@@ -1,0 +1,47 @@
+AuthType Basic
+AuthName "ENTER YOUR NAME & PASSWORD TO LOGIN"
+AuthUserFile /home/kusanagi/renews/DocumentRoot/.htpasswd
+Require valid-user
+
+# SNS Share
+Satisfy Any
+Order Allow,Deny
+SetEnvIf User-Agent "^facebookexternalhit.*$" fb_crawler
+SetEnvIf User-Agent "^facebookplatform.*$" fb_crawler2
+SetEnvIf User-Agent "^Twitterbot.*$" tw_crawler
+Allow from env=fb_crawler
+Allow from env=fb_crawler2
+Allow from env=tw_crawler
+
+
+
+<Files ~ "^\.ht">
+	Deny from all
+</Files>
+
+<Files wp-login.php>
+	#Order deny,allow
+	#Deny from all
+	#Allow from all
+	#Allow from 127.0.0.1
+	#Satisfy any
+</Files>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /
+	RewriteRule ^index\.php$ - [L]
+
+	# add a trailing slash to /wp-admin
+	RewriteRule ^([_0-9a-zA-Z-]+/)?wp-admin$ $1wp-admin/ [R=301,L]
+
+	RewriteCond %{REQUEST_FILENAME} -f [OR]
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteRule ^ - [L]
+	RewriteRule ^([_0-9a-zA-Z-]+/)?(wp-(content|admin|includes).*) $2 [L]
+	RewriteRule ^([_0-9a-zA-Z-]+/)?(.*\.php)$ $2 [L]
+	RewriteRule . index.php [L]
+	RewriteEngine On
+	RewriteBase /
+</IfModule>
+

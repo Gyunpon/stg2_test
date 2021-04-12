@@ -1,0 +1,175 @@
+@charset "UTF-8";
+.thumbs_article img { width: 100%; }
+
+.acf-comment-fields { display: none !important; }
+
+.form-submit { text-align: right; }
+
+.form-submit .submit {
+  border: 1px solid #2c76a4;
+  display: inline-block;
+  padding: 16px 42px;
+  background-color: transparent;
+  color: #2c76a4;
+  cursor: pointer;
+  /* margin-top:10px; */
+  margin-bottom:20px;
+  font-size: 14px;
+}
+.form-submit .submit:disabled{ /* 1027 add */
+	color: #7d7d7d;
+	border-color: #7d7d7d;
+	cursor: auto;
+}
+
+#reply-title {
+  font-size: 14px;
+  /* margin-bottom: 15px; */
+}
+
+.comment-respond { margin-top: 10px; }
+
+/* コメントリスト */
+.comments-list .comment { background-color: transparent; border-left: none; border-bottom: none; margin-top: 20px; }
+
+.comments-list .comment:first-of-type { margin-top: 0; }
+
+.comments-list .comment p { margin-bottom: 0; }
+
+.comments-list .comment .children { width: 90%; margin-left: auto; margin-top: 20px; }
+
+.comments-list .comment .children li { margin-top: 20px; }
+
+.comments-list .comment .children li:first-of-type { margin-top: 0; }
+
+.comments-list .comment .children .wrap_comment {
+  background-color: #fdf8e7;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.comments-list .replyBtnWrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -moz-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.comments-list .replyBtnWrap .comment-reply-link {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+/* 1027追加 */
+.comments-list .replyBtnWrap .comment-reply-link:before{
+	content: '';
+	display: inline-block;
+	width: 9px;
+	height: 4px;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-image: url("../images/icons/commMore.png");
+	background-size: 100% auto;
+	margin-right: 5px;
+}
+.commentDeleteBtnWrap{
+	margin-top: 5px;
+}
+
+.comments-list .commentWrap .wpulike { text-align: right; }
+
+.comments-list .commentWrap > p { display: none; }
+
+
+.commentText{
+	word-break: break-all;
+}
+
+/* ------------------------------------- */
+.grad-trigger { display: none; }
+
+.overComm.grad-wrap { position: relative; margin-bottom: 10px; }
+
+.overComm .grad-trigger { /*ボタンのスタイルはご自由にどうぞ*/ display: block; width: 100%; position: absolute; bottom: -20px; left: 0; text-align: center; z-index: 1; font-size: 14px; cursor: pointer; color: #2c76a4; }
+
+.overComm .grad-item { position: relative; overflow: hidden; }
+
+.overComm .grad-item.is-hide { height: 110px; /*隠した後の高さ*/ }
+
+.overComm .grad-item p + p { margin-top: 1em; }
+
+.overComm .grad-item::before {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 40px; /*グラデーションで隠す高さ*/
+	background: -webkit-linear-gradient(top, rgba(253, 248, 231, 0) 0%, rgba(253, 248, 231, 0.9) 50%, rgba(253, 248, 231, 0.9) 50%, #fdf8e7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(253, 248, 231, 0)), color-stop(50%, rgba(253, 248, 231, 0.9)), color-stop(50%, rgba(253, 248, 231, 0.9)), to(#fdf8e7));
+	background: -o-linear-gradient(top, rgba(253, 248, 231, 0) 0%, rgba(253, 248, 231, 0.9) 50%, rgba(253, 248, 231, 0.9) 50%, #fdf8e7 100%);
+	background: linear-gradient(top, rgba(253, 248, 231, 0) 0%, rgba(253, 248, 231, 0.9) 50%, rgba(253, 248, 231, 0.9) 50%, #fdf8e7 100%);
+}
+.um_renewer .overComm .grad-item::before{
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #fff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.9)), color-stop(50%, rgba(255, 255, 255, 0.9)), to(#fff));
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #fff 100%);
+	background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, #fff 100%);
+}
+
+
+.overComm .grad-trigger.is-show + .grad-item::before { display: none; }
+
+/* ------------------------------------- */
+
+/* 1027追加 */
+.comments-list .comment .wrap_comment.um_renewer{
+	background-color: #fff;
+	border-color: #E9BC9D;
+	border-width: 2px;
+}
+
+.morelinkWrap{
+	margin-top: 40px;
+	text-align: center;
+}
+@media only screen and (max-width: 767px){
+	.morelinkWrap{
+		margin-top: 30px;
+	}
+}
+.morelink{
+	color: #2c76a4;
+	font-size: 17px;
+}
+.morelink:before{
+	content: '';
+	display: inline-block;
+	width: 15px;
+	height: 8px;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	background-image: url("../images/icons/commMore.png");
+	background-size: 100% auto;
+	margin-right: 10px;
+}
+.morelink:hover{
+	cursor: pointer;
+	color: #0f6ecd;
+}

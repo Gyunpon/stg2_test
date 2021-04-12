@@ -1,0 +1,42 @@
+
+■/includes/core/class-password.php
+
+wp_die( 'Hello, spam bot!', 'ultimate-member' );
+
+をコメントアウト
+※2か所くらいあった
+
+
+
+■/templates/members-list.php
+123行目付近
+<?php do_action( 'um_members_list_just_after_actions_tmpl', $args ); ?>
+の下に
+
+<?php if (!(is_user_logged_in())): ?>
+<a href="#modalLoginWrap" class="followCover popup-modal"></a>
+<?php endif; ?>
+
+追加
+
+■/includes/core/class-fields.php
+プロフィール編集でメルアド編集できるように
+$arr_restricted_fields = array( 'user_email', 'username', 'user_login', 'user_password', '_um_last_login' );
+↓に変更
+$arr_restricted_fields = array( /* 'user_email',  */'username', 'user_login', 'user_password', '_um_last_login' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

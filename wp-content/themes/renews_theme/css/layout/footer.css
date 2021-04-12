@@ -1,0 +1,150 @@
+footer {
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 100px 0 97px;
+  background-color: #c7dcee;
+  text-align: center;
+  opacity: 0.8;
+  text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+  footer {
+    padding: 61px 17px 19px;
+  }
+}
+
+.inner_footer {
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 1159px) {
+  .inner_footer {
+    padding: 0 3%;
+  }
+}
+
+.logo_footer {
+  margin-bottom: 46px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+  .logo_footer {
+    margin-bottom: 55px;
+  }
+}
+
+.wrap_sitemap {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #2c76a4;
+}
+
+@media only screen and (max-width: 767px) {
+  .wrap_sitemap {
+    padding-bottom: 10px;
+  }
+}
+
+.sitemap {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  list-style: none;
+  font-weight: 600;
+  padding-right: 10%;
+}
+
+@media screen and (max-width: 767px) {
+  .sitemap {
+    display: block !important;
+  }
+  .sitemap .item_sitemap {
+    display: block;
+  }
+}
+
+.sitemap.sitemap-left {
+  width: 130%;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .sitemap.sitemap-left {
+    display: none;
+  }
+}
+
+.sitemap.sitemap-right {
+  width: 70%;
+  margin-left: auto;
+  padding-right: 9.5%;
+}
+
+@media only screen and (max-width: 767px) {
+  .sitemap.sitemap-right {
+    margin-left: 0;
+  }
+}
+
+.sitemap.sitemap-right .sitemap_column {
+  margin-right: 22.5%;
+}
+
+.sitemap_column {
+  margin-right: 10.5%;
+}
+
+.item_sitemap {
+  margin-bottom: 24px;
+}
+
+.target_sitemap {
+  white-space: nowrap;
+}
+
+.text_copyright {
+  margin-left: auto;
+  color: #2c76a4;
+  font-size: 12px;
+  letter-spacing: 0.075em;
+}
+
+.footer_bottom {
+  padding-top: 50px;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer_bottom {
+    padding-top: 40px;
+  }
+}
+
+.footer_bottom .social.flex {
+  display: flex !important;
+}
+
+.footer_bottom .share-btn {
+  margin-right: 20px;
+}
+
+.social_button {
+  margin-right: 31px;
+}
+
+.social_button a {
+  display: inline-block;
+}
+
+.social_button a:hover {
+  opacity: 0.75;
+}
+
+.social_button a i {
+  font-size: 20px;
+}

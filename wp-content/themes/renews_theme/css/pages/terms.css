@@ -1,0 +1,20 @@
+main {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding: 80px 20px !important;
+  }
+}
+
+main p {
+  margin-bottom: 40px;
+}
+
+main .c5 {
+  color: #2c76a4;
+  font-weight: 600;
+}

@@ -1,0 +1,365 @@
+//> *{
+//	margin-top: 30px;
+//	@include mobile{
+//		margin-top: 6%;
+//	}
+//	&:first-child{
+//		margin-top: 0;
+//	}
+//}
+
+//h1{
+//	line-height: 1.4;
+//	@include fs(28);
+//	font-weight: bold;
+//	@include mobile{
+//		font-size: 5.5vw;
+//	}
+//}
+//h2{
+//	font-size: 39px;
+//	line-height: 1.2;
+//	letter-spacing: .045em;
+//	@include mobile{
+//		font-size: 28px;
+//	}
+//}
+//h3{
+//	line-height: 1.4;
+//	padding: 0.6em 0.5em;
+//	@include fs(20);
+//	font-weight: bold;
+//	background-color: #eaeaea;
+//	@include mobile{
+//		font-size: 4vw;
+//	}
+//}
+h4{
+	line-height: 1.6;
+	padding: 0 0.5em 0.5em 2em;
+	@include fs(20);
+	font-weight: bold;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+	@include mobile{
+		font-size: 4vw;
+	}
+	&:before, &:after{
+		content: '';
+		position: absolute;
+		@include border-radius(100%);
+	}
+	&:before{
+		width: 18px;
+		height: 18px;
+		top: 0.2em;
+		left: 0.2em;
+		z-index: 2;
+		background-color: #eee;
+		background-color: rgba(150, 150, 150, .5);
+	}
+	&:after{
+		width: 13px;
+		height: 13px;
+		top: 0.7em;
+		left: 0.7em;
+		background-color: #bbb;
+		background-color: rgba(210, 210, 210, .5);
+	}
+}
+h5{
+	line-height: 1.6;
+	padding-bottom: 0.4em;
+	@include fs(20);
+	font-weight: bold;
+	border-bottom: 4px solid #eaeaea;
+	position: relative;
+	@include mobile{
+		font-size: 4vw;
+	}
+	&:after {
+		width: 20%;
+		height: 4px;
+		content: '';
+		background-color: $base_color;
+		position: absolute;
+		bottom: -4px;
+		left: 0;
+		z-index: 2;
+	}
+}
+h6{
+	line-height: 1.6;
+	padding-bottom: 0.4em;
+	@include fs(20);
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+	@include mobile{
+		font-size: 4vw;
+	}
+}
+
+/* text */
+/* -------------------------------------------------- */
+a{
+//	line-height: 1.8;
+	@include linkColor($base_color);
+//	text-decoration: underline;
+//	@include fs(16);
+	@include pc{
+		&:hover{
+			text-decoration: none;
+		}
+	}
+//	@include mobile{
+//		font-size: 3.2vw;
+//	}
+}
+
+//.wp-caption{
+//	>.wp-caption-text{
+//		margin-bottom: 0;
+//	}
+//}
+
+p{
+//	line-height: 1.8;
+//	@include fs(16);
+//	@include mobile{
+//		font-size: 3.2vw;
+//	}
+	&:after{
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: " ";
+		clear: both;
+		height: 0;
+	}
+	&.wp-caption-text{
+		color:#8dbda3;
+		font-size: 15px;
+		margin-top: 10px;
+		letter-spacing: .045em;
+		line-height: 1.4;
+		margin-bottom: 30px;
+	}
+}
+b,em,strong{
+	font-weight: bold;
+}
+em{
+	font-style: italic;
+}
+sup,sub{
+	font-size: 80%;
+}
+sup{
+	vertical-align: super;
+}
+sub{
+	vertical-align: sub;
+}
+
+/* img */
+/* -------------------------------------------------- */
+//img{
+	.alignleft{
+		padding-right: 30px;
+		padding-bottom: 0px;
+		float: left;
+		@include mobile{
+			padding: 0;
+			padding-bottom: 4%;
+			margin-left: auto;
+			margin-right: auto;
+			float: none;
+			display: block;
+		}
+	}
+	.alignright{
+		padding-left: 30px;
+		padding-bottom: 0px;
+		float: right;
+		@include mobile{
+			padding: 0;
+			padding-bottom: 4%;
+			margin-left: auto;
+			margin-right: auto;
+			float: none;
+			display: block;
+		}
+	}
+	.aligncenter{
+		padding-bottom: 0px;
+		margin-left: auto;
+		margin-right: auto;
+		clear: both;
+		display: block;
+		@include mobile{
+			padding: 0;
+			padding-bottom: 4%;
+			margin-left: auto;
+			margin-right: auto;
+			float: none;
+		}
+	}
+//}
+
+/* box */
+/* -------------------------------------------------- */
+hr{
+	width: 100%;
+	height: 1px;
+	border: none;
+	background-color: $base_color;
+	display: block;
+}
+blockquote{
+//	padding: 65px;
+//	background-color: #f8f8f8;
+//	display: block;
+//	position: relative;
+//	@include mobile{
+//		padding: 40px;
+//	}
+//	&:before, &:after{
+//		width: 42px;
+//		height: 32px;
+//		content: "";
+//		background-repeat: no-repeat;
+//		background-position: center center;
+//		@include background-size(contain);
+//		display: block;
+//		position: absolute;
+//		z-index: 1;
+//		@include mobile{
+//			width: 21px;
+//			height: 16px;
+//		}
+//	}
+//	&:before{
+//		background-image: image-url("icon/quate_top_2x.png");
+//		top: 20px;
+//		left: 20px;
+//		@include mobile{
+//			top: 15px;
+//			left: 15px;
+//		}
+//	}
+//	&:after{
+//		background-image: image-url("icon/quate_bottom_2x.png");
+//		right: 20px;
+//		bottom: 20px;
+//		@include mobile{
+//			right: 15px;
+//			bottom: 15px;
+//		}
+//	}
+	p{
+//		line-height: 2;
+//		position: relative;
+//		z-index: 2;
+		display: block;
+		line-height: 40px;
+		margin-bottom: 18px;
+		font-size: 20px;
+		font-weight: 400;
+		letter-spacing: .05em;
+		color: #3c7658;
+	}
+}
+
+
+/* list */
+/* -------------------------------------------------- */
+ul{
+	padding-left: 1.2em;
+	list-style: disc;
+	@include fs(16);
+//	@include mobile{
+//		font-size: 3.2vw;
+//	}
+	li{
+		list-style: disc;
+	}
+}
+ol{
+	padding-left: 1.2em;
+	list-style: decimal;
+	@include fs(16);
+//	@include mobile{
+//		font-size: 3.2vw;
+//	}
+	li{
+		list-style: decimal;
+	}
+}
+li{
+	line-height: 1.8;
+	margin-top: 15px;
+	@include fs(16);
+	@include mobile{
+		margin-top: 3%;
+		font-size: 3.2vw;
+	}
+	&:first-child{
+		margin-top: 0;
+	}
+}
+
+
+
+/* movie */
+/* -------------------------------------------------- */
+iframe, video{
+	max-width: 100% !important;
+	@include mobile{
+		height: 56.25vw !important;
+	}
+}
+
+/* table */
+/* -------------------------------------------------- */
+$borderCol:#ccc;
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+	@include fs($base_fontSize);
+	th{
+		line-height: 1.8;
+		padding: 20px;
+		border: 1px solid $borderCol;
+		@include fs(16);
+//		@include mobile{
+//			font-size: 3.2vw;
+//		}
+	}
+	td{
+		line-height: 1.8;
+		padding: 20px;
+		border: 1px solid $borderCol;
+		@include fs(16);
+//		@include mobile{
+//			font-size: 3.2vw;
+//		}
+	}
+	thead{
+		th,td{
+			&:first-child{
+				border: none;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

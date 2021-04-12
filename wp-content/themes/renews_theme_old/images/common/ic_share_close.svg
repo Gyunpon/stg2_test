@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>ic_share_close</title>
+    <desc>Created with Sketch.</desc>
+    <g id="design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="renews_dt_article_detail_share" transform="translate(-1111.000000, -1132.000000)" stroke="#2C76A4" stroke-width="1.28003924">
+            <g id="Share_pop_up" transform="translate(999.000000, 1117.000000)">
+                <g id="Share_popup">
+                    <g id="ic_share_close" transform="translate(113.000000, 16.000000)">
+                        <line x1="12" y1="0" x2="-4.65675564e-12" y2="12" id="Path-5"></line>
+                        <line x1="0" y1="-1.16418891e-12" x2="12" y2="12" id="Path-5"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

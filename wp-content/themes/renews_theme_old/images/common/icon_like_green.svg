@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>icon_like_green</title>
+    <desc>Created with Sketch.</desc>
+    <g id="design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="renews_dt_home_default" transform="translate(-290.000000, -2011.000000)" fill="#3D7758" fill-rule="nonzero">
+            <g id="special-issues" transform="translate(136.000000, 1466.000000)">
+                <g id="special-issue" transform="translate(4.000000, 95.000000)">
+                    <g id="articles" transform="translate(0.000000, 333.000000)">
+                        <g id="article" transform="translate(30.000000, 26.000000)">
+                            <g id="info" transform="translate(120.000000, 89.000000)">
+                                <path d="M11.5,2 C13.9852814,2 16,4.51471863 16,7 C16,10.3333333 13.3333333,13.6666667 8,17 C2.66666667,13.6666667 0,10.3333333 0,7 C0,4.51471863 2.01471863,2 4.5,2 C5.91357726,2 7.17492267,2.65178201 7.99990231,3.67121211 C8.82507733,2.65178201 10.0864227,2 11.5,2 Z M8.36701609,15.5743248 C12.8314652,12.6089326 15,9.73197689 15,7 C15,4.94242095 13.3160612,3 11.5,3 C10.4287735,3 9.43881734,3.48297591 8.77717624,4.30037445 L7.99981028,5.26074072 L7.22255554,4.30028444 C6.56114344,3.4829753 5.57122916,3 4.5,3 C2.68393876,3 1,4.94242095 1,7 C1,9.73197689 3.16853482,12.6089326 7.63298391,15.5743248 L8,15.8149547 L8.36701609,15.5743248 Z" id="icon_like_green"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

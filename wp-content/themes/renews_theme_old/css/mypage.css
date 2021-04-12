@@ -1,0 +1,160 @@
+.title_lower_l1 {
+  text-align: center; }
+
+/* member */
+/*-------------------------------------*/
+.um-account-side {
+  display: none !important; }
+
+.profileAreaWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .profileAreaWrap .profileLink {
+    width: 20%; }
+    @media only screen and (max-width: 767px) {
+      .profileAreaWrap .profileLink {
+        width: 100%;
+        margin-bottom: 60px; } }
+    .profileAreaWrap .profileLink .userNameWrap {
+      margin-bottom: 80px;
+      text-align: center;
+      font-size: 18px; }
+      @media only screen and (max-width: 767px) {
+        .profileAreaWrap .profileLink .userNameWrap {
+          margin-bottom: 60px; } }
+      .profileAreaWrap .profileLink .userNameWrap .userName, .profileAreaWrap .profileLink .userNameWrap .userId {
+        text-align: center; }
+      .profileAreaWrap .profileLink .userNameWrap .userName {
+        font-weight: 500;
+        font-size: 30px; }
+      .profileAreaWrap .profileLink .userNameWrap .userId {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        font-size: 22px;
+        color: #2c76a4; }
+    @media only screen and (max-width: 767px) {
+      .profileAreaWrap .profileLink > ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: start;
+        -moz-box-align: start;
+        -ms-flex-align: start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
+    .profileAreaWrap .profileLink > ul li {
+      border: 1px solid #2c76a4;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      -o-box-sizing: border-box;
+      box-sizing: border-box;
+      background-color: #fff; }
+      @media only screen and (max-width: 767px) {
+        .profileAreaWrap .profileLink > ul li {
+          width: 48%; } }
+      .profileAreaWrap .profileLink > ul li:not(:first-of-type) {
+        margin-top: 40px; }
+        @media only screen and (max-width: 767px) {
+          .profileAreaWrap .profileLink > ul li:not(:first-of-type) {
+            margin-top: 0; } }
+      @media only screen and (max-width: 767px) {
+        .profileAreaWrap .profileLink > ul li:nth-of-type(n+3) {
+          margin-top: 12%; } }
+      .profileAreaWrap .profileLink > ul li .linkParts a {
+        display: block;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 7%; }
+      .profileAreaWrap .profileLink > ul li .linkParts .thumb {
+        text-align: center;
+        max-width: 120px;
+        max-height: 120px;
+        margin: -40px auto 0; }
+        @media only screen and (max-width: 767px) {
+          .profileAreaWrap .profileLink > ul li .linkParts .thumb {
+            max-width: 80px;
+            max-height: 80px; } }
+      .profileAreaWrap .profileLink > ul li .linkParts .title {
+        color: #2c76a4;
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 10px; }
+        @media only screen and (max-width: 767px) {
+          .profileAreaWrap .profileLink > ul li .linkParts .title {
+            font-size: 14px; } }
+      .profileAreaWrap .profileLink > ul li.profile {
+        background-color: #F8E2D4; }
+        .profileAreaWrap .profileLink > ul li.profile .thumb {
+          border-radius: 999px;
+          overflow: hidden; }
+      .profileAreaWrap .profileLink > ul li.textLink {
+        margin-top: 20px; }
+        @media only screen and (max-width: 767px) {
+          .profileAreaWrap .profileLink > ul li.textLink {
+            margin-top: 4%; } }
+        .profileAreaWrap .profileLink > ul li.textLink .linkParts .title {
+          margin-top: 0; }
+  .profileAreaWrap .profileArea {
+    width: 80%; }
+    @media only screen and (max-width: 767px) {
+      .profileAreaWrap .profileArea {
+        width: 100%; }
+        .profileAreaWrap .profileArea .um-account-nav {
+          display: none; }
+        .profileAreaWrap .profileArea div.uimob500 .um-account-tab {
+          padding-bottom: 0;
+          border-bottom: none; } }
+    .profileAreaWrap .profileArea .um-account-main {
+      float: none !important;
+      width: 61%;
+      padding: 0  !important;
+      margin: 0 auto; }
+      @media only screen and (max-width: 767px) {
+        .profileAreaWrap .profileArea .um-account-main {
+          width: 100%; } }
+    .profileAreaWrap .profileArea .um-account-meta-img, .profileAreaWrap .profileArea .um-account-name, .profileAreaWrap .profileArea .um-account-profile-link {
+      text-align: center; }
+
+.sec_my .title_lower_l1, .sec_my .text_desc_login {
+  text-align: center; }
+
+.sec_my .content_my .my .my_img_avatar, .sec_my .content_my .my .text_middle, .sec_my .content_my .my .text_read {
+  text-align: center; }
+
+/* follow */
+.um-header, .um-profile-navbar, .um-profile-nav {
+  display: none; }
+
+#renewer_detail .wrapper::before {
+  content: none; }
+
+.following {
+  margin-top: 40px !important; }

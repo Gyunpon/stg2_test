@@ -1,0 +1,1281 @@
+@charset "utf-8";
+@import "mixin";
+@import "setting";
+
+.title_lower_l1{
+	text-align: center;
+}
+
+/* member */
+/*-------------------------------------*/
+.um-account-side{
+	display: none !important;
+}
+
+.profileAreaWrap{
+	display: flex;
+	@include align-items($align:flex-start);
+	@include justify-content($pack:flex-start);
+	@include flex-wrap($wrap:wrap);
+	.profileLink{
+		width: 20%;
+		@include mobile{
+			width: 100%;
+			margin-bottom: 60px;
+		}
+		.userNameWrap{
+			margin-bottom: 80px;
+			text-align: center;
+			font-size: 18px;
+			@include mobile{
+				margin-bottom: 60px;
+			}
+			.userName,.userId{
+				text-align: center;
+			}
+			.userName{
+				font-weight: 500;
+				font-size: 30px;
+			}
+			.userId{
+				margin-top: 5px;
+				margin-bottom: 10px;
+				font-weight: 500;
+				font-size: 22px;
+				color: $rn_blue;
+			}
+		}
+		
+		>ul{
+			@include mobile{
+				display: flex;
+				@include align-items($align:flex-start);
+				@include justify-content($pack:space-between);
+				@include flex-wrap($wrap:wrap);
+			}
+			li{
+				border: 1px solid $rn_blue;
+				@include box-sizing();
+				background-color: #fff;
+				@include mobile{
+					width: 48%;
+				}
+				&:not(:first-of-type){
+					margin-top: 40px;
+					@include mobile{
+						margin-top: 0;
+					}
+				}
+				@include mobile{
+					&:nth-of-type(n+3){
+						margin-top: 12%;
+					}
+				}
+//				.linkParts{
+//					a{
+//						display: block;
+//						@include box-sizing();
+//						padding: 7%;
+//					}
+//					.thumb{
+//						text-align: center;
+//						max-width: 120px;
+//						max-height: 120px;
+//						margin: -40px auto 0;
+//						@include mobile{
+//							max-width: 80px;
+//							max-height: 80px;
+//						}
+//					}
+//					.title{
+//						color: $rn_blue;
+//						font-weight: 500;
+//						font-size: 18px;
+//						text-align: center;
+//						margin-top: 10px;
+//						@include mobile{
+//							font-size: 14px;
+//						}
+//					}
+//				}
+
+				&.profile{
+					background-color: #F8E2D4;
+					.thumb{
+						border-radius: 999px;
+						overflow: hidden;
+					}
+				}
+				&.textLink{
+					margin-top: 20px;
+					@include mobile{
+						margin-top: 4%;
+					}
+					.linkParts{
+						.title{
+							margin-top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.profileArea{
+		width: 100%;
+//		width: 80%;
+		@include mobile{
+			width: 100%;
+			
+			.um-account-nav{
+				display: none;
+			}
+			div.uimob500 .um-account-tab{
+				padding-bottom: 0;
+				border-bottom: none;
+			}
+			
+		}
+		.um-account-main{
+			float: none !important;
+//			width: 61%;
+			padding: 0  !important;
+			margin: 0 auto;
+			@include mobile{
+				width: 100%;
+			}
+		}
+		.um-account-meta-img,.um-account-name,.um-account-profile-link{
+			text-align: center;
+		}
+	}
+}
+
+.profileEditTitleWrap{
+	margin-bottom: 0;
+}
+
+.profUserBlock{
+	dl{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		dt{
+			width: 50px;
+			height: 50px;
+			@include border-radius(999px);
+			overflow: hidden;
+			margin-right: 10px;
+		}
+		dd{
+			span{
+				font-size: 14px;
+				font-weight: 500;
+			}
+			.userName{
+				color: $rn_black;
+			}
+		}
+	}
+}
+
+
+.sec_my{
+	.title_lower_l1,.text_desc_login{
+		text-align: center;
+	}
+	
+	.content_my{
+		max-width: 750px;
+		margin-left: auto;
+		margin-right: auto;
+		justify-content: flex-start;
+		.my{
+			padding: 0;
+			margin-bottom: 40px;
+			@include mobile{
+				margin-bottom: 20px;
+			}
+			a{
+				padding: 28px 2% 28px;
+				height: 100%;
+				border: 1px solid #2c76a4;
+			}
+			&:not(:nth-of-type(3n+1)){
+				margin-left: 35px;
+				@include mobile{
+					margin-left: 0;
+				}
+			}
+			.avatar01{
+				img{
+					border-radius: 999px;
+				}
+			}
+			.text_middle{
+				font-size: 14px;
+			}
+			.my_img_avatar{
+				position: static;
+				transform: translateX(0);
+				margin-top: -60px;
+				margin-bottom: 20px;
+				img{
+					width: 150px;
+				}
+			}
+			.my_img_avatar,.text_middle,.text_read{
+				text-align: center;
+			}
+			&.noticeLink,&.bookmarkLink{
+				@include mobile{
+					margin-bottom: 60px;
+				}
+			}
+			&.cmsLoginLink{
+				@include mobile{
+					a{
+						padding: 25px;
+						>.text_middle{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+			&.otherLink{
+				a{
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}
+//				background-color: transparent;
+//				@include mobile{
+//					margin-bottom: 20px;
+//					&:last-of-type{
+//						margin-bottom: 0;
+//					}
+//				}
+//				ul{
+//					li{
+//						&:not(:first-of-type){
+//							margin-top: 20px;
+//						}
+//						a{
+//							display: block;
+//							background-color: #fff;
+//							padding: 19px;
+//							@include linkColor($color:$rn_blue);
+//							.title{
+//								font-size: 20px;
+//								text-align: center;
+//							}
+//						}
+//					}
+//				}
+			}
+		}
+	}
+}
+
+.linkParts{
+	margin-top: 50px;
+	>p{
+		text-align: center;
+		&:not(:first-of-type){
+			margin-top: 15px;
+		}
+	}
+}
+
+
+.noFollow{
+	text-align: center;
+	font-size: 14px;
+	margin-bottom: 20px;
+}
+
+.wrapper{
+	background-color: #fff;
+}
+
+
+/* bookmark */
+.profileArea{
+	margin-top: 35px;
+}
+
+
+/* follow */
+.um-header,.um-profile-navbar,.um-profile-nav{
+	display: none;
+}
+#renewer_detail .wrapper::before{
+	content: none;
+}
+.following{
+//	margin-top: 40px !important;
+//	padding: 0 !important;
+	display: flex;
+	@include align-items($align:stretch);
+	@include justify-content($pack:flex-start);
+	@include flex-wrap($wrap:wrap);
+	.um-followers-user{
+		width: 30%;
+//		background-color: #f8eae1 !important;
+//		border: 1px solid #e9bc9d;
+		padding: 0 0 10px !important;
+		display: flex;
+		@include align-items($align:center);
+		@include justify-content($pack:flex-start);
+//		@include flex-wrap($wrap:wrap);
+		margin-left: 5%;
+		margin-bottom: 2%;
+		box-sizing: border-box;
+		&:nth-of-type(3n+1){
+			margin-left: 0;
+		}
+		@include mobile{
+			width: 100%;
+			margin-left: 0;
+			margin-top: 2%;
+			&:first-of-type{
+				margin-top: 0;
+			}
+		}
+//		.userInfo{
+//			display: flex;
+//			@include align-items($align:center);
+//			@include justify-content($pack:flex-start);
+////			@include flex-wrap($wrap:wrap);
+//			margin-right: auto;
+//			width: 50%;
+//			.um-followers-user-photo{
+//				position: static;
+//				overflow: hidden;
+//				opacity: 1;
+//				width: 45px;
+//				height: 45px;
+//				display: block;
+//				border-top-right-radius: 999px;
+//				border-bottom-right-radius: 999px;
+//				//			float: left;
+//				margin-right: 15px;
+//				@include mobile{
+//					margin-right: 2%;
+//				}
+//				img{
+//					width: 100%;
+//					height: 100%;
+//				}
+//			}
+//					.um-followers-user-name{
+//						font-size: 14px;
+//						font-weight: 500;
+//			//			float: left;
+//			//			width: 80%;
+//			//			a{
+//			//				color: $rn_black;
+//			//				font-size: 20px;
+//			//			}
+//						.renewerID{
+//							a{
+////								color: $rn_black;
+//							}
+//						}
+//					}
+//		}
+
+//		.um-followers-user-btn{
+//			position: static;
+//			width: 160px;
+//			@include mobile{
+//				padding-top: 0;
+//			}
+////			bottom: 15px;
+////			left: 15px;
+////			top: auto;
+////			right: auto;
+//		}
+	}
+}
+
+.followViewArea,.bookmarkPage{
+	.inner_base{
+		background-color: transparent !important;
+	}
+}
+
+
+.followViewArea{
+//	padding-bottom: 0;
+	.followBlockWrap{
+		margin-top: 40px;
+		.followBlock{
+			background-color: transparent;
+			padding: 0 !important;
+			.title_thin{
+				margin-bottom: 40px;
+				@include mobile{
+					margin-bottom: 20px;
+				}
+			}
+			&:not(:first-of-type){
+				margin-top: 50px;
+				@include mobile{
+					margin-top: 0px;
+				}
+			}
+		}
+	}
+	//agenda
+	.wrap_agenda{margin-top:60px}@media only screen and (max-width:767px){.wrap_agenda{margin-top:100px}}.wrap_agenda .agenda{float:left;width:31.33333%}.wrap_agenda .agenda .title_avatar{margin:10px 0 0}@media screen and (min-width:981px){.wrap_agenda .agenda:nth-last-of-type(n+4){margin-bottom:130px}}@media only screen and (max-width:980px){.wrap_agenda .agenda:nth-last-of-type(n+4){margin-bottom:0}}@media screen and (min-width:981px){.wrap_agenda .agenda:not(:nth-child(3n)){margin-right:3%}}@media screen and (min-width:768px) and (max-width:980px){.wrap_agenda .agenda:not(:nth-child(3n)){margin-right:0}}@media screen and (min-width:768px) and (max-width:980px){.wrap_agenda .agenda{width:48%}.wrap_agenda .agenda:nth-child(odd){margin-right:4%}.wrap_agenda .agenda:nth-last-of-type(n+2){margin-bottom:130px}}@media only screen and (max-width:767px){.wrap_agenda .agenda{width:100%;margin:0}.wrap_agenda .agenda:not(:last-child){margin:0 0 90px}}
+	
+	
+	//series
+	.column+.column{margin-bottom:57px}@media only screen and (max-width:767px){.column+.column{margin-bottom:62px}}
+}
+
+/* bookmark */
+.bookmarkPage{
+	&#article .content_article{
+		padding-top: 40px;
+	}
+	.inner_base{
+		padding-left: 0;
+	}
+}
+
+
+/* 通知 */
+.um-account-tab-notifications{
+	.um-account-heading{
+		&+p{
+			display: none;
+			font-size: 0;
+//			&:before{
+//				content: "受信する通知を選択してください。";
+//				font-size: 14px;
+//			}
+		}
+	}
+}
+
+
+/* member/profile */
+//#profEditFrameWrap{
+//	#profEditFrame{
+//		width: 100%;
+//		height: 500px;
+//	}
+//}
+
+
+/* NEW style */
+/* common parts */
+.um-field-checkbox:not(.um-field){
+	margin-bottom: 20px;
+	margin-top: 0;
+}
+
+.um-field-checkbox{
+	.um-field-checkbox-option{
+		color: $rn_gray !important;
+	}
+	input[type="checkbox"]{
+		&:checked{
+			&+.um-field-checkbox-state{
+				i{
+					background-color: #B0AD9E;
+					&:before,&:after{
+						border-color: #fff;
+					}
+					&:before{
+						width: 8px;
+						transition-delay: 0s;
+					}
+					&:after{
+						width: 11px;
+						transition-delay: 0s;
+					}
+				}
+			}
+		}
+	}
+	.um-field-checkbox-state{
+		width: 20px;
+		height: 20px;
+		top: 3px;
+		i{
+			cursor: pointer;
+			font-size: 0;
+			display: block;
+			border: 2px solid #B0AD9E;
+			background-color: #fff;
+			width: 100%;
+			height: 100%;
+			line-height: 1;
+			border-radius: 2px;
+			box-sizing: border-box;
+			&:before,&:after{
+				content: "";
+				position: absolute;
+				-webkit-transform-origin: 0 100%;
+				transform-origin: 0 100%;
+				width: 0;
+				border-bottom-color: #B0AD9E;
+				border-bottom-width: 2px;
+				border-bottom-style: solid;
+			}
+			&:before{
+				-webkit-transition: width .05s linear;
+				transition: width .05s linear;
+				transition-delay: 0s;
+				-webkit-transition-delay: .1s;
+				transition-delay: .1s;
+				transform: rotate(45deg) translateX(4px) translateY(3px);
+			}
+			&:after{
+				-webkit-transition: width .1s linear;
+				transition: width .1s linear;
+				transition-delay: 0s;
+				-webkit-transition-delay: 0s;
+				transition-delay: 0s;
+				transform: rotate(-45deg) translateX(-2px) translateY(12px);
+			}
+		}
+
+	}
+}
+
+
+.sec{
+	padding-top: 0;
+	background-color: #fff;
+}
+
+.mypageHead{
+	.inner_base{
+		max-width: 720px;
+		@include mobile{
+			padding-left: 5%;
+		}
+	}
+	.userName{
+		text-align: center;
+		@include fs(17);
+		font-weight: 500;
+		color: $rn_gray;
+		margin-top: 15px;
+		@include mobile{
+			@include fs(16);
+		}
+	}
+	.userMenu{
+		margin-top: 10px;
+		li{
+			text-align: center;
+			&:not(:first-of-type){
+				margin-top: 8px;
+			}
+			a{
+				@include fs(14);
+				font-weight: 500;
+				color: $rn_ash;
+				@include mobile{
+					@include fs(10);
+				}
+			}
+		}
+	}
+	.mypageTabWrap{
+		margin: 35px auto 0;
+		position: relative;
+		text-align: center;
+		max-width: 720px;
+		background-color: #fff;
+		img{
+			max-width: 100% !important;
+			height: auto;
+		}
+		@include mobile{
+			max-width: 375px;
+			margin-top: 15px;
+		}
+		.mypageTab{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			li{
+				width: 25%;
+				height: 100%;
+				a{
+					width: 100%;
+					height: 100%;
+					display: block;
+					font-size: 0;
+				}
+			}
+		}
+	}
+}
+.mypageContent{
+	background-color: #fff;
+	padding-top: 35px;
+	.inner_base{
+		max-width: 720px;
+	}
+	.mypageTitleBlock{
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		.pageIcon{
+//			width: 100px;
+			width: auto;
+			margin-right: 10px;
+			img{
+				max-width: 100% !important;
+				max-height: 102px;
+				@include mobile{
+					max-height: 85px;
+				}
+			}
+//			@include mobile{
+//				width: 90px;
+//				margin-right: 0;
+//			}
+		}
+	}
+}
+.mypageTitleArea{
+	margin-top: 15px;
+	@include mobile{
+		margin-top: 8px;
+	}
+	.mypageTitle{
+		@include fs(20);
+		padding: 0 15px;
+		@include mobile{
+			@include fs(18);
+		}
+	}
+	.pageCatch{
+		@include fs(13);
+		padding: 10px 15px 0;
+		margin-top: 10px;
+		border-top: 1px solid $rn_gray;
+		@include mobile{
+			@include fs(11);
+		}
+	}
+}
+
+.um-account-heading{
+	display: none;
+	opacity: 0;
+}
+.um-account-meta{
+	display: none !important;
+	opacity: 0;
+}
+.profileArea .um{
+	margin-bottom: 70px !important;
+	@include mobile{
+		margin-bottom: 60px !important;
+	}
+}
+
+/* あなたへの通知 */
+.hide{
+	display: none !important;
+}
+
+.memberProfPage .um-account-tab-webnotifications{
+	.um-field{
+		.um-field-area{
+			.um-field-checkbox{
+				&:nth-of-type(2),&:nth-of-type(3){
+					display: none;
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+		}
+	}
+}
+
+#noticeArea{
+	.um-notification-photo{
+		width: 60px;
+		height: 60px;
+		@include mobile{
+			width: 50px;
+			height: 50px;
+		}
+	}
+	.um-notification{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-left: 15px;
+		border-bottom-color: #CECECE;
+		font-size: 17px ;
+		&:not(:first-of-type){
+			margin-top: 20px;
+		}
+		@include mobile{
+			font-size: 14px ;
+		}
+		span.b2{
+			color: $rn_gray;
+			i{
+				&.um-faicon-comment{
+					background-image: url("../images/icons/comm.svg");
+					font-size: 0;
+					width: 19px;
+					height: 18px;
+					display: inline-block;
+					background-size: 100% auto;
+					background-repeat: no-repeat;
+					top: -1px;
+				}
+			}
+		}
+		.um-notification-hide{
+			top: auto;
+			bottom: 15px;
+		}
+	}
+}
+
+
+.um-notification-header{
+	margin-bottom: 30px;
+	border-bottom: none !important;
+	.um-notification-right{
+		padding-top: 0;
+		padding-right: 0;
+		.um-notification-i-settings{
+			font-size: 0 !important;
+			text-align: center;
+			padding: 5px 8px !important;
+			border: 1px solid #CECECE !important;
+			border-radius: 5px;
+			span{
+				color: $rn_gray;
+				@include fs(13);
+				font-weight: 300;
+				margin-right: 5px;
+				display: inline-block;
+				@include mobile{
+					@include fs(11);
+				}
+			}
+			span,img{
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+.um-notification-shortcode .um-notifications-none{
+	min-height: 0 !important;
+	height: auto;
+	padding: 0 !important;
+	color: #4e4e4e;
+	font-size: 18px;
+	.nonewBlock{
+		text-align: center;
+		.um-icon-ios-bell{
+			margin-bottom: 0;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 15px;
+			&:before{
+				height: 30px;
+				font-size: 30px;
+			}
+		}
+		.nonewText{
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+
+#noticeArea{
+	padding-bottom: 70px;
+	@include mobile{
+		padding-bottom: 35px;
+	}
+}
+
+/* 通知設定 */
+.um-account-tab-webnotifications{
+	.um-field-label{
+		display: none;
+	}
+	.um-left{
+		text-align: center;
+		float: none;
+	}
+}
+
+
+/* フォロー管理 */
+.followViewArea{
+	.followNavWrap{
+		margin-top: 20px;
+		max-width: 330px;
+		margin-left: auto;
+		margin-right: auto;
+		.followNav{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			li{
+				a{
+					color: $rn_gray;
+					@include fs(13);
+					background-image: url("../images/icons/arrow_btm.svg");
+					background-position: right center;
+					background-repeat: no-repeat;
+					padding-right: 30px;
+				}
+			}
+		}
+	}
+	
+	.mypageContent{
+		.inner_base{
+			max-width: 1210px;
+		}
+	}
+	.title_thin{
+		max-width: 1160px;
+		&:after{
+			content: "";
+			position: absolute;
+			top: 45px;
+			right: 0;
+			z-index: 1;
+			width: 100%;
+			height: 1px;
+			background-color: #b0ad9e;
+			display: block;
+			@include mobile{
+				top: 40px;
+			}
+		}
+
+		.title_thin_img h2{
+			@include fs(20);
+			margin-bottom: 0;
+			@include mobile{
+				border-bottom: none;
+				@include fs(18);
+			}
+		}
+	}
+	
+	
+	@media only screen and (max-width: 1100px) {
+		.followList.grid {
+			-ms-grid-columns: (1fr)[2];
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media only screen and (max-width: 767px) {
+		.followList.grid {
+			-ms-grid-columns: (1fr)[1];
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+	.followList{
+		li{
+			margin-bottom: 40px;
+			max-width: 355px;
+//			&:nth-of-type(3n+2){
+//				.followListBlock{
+//					margin-left: auto;
+//					margin-right: auto;
+//					@include mobile{
+//					}
+//				}
+//			}
+//			&:nth-of-type(3n){
+//				.followListBlock{
+//					margin-left: auto;
+//					@include mobile{
+//						margin-left: auto;
+//						margin-right: auto;
+//					}
+//				}
+//			}
+			.followListBlock{
+//				overflow: hidden;
+//				border-radius: 4px;
+				filter: drop-shadow(0px 5px 6px rgba(0,0,0,0.2));
+				@include mobile{
+					max-width: none;
+				}
+				.followTitleArea{
+					border-top-left-radius: 4px;
+					border-top-right-radius: 4px;
+					a{
+						display: block;
+//						background-position: left top;
+//						background-repeat: no-repeat;
+//						background-size: auto 100%;
+//						@include box-sizing();
+//						height: 130px;
+					}
+					//agenda
+					dl{
+						position:relative;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						.icon{
+							margin-right: 10px;
+							img{
+								height: 95px;
+//								max-width: 205px;
+								margin-top: -10px;
+							}
+						}
+						.agendaTitle{
+//							position: absolute;
+//							top: 30px;
+//							left: 190px;
+//							width: 160px;
+							p{
+								font-weight: 300;
+								@include fs(28);
+								@include mobile{
+									@include fs(24);
+								}
+							}
+						}
+					}
+				}
+				.followBtnArea{
+					background-color: #fff;
+					padding-bottom: 14px;
+					text-align: center;
+					border-bottom-left-radius: 4px;
+					border-bottom-right-radius: 4px;
+					.switch-button{
+						margin-top: -10px;
+					}
+				}
+			}
+		}
+	}
+	#renewer{
+		.um-followers-user-btn .um-button.um-unfollow-btn::before{
+			background-color: #2c76a4 !important;
+		}
+		.followList{
+			li{
+				.followTitleArea{
+					background-color: #F8EAE1;
+					a{
+						padding-top: 15px;
+						padding-bottom: 25px;
+					}
+					.userInfo{
+						display: flex;
+						@include align-items($align:center);
+						@include justify-content($pack:center);
+						//			@include flex-wrap($wrap:wrap);
+//						margin-right: auto;
+//						width: 50%;
+						.um-followers-user-photo{
+							position: static;
+							overflow: hidden;
+							opacity: 1;
+							width: 45px;
+							height: 45px;
+							display: block;
+							border-top-right-radius: 999px;
+							border-bottom-right-radius: 999px;
+							//			float: left;
+							margin-right: 10px;
+							@include mobile{
+								margin-right: 2%;
+							}
+							img{
+								width: 100%;
+								height: 100%;
+							}
+						}
+						.um-followers-user-name{
+							font-size: 14px;
+							font-weight: 500;
+							color: $rn_gray;
+							//			float: left;
+							//			width: 80%;
+							//			a{
+							//				color: $rn_black;
+							//				font-size: 20px;
+							//			}
+							.renewerID{
+								a{
+									//								color: $rn_black;
+								}
+							}
+						}
+					}
+				}
+				.followBtnArea{
+					.um-followers-user-btn{
+						position: static;
+						text-align: center;
+						padding-top: 0;
+						.um-button{
+							box-shadow: inset 0 0 0 1px #2c76a4 !important;
+							margin-top: -10px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	#agenda{
+		.followList{
+			li{
+				.followTitleArea{
+					background-color: #C7DCEE;
+					a{
+//						padding: 20px;
+					}
+				}
+			}
+		}
+	}
+	#series{
+		.followList{
+			li{
+				.followTitleArea{
+					position: relative;
+					a{
+						padding-top: 27.28%;
+					}
+					img{
+//					visibility: hidden;
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+
+/* クリップ記事 */
+.bookmarkPage{
+	.mypageContent{
+		.inner_base{
+			max-width: 1160px;
+		}
+		
+		
+		@media only screen and (max-width: 1100px) {
+			.wrap_article_middle.grid {
+				-ms-grid-columns: (1fr)[2];
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media only screen and (max-width: 767px) {
+			.wrap_article_middle.grid {
+				-ms-grid-columns: (1fr)[1];
+				grid-template-columns: repeat(1, 1fr);
+			}
+		}
+		.wrap_article_middle.grid{
+			margin-top: 50px;
+			@include mobile{
+				margin-top: 40px;
+			}
+			.article_middle{
+//				@include trans();
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				margin-bottom: 0;
+				.wrap_img{
+					.article_middle_img{
+						width: 120px;
+						height: 150px;
+						max-height: none;
+					}
+				}
+				.textbox{
+					background-color: #fff;
+					padding: 2.5% 0 2.5% 5%;
+					top: 0;
+					width: calc(100% - 120px);
+					margin-top: 0;
+					.title_middle{
+						@include fs(19);
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						-webkit-line-clamp: 2;
+						overflow: hidden;
+					}
+					.likebox{
+						.wpulike-robeen svg, .wpulike-animated-heart .wp_ulike_btn{
+							margin-top: 5px;
+						}
+					}
+					.likebox,.commentbox{
+						@include fs(13);
+						margin-right: 8px;
+					}
+					.clipbox{
+						.clipbox.stock svg{
+							margin-top: 2px;
+						}
+					}
+					.stockTxt{
+						@include fs(11);
+					}
+				}
+//				@include pc{
+//					display: flex;
+//					justify-content: flex-start;
+//					align-items: flex-start;
+//					max-width: 360px;
+////					margin-bottom: 60px;
+////					.textbox{
+////						padding: 2.5% 0 2.5% 5%;
+//////						z-index: 2;
+////						top: 0;
+//////						left: auto;
+//////						right: 0;
+////						width: calc(100% - 120px);
+////						.title_middle{
+////							@include fs(18);
+////							display: -webkit-box;
+////							-webkit-box-orient: vertical;
+////							-webkit-line-clamp: 2;
+////							overflow: hidden;
+////						}
+////						.textbox_avatar{
+////							display: none;
+////						}
+////					}
+//				}
+			}
+		}
+	}
+}
+
+
+
+/* メール通知 */
+.um-account-tab-notifications{
+	.um-left{
+		text-align: center;
+		float: none;
+	}
+}
+/* パスワード変更 */
+
+//#um_field_password_confirm_user_password{
+//	.confirmError{
+//		&:before{
+//			content: '';
+//		}
+//	}
+//}
+.um-account-tab-password{
+	.um-left{
+		text-align: center;
+		float: none;
+	}
+}
+
+
+/* プロフィール編集 */
+.profEditPage{
+	.um-header{
+	display: block;
+	}
+	.um-editing{
+		padding-top: 35px;
+		&.um-profile{
+			@include mobile{
+				padding: 20px 5% 0;
+			}
+			.um-form{
+				.um-profile-photo{
+					width: auto !important;
+					display: flex;
+					justify-content: center;
+					align-items: flex-start;
+					a.um-profile-photo-img{
+						margin-right: 10px;
+						width: 100px !important;
+						height: 100px !important;
+						@include mobile{
+							width: 90px !important;
+							height: 90px !important;
+							margin: 0 10px 0 0 !important;
+						}
+					}
+					.um-profile-photo-overlay i{
+						font-size: 23px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/* 退会ページ */
+.deleteTitle{
+	text-align: center;
+	@include fs(20);
+	margin-bottom: 20px;
+	font-weight: 400;
+	@include mobile{
+		@include fs(18);
+		margin: 10px;
+	}
+}
+.userBlock{
+	.userIcon{
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+	}
+	.userName{
+		@include fs(17);
+		margin-top: 15px;
+		text-align: center;
+		@include mobile{
+			@include fs(16);
+		}
+	}
+}
+.um-account-tab-delete{
+	p{
+		color: $rn_gray;
+		line-height: 1.6;
+	}
+	.um-left{
+		float: none;
+		text-align: center;
+	}
+}
