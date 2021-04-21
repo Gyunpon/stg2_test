@@ -534,20 +534,7 @@ global $postId;
 					$excerpt = get_the_excerpt();
 					if($excerpt != ''): ?>
 					<div class="embed excerpt title_component mb-50">
-						<div class="reference"><?php echo $excerpt; ?></div>
-
-						<!--追加部分 -->
-						<?php if(!empty($keyword_terms)): ?>
-						<?php foreach($keyword_terms as $t_k)://value_hashtag
-						$tag_link = get_category_link($t_k->term_id);
-						$tag_name = $t_k->name;
-						?>
-							<a href="<?php echo $tag_link; ?>" class="tag_keyword">#<?php echo $tag_name; ?></a>
-						<?php endforeach; ?>
-						<?php endif; ?>
-						<!-- 追加ここまで -->
-
-
+						<div class="reference"><?php echo $excerpt; ?></div>					
 					</div>
 					<hr />
 				<?php endif; ?>
@@ -577,6 +564,21 @@ global $postId;
 					<?php endif; ?>
 					</div>
 -->
+						<!--キーワード追加部分 -->
+						<div class="keyword_cont">
+							<!-- <span class="title_keyword">▼キーワードタグ</span><br/> -->
+							<?php if(!empty($keyword_terms)): ?>
+							<?php foreach($keyword_terms as $t_k)://value_hashtag
+							$tag_link = get_category_link($t_k->term_id);
+							$tag_name = $t_k->name;
+							?>
+									<a href="<?php echo $tag_link; ?>" class="tag_keyword">
+										<div class="keyword_each">#<?php echo $tag_name; ?></div>
+									</a>
+						<?php endforeach; ?>
+						<?php endif; ?>
+						</div>
+						<!-- 追加ここまで -->
 
 					<div class="wrap_social foot_article_detail color_black flex">
 						<div class="socialbox likebox">
@@ -716,11 +718,11 @@ if(!empty($relatedPosts)):
 ?>
 <div class="content_article">
 	<div class="inner_base">
-		<h2 class="title_thin">
+		<h3 class="title_thin">
 			<span class="title_thin_img beige">
-				<h2>関連記事</h2>
+				<h3>おすすめの記事</h3>
 			</span>
-		</h2>
+		</h3>
 		<div class="wrap_article_middle grid articleListStyle">
 	<?php foreach( $relatedPosts as $val ):
 

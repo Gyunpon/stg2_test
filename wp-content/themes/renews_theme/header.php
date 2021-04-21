@@ -66,7 +66,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<?php endif; ?>
 
-	<?php if(is_home() || is_front_page()): ?>
+	<!-- TOPページ用の分岐 -->
+	<?php if(is_home() || is_front_page() || is_page('index2')): ?>
 	<title><?php bloginfo("name"); ?></title>
 	<?php else: ?>
 	<title><?php wp_title(); ?></title>
@@ -78,8 +79,8 @@
 
 	<!-- base -->
 	<script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<!-- 追加分 -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+	<!-- 追加分
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"> -->
 	<!-- animation -->
 	<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" media="all" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -88,8 +89,9 @@
 	<!-- UIkit JS -->
 	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
-	<!-- 環境移行時に差し替え -->
-<!--	<script src="//kit.fontawesome.com/55b5b4c129.js" crossorigin="anonymous"></script>-->
+	<!-- FontAwesome -->
+	<!-- 環境移行時に差し替え <script src="//kit.fontawesome.com/55b5b4c129.js" crossorigin="anonymous"></script>-->
+	<script src="https://kit.fontawesome.com/05117f24ac.js" crossorigin="anonymous"></script>
 	<!-- base -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/all.min.css" rel="stylesheet"  media="all" />
@@ -103,7 +105,8 @@
 	<!-- add -->
 	<link href="//fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap" rel="stylesheet" media="all" />
 
-	<?php if(is_home() || is_front_page()): ?>
+	<!-- TOPページ用の分岐 -->
+	<?php if(is_home() || is_front_page() || is_page('index2')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
@@ -210,6 +213,10 @@
 <!-- 上書き用CSS -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/add.css" rel="stylesheet" media="all" />
 
+<!-- TOPページテスト用の分岐 -->
+	<?php if(is_page('index2')): ?>
+	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.test.css" rel="stylesheet" media="all" />
+	<?php endif; ?>
 
 
 		<!-- 追加分 -->
@@ -248,7 +255,8 @@
 
 		</script>
 
-<!-- cookieの設定 -->
+<!--
+ cookieの設定
 		<script>
 		$(function () {
 			// cookieの値がisClickedじゃなかったら表示
@@ -262,6 +270,7 @@
 		  });
 		});
 		</script>
+-->
 
 <!-- 一番下に来た時バナーをフッターの上にする -->
 		<script>
@@ -305,8 +314,8 @@
 
 	<body ontouchstart="" <?php if(is_page('series')){echo 'id="column"';}elseif(is_tax('series')){echo 'id="ajenda_detail"';}elseif(is_page_template('page-templates/renewers_detail.php')){echo 'id="renewer_detail"';} if(!empty($_GET['um_action']) && $_GET['um_action'] == 'edit'){echo ' class="profEditBody"';} if(!is_page(array('login','register','contact'))){echo ' class="grecaptchaHide"';} ?>>
 
-
-		<div class="wrapper <?php if(is_home() || is_front_page()){echo 'topPage';} if(!is_user_logged_in()){echo ' noLogin';} if(is_page('password-reset')){echo ' passwordReset';} ?> " id="wrap">
+		<!-- TOPページ用の分岐 -->
+		<div class="wrapper <?php if(is_home() || is_front_page() || is_page('index2')){echo 'topPage';} if(!is_user_logged_in()){echo ' noLogin';} if(is_page('password-reset')){echo ' passwordReset';} ?> " id="wrap">
 		<?php //if(!($_GET['um_action'] == 'edit')): ?>
 		<header>
 			<div class="inner_base flex">

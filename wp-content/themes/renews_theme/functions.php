@@ -1201,4 +1201,12 @@ function page_html() {
   //ページの表示内容を記述する
   include('edit_ver2.php');
 }
+
+
+// TinyMCE Advancedのフォントサイズ変更
+function tinymce_custom_fonts($setting){
+	$setting['fontsize_formats'] = "9px 10px 11px 12px 13px 14px 15px 16px 18px 20px 22px";
+	return $setting;
+}
+add_filter('tiny_mce_before_init','tinymce_custom_fonts',5);
 ?>

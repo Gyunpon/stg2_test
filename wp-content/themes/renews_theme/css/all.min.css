@@ -137,8 +137,8 @@ ul li {
 
 .article_main_img {
   width: 75.9%;
-  height: 462px;
-  max-width: 880px;
+  height: 350px; /* 2021/04/19 黒澤修正 */
+  max-width: 600px; /* 2021/04/19 黒澤修正 */
 }
 
 @media only screen and (min-width:768px) {
@@ -158,8 +158,10 @@ ul li {
 .textbox {
   display: inline-block;
   background-color: rgba(255,253,245,1);
+  /* 2021/04/12 黒澤削除
   border-left: 1px solid #888;
-  border-bottom: 1px solid #888
+  border-bottom: 1px solid #888;
+  */
 }
 
 .textbox.large {
@@ -181,9 +183,10 @@ ul li {
 }
 
 .textbox.middle {
-	width: 83%; /* 2021/04/07井上修正 */
-  max-width: 83%; /* 2021/04/07井上修正 */
-  /* padding: 40px 9% 36px 40px */
+	width: 100%; /* 2021/04/19 黒澤修正 */
+  max-width: 100%; /* 2021/04/19 黒澤修正 */
+  border: 1px solid #ccc; /* 2021/04/19 黒澤追加 */
+  background-color: white; /* 2021/04/19 黒澤追加 */
 }
 
 @media only screen and (max-width:1159px) {
@@ -2439,82 +2442,84 @@ background-image: url(../../images/common/icon_like_blue-acvive.svg);
   }
 }
 
+/* 2021/04/14 黒澤keyword追加 */
 
 /* 中コンポーネント */
-.wrap_article_middle {
+.wrap_article_middle, .wrap_keyword_middle {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap
 }
-.wrap_article_middle.grid{
+.wrap_article_middle.grid, .wrap_keyword_middle.grid{
 	grid-gap: 30px;
 }
 
-.wrap_article_middle.colum2 {
-  width: 88%;
+.wrap_article_middle.colum2, .wrap_keyword_middle.colum2 {
+  width: 100%; /* 2021/04/21 黒澤修正 */
   margin-right: auto;
   margin-left: auto
 }
 
-.info_detail .wrap_article_middle.colum2 {
+.info_detail .wrap_article_middle.colum2, .info_detail .wrap_keyword_middle.colum2 {
 	width: 100%;
 }
 
 @media only screen and (max-width:767px) {
-  .wrap_article_middle.colum2 {
+  .wrap_article_middle.colum2, .wrap_keyword_middle.colum2 {
     width: 100%
   }
 }
 
-.wrap_article_middle.colum2 .article_middle {
-  width: 47.05%;
+.wrap_article_middle.colum2 .article_middle, .wrap_keyword_middle.colum2 .keyword_middle {
+  width: 49.5%; /* 2021/04/21 黒澤修正 */
+  margin-bottom: -20px; /* 2021/04/21 黒澤修正 */
   /* max-width: 480px; */
 }
 
 @media only screen and (max-width:767px) {
-  .wrap_article_middle.colum2 .article_middle {
+  .wrap_article_middle.colum2 .article_middle, .wrap_keyword_middle.colum2 .keyword_middle {
     width: 100%
   }
 
-  .wrap_article_middle.colum2 .article_middle:not(:first-child) {
+  .wrap_article_middle.colum2 .article_middle:not(:first-child), .wrap_keyword_middle.colum2 .keyword_middle:not(:first-child) {
     margin-top: 30px
   }
 }
 
-.wrap_article_middle.colum3 {
+.wrap_article_middle.colum3, .wrap_keyword_middle.colum3 {
   width: 100%
 }
 
-.wrap_article_middle.colum3 .article_middle {
+.wrap_article_middle.colum3 .article_middle ,.wrap_keyword_middle.colum3 .keyword_middle {
   width: calc(33.33333% - 20px)
 }
 
 @media screen and (min-width:768px) and (max-width:980px) {
-  .wrap_article_middle.colum3 .article_middle {
+  .wrap_article_middle.colum3 .article_middle, .wrap_keyword_middle.colum3 .keyword_middle {
     width: calc(50% - 20px)
   }
 }
 
 @media only screen and (max-width:767px) {
-  .wrap_article_middle.colum3 .article_middle {
+  .wrap_article_middle.colum3 .article_middle, .wrap_keyword_middle.colum3 .keyword_middle {
     width: 100%
   }
 }
 
-.article_middle {
+.article_middle, .keyword_middle {
   position: relative;
   display: inline-block
 }
 
-.article_middle .btn_base {
+.article_middle .btn_base, .keyword_middle .btn_base {
   position: relative;
   top: -6px
 }
 
 @media only screen and (max-width:767px) {
-  .article_middle .btn_base {
+  .article_middle .btn_base , .keyword_middle .btn_base {
     display: table;
     margin-top: 82px;
     margin-right: auto;
@@ -2522,17 +2527,19 @@ background-image: url(../../images/common/icon_like_blue-acvive.svg);
   }
 }
 
-.article_middle_img {
+.article_middle_img, .keyword_middle_img {
   width: 100%;
   height: 252px
 }
 
 @media only screen and (max-width:767px) {
-  .article_middle_img {
+  .article_middle_img ,.keyword_middle_img {
     width: 120px;
     height: 150px;
   }
 }
+
+/* 追加ここまで */
 
 .sec_agenda {
   width: 100%;
@@ -4115,7 +4122,8 @@ body.is_non_active{
 
 .btn_base.color_blue {
   border: 1px solid #2c76a4;
-  color: #2c76a4
+  color: #2c76a4;
+  background-color: white; /* 2021/04/21 黒澤追加 */
 }
 
 .btn_base.color_blue:hover {

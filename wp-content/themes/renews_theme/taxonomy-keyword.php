@@ -52,12 +52,21 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
   <section class="sec sec_column_detail agenda_sec">
     <div class="inner_base">
       <div class="head_content">
+
         <div class="keyword_title_head_content_wrapper">
+          <h2 class="title_thin">
+						<span class="title_thin_img beige">
+							<h2>「<b>#<?php echo $archivePageName; ?></b>」のタグが付いた記事</h2>
+						</span>
+				  </h2>
+          <!-- ミキちゃんが作った？
           <h2 class="keyword_title_head_content">
-            # <?php echo $archivePageName; ?>
+            # <?php //echo $archivePageName; ?>
           </h2>
           <span class="sub_title_content">のタグが付いた記事</span>
+          -->
         </div>
+
         <div class="text_intro_head_content">
           <!--
           <div class="wrap_switch">

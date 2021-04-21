@@ -260,10 +260,10 @@ width:360px
   }
 }
 */
-  
+/*  
 #agenda_detail .content_article {
   padding-top:42px;
-}
+} 2021/04/15 井上削除 */
 @media only screen and (max-width:767px){
 	#agenda_detail .content_article {
 		padding-top:0;

@@ -53,12 +53,14 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 		<div class="inner_base">
 			<div class="head_content">
 				<div class="title_head_content_wrapper">
+					<!-- アジェンダダグの＃位置 2021/04/15 井上削除-->
 					<h2 class="title_head_content color_green">
 						<?php echo $archivePageName; ?>
 					</h2>
 					<img src="<?php echo $agenda_url; ?>" alt="メインビジュアルイメージ" />
 				</div>
 				<div class="text_intro_head_content color_green">
+					<!-- アジェンダダグの＃位置 2021/04/15 井上削除-->
 					「<?php echo $archivePageName; ?>」というタグが付いた記事を集めました。<?php if($termDescription){echo $termDescription;} ?>
 					<div class="wrap_switch">
 						<?php if( is_user_logged_in() ) : ?>
@@ -103,7 +105,7 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 				//著者情報
 				$rows = get_field('author_select' ); // すべてのrow（内容・行）をいったん取得する
 				$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-				$first_row_item = $first_row['author']; // get the sub field value
+				$first_row_item = $first_row['author']; // get the sub field value 
 				if(!($first_row_item)){
 					$user_name = get_the_author_meta( 'display_name', $post->post_author );
 					$renews_id = get_the_author_meta( 'user_login', $post->post_author );
@@ -214,12 +216,12 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 							$encodedURL = json_encode(get_permalink());
 
 							?>
-							<a href="https://twitter.com/share?url=<?php echo get_permalink( $post->ID ); ?>&text=<?php echo $encoded; ?>" class="share_popup tag_value border_value">#<?php echo $tag_name; ?></a>
+							<a href="https://twitter.com/share?url=<?php echo get_permalink( $post->ID ); ?>&text=<?php echo $encoded; ?>" class="share_popup tag_value border_value"><?php echo $tag_name; ?></a>
 							<?php endforeach; ?>
 							<?php endif; ?>
 							<br>
 							<?php if(!empty($agenda_terms)): ?>
-							<?php
+							<?php 
 							$postId = $post->ID;
 							$taxonomy = 'agenda';
 
@@ -276,7 +278,7 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 							</div>
 
 
-							<?php
+							<?php 
 							$postId = $post->ID;
 							?>
 							<div class="wrap_social color_black flex">
@@ -320,7 +322,7 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 					//		$renews_id = get_the_author_meta( 'user_login', $post->post_author );
 					$rows = get_field('author_select' ); // すべてのrow（内容・行）をいったん取得する
 					$first_row = $rows[0]; // 1行目だけを$first_rowに格納
-					$first_row_item = $first_row['author']; // get the sub field value
+					$first_row_item = $first_row['author']; // get the sub field value 
 					if(!($first_row_item)){
 						$user_name = get_the_author_meta( 'display_name', $post->post_author );
 						$renews_id = get_the_author_meta( 'user_login', $post->post_author );
@@ -380,7 +382,7 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 									</div>
 								</a>
 
-								<?php
+								<?php 
 								$postId = $post->ID;
 								$follow_post = get_user_meta($uid,'article_follow');
 								$follow_check = in_array($post->ID, $follow_post);

@@ -146,7 +146,8 @@
   letter-spacing: .045em;
   margin-top: 5px; /* 2021/04/05 井上修正 */
   /* padding-bottom: 23px; 2021/04/05 井上削除*/
-  width: 100%; /* 2021/03/26 黒澤修正 */
+  /* width: 100%; 2021/03/26 黒澤修正 */
+  max-width: 720px; /* 2021/04/15 井上追加 */
   display: table-caption; /* 2021/04/02 黒澤修正 */
   caption-side: bottom; /* 2021/04/02 黒澤修正 */
   /* text-align: left;  2021/04/02 黒澤削除 */
@@ -179,7 +180,7 @@
 .singleText .alignleft {
   /* padding-right: 30px; 2021/04/02 黒澤修正 */
   /* padding-bottom: 0px; 2021/04/05 井上削除 */
-  margin-right: 50px; /* 2021/04/05 井上追加 */
+  margin-right: 36px; /* 2021/04/16 井上修正 */
   margin-bottom: 10px; /* 2021/04/05 井上追加 */
   float: left;
 }
@@ -200,7 +201,7 @@
 .singleText .alignright {
   /* padding-left: 30px;  2021/04/02 黒澤修正  */
   /* padding-bottom: 0px; 2021/04/05 井上削除 */
-  margin-left: 50px; /* 2021/04/05 井上追加 */
+  margin-left: 36px; /* 2021/04/16 井上修正 */
   margin-bottom: 10px; /* 2021/04/05 井上追加 */
   float: right;
 }
@@ -219,7 +220,7 @@
 
 .singleText .aligncenter {
   /* padding-bottom: 0px; 2021/04/05 井上削除 */
-  margin-bottom: 27px; /* 2021/04/05 井上追加 */
+  margin-bottom: 30px; /* 2021/04/19 井上修正 */
   margin-left: auto;
   margin-right: auto;
   clear: both;
