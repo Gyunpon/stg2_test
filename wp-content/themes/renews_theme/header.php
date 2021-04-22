@@ -106,7 +106,7 @@
 	<link href="//fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap" rel="stylesheet" media="all" />
 
 	<!-- TOPページ用の分岐 -->
-	<?php if(is_home() || is_front_page() || is_page('index2')): ?>
+	<?php if(is_home() || is_front_page()): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
@@ -215,7 +215,15 @@
 
 <!-- TOPページテスト用の分岐 -->
 	<?php if(is_page('index2')): ?>
+	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/slick.min.js"></script>
+
+	<link href="<?php echo get_template_directory_uri(); ?>/css/slick.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.test.css" rel="stylesheet" media="all" />
+	<script src="<?php echo get_template_directory_uri(); ?>/js/top-test.js"></script>
 	<?php endif; ?>
 
 

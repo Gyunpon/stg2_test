@@ -137,8 +137,8 @@ ul li {
 
 .article_main_img {
   width: 75.9%;
-  height: 350px; /* 2021/04/19 黒澤修正 */
-  max-width: 600px; /* 2021/04/19 黒澤修正 */
+  height: 462px;
+  max-width: 880px;
 }
 
 @media only screen and (min-width:768px) {
@@ -158,10 +158,8 @@ ul li {
 .textbox {
   display: inline-block;
   background-color: rgba(255,253,245,1);
-  /* 2021/04/12 黒澤削除
   border-left: 1px solid #888;
   border-bottom: 1px solid #888;
-  */
 }
 
 .textbox.large {
@@ -183,10 +181,8 @@ ul li {
 }
 
 .textbox.middle {
-	width: 100%; /* 2021/04/19 黒澤修正 */
-  max-width: 100%; /* 2021/04/19 黒澤修正 */
-  border: 1px solid #ccc; /* 2021/04/19 黒澤追加 */
-  background-color: white; /* 2021/04/19 黒澤追加 */
+	width: 82.3%;
+  max-width: 82.3%;
 }
 
 @media only screen and (max-width:1159px) {
@@ -2457,9 +2453,9 @@ background-image: url(../../images/common/icon_like_blue-acvive.svg);
 }
 
 .wrap_article_middle.colum2, .wrap_keyword_middle.colum2 {
-  width: 100%; /* 2021/04/21 黒澤修正 */
+  width: 88%;
   margin-right: auto;
-  margin-left: auto
+  margin-left: auto;
 }
 
 .info_detail .wrap_article_middle.colum2, .info_detail .wrap_keyword_middle.colum2 {
@@ -2473,8 +2469,7 @@ background-image: url(../../images/common/icon_like_blue-acvive.svg);
 }
 
 .wrap_article_middle.colum2 .article_middle, .wrap_keyword_middle.colum2 .keyword_middle {
-  width: 49.5%; /* 2021/04/21 黒澤修正 */
-  margin-bottom: -20px; /* 2021/04/21 黒澤修正 */
+  width: 47.05%;
   /* max-width: 480px; */
 }
 
@@ -4123,7 +4118,6 @@ body.is_non_active{
 .btn_base.color_blue {
   border: 1px solid #2c76a4;
   color: #2c76a4;
-  background-color: white; /* 2021/04/21 黒澤追加 */
 }
 
 .btn_base.color_blue:hover {

@@ -288,7 +288,7 @@
 
 .slide_wrap .arrows {
   position: absolute;
-  width: 60%; /* 2021/04/21 黒澤修正 */
+  width: 75%;
   left: 0;
   top: 78%;
   -webkit-transform: translateY(-50%);
@@ -1518,7 +1518,7 @@ a.target_nav_header:hover {
 /* TOP */
 /*----------------------------------*/
 .content_article .wrap_btn {
-  width: 100%; /* 2021/04/21 黒澤追加 */
+  width: 88%;
   margin: 0px auto 0px ;
 }
 
@@ -2588,6 +2588,11 @@ small.um-max-filesize {
   margin-right: 0;
   max-width: 386px;
 }
+
+.agenda_slick .agenda:nth-child(1) {
+  margin-left: 150px;
+}
+
 
 .agenda_slick .agenda .agenda_slide {
   max-width: 360px;

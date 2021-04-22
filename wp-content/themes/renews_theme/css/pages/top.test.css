@@ -1,0 +1,176 @@
+@media only screen and (max-width:767px){
+  .title_avatar{
+    margin:0
+  }
+}
+
+@media only screen and (min-width:768px){
+  .article_main_img {
+    width: 65%;
+    height: 40vw;
+  }
+}
+
+.textbox.right_top {
+  top: 15%;
+}
+
+.textbox.large {
+  width: 33%;
+  margin-left: 2%;
+  background-color: white;
+}
+
+.title_large {
+  font-size: 2.5vw;
+}
+
+.slide_wrap .content_mv_wrap .content_mv .textbox {
+  border: none;
+}
+
+.btn_base{
+  float:right;
+}
+
+.btn_base.color_blue {
+  background-color: white;
+}
+
+.wrap_article_middle.colum2, .wrap_keyword_middle.colum2 {
+  width: 100%;
+}
+
+.wrap_article_middle.colum2 .article_middle, .wrap_keyword_middle.colum2 .keyword_middle {
+  width: 49.5%;
+  margin-bottom: -20px;
+  /* max-width: 480px; */
+}
+
+.slide_wrap .arrows {
+  width: 60%;
+}
+
+.content_article .wrap_btn {
+  width: 100%;
+}
+
+.textbox.middle {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+/*
+.sec.sec_mv{
+  padding-bottom:30px;
+}
+*/
+
+/*
+@media only screen and (max-width:767px){
+  .sec_agenda{
+    margin-top:6px;
+    padding-bottom:65px
+   }
+}
+*/
+
+.sec_agenda .title_avatar{
+  margin:10px 0 0
+}
+
+.sec_comment .inner_base{
+  margin-bottom:80px
+}
+
+.content_agenda{
+  padding-top:110px
+}
+
+@media only screen and (max-width:767px){
+  .content_agenda{
+    padding-top:73px
+  }
+}
+
+@media screen and (max-width:767px){
+  .textbox_avatar{
+    margin-right:10px;
+  }
+}
+
+/*
+.title_middle{
+  font-size:28px;
+  line-height:33px;
+  margin-bottom:10px
+}
+
+@media screen and (max-width:767px){
+  .title_middle{
+    line-height:25px;
+    font-size:20px!important
+  }
+}
+*/
+
+.wrap_social{
+  margin-top:10px
+}
+
+@media only screen and (max-width:767px){
+  .content_mv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article_main_img {
+    width: 100%;
+  }
+
+  .textbox.right_top {
+    position: none;
+  }
+
+  .textbox.large {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .slide_wrap .content_mv_wrap .content_mv .textbox.right_top {
+    top: 190px;
+  }
+
+  .textbox.large {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .title_large {
+    font-size: 5vw;
+  }
+
+  .slide_wrap .arrows {
+    width: 100%;
+  }
+
+  .wrap_article_middle.colum2 .article_middle {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .wrap_article_middle.colum2 .article_middle:not(:first-child), .wrap_keyword_middle.colum2 .keyword_middle:not(:first-child) {
+    margin-top: 0;
+  }
+
+  .article_middle_img, .keyword_middle_img {
+    width: 100%;
+    margin: auto;
+  }
+
+  .sec_mv .inner_base, #article .inner_base {
+    padding: 0;
+  }
+}

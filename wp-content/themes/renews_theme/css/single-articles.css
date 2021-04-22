@@ -44,7 +44,7 @@ footer{
 }
 @media screen and (max-width: 767px) {
   .sec_article_detail .textbox.large.big {
-    margin-bottom: -80px; /* 2021/04/19 井上修正 */
+    margin: -80px 240px 0 auto; /* 2021/04/19 井上修正 */
   }
 }
 
