@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
   //slider
-  $('.content_mv_wrap').not('.slick-initialized').slick({
+  $('.content_mv_wrap').slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -16,7 +16,7 @@ $(document).ready(function(){
   });
 
 
-  $('.agenda_slick .slider_agenda').not('.slick-initialized').slick({
+  $('.agenda_slick .slider_agenda').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows:false,

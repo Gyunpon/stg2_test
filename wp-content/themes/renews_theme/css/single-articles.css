@@ -1,8 +1,9 @@
-.wrapper {
-	padding-bottom: 0;
+/* 2021/06/02 */
+.wrapper{
+	padding-bottom: 0 !important;
 }
-footer{
-	position: static;
+footer {
+	position: static !important;
 }
 
 
@@ -57,7 +58,7 @@ footer{
   margin-bottom: 10px; /* 2021/04/01井上追加 */
   max-width: 720px; /* 2021/04/01井上追加 */
   color: #2c76a4;
-  font-size: 39px; /* 2021/04/01井上修正 */
+  font-size: 39px; /* 2021/04/22井上修正 */
   font-weight: 400; /* 2021/04/01井上修正 */
   line-height: 1.3; /* 2021/04/07井上修正 */
   letter-spacing: .15em; /* 2021/04/01井上修正 */
@@ -92,7 +93,7 @@ footer{
     padding: 5% 5% 2%; /* 2021/04/07 井上修正 */
   }
   .sec_article_detail .textbox.large.big .title_big {
-    font-size: 7vw !important; /* 2021/04/07 井上修正 */
+    font-size: 27px !important; /* 2021/05/20 井上修正 */
     letter-spacing: 0.1em; /* 2021/04/07 井上修正 */
   }
 

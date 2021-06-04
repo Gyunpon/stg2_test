@@ -1,0 +1,1981 @@
+/************ 共通CSS ************/
+html, body {
+  height: 100%;
+}
+.main {
+  padding-bottom: 0px !important;
+}
+.sec {
+  padding-bottom: 50px;
+}
+.wrap_content {
+  background-color: #f7f7f7;
+}
+.fw_500 {
+  font-weight: 500;
+}
+.fw_600 {
+  font-weight: 600;
+}
+.wrap_article_middle.grid {
+  grid-gap: 30px;
+  padding-bottom: 50px;
+}
+
+/*** ページャー ***/
+.pagerArea {
+  padding: 0 !important;
+}
+.pagerArea a.current, .pagerArea span.current {
+  background-color: #b0ad9e !important;
+}
+
+/*** ヘッダー&フッター ***/
+header {
+  background-color: #fff;
+  height: 67px !important;
+}
+
+.logo_header {
+  position: relative;
+  top: 0;
+}
+
+.sign_in {
+  display: block;
+}
+
+@media only screen and (max-width: 767px) {
+  header .inner_base {
+    padding: 0 10px;
+  }
+
+  .logo_header {
+    left: 0;
+    transform: translateX(0%);
+  }
+
+  .logo_header, .noLogin .logo_header {
+    margin-left: 100px;
+    position: relative;
+    top: 3px;
+  }
+  header.is_open .logo_header {
+    top: 3px;
+  }
+  .sign_wrap {
+    max-width: none;
+    width: auto;
+    margin-left: auto;
+  }
+  .sign_up {
+    margin-left: 5px;
+  }
+  .user_avatar {
+    top: -10px;
+    margin-right: 0px;
+  }
+}
+
+@media only screen and (max-width:767px){
+  .title_avatar{
+    margin:0;
+  }
+  .sec_mv .inner_base {
+    padding: 0;
+  }
+
+}
+
+/* Classから.article_middleを削除。大中コンポのAgendaタグ周りをゼロにして間隔調整は各コンポのタイトル周りで行う */
+.top_tags {
+  padding-top: 0; /*2021/05/25 井上 */
+}
+
+
+/*** ハート ***/
+.article_main_img .wrap_social, .wrap_img .wrap_social {
+  position: absolute;
+  bottom: -2%;
+  right: 2%;
+}
+.article_main_img .wpulike-robeen label, .wrap_img .wpulike-robeen label {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+}
+
+/* .sec_mv .wpulike .heart {
+  stroke: #C14949;
+  fill: #fff;
+}
+.sec_mv .main-circ {
+  fill: #C14949;
+}
+.sec_mv .wpulike-robeen .wp_ulike_is_liked .wp_ulike_btn:checked+svg .heart {
+  fill: #C14949;
+} */
+/*.article_main_img .likebox .count-box:before, .wrap_img .likebox .count-box:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f27a";
+  position: absolute;
+  top: 4%;
+  right: 14%;
+  font-size: 2.1em;
+  color: #b0ad9e;
+  z-index: -1;
+}*/
+
+.article_main_img .likebox .count-box, .wrap_img .likebox .count-box {
+  margin: auto;
+  padding-top: 5px!important;
+  color: #fff;
+  line-height: 1;
+  z-index: 10;
+  width: 26px;
+  text-align: left;
+  position: absolute;
+    top: 38%;
+    right: -38%;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px #202020;
+}
+
+@media only screen and (max-width:767px){
+  .sec_mv .wrap_img .wrap_social {
+    right: 3%;
+    bottom: -25%;
+  }
+  .wrap_img .wrap_social {
+    right: 6%;
+    bottom: -7%;
+  }
+  .article_main_img .likebox .count-box, .wrap_img .likebox .count-box {
+    top: 43%;
+    right: -43%;
+  }
+  .wrap_article_middle.grid.articleListStyle .count-box {
+    top: 32%;
+    right: -45%;
+  }
+}
+
+.wpulike-robeen svg, .wpulike-animated-heart .wp_ulike_btn {
+  height: 55px;
+}
+
+@media only screen and (max-width:767px){
+  .sec_mv .wpulike-robeen svg, .wpulike-animated-heart .wp_ulike_btn {
+    height: 80px;
+  }
+  .wpulike-robeen svg, .wpulike-animated-heart .wp_ulike_btn {
+    height: 45px;
+  }
+  .sec_mv .articleListStyle .wrap_social .likebox .wpulike-robeen svg {
+    margin-top: 3px;
+  }
+  .articleListStyle .wrap_social .likebox .wpulike-robeen svg {
+    margin-top: -2px;
+  }
+  .article_main_img .likebox .count-box:before, .wrap_img .likebox .count-box:before {
+    top: 2%;
+  }
+  .article_main_img .wrap_social {
+    bottom: -20px;
+  }
+  .sec_mv .likebox .count-box {
+    margin-bottom: -50%;
+  }
+  /* .article_middle .likebox .count-box {
+    margin-bottom: -150%;
+  } */
+}
+
+/* 全体の背景 */
+/* wrapperはマイページなど全部がおかしくなるので、いじるの禁止！ */
+/*.wrapper {
+  background-color: #F7F7F7;
+}*/
+/************ 共通CSS END ************/
+
+
+/************ Small Component ************/
+.articleListStyle.wrap_article_middle.grid .article_middle_img {
+  height: 192px; /* 2021/05/31 井上 */
+  width: 100%!important;
+  max-width: none;
+}
+.textbox {
+  background-color: #fff;
+  border: none;
+}
+.textbox.middle {
+  width: 100%;
+  max-width: 100%;
+}
+.wrap_article_middle.grid .textbox.left_bottom {
+  top: 0;
+}
+.articleListStyle .textbox.left_bottom {
+  padding: 20px; /* 2021/05/28 井上 */
+}
+/* .artcle_small_title => .small_compo */
+.textbox.middle.left_bottom.small_compo .title_middle {
+  font-size: 18px;
+  height: 2.8em; /* 2021/05/28 井上 */
+  padding: 5px 0 0; /* 2021/05/28 井上 */
+}
+.articleListStyle .textbox.left_bottom .card-bottom {
+  padding: 0px 20px 20px 20px;
+}
+/* 2021/05/28 井上 */
+.articleListStyle .textbox.left_bottom .card-bottom {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .articleListStyle.wrap_article_middle.grid .wrap_img {
+    max-width: 120px; /* 2021/05/31 井上 */
+  }
+  .articleListStyle.wrap_article_middle.grid .article_middle_img {
+    max-width: 120px; /* 2021/05/31 井上 */
+    height: 120px!important; /* 2021/05/31 井上 */
+    width: 100%!important;
+  }
+  .articleListStyle .textbox.left_bottom {
+    padding: 10px;
+  }
+  .articleListStyle .textbox.left_bottom .card-bottom {
+    margin-top: -15px; /* 2021/05/26 井上 */
+    padding: 0;
+    /* padding-top: 10px; */
+  }
+  .wrap_article_middle.grid .textbox.left_bottom {
+    height: 120px; /* 2021/05/31 井上 */
+  }
+  /* .artcle_small_title => .small_compo */
+  .textbox.middle.left_bottom.small_compo .title_middle {
+    font-size: 14px;
+    letter-spacing: .03em;
+    padding: 1px 0 0;
+    height: 2.8em;
+  }
+  .article_middle .top_tags {
+    display: none;
+  }
+  /* .textbox.middle .title_middle {
+    font-size: 14px;
+  } */
+  .content_article .inner_base {
+    padding: 0;
+  }
+  #article .title_thin_subtitle {
+    padding: 0;
+  }
+  .articleListStyle .textbox.middle .wrap_avatar {
+    margin-top: 25px;
+    padding-top: 0;
+  }
+}
+/************ Small Component END ************/
+
+
+/************ TOP Page ************/
+/*** 背景色 2021/06/03 ***/
+.topPage .sec_agenda {
+  background-color: #fff;
+}
+
+/*** タイトル改革 2021/06/03 ***/
+/* セクションタイトルエリア(title_thin → sec_title) */
+.sec_title {
+  padding: 20px 0;
+}
+@media only screen and (max-width:767px) {
+  .sec_mv .sec_title {
+    padding-left: 2%;
+  }
+}
+/* メインタイトル */
+.main_title {
+  font-size: 20px;
+  color: #b0ad9e;
+  font-weight: 600;
+  display: inline-block;
+}
+@media only screen and (max-width:767px) {
+  .main_title {
+    font-size: 18px;
+  }
+}
+/* 各Pageへのナビ(title_thin_img → main_title_navi) */
+.main_title_navi {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #202020;
+  display: inline-block;
+  margin-left: 20px;
+}
+@media only screen and (max-width:767px) {
+  .title_thin .main_title_navi {
+    font-size: 14px;
+  }
+}
+/* 各Pageへのナビ後の矢印 */
+.sec_title:after{
+  position: unset;
+}
+svg#arrow {
+  width:50px;
+  stroke: #b0ad9e;
+}
+
+/* メインタイトル矢印
+.topPage .title_thin:not(.sec_keyword .title_thin):before, .topPage .title_thin:not(.sec_keyword .title_thin):after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 65%;
+  right: 73%;
+  height: 1px;
+  background: #b0ad9e;
+  z-index: 999;
+}
+.topPage .title_thin:not(.sec_keyword .title_thin):before {
+  width: 60px;
+  transform: translate(30px, 0px);
+}
+.topPage .title_thin:not(.sec_keyword .title_thin):after{
+  width: 15px;
+  transform-origin: right center;
+  transform: translate(30px, 0px) rotate(25deg);
+}
+@media only screen and (max-width:767px) {
+  .topPage .title_thin:not(.sec_keyword .title_thin):before, .topPage .title_thin:not(.sec_keyword .title_thin):after {
+    right: 20%;
+  }
+}
+メインタイトル矢印 ここまで */
+
+
+/*** 大コンポーネント > スライダー 2021/05/18 井上***/
+.slide_wrap .arrows {
+    width: 70%;
+    top: 50%;
+    left: -6px;
+}
+.sec_mv .slick-dots {
+  left: 31.5%;
+  bottom: 20px;
+}
+.slick-dots li {
+  width: 47px;
+  height: 8px;
+}
+.slide_wrap .arrows .slick-arrow {
+  width: 50px;
+  height: 80px;
+  opacity: 0.8;
+}
+.slide_wrap .arrows .slick-arrow.slick-prev {
+  left: 0;
+}
+.slide_wrap .arrows .slick-arrow.slick-next {
+  right: 0;
+}
+
+/* 大コンポーネント > TextBox */
+.textbox.large {
+  background-color: white;
+}
+
+/* .slide_wrap .content_mv_wrap .content_mv .textbox {
+  border: none;
+}
+
+.btn_base{
+  float:right;
+  padding: 18px 61px 20px 40px;
+}
+
+.btn_base.color_blue {
+  background-color: white;
+} */
+
+@media only screen and (max-width:767px){
+  .content_agenda{
+    padding-top:73px
+  }
+  .slide_wrap .arrows .slick-arrow {
+    width: 30px;
+    height: 50px;
+  }
+  .slide_wrap .arrows {
+    width: 100%;
+    top: 25%;
+    left: 0;
+  }
+  .sec_mv .slick-dots {
+    left: 50%;
+    top: 43%;
+  }
+}
+
+@media only screen and (max-width:767px){
+  .textbox_avatar{
+    margin-right: 8px;
+  }
+}
+
+/*
+.title_middle{
+  font-size:28px;
+  line-height:33px;
+  margin-bottom:10px
+}
+
+@media screen and (max-width:767px){
+  .title_middle{
+    line-height:25px;
+    font-size:20px!important
+  }
+}
+*/
+
+.article_main_img {
+  width: 100%;
+  height: 420px; /* 16:9→1.91:1へ変更 2021/05/20 井上 */
+  max-width: 800px;
+  position: relative;
+}
+
+.content_mv {
+  display: flex;
+}
+
+/* HOME(DT)のタイトルを大コンポと中コンポに分離 2021/05/26 井上 */
+.content_mv .top_title {
+  padding: 10px 0 30px;
+  display: block;
+}
+.article_middle .top_title {
+  padding: 5px 0 18px;
+  display: block;
+}
+
+.textbox.large .wrap_avatar {
+  margin-top: 30px; /* 2021/05/26 井上 */
+}
+@media only screen and (max-width: 767px) {
+  .sec_article_detail .textbox.large .wrap_avatar {
+    margin-top: 14px;
+  }
+}
+
+
+/* 中コンポーネント & 小コンポーネント共通部分 */
+/* TOPページの中コンポのGrid＝2列 2021/05/31 井上*/
+.wrap_article_middle.grid.colum2 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.wrap_article_middle.grid .wrap_img {
+  position: relative;
+  width: 100%; /* 2021/05/31 井上 */
+  max-width: 100%;
+}
+
+.article_middle_img{
+  width: 100%;
+}
+
+.wrap_article_middle.colum2, .wrap_keyword_middle.colum2 {
+  width: 100%;
+}
+
+.wrap_article_middle.colum2 .article_middle,
+.wrap_keyword_middle.colum2 .keyword_middle {
+  /* width: calc((100% - 20px) / 2); */
+  width: 100%; /* 2021/05/29 井上 */
+}
+
+.textbox.middle {
+  width: 100%;
+  max-width: 100%;
+  background-color: white;
+}
+
+.wrap_article_middle.colum2 .article_middle .textbox {
+  height: auto; /* 2021/05/29 井上 */
+  padding: 20px;
+  border: none;
+}
+
+.wrap_article_middle.colum2 .card-bottom {
+  position: static;
+  padding: 0;
+}
+
+.wrap_article_middle.colum2 .article_middle .infobox .wrap_avatar {
+  margin-top: 20px; /* 2021/05/26 井上 */
+}
+
+/* .content_mv .top_tags a, .article_middle .top_tags a {
+  margin-bottom: 0;
+} */
+
+/* 共通タグ 2021/05/19 井上 */
+.series_name {
+  /* background-color: #4E5B64; */
+  background-color: #616C74;
+  padding: 3px 8px 3px 5px;
+  border: 1px solid #616C74;
+  margin-bottom: 0;
+}
+
+.series_name:hover {
+  color: #4E5B64 !important;
+}
+
+.tag_agenda:hover {
+  background-color: #fff;
+  color: #b0ad9e;
+}
+
+.border_agenda {
+ border: 1px solid #b0ad9e;
+}
+
+.tag_agenda {
+  background-color: #b0ad9e;
+  color: #fff;
+  padding: 2px 4px;
+  margin-right: 8px; /* 2021/05/26 井上 */
+}
+/* 共通タグ ここまで */
+
+
+.title_large, .title_middle {
+  color: #202020;
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.title_middle {
+  font-size: 20px;
+  line-height: 1.3; /* 2021/05/26 井上 */
+}
+
+/* .series_name {
+  background-color: #4E5B64;
+  padding: 4px 10px 4px 4px;
+  border:none;
+}
+.content_article {
+  padding-bottom: 0;
+} */
+
+
+/*** For SP ***/
+@media only screen and (max-width:767px){
+  /* .slide_wrap {
+    height: 470px;
+  } */
+  .content_mv {
+    flex-direction: column;
+    display: block;
+    height: auto;
+    padding-bottom: 0;
+  }
+
+  /* HOME(SP)のタイトルを大コンポと中コンポに分離 2021/05/26 井上 */
+  .content_mv .top_title {
+    padding: 3px 0 15px;
+    display: block;
+  }
+  .article_middle .top_title {
+    padding: 3px 0 10px;
+    display: block;
+  }
+
+  .content_mv .top_tags a {
+    margin-bottom: 0;
+  }
+
+  /* SP大コンポをレスポンシブ対応に、100vwに対して16:9 2021/05/31 井上 */
+  .article_main_img {
+    height: calc((100vw * 9) / 16);
+  }
+
+  /* .top_title {
+    margin: 7px 0 0 0;
+  } 2021/05/25 井上 */
+
+  .textbox.right_top {
+    position: static;
+  }
+
+  .textbox.large {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* 2021/05/26 井上 */
+  .sec_mv .textbox.large .wrap_avatar {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+
+  .slide_wrap .content_mv_wrap .content_mv .textbox.right_top {
+    top: auto;
+    bottom: 0;
+  }
+
+  .textbox.middle {
+    margin-top: 0;
+  }
+
+  .article_middle {
+    margin-top: 0!important;
+  }
+
+  .textbox.middle {
+    display: block;
+  }
+
+  .title_large {
+    font-size: 20px;
+  }
+
+  .title_middle {
+    font-size: 14px;
+  }
+
+  .series_name {
+    font-size: 11px;
+    padding: 2px 6px 3px 3px;
+    letter-spacing: 0;
+  }
+
+  .tag_agenda {
+    font-size: 11px;
+    padding: 0px 4px 2px;
+  }
+
+  .title_avatar {
+    font-size: 12px;
+  }
+
+  /* For Large component & Article Page */
+  .content_mv .title_avatar,.sec_article_detail .title_avatar {
+    font-size: 13px;
+  }
+
+  /* SP中コンポ＆小コンポ共通 */
+  .wrap_article_middle.grid.colum2 {
+    grid-gap: 15px 7px;
+  }
+
+  .wrap_article_middle.grid .wrap_img .article_middle_img {
+    width: 100%;
+    height: calc((100vw - 7px) / 2 * 0.5625);
+  }
+
+  .wrap_article_middle.colum2 .article_middle {
+    display: block;
+    /* width: calc((100% - 7px) / 2); */
+    width: 100%; /* 2021/05/31 井上 */
+  }
+
+  .wrap_article_middle.colum2 .article_middle .textbox {
+    /* height: 220px; 2021/05/20 井上 */
+    padding: 10px;
+  }
+
+  .wrap_article_middle.colum2 .card-bottom {
+    padding-top: 0; /* 2021/05/25 井上 */
+  }
+
+  /* リニュアーアバター：記事ページは下に統合 2021/05/26 井上
+  .sec_article_detail .textbox.large.big .textbox_avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 35px;
+  } */
+
+  /* リニュアーアバター：大コンポと記事ページは40px 2021/05/26 井上*/
+  .content_mv .textbox_avatar,.sec_article_detail .textbox_avatar {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 40px!Important;
+    height: 40px;
+    min-width: 40px;
+  }
+  .content_mv .textbox_avatar img,.sec_article_detail .textbox_avatar img {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+  /* For Middle & Small Component */
+  .textbox_avatar {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+  }
+  .textbox_avatar img {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* .content_mv {
+    position: static;
+  } */
+
+  .textbox.right_top {
+    position: static;
+  }
+
+  .textbox.large {
+    width: 360px;
+    height: 420px;
+    padding: 70px 20px 0 30px; /* 2021/05/26 井上 */
+  }
+
+  .wrap_article_middle.colum2 .article_middle {
+    display: block;
+    /* margin-bottom: 20px; 2021/05/29 井上 */
+  }
+
+  .wrap_article_middle.colum2 .article_middle:not(:first-child), .wrap_keyword_middle.colum2 .keyword_middle:not(:first-child) {
+    margin-top: 0;
+  }
+
+  /* .article_middle_img, .keyword_middle_img {
+    max-height: 191px;
+  }
+  .sec_mv .inner_base, #article .inner_base {
+    padding: 0;
+  } */
+
+  .title_large {
+    font-size: 24px;
+  }
+}
+
+
+/*** TOP > sec agenda ***/
+.sec_info {
+  padding-bottom: 70px;
+}
+
+.agenda_slick .agenda .agenda_slide {
+  margin-bottom: 0px;
+}
+
+/*** TOP > sec renewer ***/
+.um.um-directory.um-a397a.um-loaded {
+  margin-bottom: 0 !important;
+}
+
+/*** TOP > sec news ***/
+.news {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.news a {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  color: #202020!important;
+  text-align: left;
+}
+.news span {
+  margin: 0 !important;
+}
+.news_cont {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 7px;
+  border-bottom: 1px solid #707070;
+  width: 45%;
+  margin: 0 2.5%;
+}
+.news_date {
+  color: #b0ad9e;
+}
+
+@media screen and (max-width: 767px) {
+  .news {
+    margin: 0;
+    flex-direction: column;
+  }
+  .news_cont {
+    width: 100%;
+    margin: 0;
+    padding-top: 15px;
+  }
+  .news_cont:first-child {
+    padding-top: 0;
+  }
+  .news span {
+    text-align: left;
+  }
+}
+/************ Top page END ************/
+
+
+/************ リストPage ************/
+/*** リストPage共通 ***/
+
+/* Pageタイトルエリア(title_thin → sec_title) */
+.sub_title_thin { /* あとで削除 */
+  max-width: 1160px;
+  margin-bottom: 0;
+  padding: 30px 0 10px 0;
+}
+
+/* 各Pageのタイトル = TOPと共通*/
+.main_title_jp {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: #b0ad9e;
+}
+
+/*.sub_main_title {
+  font-size: 20px;
+  color: #b0ad9e;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 10px;
+}
+.sub_title_thin_img {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #b0ad9e;
+}*/
+
+/* タイトル下の説明 */
+.main_title_desc, .main_title_desc_s {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  color: #202020;
+  padding-left: 30px;
+}
+.main_title_desc {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.main_title_desc_s {
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 7px;
+  margin-bottom: 10px;
+}
+
+/*.title_thin_subtitle {
+  margin-top: 0;
+}
+.title_thin_subtitle, .title_thin_subtitle_s {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #202020;
+}*/
+
+@media only screen and (max-width:767px) {
+  .sub_title_thin {
+    padding: 15px 0 10px 0;
+  }
+  .sub_main_title {
+    font-size: 20px;
+  }
+  .sub_title_thin_img {
+    font-size: 17px;
+  }
+  .title_thin_subtitle, .title_thin_subtitle_s {
+    font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+    font-size: 13px;
+    margin-top: -5px;
+  }
+  .title_thin_subtitle_s {
+    margin-top: 5px;
+  }
+  .main_title_desc, .main_title_desc_s {
+    padding-left: 10px;
+  }
+}
+
+
+
+@media only screen and (max-width:767px) {
+  .sec_mv .title_thin {
+    padding: 15px 5% 10px 5%;
+  }
+  .title_thin .title_thin_img {
+    margin-left: 10px;
+  }
+  .title_thin .title_thin_img h2 {
+    right: 50%;
+    border-bottom: none;
+  }
+  .title_thin .title_thin_img, .title_thin .title_thin_img h2 {
+    display: inline;
+  }
+  .title_thin {
+    padding: 30px 0 15px 0;
+  }
+  .content_recomend .title_thin {
+    padding: 30px 0 15px 5%;
+  }
+}
+/* サブタイトル ここまで */
+
+.title_thin_subtitle_s{
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+/************ 新着Page ***********/
+@media only screen and (max-width: 767px) {
+  #article .inner_base {
+    padding: 0;
+  }
+  #article .sec_title {
+    padding-left: 2%;
+  }
+}
+/************ 新着Page END ***********/
+
+
+
+
+
+/*** アジェンダ > リストPage ***/
+.sec_agenda .title_avatar{
+  margin:10px 0 0
+}
+
+#agenda_detail .head_content {
+  margin-bottom: 50px;
+}
+
+.agenda_slick {
+  margin-top: 30px;
+}
+
+.agenda_slick .agenda {
+  padding-top: 0;
+}
+
+.agenda_slick .agenda:nth-child(1) {
+  margin: 0;
+}
+
+/* 2021/06/01 井上 */
+.agenda_desc {
+  font-size: 15px;
+  /* font-family: YakuHanMP_Noto, 'Shippori Mincho', serif; */
+  font-weight: 400;
+  color: #4e4e4e;
+  padding-top: 20px;
+}
+.wrap_title_agenda {
+  height: auto;
+  padding: 200px 30px 30px 30px;
+}
+
+.img_agenda {
+  top: 25px;
+}
+
+/* アジェンダモーション関連 2021/05/19 井上 */
+.wrap_title_agenda .title_agenda {
+  border: 1px solid #b0ad9e;
+  border-radius: .2em;
+  color: #fff;
+  background-color: #b0ad9e;
+  padding: 2px 7px 3px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 0;
+}
+.wrap_title_agenda:hover {
+  background-color: #ebf0ed;
+  opacity: unset;
+}
+.wrap_title_agenda a:hover .title_agenda {
+  color: #b0ad9e;
+  border: 1px solid #b0ad9e;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .agenda_slick .agenda .agenda_slide {
+    margin: 0;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wrap_title_agenda {
+    height: auto;
+    padding-top: 175px;
+  }
+  .wrap_title_agenda .title_agenda {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  .agenda_desc {
+    font-size: 14px;
+  }
+
+  .wrap_agenda .agenda:not(:last-child) {
+    margin: 0 0 50px;
+  }
+  .wrap_agenda .agenda {
+    margin-bottom: 50px;
+  }
+}
+
+/* アジェンダ詳細Page */
+#agenda_detail .head_content .text_intro_head_content {
+  /* font-family: YakuHanMP_Noto, 'Shippori Mincho', serif; */
+  color: #4e4e4e;
+  padding: 30px 0;
+}
+#agenda_detail .wrap_switch {
+  margin-top: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 30px 20px 30px;
+}
+#agenda_detail .content_mv {
+  margin-top: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  #agenda_detail .head_content .text_intro_head_content {
+    padding: 30px 20px;
+  }
+  #agenda_detail .wrap_switch {
+    align-items: unset;
+    justify-content: flex-end;
+    padding: 0 20px 20px 0;
+  }
+}
+
+#agenda_detail .head_content .wrap_switch .switch {
+  background-color: #2c76a4;
+}
+
+/* アジェンダ ここまで */
+
+
+/* シリーズ一覧 */
+.sec_column {
+  background-color: #F7F7F7;
+  padding-bottom: 70px;
+}
+.sec_series{
+  background-color: #F7F7F7;
+}
+
+.list_column {
+  max-width: 100%;
+  border: none;
+  margin-top: 0;
+}
+
+.inner_title {
+  font-size: 14px;
+  padding: 5px 10px;
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 500;
+  color: #202020;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  .inner_column_thumb {
+    position: relative;
+    padding-top: 27.28%;
+    overflow: hidden;
+  }
+
+  .series_thumb_trim {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: 0 100%;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  .inner_title {
+    font-size: 13px;
+  }
+}
+
+/* シリーズ覧 ここまで */
+
+/* リニュアー */
+
+#renewer .sec {
+  padding-bottom: 0;
+}
+
+.sec_renewer {
+  background-color: #fff;
+}
+
+/*
+.um-directory {
+  margin-top: 50px;
+}
+*/
+
+.um-directory .um-members-wrapper .um-members.um-members-list .um-member .um-member-card-container .um-member-card .um-member-card-actions {
+  margin-left: -20px;
+}
+.um-directory .um-members-wrapper .um-members .um-members-none{
+  padding-bottom: 300px;
+}
+
+@media only screen and (max-width: 840px) and (min-width: 768px) {
+  .um-directory .um-members-wrapper .um-members.um-members-list .um-member .um-member-card-container .um-member-card .um-member-card-content .um-member-tagline.um-member-tagline-description {
+    margin-left: -70%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .um-button {
+    color: #4e4e4e !important;
+  }
+}
+/*** リニュアー ここまで ***/
+
+
+/* キーワード */
+.sec_keyword {
+  padding-bottom: 0;
+}
+.keyword_cont {
+  margin-top: 30px;
+}
+@media only screen and (max-width: 767px) {
+.head_content {
+    padding-right: 0;
+  }
+}
+/* キーワード ここまで */
+
+/************ END ************/
+
+
+/************ 記事ページ CSS ************/
+/*** 全体 ***/
+/* .main {
+  padding-bottom: 0!important;
+  padding-top: 67px;
+} */
+/* 全体 ここまで */
+
+/* 背景 */
+.sec_article_detail {
+  background-color: #fff;
+}
+/* 背景 ここまで */
+
+
+/*** タイトルエリア ***/
+
+/*.content_mv_article_detail {
+  width: 1160px;
+  margin: 0 auto;
+  background-color: white;
+}
+.sec_article_detail .textbox.big {
+  margin-top: -200px !important;
+}
+.sec_article_detail .textbox.large.big {
+  width: 100%;
+  border: none;
+  padding: 0 calc((100vw - 960px) / 2);
+  margin: 0;
+}*/
+
+.sec_article_detail .article_main_img {
+  max-width: 1160px;
+  height: 450px; /* 2021/05/18 井上 */
+  z-index: 1;
+  margin: auto;
+}
+
+.textbox_body {
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+  margin: -200px auto 0px;
+  padding: 0;
+}
+
+.sec_article_detail .textbox.large.big {
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+  margin: -200px auto 0px;
+  padding: 0;
+}
+
+.textbox.large.big .serise_tags{
+  height: 28px;
+}
+.sec_article_detail .title_big {
+  font-size: 36px;
+  color: white;
+  font-family: YakuHanMP_Noto, "Shippori Mincho", serif;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-shadow: 0px 0px 1px #ffffff, 0px 0px 5px #000, 0px 0px 20px #202020, 0px 0px 30px #202020; /* 2021/05/18 井上 */
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.content_mv_article_detail .textbox {
+  background-color: transparent;
+}
+
+.sec_article_detail .tag_agenda{
+  font-size: 15px; /* 2021/05/18 井上 */
+  margin: 25px 5px 30px 0;
+}
+
+/* .sec_article_detail .wrap_avatar {
+  margin-top: 30px;
+} */
+
+.wrap_avatar.flex .detail_avatar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wrap_sub_info {
+  display: flex;
+  flex-direction: column; /* 2021/05/18 井上 */
+}
+
+/* 不要
+.content_mv_article_detail .wrap_social {
+  margin-left: auto;
+  margin-top: 30px!important;
+}
+
+.textbox_avatar.story:before, .title_avatar.story:before {
+  content: "";
+} */
+
+.wrap_label_article_mv .title_avatar {
+  display: flex;
+}
+
+
+.title_avatar.story:before, .title_avatar.edited:before {
+  position: static;
+  content: "";
+}
+
+.title_renewer, .title_editer {
+  margin-bottom: -8px;
+  color: #202020;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 767px) {
+  .content_recomend .inner_base {
+    padding: 0 0;
+  }
+  .content_mv_article_detail {
+    width: 100%;
+  }
+  .sec_article_detail .textbox.big {
+    margin-top: -180px !important;
+  }
+  .wrap_sub_info {
+    display: block;
+  }
+  .content_mv_article_detail .wrap_social {
+    margin-top: 10px !important;
+  }
+  .sec_article_detail .article_main_img {
+    max-height: 350px;
+  }
+  .sec_article_detail .textbox.large.big .title_big {
+    font-size: 27px !important;
+    letter-spacing: 0.09em;
+    max-width: 720px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sec_article_detail .textbox .series_name {
+    font-size: 14px;
+  }
+  .sec_article_detail .tag_agenda {
+    font-size: 13px;
+    padding: 2px 4px;
+    margin: 9px 5px 18px 0;
+  }
+  /* .sec_article_detail .wrap_avatar {
+    margin-top: 14px;
+  } */
+  .excerpt {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+  .sec_article_detail .textbox.large.big {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  .title_renewer, .title_editer {
+    margin-bottom: 2px;
+  }
+}
+/* MV ここまで */
+
+
+/* タイムスタンプエリア */
+.content_mv_article_detail .wrap_social {
+  height: 30px;
+}
+@media only screen and (max-width: 767px) {
+  .content_mv_article_detail .wrap_social {
+    height: 25px;
+  }
+  .flexSocialbox.commentbox .commCount {
+    padding-bottom: 6px;
+  }
+  .flexSocialbox.clipbox .stockTxt {
+    padding-bottom: 8px;
+  }
+}
+
+.head_article_detail {
+  margin-bottom: 20px;
+}
+
+/* 本文 */
+.sec_article_detail .content_article_detail .inner_base {
+  max-width: 1160px;
+  width: auto; /* 2021/05/18 井上 */
+  margin: 0 auto;
+  background-color: #fff;
+}
+@media only screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .inner_base{
+    padding: 0 5%;
+  }
+}
+
+.sec_article_detail .content_article_detail .article_detail {
+  padding: 0;
+  padding-top: 20px; /* 2021/05/18 井上 */
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sec_article_detail .content_article_detail::before {
+  background-color: transparent;
+}
+
+/* 不要
+.excerpt {
+  font-size: 18px;
+}
+
+.article_detail h2 {
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 767px) {
+  .article_detail h2 {
+    font-size: 20px;
+  }
+
+  .sec_article_detail .content_article_detail .article_detail {
+    padding-top: 20px;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+} */
+/* 本文 ここまで */
+
+/*** 記事下エリア ***/
+.foot_article_detail.wrap_social {
+  margin: 35px 0 !important;
+}
+
+/*** コメントエリア ***/
+.sec_comment .content_article_detail .article_detail {
+  padding-bottom: 0;
+}
+.sec_comment .inner_base{
+  margin-bottom:80px;
+}
+.form-submit .submit:disabled {
+  color: #b0ad9e;
+  border-color: #b0ad9e;
+}
+.sec_comment .content_article_detail::before {
+  background-color: transparent;
+}
+.sec_comment .content_article_detail, .sec_comment .article_detail {
+  background-color: #F7F7F7!important;
+}
+.reload_button {
+  border: 1px solid #b0ad9e;
+  color: #b0ad9e;
+}
+.wrap_comment, .comments-list .comment .children .wrap_comment {
+  background-color: #fff;
+}
+.comments-list .replyBtnWrap .comment-reply-link {
+  color: #b0ad9e;
+}
+.morelink {
+  color: #b0ad9e;
+}
+.overComm .grad-item::before {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.9)), color-stop(50%, rgba(255, 255, 255, 0.9)), to(#fff));
+}
+.overComm .grad-trigger {
+  color: #b0ad9e;
+}
+.uk-input:focus, .uk-select:focus, .uk-textarea:focus {
+  border: 1px solid #b0ad9e;
+}
+.comment-reply-title a {
+  color: #b0ad9e;
+}
+#comments .must-log-in {
+  text-align: center;
+}
+
+/*** おすすめの記事 ***/
+/* .content_article {
+  background-color: #F7F7F7;
+  padding-bottom: 50px;
+} 2021/05/14 井上削除*/
+
+@media only screen and (max-width: 767px) {
+  .content_recomend .sec_title {
+    padding-left: 2%;
+  }
+}
+
+/* 記事ページ・おすすめ記事エリアのClassを新設 2021/05/14 井上 */
+.content_recomend{
+  background-color: #F7F7F7;
+}
+/************ 記事ページ CSS ここまで ************/
+
+
+
+
+/************ アジェンダページ CSS ************/
+.sec_agenda {
+  background-color: #F7F7F7;
+}
+
+#agendaArchive .target_agenda {
+  padding: 10px;
+}
+
+#agendaArchive .list_agenda {
+  border: none;
+}
+
+/* 2021/06/01 井上 */
+#agendaArchive .wrap_text_agenda {
+  margin: auto;
+  padding-left: 10px;
+  width: calc( 100% - 90px);
+}
+#agendaArchive .text_agenda {
+  font-size: 15px;
+  font-weight: 500;
+  color: #202020;
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  line-height: 1.6;
+}
+
+.wrap_thumbs_agenda {
+  width: 90px;
+  height: 50px;
+}
+
+/* 2021/06/01 井上 */
+.list_agenda .see_more a {
+  color: #202020;
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 600;
+}
+
+.see_more {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 767px) {
+  #agendaArchive .text_agenda {
+    font-size: 14px!important;
+  }
+}
+/************ アジェンダページ CSS ここまで ************/
+
+
+/************ アジェンダ詳細ページ CSS ************/
+
+/************ アジェンダ詳細ページ CSS ここまで ************/
+
+
+/************ シリーズページ CSS ************/
+#column .wrapper {
+  background-color: #F7F7F7;
+}
+
+.sec_column .title_thin {
+  margin-bottom: 0;
+}
+
+.item_column {
+  display: flex;
+  border-bottom: 1px solid #cecece;
+  padding: 10px 0;
+}
+
+.wrap_text_column {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item_column .imgLiquidFill {
+  width: 90px;
+  height: 50px;
+  min-width: 90px;
+}
+
+.sec_column .item_column_wrap .item_column .wrap_text_column {
+  padding-left: 15px;
+  margin: auto 0;
+}
+
+.sec_column .item_column_wrap .item_column .wrap_text_column a {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+}
+
+.text_column {
+  color: #202020;
+  font-size: 16px;
+}
+
+.list_column .see_more, .list_column .see_more a {
+  color: #202020;
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 600;
+}
+
+.target_column {
+  margin-top: 0;
+}
+
+.sec_column .item_column_wrap .item_column:not(:first-child) {
+  margin-top: 0;
+}
+
+.column-highlighted {
+  padding-right: 0;
+  margin-bottom: 50px;
+}
+
+.seriesShareAreaWrap .seriesShareArea {
+  bottom: 0;
+}
+
+.column-highlighted .column-text-wrapper>div {
+  width: 100%;
+  border: none;
+  padding: 30px 16%;
+}
+
+#series_detail .wrap_switch {
+  display: block!important;
+}
+
+@media only screen and (max-width: 767px) {
+  .sec_column .title_thin {
+    margin-bottom: 0;
+    }
+
+  .sec_column .list_column {
+    max-width: 100%;
+    margin-top: 0;
+    padding: 0 10px;
+    padding-bottom: 10px;
+  }
+
+  .sec_column .item_column_wrap .item_column .wrap_text_column {
+    padding: 0 10px;
+  }
+
+  .text_column {
+    font-size: 14px!important;
+  }
+
+  .column-highlighted .column-text-wrapper>div {
+    padding: 30px 10%;
+  }
+}
+/************ シリーズページ CSS ここまで ************/
+
+
+/************ リニュアーリスト Page ************/
+#renewer .footer {
+  margin-top: 0;
+}
+.um-members-pagi span.current {
+  background: #b0ad9e !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .content_renewer .inner_base {
+    padding: 0;
+  }
+  #renewer_detail .content_renewer {
+    padding-top: 0;
+  }
+}
+/************ リニュアーリスト END ************/
+
+
+/************ リニュアー詳細 page ************/
+/*.sec_renewer_detail {
+  padding-bottom: 50px;
+}
+
+.um-followers-bar {
+  padding: 20px 0;
+  background-color: #f8eae1;
+}*/
+
+/* 2021/06/02 井上 リニュアー詳細大改修*/
+.sec_renewer_detail.memberProfPage.myProfPage .inner_base {
+  padding: 0;
+}
+#renewer_detail .content_renewer {
+  padding-top: 50px;
+}
+.sec_renewer_detail:not(.profEditPage) > .inner_base .um-profile .um-followers-btn .um-button {
+  top: -65px;
+}
+.um-followers-bar {
+  padding: 0 !important;
+}
+.head_content_renewer {
+  padding-bottom: 50px;
+  margin-bottom: 0px;
+}
+
+/*.sec_renewer_detail:not(.profEditPage) > .inner_base .um-profile .um-profile-navbar {
+  position: relative;
+  background: #f8eae1;
+  padding: 10px 0 10px;
+}*/
+
+@media only screen and (max-width: 767px) {
+  .sec_renewer_detail:not(.profEditPage) > .inner_base .um-profile .um-followers-btn .um-button {
+    top: 10px;
+  }
+  .sec_renewer_detail > .inner_base {
+    background: linear-gradient(to bottom, #fffdf2, #f8e2d4);
+  }
+  .head_content_renewer {
+    padding-bottom: 70px;
+  }
+}
+/************ リニュアー詳細 END ************/
+
+
+/************ アバウト Page ************/
+.about.under {
+  background-color: #fff;
+}
+.main .information-img {
+  padding-bottom: 50px;
+}
+.main .information-text {
+  padding-bottom: 50px;
+}
+/************ アバウト END ************/
+
+
+/************ 検索&キーワード Page ************/
+#search_keyword .sec_title {
+  display: flex;
+  align-items: center;
+  padding-bottom: 40px;
+}
+#search_keyword .main_title_jp {
+  color: #4e4e4e;
+  padding-left: 20px;
+}
+.search_que {
+  color: #202020;
+  font-size: 18px;
+}
+#search_keyword .keyword_each {
+  font-family: Noto Sans JP, Helvetica, sans-serif !important;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 1px 6px 1.5px 5px;
+  margin: 0 5px 0 0;
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+  #search_keyword .inner_base {
+    padding: 0;
+  }
+  #search_keyword .sec_title {
+    padding-left: 2%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #search_keyword .main_title_jp {
+    font-size: 16px;
+    padding: 5px 10px 0;
+  }
+  .search_que {
+    font-size: 17px;
+  }
+  #search_keyword .keyword_each {
+    font-size: 16px;
+  }
+}
+/************ 検索 END ************/
+
+
+/************ キーワード ************/
+
+
+/*.keyword_title_head_content_wrapper {
+  padding: 0;
+}
+.keyword_title_head_content_wrapper .title_thin {
+  padding-bottom: 0;
+}
+.sec_column_detail.agenda_sec.keyword {
+  padding-bottom: 0;
+}*/
+/************ キーワード ここまで ************/
+
+
+/************ マイページ ************/
+/*.sec_renewer_detail.memberProfPage.myProfPage {
+  height: 100vh;
+}*/
+
+.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .title_middle {
+  padding-bottom: 0;
+}
+
+.bookmarkPage .mypageContent .wrap_article_middle.grid .wrap_img {
+  width: 50%;
+  height: 100%;
+}
+
+.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .wrap_img .article_middle_img {
+  width: 100%;
+  height: 100%;
+}
+
+.bookmarkPage .wrap_social {
+  display: block;
+}
+
+.mypageContent .flexSocialbox svg {
+  margin-right: 6px;
+  width: 35px;
+  margin-left: -10px;
+}
+
+.sec_renewer_detail.followViewArea, .sec_renewer_detail.bookmarkPage, .sec_renewer_detail.profEditPage.myProfPage {
+  background-color: #fff;
+}
+
+.profEditTxtWrap .btn_base {
+  background-color: #fff!important;
+  float: none;
+  color: #2c76a4;
+  border: 1px solid #2c76a4;
+  font-family: Noto Sans JP, Helvetica, 游ゴシック, Hiragino Kaku Gothic ProN, ヒラギノ角ゴ ProN W3, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif !important;
+}
+
+.profEditTxtWrap .btn_base:hover {
+  background-color: #2c76a4!important;
+}
+
+.profEditTxtWrap .btn_base:after {
+  content: "";
+  background-image: url(../images/common/ic_arrow_blue.svg);
+}
+
+.followViewArea #agenda .followList li .followTitleArea {
+  background-color: #dde5df;
+}
+.agendaTitle {
+  color: #B0AD9E;
+}
+
+.profileArea .um {
+  margin-bottom: 0 !important;
+}
+
+.um-dropdown {
+  left: 22.5%!important;
+  top: 90% !important;
+}
+
+.profEditTxtWrap {
+  max-width: 100%;
+  background-color: #fff;
+  padding: 40px 0 0;
+  margin: 0 auto;
+  height: calc(100vh - 192px);
+  text-align: center;
+}
+
+.profEditTxt{
+  margin: 0;
+  padding: 0px 0 50px;
+}
+
+.sec_renewer_detail.memberProfPage.myProfPage {
+  padding-bottom: 0;
+}
+
+/* .sec_renewer_detail.memberProfPage.myProfPage .inner_base {
+  background-color: #fff;
+} */
+
+@media only screen and (max-width: 767px) {
+  .profEditTxtWrap {
+    height: calc(100vh - 217px);
+  }
+  .roundTitleWrap {
+    padding-top: 20px;
+  }
+  .bookmarkPage .mypageContent .textbox.middle.left_bottom.small_compo .title_middle {
+    height: auto;
+    font-size: 14px;
+  }
+
+  .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox {
+    padding: 5px 10px;
+  }
+
+  .bookmarkPage .mypageContent .wrap_avatar {
+    margin-top: 25px;
+  }
+
+  .mypage_title_link {
+    height: 17px;
+    display: block;
+  }
+
+  #bookmark_top_contentArticle {
+    padding: 0;
+    width: 100%;
+  }
+
+  .sec_renewer_detail.profEditPage.myProfPage {
+    padding-bottom: 50px!important;
+  }
+
+  .um-dropdown {
+    left: -4%!important;
+    top: 77% !important;
+  }
+}
+/************ マイページ ここまで ************/
+
+
+/************ 404ページ ************/
+/*.logo_header {
+  position: relative;
+  top: 0;
+}*/
+
+.mv_error {
+  position: static;
+  -webkit-transform: translate(0%,0%);
+  transform: translate(0%,0%);
+}
+
+.mv_error .btn_base.color_blue.reverse {
+  background-color: #2c76a4!important;
+}
+
+.mv_error .btn_base.color_blue:after {
+  content: "";
+}
+
+.sec_article.error {
+  clear: both;
+}
+
+@media only screen and (max-width: 767px) {
+  /*.logo_header {
+    position: relative;
+    left: 0;
+    top: -5px;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }*/
+  .mv_error .error_text {
+    font-size: 10em;
+  }
+  .mv_error .btn_base.color_blue.reverse {
+    float: none;
+    margin: 40px auto;
+  }
+}
+/************ 404ページ ここまで ************/
+

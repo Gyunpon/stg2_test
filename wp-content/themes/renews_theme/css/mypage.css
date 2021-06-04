@@ -3,7 +3,7 @@
   text-align: center; }
 
 header {
-  background-color: #fffdf5;
+  background-color: #fffdf5 !important;
 }
 
 /* member */
@@ -482,17 +482,19 @@ header {
   max-width: 720px; }
   @media only screen and (max-width: 767px) {
     .mypageHead .inner_base {
-      padding-left: 5%; } }
+      padding-left: 5%;
+    }
+  }
 
 .mypageHead .userName {
   text-align: center;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 500;
   color: #4e4e4e;
   margin-top: 15px; }
   @media only screen and (max-width: 767px) {
     .mypageHead .userName {
-      font-size: 16px; } }
+      font-size: 18px; } }
 
 .mypageHead .userMenu {
   margin-top: 10px; }
@@ -549,7 +551,6 @@ header {
 .mypageContent {
   background-color: #fff;
   padding-top: 35px;
-  padding-bottom: 50px;
 }
 
   .mypageContent .inner_base {
@@ -728,58 +729,69 @@ header {
   margin-top: 20px;
   max-width: 330px;
   margin-left: auto;
-  margin-right: auto; }
-  .followViewArea .followNavWrap .followNav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
-    .followViewArea .followNavWrap .followNav li a {
-      color: #4e4e4e;
-      font-size: 13px;
-      background-image: url("../images/icons/arrow_btm.svg");
-      background-position: right center;
-      background-repeat: no-repeat;
-      padding-right: 20px; }
-
+  margin-right: auto; 
+}
+.followViewArea .followNavWrap .followNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; 
+}
+.followViewArea .followNavWrap .followNav li a {
+  color: #4e4e4e;
+  font-size: 13px;
+  background-image: url("../images/icons/arrow_btm.svg");
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 20px; 
+}
 .followViewArea .mypageContent .inner_base {
-  max-width: 1160px; }
-
+  max-width: 1160px; 
+}
 .followViewArea .title_thin {
-  max-width: 1160px; }
+  max-width: 1160px; 
+}
+.followViewArea .title_thin:after {
+  content: "";
+  position: absolute;
+  top: 48px;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+}
+.followViewArea .title_thin .title_thin_img h2 {
+  height: 1px;
+  background-color: #b0ad9e;
+  display: block; 
+}
+@media only screen and (max-width: 767px) {
   .followViewArea .title_thin:after {
-    content: "";
-    position: absolute;
-    top: 48px;
-    right: 0;
-    z-index: 1;
-    width: 100%;.followViewArea .title_thin .title_thin_img h2
-    height: 1px;
-    background-color: #b0ad9e;
-    display: block; }
-    @media only screen and (max-width: 767px) {
-      .followViewArea .title_thin:after {
-        top: 40px; } }
+    top: 40px; 
+  } 
+}
+.followViewArea .title_thin .title_thin_img h2 {
+  font-size: 28px;
+  margin-bottom: 0; 
+}
+@media only screen and (max-width: 767px) {
   .followViewArea .title_thin .title_thin_img h2 {
-    font-size: 28px;
-    margin-bottom: 0; }
-    @media only screen and (max-width: 767px) {
-      .followViewArea .title_thin .title_thin_img h2 {
-        font-size: 25px;
-	border-bottom: solid;
-	border-width: 1px;
+    font-size: 25px;
+    border-bottom: solid;
+	  border-width: 1px;
 	} 
 }
 
 @media only screen and (max-width: 1100px) {
   .followViewArea .followList.grid {
     -ms-grid-columns: 1fr [2];
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); 
+  } 
+}
 
 @media only screen and (max-width: 767px) {
   .followViewArea .followList.grid {
@@ -963,7 +975,7 @@ overflow: visible;
       width: calc(100% - 120px);
       margin-top: 0; }
       .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .title_middle {
-        font-size: 19px;
+        font-size: 18px;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
@@ -1102,7 +1114,6 @@ input[name="um-notifyme[follow_series_newpost_mail]"] + .um-field-checkbox-state
 input[name="um-notifyme[follow_series_newpost_mail]"] + .um-field-checkbox-state + .um-field-checkbox-option{
 	margin-left: 71px;
 }
-
 
 
 

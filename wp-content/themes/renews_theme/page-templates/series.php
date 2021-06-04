@@ -58,13 +58,13 @@ $pageNum_article = 2;
 
 <section id="page_series" class="sec sec_column">
 	<div class="inner_base">
-		<h2 class="title_thin">
-			<span class="title_thin_img white">
-				<h2>シリーズ</h2>
-			</span>
-		</h2>
+		<div class="sub_title_thin">
+			<h1 class="sub_main_title">Series
+			<span class="sub_title_thin_img">シリーズ</span>
+			</h1>
+		</div>
 		<p class="title_thin_subtitle">「シリーズ（連載コラム）」をまとめました。</p>
-		<p class="title_thin_subtitle_s mb-50">短期で取り組む完結型の集中連載は「特集」としてまとめていきます。</p>
+		<p class="title_thin_subtitle_s mb-40 mb-30">短期で取り組む完結型の集中連載は「特集」としてまとめていきます。</p>
 
 		<div id="seriesArchive">
 			<?php get_template_part('inc/layout_series_taxArchive'); ?>

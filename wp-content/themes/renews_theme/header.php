@@ -66,21 +66,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<?php endif; ?>
 
-	<!-- TOPページ用の分岐 -->
+	<!-- Title of Home -->
 	<?php if(is_home() || is_front_page() || is_page('index2')): ?>
 	<title><?php bloginfo("name"); ?></title>
 	<?php else: ?>
 	<title><?php wp_title(); ?></title>
 	<?php endif; ?>
 
-
+	<!-- All Head -->
 	<?php wp_head(); ?>
-
-
-	<!-- base -->
+	<!-- jquery -->
 	<script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<!-- 追加分
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css"> -->
 	<!-- animation -->
 	<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" media="all" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
@@ -89,46 +85,39 @@
 	<!-- UIkit JS -->
 	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
-	<!-- FontAwesome -->
-	<!-- 環境移行時に差し替え <script src="//kit.fontawesome.com/55b5b4c129.js" crossorigin="anonymous"></script>-->
-	<script src="https://kit.fontawesome.com/05117f24ac.js" crossorigin="anonymous"></script>
 	<!-- base -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/all.min.css" rel="stylesheet"  media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/function.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
-
-
 	<link href="<?php echo get_template_directory_uri(); ?>/css/magnific-popup.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery.magnific-popup.min.js"></script>
-
-	<!-- add -->
-	<link href="//fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap" rel="stylesheet" media="all" />
-
-	<!-- TOPページ用の分岐 -->
-	<?php if(is_home() || is_front_page()): ?>
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	
+	<!-- Head For TOP Page -->
+	<?php if(is_home() || is_front_page()|| is_page('index2')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />
-
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/slick.min.js"></script>
-
 	<link href="<?php echo get_template_directory_uri(); ?>/css/slick.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/top.js"></script>
 	<?php else: ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/lower1.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
 
+	<!-- Head For Article Page -->
 	<?php if(is_singular('articles')||is_post_type_archive('articles')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/article.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/single.css" rel="stylesheet"  media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/single-articles.css" rel="stylesheet" media="all" />
-
+	<!-- FontAwesome -->
+	<script src="https://kit.fontawesome.com/05117f24ac.js" crossorigin="anonymous"></script>
 	<?php endif; ?>
+	
 	<?php if(is_main_site() && is_singular('articles')): ?>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/article.js"></script>
-
-
 	<script type="text/javascript" src='<?php bloginfo('url'); ?>/wp-includes/js/comment-reply.min.js'></script>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/comments.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/comments.js"></script>
@@ -137,61 +126,50 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/scrollOption.js"></script>
 	<?php endif; ?>
-
+	<!-- Head For Agenda Page -->
 	<?php if(is_page('agenda')||is_tax(array('agenda'))): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/agenda.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
+	<!-- Head For About Page -->
 	<?php if(is_page('about')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/about.min.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/about.js"></script>
 	<?php endif; ?>
-
+	<!-- Head For series Page -->
 	<?php if(is_page('series')||is_tax(array('series','value_hashtag'))||is_search()): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/agenda.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/column.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
-	<!-- 追加部分 -->
+	<!-- Head For Keyword Page -->
 	<?php if(is_page('keyword')||is_tax(array('keyword'))): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/keyword.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-	<!-- 追加部分 ここまで -->
-
+	<!-- Head For Various Pages -->
 	<?php if(is_page_template(array('page-templates/member.php','page-templates/member_under.php','page-templates/profile.php','page-templates/follow.php','page-templates/bookmark.php','page-templates/notifications.php')) || is_page(array('bookmark')) || (!empty($_GET['um_action']) && $_GET['um_action'] == 'edit') || (!empty($_GET['profiletab']) && $_GET['profiletab'] == 'following')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/my.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/mypage.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
 	<?php if((!empty($_GET['um_action']) && $_GET['um_action'] == 'edit') || is_page_template('page-templates/notifications.php') || ($slug_member_under == 'password') || is_page_template('page-templates/follow.php')):?>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/mypage.js"></script>
 	<?php endif; ?>
-
 	<?php if(is_page('donation')||is_404()): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/donation.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
 	<?php if(is_page(array('register','login','password-reset'))): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/join.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
 	<?php if(is_page('renewers')||is_page_template('page-templates/renewers_detail.php')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/renewer.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
 	<?php if(is_page('policy')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/privacy.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
 	<?php if(is_404()): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/error.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
-
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/imgLiquid-min.js"></script>
 
-
-	<!-- SNSシェアボタン -->
+	<!-- SNS Share -->
 	<!-- TW -->
 	<script>
 		window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
@@ -210,124 +188,23 @@
 		{lang: "ja"}
 	</script>
 
-<!-- 上書き用CSS -->
+	<!-- add.css -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/add.css" rel="stylesheet" media="all" />
-
-<!-- TOPページテスト用の分岐 -->
-	<?php if(is_page('index2')): ?>
-	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/slick.min.js"></script>
-
-	<link href="<?php echo get_template_directory_uri(); ?>/css/slick.css" rel="stylesheet" media="all" />
-	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.test.css" rel="stylesheet" media="all" />
-	<script src="<?php echo get_template_directory_uri(); ?>/js/top-test.js"></script>
-	<?php endif; ?>
-
-
-		<!-- 追加分 -->
-
-		<script>
-/*
-			$(function () {
-			    var display = function () {
-			    if ($(this).scrollTop() > 0) { //scroll量
-			            $(".banner-body").fadeIn();
-			        } else {
-			            $(".banner-body").fadeOut();
-			        }
-			    };
-			    $(window).on("scroll", display);
-			    //click
-			    $(".banner-body p.close a").click(function(){
-			    $(".banner-body").fadeOut();
-			    $(window).off("scroll", display);
-			    });
-			});
-
-			$(function () {
-		  // cookieの値がisClickedじゃなかったら表示
-				if ($.cookie('Btn') != 'isClicked') {
-				  $('.banner-body').show();
-				}
-				$('.close').on('click', function(){
-				  $(this).hide();
-				  var date = new Date();
-				  // cookieにBtnという名前でisClickedをセット 期限は1日間
-				  $.cookie('Btn', 'isClicked', { expires: 1 });
-				});
-			});
-*/
-
-		</script>
-
-<!--
- cookieの設定
-		<script>
-		$(function () {
-			// cookieの値がisClickedじゃなかったら表示
-		  if ($.cookie('Btn') != 'isClicked') {
-		    $('.banner-body').show();
-		  }
-		  $('.close').on('click', function(){
-		    $('.banner-body').hide();
-		    // cookieにBtnという名前でisClickedをセット cookieの有効期限はブラウザを閉じるまで
-		    $.cookie('Btn', 'isClicked');
-		  });
-		});
-		</script>
--->
-
-<!-- 一番下に来た時バナーをフッターの上にする -->
-		<script>
-		$(function () {
-			$(window).on('scroll', function(){
-					var docHeight = $(document).innerHeight(), //ドキュメントの高さ
-					windowHeight = $(window).innerHeight(), //ウィンドウの高さ
-					pageBottom = docHeight - windowHeight; //ドキュメントの高さ - ウィンドウの高さ
-					if(pageBottom <= $(window).scrollTop()) {
-		      //ウィンドウの一番下までスクロールした時に実行
-			      $(document).ready(function () {
-						  hsize = $('footer').height() + 35;//フッターの高さを取得
-						  $(".floating-banner").css("bottom", hsize + "px");//取得したフッターの高さ分#wrapperにpadding-bottomをpxで指定
-						});
-		    	}
-		    	else {
-		    		$(document).ready(function () {
-						  $(".floating-banner").css("bottom", -3 + "px");//取得したフッターの高さ分#wrapperにpadding-bottomをpxで指定
-						});
-		    	}
-			});
-		});
-		</script>
-
-	<!-- 追加分 -->
-
-	<!-- 2021/04/12 黒澤 追加分 -->
-
-	<script>
-		$(function () {
-			$(window).load(function(){ // ウィンドウを更新した後に画像サイズを取得
-        var width=$('.wp-image-1636').width();
-        $('.wp-caption-text').css('width', width + 'px');
-    	});
-		});
-	</script>
-
-	<!--追加分ここまで -->
-
+	<link href="<?php echo get_template_directory_uri(); ?>/css/renew.css" rel="stylesheet" media="all" />
 </head>
+<!-- END OF HEAD -->
+
 
 	<body ontouchstart="" <?php if(is_page('series')){echo 'id="column"';}elseif(is_tax('series')){echo 'id="ajenda_detail"';}elseif(is_page_template('page-templates/renewers_detail.php')){echo 'id="renewer_detail"';} if(!empty($_GET['um_action']) && $_GET['um_action'] == 'edit'){echo ' class="profEditBody"';} if(!is_page(array('login','register','contact'))){echo ' class="grecaptchaHide"';} ?>>
-
-		<!-- TOPページ用の分岐 -->
-		<div class="wrapper <?php if(is_home() || is_front_page() || is_page('index2')){echo 'topPage';} if(!is_user_logged_in()){echo ' noLogin';} if(is_page('password-reset')){echo ' passwordReset';} ?> " id="wrap">
+		<!-- For Top Page -->
+		<div class="wrapper <?php if(is_home() || is_front_page()|| is_page('index2')){echo 'topPage';} if(!is_user_logged_in()){echo ' noLogin';} if(is_page('password-reset')){echo ' passwordReset';} ?> " id="wrap">
 		<?php //if(!($_GET['um_action'] == 'edit')): ?>
 		<header>
 			<div class="inner_base flex">
-				<div class="logo_header">
+
+				<!-- For Top Page -->
+				<!--<div class="logo_header">-->
+				<<?php if(is_home() || is_front_page()|| is_page('index2')){echo 'h1';} else{echo 'div';} ?> class="logo_header">
 					<a href="<?php echo home_url(); ?>/">
 						<svg
 								 version="1.1"
@@ -341,7 +218,7 @@
 								 style="enable-background:new 0 0 108.1 22;"
 								 xml:space="preserve"
 								 >
-							<title>logo RENEWS</title>
+							<title>Renews リニューズ</title>
 							<style type="text/css">
 								.st0 {
 									fill: #2c76a4;
@@ -357,8 +234,8 @@
 							</g>
 						</svg>
 					</a>
-				</div>
-
+				<!--</div>-->
+				</<?php if(is_home() || is_front_page()|| is_page('index2')){echo 'h1';}else{echo 'div';} ?>>
 
 				<nav class="nav_header">
 					<ul class="list_nav_header flex">
@@ -370,7 +247,7 @@
 					</ul>
 				</nav>
 
-				<div id="headerShareLink" class="uk-flex-top" uk-modal>
+				<!--<div id="headerShareLink" class="uk-flex-top" uk-modal>
 					<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
 						<?php
 						//元となるテキスト
@@ -380,7 +257,7 @@
 						$encoded = rawurlencode( $text ) ;
 						?>
 						<button class="uk-modal-close-default" type="button" uk-close></button>
-						<p class="shareBtnTitle"><img src="<?php echo get_template_directory_uri(); ?>/images/about/about.png" alt="RENEWS" /><span>をシェアする</span></p>
+						<p class="shareBtnTitle"><img src="<?php echo get_template_directory_uri(); ?>/images/about/about.jpg" alt="RENEWS" /><span>をシェアする</span></p>
 						<ul class="shareBtnList">
 							<li><a href="//twitter.com/share?url=<?php echo home_url(); ?>&text=<?php echo $encoded; ?>" class="shareBtn twitter share_popup" target="_blank"><i class="um-faicon-twitter"></i><span>Twitter</span></a></li>
 							<li><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo $siteURL; ?>" class="shareBtn facebook share_popup" target="_blank"><i class="um-faicon-facebook-square"></i><span>Facebook</span></a></li>
@@ -388,7 +265,7 @@
 							<li><a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo $siteURL; ?>&title=<?php echo $encoded; ?>" class="shareBtn hatena share_popup" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/hatena_wh.svg" alt="" /><span>はてなブックマーク</span></a></li>
 						</ul>
 					</div>
-				</div>
+				</div>-->
 				<div class="search__box for_pc">
 					<div class="search-box">
 						<form role="search" method="get" id="searchform" class="search-form" action="<?php echo home_url( '/' ); ?>">

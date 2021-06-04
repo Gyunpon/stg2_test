@@ -25,7 +25,7 @@ if (empty($archivePageName)) {
 					<h2>バリューハッシュタグ</h2>
 				</span>
 			</h2>
-			<p class="title_thin_subtitle">「<?php echo $archivePageName; ?>」というタグが付いた記事を集めました。</p>
+			<p class="title_thin_subtitle">「#<?php echo $archivePageName; ?>」というタグが付いた記事を集めました。</p>
 		</section>
 
 
@@ -48,7 +48,7 @@ if (empty($archivePageName)) {
 							//著者情報
 							$rows = get_field('author_select'); // すべてのrow（内容・行）をいったん取得する
 							$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-							$first_row_item = $first_row['author']; // get the sub field value
+							$first_row_item = $first_row['author']; // get the sub field value 
 							if (!($first_row_item)) {
 								$user_name = get_the_author_meta('display_name', $post->post_author);
 								$renews_id = get_the_author_meta('user_login', $post->post_author);

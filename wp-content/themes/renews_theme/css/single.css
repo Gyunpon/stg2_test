@@ -16,6 +16,7 @@
   /* -------------------------------------------------- */
 }
 
+/* 2021/05/16 井上削除
 .singleText h4 {
   line-height: 1.6;
   padding: 0 0.5em 0.5em 2em;
@@ -103,6 +104,7 @@
 .singleText a {
   color: #2c76a4;
 }
+*/
 
 .singleText a:visited, .singleText a:focus, .singleText a:active {
   color: #2c76a4;
@@ -123,8 +125,8 @@
   height: 0;
 }
 
-/* 2021/03/26 黒澤修正 */
 
+/* 2021/03/26 黒澤修正 */
 .wp_img_contents {
   float: right;
   text-align: center;
@@ -356,10 +358,10 @@
   overflow: hidden;
 }
 
-/* 調整 */
+/* 2021/05/15 井上修正*/
 .excerpt {
-  line-height: 1.6;
-  font-size: 20px;
+  line-height: 1.8;
+  font-size: 18px;
   font-weight: 400;
   letter-spacing: .05em;
 }
@@ -367,7 +369,7 @@
 @media only screen and (max-width: 767px) {
   .excerpt {
     line-height: 1.4;
-    font-size: 18px;
+    font-size: 17px;
     letter-spacing: .03em;
   }
 }

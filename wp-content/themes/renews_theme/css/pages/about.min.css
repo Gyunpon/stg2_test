@@ -11,6 +11,7 @@
 @media screen and (max-width:767px) {
   .main {
     padding: 80px 5%;
+    background-color: #fff;
   }
 }
 

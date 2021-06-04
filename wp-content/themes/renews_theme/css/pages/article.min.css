@@ -91,7 +91,7 @@ img[class*="attachment-"] {
 }
 .inner_article_detail hr {
   max-width: 600px;
-  margin: 30px auto 50px;
+  margin: 30px auto 30px; /* 2021/05/14 井上修正 */
   border-top: 1px solid #888;
 }
 .head_article_detail {
@@ -224,24 +224,45 @@ img[class*="attachment-"] {
 */
 
 
-/* 小見出し「H2」化の当座の仕様、20/11/17追加*/
-.article_detail h2 {
-	margin: 10px 0;
-	font-size: 20px;
+/* 記事ページの中見出し(h2)+小見出し(h2＆h3)共通のスタイル 2021/05/14 井上*/
+.article_detail h2, .article_detail h3 {
 	letter-spacing: .05em;
-	line-height: 1.8;
-	font-weight: 500;
 	color: #202020;
 }
 @media only screen and (max-width: 767px) {
-	.article_detail h2 {
+	.article_detail h2, .article_detail h3 {
+		letter-spacing: .03em;
+	}
+}
+
+/* 新設・記事ページの中見出し＆小見出しのスタイル 2021/05/14 井上 */
+.subtitle_large {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 10px 0;
+  line-height: 1.8;
+}
+.subtitle_small {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px 0;
+  line-height: 1.8;
+}
+@media only screen and (max-width: 767px) {
+  .subtitle_large {
+		font-size: 22px;
+		letter-spacing: .03em;
+		line-height: 1.5em;
+	}
+	.subtitle_small {
 		font-size: 19px;
 		letter-spacing: .03em;
 		line-height: 1.5em;
 	}
 }
 
-.article_detail h3 {
+/* スポイラーのタイトルh3化に伴い削除 2021/05/14 井上 */
+/* .article_detail h3 {
   margin: 10px 0;
   font-size: 20px;
   letter-spacing: .05em;
@@ -249,14 +270,13 @@ img[class*="attachment-"] {
   font-weight: 500;
   color: #202020;
 }
-
 @media only screen and (max-width: 767px) {
   .article_detail h3 {
     font-size: 19px;
     letter-spacing: .03em;
     line-height: 1.5em;
   }
-}
+} */
 
 .article_detail p {
   margin-bottom: 0 !important;
@@ -745,7 +765,7 @@ h5 {
 	visibility: hidden;
 	opacity: 0;
 	left: -65px;
-	top: 80%;
+	top: 85%;
 	transform:translateY(-50%);
 	max-width: 350px;
 	width: 100%;
@@ -984,7 +1004,7 @@ h5 {
 
 
 .foot_article_detail.wrap_social{
-	margin-top: 45px !important;
+	margin-top: 45px;
 	margin-bottom: 50px;
 }
 

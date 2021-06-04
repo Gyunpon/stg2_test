@@ -11,7 +11,7 @@
 	$pageTitle = $page->post_title;
 	$pageSlug = $page->post_name;
 	$pageParent = $page->post_parent;
-	
+
 	// 最上位親ページスラッグ取得
 	if($pageParent != 0){
 		$current_id = $page->ID;
@@ -25,7 +25,7 @@
 
 		$mostParentsPage = get_post($most_par_id);
 		$mostParentsPageSlug = $mostParentsPage->post_name;
-		
+
 		$pageSlug .= ' '.$mostParentsPageSlug.'_child';
 	}
 ?>
@@ -59,31 +59,31 @@ $pageNum_article = 2;
 
 <section id="page_agenda" class="sec sec_agenda">
 	<div class="inner_base">
-		<h2 class="title_thin">
-			<span class="title_thin_img white">
-				<h2>アジェンダ</h2>
-			</span>
-		</h2>
+		<div class="sub_title_thin">
+			<h1 class="sub_main_title">Agenda
+			<span class="sub_title_thin_img">アジェンダ</span>
+			</h1>
+		</div>
 
 		<p class="title_thin_subtitle">重点的に取り組む議題を「アジェンダ」としてまとめました。</p>
-		<p class="title_thin_subtitle_s mb-30">「日本の課題解決」「国際競争力の向上」「SDGsへの貢献」をゴールとします。随時、新たなアジェンダを追加していきます。</p>
-		
-		
-		
+		<p class="title_thin_subtitle_s mb-40 mb-30">「日本の課題解決」「国際競争力の向上」「SDGsへの貢献」をゴールとします。随時、新たなアジェンダを追加していきます。</p>
+
+
+
 		<div id="agendaArchive">
 			<?php get_template_part('inc/layout_agenda_taxArchive'); ?>
 		</div><!-- agendaArchive -->
-		
+
 		<div id="agendaArchivePager">
 			<?php get_template_part('inc/layout_page_taxArchive_pager'); ?>
 		</div><!-- agendaArchive -->
-		
-		
-		
+
+
+
 	</div>
 </section>
-	
-	
+
+
 	<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

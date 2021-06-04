@@ -4,7 +4,7 @@
 		'title_reply' => '',
 		'comment_notes_before' => '',
 		'logged_in_as' =>'',
-		'must_log_in' => '<p class="must-log-in">コメントを投稿するには<a class="popup-modal" href="#modalLoginWrap">ログイン</a>してください。</p>',
+		'must_log_in' => '<p class="must-log-in">コメントを投稿するには<a class="popup-modal" href="#modalLoginWrap">ログイン</a>が必要です。</p>',
 		'fields' => array(
 			'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
 			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></p>',
