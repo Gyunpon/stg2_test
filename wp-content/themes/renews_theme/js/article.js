@@ -68,12 +68,18 @@ $(document).ready(function(){
 			}
 			//600px以下の場合
 		} else {
-			if( ($(window).scrollTop() > navShowOffset)){
+			if( ($(window).scrollTop() > navShowOffset) && ($(window).scrollTop() < footOffset)){
 				// 特定の要素を超えた
 				$('#sideFixShare').addClass('active');
 			}else{
 				$('#sideFixShare').removeClass('active');
 			}
+//			if( ($(window).scrollTop() > navShowOffset)){
+//				// 特定の要素を超えた
+//				$('#sideFixShare').addClass('active');
+//			}else{
+//				$('#sideFixShare').removeClass('active');
+//			}
 		};
 		
 		

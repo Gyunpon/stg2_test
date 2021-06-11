@@ -1,23 +1,5 @@
-/***** 新CSSエリア（統合作業エリア） 2021/06/10以降 *****/
-.wrapper {
-  background-color: #fff !important;
-}
+/***** 新CSSエリア（統合作業エリア） 2021/06/10以降 *****/ 
 
-/* 2021/06/11 黒澤 追加 */
-
-.info_detail {
-  background-color: #fff;
-}
-
-/* 2021/06/11 黒澤 追加 */
-.info-img img {
-  max-width: 100%;
-}
-
-/* 2021/06/11 黒澤 追加 */
-#faq {
-  padding-bottom: 50px;
-}
 
 @media only screen and (min-width: 768px) {
 .textbox.middle {
@@ -26,14 +8,14 @@
   }
 }
 
-/***** 新CSSエリア（統合作業エリア） END ***************/
+/***** 新CSSエリア（統合作業エリア） END ***************/ 
 
 
 
 /***** 旧CSSエリア 2021/06/10以前 ********************/
 /* common */
 .series_name {
-  display: inline-block !important;
+	display: inline-block !important;
   border: 1px solid #2c76a4;
   background-color: #fffdf5;
   color: #2c76a4; }
@@ -49,7 +31,7 @@
 .title_big, .title_middle {
   font-family: Noto Sans JP, Helvetica, sans-serif;
   font-weight: 400;
-  color: #202020;
+  color: #202020; 
 }
 
 .title_big {
@@ -132,5 +114,5 @@
 
 /* search */
 .articleListStyle .textbox > .search_series_name_link{
-  display: none;
+	display: none;
 }

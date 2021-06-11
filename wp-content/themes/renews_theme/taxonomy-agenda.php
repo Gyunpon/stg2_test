@@ -61,9 +61,9 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 				</div>
 				<div class="text_intro_head_content color_green">
 					<!-- アジェンダダグの＃位置 2021/04/15 井上削除-->
-					<span class="fw_600">「<?php echo $archivePageName; ?>」というアジェンダについて考えていきます。</span>
-					<?php if($termDescription){echo $termDescription;} ?>
-				</div>
+					<div class="text_desc mb-30">「<?php echo $archivePageName; ?>」というアジェンダについて考えていきます。</div>
+					<span><?php if($termDescription){echo $termDescription;} ?></span>
+				
 					<div class="wrap_switch">
 						<?php if( is_user_logged_in() ) : ?>
 						<span class="articleFollow switch-button openg <?php if($follow_check == 'true'){echo ' open';} ?>" data-taxonomy="agenda_follow" data-uid="<?php echo $uid; ?>" data-taxonomy_id="<?php echo $taxonomy_id; ?>">
@@ -75,6 +75,7 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 						</a>
 						<?php endif; ?>
 					</div>
+				</div>
 			</div>
 		</div>
 

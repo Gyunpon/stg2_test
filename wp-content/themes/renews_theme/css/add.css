@@ -491,31 +491,10 @@
 
 
 @media only screen and (max-width: 1160px) {
-/*1029
-	.articleListStyle.wrap_article_middle.grid {
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0 5%;
-  }
-*/
 	.articleListStyle.wrap_article_middle.grid .article_middle_img{
 		max-width: 360px;
 		width: 100%;
 	}
-}
-@media only screen and (max-width: 1040px){
-	.articleListStyle.wrap_article_middle.grid {
-		-ms-grid-columns: (1fr)2;
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-@media only screen and (max-width: 767px) {
-	.articleListStyle.wrap_article_middle.grid {
-    -ms-grid-columns: (1fr)1;
-    grid-template-columns: repeat(1, 1fr);
-    padding-bottom: 50px;
-  }
 }
 
 
@@ -1077,10 +1056,6 @@
   right: 50px !important;
 }
 
-/* フォローボタン agenda,series */
-#agenda_detail .wrap_switch {
-	margin-top: 20px; /* 2021/05/10 井上修正 */
-}
 
 /* agenda */
 .wrap_text_agenda .title_avatar {
@@ -1258,11 +1233,14 @@ header .userIcon {
 
 /* Pager */
 /* ------------------------------------------------- */
-.pagerArea {
+.pagerArea{
+	width: 100%;
+  padding-top: 50px !important;
+	margin-top: 0 !important;
+	margin-bottom: 50px !important; /* 2021/06/11 黒澤 追加 */
+	font-size: 0;
   text-align: center;
-  font-size: 0px;
-/*  margin-left: 5%;*/
-  margin-bottom:5%;
+	overflow: hidden;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1316,7 +1294,7 @@ header .userIcon {
 }
 
 .pagerArea a.current, .pagerArea span.current {
-  background-color: #2c76a4;
+  background-color: #b0ad9e;
   color: #fff;
 }
 
@@ -3025,22 +3003,6 @@ ul.link_list li:before {
 }
 
 /* 2020/12/01 ページャー */
-.pagerArea{
-	width: 100%;
-	padding: 0 0 50px !important;
-	margin-top: 0 !important;
-	margin-bottom: 0 !important;
-	font-size: 0;
-	overflow: hidden;
-	@include box-sizing();
-}
-/* @media only screen and (max-width: 768px) {
-	.pagerArea{
-		margin-top: 30px !important;
-		margin-bottom: 0 !important;
-	}
-} */
-
 .pagerArea:before, .pagerArea:after{
 	display: none !important;
 }
@@ -3063,12 +3025,14 @@ ul.link_list li:before {
 	color: #666 !important;
 }
 .pagerArea a.current, .pagerArea span.current{
-	background-color: #3ba1da;
+	background-color: #b0ad9e !important;
 	color: #fff;
 }
 .pagerArea a:hover, .pagerArea span:not(.current):hover{
 	background-color: transparent !important;
-	color: #666 !important;
+  opacity: 0.7;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 .pagerArea a.dots, .pagerArea span.dots{
 	color: #666 !important;
@@ -3082,17 +3046,13 @@ ul.link_list li:before {
 	width: auto !important;
 	height: auto !important;
 	line-height: 1 !important;
-	/*height: 34px;*/
-	/*line-height: 38px;*/
 	font-family: "FontAwesome" !important;
 	font-size: 20px;
 	display: block;
-	vertical-align: middle !important;
 	transform: translate(-50%, -50%);
 	position: absolute;
-	top: 50%;
+	top: 52%;
 	left: 50%;
-	@include box-sizing();
 }
 .pagerArea a.prev:before{
 	content: "\f104";
@@ -3115,13 +3075,7 @@ ul.link_list li:before {
 	margin-bottom: 0 !important;
 }
 .um-directory .um-members-pagination-box{
-	margin-top: 50px !important;
 	margin-bottom: 0 !important;
-}
-@media only screen and (max-width: 768px) {
-	.um-directory .um-members-pagination-box{
-		margin-top: 30px !important;
-	}
 }
 
 /* 2021/06/02 井上 */
@@ -3160,7 +3114,7 @@ ul.link_list li:before {
 
 .um-directory .um-members-pagination-box .um-members-pagi{
 	display : flex !important;
-  padding-bottom: 50px !important;
+  padding-top: 50px !important;
 }
 
 .circle-btn >a.for_pc {
@@ -3181,15 +3135,16 @@ ul.link_list li:before {
 }
 
 
-/* 2020/12/08 info Site */
+/* 2020/12/08 info Site
 #info_top_intro, #info_archive_intro{
 	padding-bottom: 0 !important;
-}
+} */
 
 /* 2020/12/08 marginSetting */
 /*#page_agenda{
 	padding-bottom: 0 !important;
 }*/
+
 #page_agenda #agendaArchivePager .pagerArea{
 	margin-top: 35px !important;
 }
@@ -3216,36 +3171,9 @@ ul.link_list li:before {
 }
 
 /* 2021/06/02 井上 大規模改修 */
-.wrapper{
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 125px;/*←footerの高さ*/
-  box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
-}
-.main{
-	padding-bottom: 50px !important;
-}
-
-/*footer {
-	position: static;
-}*/
 
 @media only screen and (max-width: 767px) {
-	.wrapper{
-    padding-bottom: 150px;/*←footerの高さ*/
-	}
-	/*footer {
-		position: static;
-	}*/
 	#bookmark .mypageContent{
-		padding-bottom: 0 !important;
-	}
-
-	/* #article >.inner_base{
-		padding-bottom: 0 !important;
-	} */
-
-	.sec_renewer_detail{
 		padding-bottom: 0 !important;
 	}
 
@@ -3257,18 +3185,13 @@ ul.link_list li:before {
 	}
 }
 
-
-
 #wrap.topPage .sec_renewer .um-directory .um-members-pagination-box{
 	margin-top: 0 !important;
 }
-#wrap.topPage .main{
-	padding-bottom: 0 !important;
-}
+
 
 
 /* RN20210108 YouTube埋め込み用 */
-
 .youtube {
   position: relative;
   width: 100%;

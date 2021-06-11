@@ -180,6 +180,32 @@ function test_save_pre($content){
 
 	return $content;
 }
+/*-------------------------------------------------------------------------------*/
+/* Webp対応 2021/06/11 */
+//* WebP File Upload
+function add_file_types_to_uploads( $mimes ) {
+	$mimes['webp'] = 'image/webp';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'add_file_types_to_uploads' );
+
+//* WebP image thumbnail display on media　Library
+function webp_is_displayable($result, $path) {
+    if ($result === false) {
+        $displayable_image_types = array( IMAGETYPE_WEBP );
+        $info = @getimagesize( $path );
+ 
+        if (empty($info)) {
+            $result = false;
+        } elseif (!in_array($info[2], $displayable_image_types)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+    }
+    return $result;
+}
+add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
 
 /*-------------------------------------------------------------------------------*/
 /* ビジュアルエディタ禁止 */
@@ -1171,8 +1197,8 @@ add_action('init', 'disable_author_archive_query');
 
 
 
-
-add_filter( 'wp_lazy_loading_enabled', '__return_false' );
+//LazyLoad機能のオフ
+//add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
 
 //新しい管理画面を追加//

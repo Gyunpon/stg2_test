@@ -43,7 +43,7 @@ if(strpos($nowUri,'password') !== false){
 				
 				<?php if($pageFlg == 'memberTop'): ?>
 				<div class="mypageTitleBlock">
-					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notice.png" alt="" /></div>
+					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notice.jpg" alt="通知" /></div>
 					<div class="mypageTitleArea">
 						<h2 class="mypageTitle"><?php the_title(); ?></h2>
 						<div class="pageCatch">
@@ -58,7 +58,7 @@ if(strpos($nowUri,'password') !== false){
 				
 				<?php if($pageFlg == 'password'): ?>
 				<div class="mypageTitleBlock">
-					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/password.png" alt="" /></div>
+					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/password.jpg" alt="パスワード" /></div>
 					<div class="mypageTitleArea">
 						<h2 class="mypageTitle">パスワード変更</h2>
 						<div class="pageCatch">
@@ -69,7 +69,7 @@ if(strpos($nowUri,'password') !== false){
 				
 				<?php elseif($pageFlg == 'webnotifications'): ?>
 				<div class="mypageTitleBlock">
-					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notice.png" alt="" /></div>
+					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notice.jpg" alt="通知設定" /></div>
 					<div class="mypageTitleArea">
 						<h2 class="mypageTitle">通知設定</h2>
 						<div class="pageCatch">
@@ -80,7 +80,7 @@ if(strpos($nowUri,'password') !== false){
 				
 				<?php elseif($pageFlg == 'notifications'): ?>
 				<div class="mypageTitleBlock">
-					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notifications.png" alt="" /></div>
+					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notifications.jpg" alt="メール受信設定" /></div>
 					<div class="mypageTitleArea">
 						<h2 class="mypageTitle">メール通知</h2>
 						<div class="pageCatch">

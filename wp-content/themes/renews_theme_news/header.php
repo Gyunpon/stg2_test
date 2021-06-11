@@ -4,8 +4,8 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="format-detection" content="telephone=no" />
-
-
+	
+	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169936877-1"></script>
 	<script>
@@ -14,41 +14,40 @@
 		gtag('js', new Date());
 		gtag('config', 'UA-169936877-1');
 	</script>
-
-
+	
+	
 	<!-- favicon -->
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon/favicon.ico" />
 	<!-- apple-touch-icon -->
 	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-touch-icon.png" />
-
+	
 	<link rel="author" href="https://www.hatena.ne.jp/panda07/" />
-
+	
 	<?php if(is_tablet()): ?>
 	<meta name="viewport" content="width=1200" />
 	<?php else: ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<?php endif; ?>
-
+	
 	<?php if(is_home() || is_front_page()): ?>
 	<title><?php bloginfo("name"); ?></title>
 	<?php else: ?>
 	<title><?php wp_title(); ?></title>
 	<?php endif; ?>
-
-
+	
+	
 	<!-- base -->
 	<script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
+	
 	<!-- animation -->
-	<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<!--<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>-->
 	<!-- UIkit CSS -->
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+	<!--<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />-->
 	<!-- UIkit JS -->
-	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
-	<!-- 環境移行時に差し替え -->
-<!--	<script src="//kit.fontawesome.com/55b5b4c129.js" crossorigin="anonymous"></script>-->
+	<!--<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>-->
+
 	<!-- base -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/all.min.css" rel="stylesheet" media="all" />
@@ -58,17 +57,20 @@
 	<link href="<?php echo get_template_directory_uri(); ?>/css/magnific-popup.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery.magnific-popup.min.js"></script>
 
-
 	<!-- add -->
-	<link href="//fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap" rel="stylesheet">	
 	<?php if(is_home() || is_front_page()): ?>
-<!--	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />-->
-
+	<!--<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />-->
+	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/slick.min.js"></script>
+	
+	<!-- slick -->
+	<!--<script src="<?php echo get_template_directory_uri(); ?>/js/libs/slick.min.js"></script>
+	<link href="<?php echo get_template_directory_uri(); ?>/css/slick.css" rel="stylesheet" media="all" />-->
 
-	<link href="<?php echo get_template_directory_uri(); ?>/css/slick.css" rel="stylesheet" media="all" />
-	<script src="<?php echo get_template_directory_uri(); ?>/js/top.js"></script>
+	<!-- top.js -->
+	<!--<script src="<?php echo get_template_directory_uri(); ?>/js/top.js"></script>-->
+
 	<?php else: ?>
 	<?php endif; ?>
 
@@ -86,11 +88,11 @@
 	<?php if(is_page('policy')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/privacy.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
+	
 	<?php if(is_404()): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/error.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
-
+	
 	<?php if(!is_front_page() && !is_archive() && !is_tag() && !is_single()): ?>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/about.js"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/contact.js"></script>
@@ -103,25 +105,19 @@
 	<?php else: ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/lower1.min.css" rel="stylesheet" media="all" />
 	<?php endif ; ?>
-
-
-
-
+	
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/privacy.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/contact.min.css" rel="stylesheet" media="all" />
 
-
-
 	<?php if(is_single()): ?>
-<!--	<script src="<?php echo get_template_directory_uri(); ?>/js/article.js"></script>-->
-
+	
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/article.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/single.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/single-articles.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/article.js"></script>
 	<?php endif ; ?>
-
+	
 
 	<link href="<?php echo get_template_directory_uri(); ?>/css/information.css" rel="stylesheet" media="all" />
 
@@ -129,7 +125,7 @@
 
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/imgLiquid-min.js"></script>
 
-
+	
 	<!-- SNSシェアボタン -->
 	<!-- TW -->
 	<script>
@@ -150,13 +146,13 @@
 	<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async">
 		{lang: "ja"}
 	</script>
-
+	
 	<?php wp_head(); ?>
-
+	
 </head>
 
 	<body <?php if(is_page('series')){echo 'id="column"';}elseif(is_tax('series')){echo 'id="ajenda_detail"';}elseif(is_page_template('page-templates/renewers_detail.php')){echo 'id="renewer_detail"';} if(!is_page('17')){echo ' class="grecaptchaHide"';} ?>>
-
+		
 
 		<div class="wrapper <?php  if(!is_user_logged_in()){echo ' noLogin';} ?> " id="wrap">
 			<header>
@@ -204,25 +200,6 @@
 						</ul>
 					</nav>
 
-					<div id="headerShareLink" class="uk-flex-top" uk-modal>
-						<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-							<?php
-							//元となるテキスト
-							$text = 'Renews | ';
-							$siteURL = rawurlencode(network_home_url());
-							//URLエンコード処理
-							$encoded = rawurlencode( $text ) ;
-							?>
-							<button class="uk-modal-close-default" type="button" uk-close></button>
-							<p class="shareBtnTitle"><img src="<?php echo get_template_directory_uri(); ?>/images/about/about.png" alt="RENEWS" /><span>をシェアする</span></p>
-							<ul class="shareBtnList">
-								<li><a href="//twitter.com/share?url=<?php echo network_home_url(); ?>&text=<?php echo $encoded; ?>" class="shareBtn twitter share_popup" target="_blank"><i class="um-faicon-twitter"></i><span>Twitter</span></a></li>
-								<li><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo $siteURL; ?>" class="shareBtn facebook share_popup" target="_blank"><i class="um-faicon-facebook-square"></i><span>Facebook</span></a></li>
-								<li><a href="//social-plugins.line.me/lineit/share?url=<?php echo $siteURL; ?>" class="shareBtn line share_popup" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/line_wh.svg" alt="LINE" /><span>LINE</span></a></li>
-								<li><a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo $siteURL; ?>&title=<?php echo $encoded; ?>" class="shareBtn hatena share_popup" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/hatena_wh.svg" alt="" /><span>はてなブックマーク</span></a></li>
-							</ul>
-						</div>
-					</div>
 					<div class="search__box for_pc">
 						<div class="search-box">
 							<form role="search" method="get" id="searchform" class="search-form" action="<?php echo network_home_url( '/' ); ?>">
@@ -239,7 +216,7 @@
 					</div>
 
 					<div class="sign_wrap">
-					<?php
+					<?php 
 					$user = wp_get_current_user();
 					$user_roles = $user->roles[0];
 //					var_dump($user);
@@ -357,7 +334,7 @@
 									</div><!-- inner_menu_sp_scroll -->
 
 									<div class="footer_bottom flex">
-										<?php
+										<?php 
 										//元となるテキスト
 										$text = 'Renews | ';
 										$siteURL = rawurlencode(network_home_url());
@@ -406,9 +383,9 @@
 			</header>
 
 			<div id="navOverlay"></div>
-
-
-
+		
+		
+		
 		<main class="main">
 			<div class="wrap_content">
 				<article class="content">

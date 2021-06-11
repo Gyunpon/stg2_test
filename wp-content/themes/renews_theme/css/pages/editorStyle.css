@@ -1,0 +1,216 @@
+@charset "UTF-8";
+/* Reset */
+/*-----------------------------------------------*/
+html, body { border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: -apple-system, BlinkMacSystemFont, "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; vertical-align: baseline; margin: 0; padding: 0; }
+
+@media all and (-ms-high-contrast: none) { html, body { font-family: "メイリオ",Meiryo,"游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","MS PGothic",sans-serif; } }
+
+body { line-height: 1; }
+
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: -apple-system, BlinkMacSystemFont, "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; vertical-align: baseline; margin: 0; padding: 0; }
+
+@media all and (-ms-high-contrast: none) { div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { font-family: "メイリオ",Meiryo,"游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","MS PGothic",sans-serif; } }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+ol, ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+table { width: 100%; border-collapse: collapse; border-spacing: 0px; }
+
+a { text-decoration: none; color: #000; }
+
+a.decoration { text-decoration: underline; }
+
+a.decoration:visited, a.decoration:focus, a.decoration:active { text-decoration: underline; outline: 0; }
+
+a:visited, a:focus, a:active { text-decoration: none; color: #000; outline: 0; }
+
+/* clearfix */
+/*-----------------------------------------------*/
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* html .clearfix { zoom: 1; }
+
+*:first-child + html .clearfix { zoom: 1; }
+
+/*-----------------------------------------------*/
+/* Reset */
+/* tinymce */
+/*------------------------------------------------*/
+#tinymce { width: 960px; line-height: 1.8; padding: 30px; margin: 0 auto; /* text */ /* -------------------------------------------------- */ /* img */ /* -------------------------------------------------- */ /* box */ /* -------------------------------------------------- */ /* list */ /* -------------------------------------------------- */ /* movie */ /* -------------------------------------------------- */ /* table */ /* -------------------------------------------------- */ }
+
+/* h3〜h6のエディタ上のスタイルをオフ 2021/05/14 井上
+#tinymce h3 { line-height: 1.4; padding: 0.6em 0.5em; font-size: 20px; font-weight: bold; background-color: #eaeaea; }
+
+@media only screen and (max-width: 767px) { #tinymce h3 { font-size: 4vw; } }
+
+#tinymce h4 { line-height: 1.6; padding: 0 0.5em 0.5em 2em; font-size: 20px; font-weight: bold; position: relative; border-bottom: 1px solid #ccc; }
+
+@media only screen and (max-width: 767px) { #tinymce h4 { font-size: 4vw; } }
+
+#tinymce h4:before, #tinymce h4:after { content: ''; position: absolute; -webkit-border-radius: 100%; -moz-border-radius: 100%; -ms-border-radius: 100%; -o-border-radius: 100%; border-radius: 100%; }
+
+#tinymce h4:before { width: 18px; height: 18px; top: 0.2em; left: 0.2em; z-index: 2; background-color: #eee; background-color: rgba(150, 150, 150, 0.5); }
+
+#tinymce h4:after { width: 13px; height: 13px; top: 0.7em; left: 0.7em; background-color: #bbb; background-color: rgba(210, 210, 210, 0.5); }
+
+#tinymce h5 { line-height: 1.6; padding-bottom: 0.4em; font-size: 20px; font-weight: bold; border-bottom: 4px solid #eaeaea; position: relative; }
+
+@media only screen and (max-width: 767px) { #tinymce h5 { font-size: 4vw; } }
+
+#tinymce h5:after { width: 20%; height: 4px; content: ''; background-color: #2c76a4; position: absolute; bottom: -4px; left: 0; z-index: 2; }
+
+#tinymce h6 { line-height: 1.6; padding-bottom: 0.4em; font-size: 20px; font-weight: bold; border-bottom: 1px solid #ccc; }
+
+@media only screen and (max-width: 767px) { #tinymce h6 { font-size: 4vw; } }
+*/
+
+#tinymce a { line-height: 1.8; color: #2c76a4; text-decoration: underline; }
+
+#tinymce a:visited, #tinymce a:focus, #tinymce a:active { color: #2c76a4; }
+
+@media only screen and (min-width: 960px) { #tinymce a:hover { text-decoration: none; } }
+
+@media only screen and (max-width: 767px) { #tinymce a { font-size: 3.2vw; } }
+
+#tinymce p:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+#tinymce p.wp-caption-text { color: #8dbda3; font-size: 15px; margin-top: 10px; letter-spacing: .045em; line-height: 1.4; margin-bottom: 25px; }
+
+#tinymce b, #tinymce em, #tinymce strong { font-weight: bold; }
+
+#tinymce em { font-style: italic; }
+
+#tinymce sup, #tinymce sub { font-size: 80%; }
+
+#tinymce sup { vertical-align: super; }
+
+#tinymce sub { vertical-align: sub; }
+
+#tinymce .alignleft { padding-right: 30px; padding-bottom: 0px; float: left; }
+
+@media only screen and (max-width: 767px) { #tinymce .alignleft { padding: 0; padding-bottom: 4%; margin-left: auto; margin-right: auto; float: none; display: block; } }
+
+#tinymce .alignright { padding-left: 30px; padding-bottom: 0px; float: right; }
+
+@media only screen and (max-width: 767px) { #tinymce .alignright { padding: 0; padding-bottom: 4%; margin-left: auto; margin-right: auto; float: none; display: block; } }
+
+#tinymce .aligncenter { padding-bottom: 0px; margin-left: auto; margin-right: auto; clear: both; display: block; }
+
+@media only screen and (max-width: 767px) { #tinymce .aligncenter { padding: 0; padding-bottom: 4%; margin-left: auto; margin-right: auto; float: none; } }
+
+#tinymce hr { width: 100%; height: 1px; border: none; background-color: #2c76a4; display: block; }
+
+#tinymce blockquote p { display: block; line-height: 40px; margin-bottom: 18px; font-size: 20px; font-weight: 400; letter-spacing: .05em; color: #3c7658; }
+
+#tinymce ul { padding-left: 1.2em; list-style: disc; font-size: 16px; }
+
+#tinymce ul li { list-style: disc; }
+
+#tinymce ol { padding-left: 1.2em; list-style: decimal; font-size: 16px; }
+
+#tinymce ol li { list-style: decimal; }
+
+#tinymce li { line-height: 1.8; margin-top: 15px; font-size: 16px; }
+
+@media only screen and (max-width: 767px) { #tinymce li { margin-top: 3%; font-size: 3.2vw; } }
+
+#tinymce li:first-child { margin-top: 0; }
+
+#tinymce iframe, #tinymce video { max-width: 100% !important; }
+
+@media only screen and (max-width: 767px) { #tinymce iframe, #tinymce video { height: 56.25vw !important; } }
+
+#tinymce table { border-collapse: collapse; border-spacing: 0; font-size: 14px; }
+
+#tinymce table th { line-height: 1.8; padding: 20px; border: 1px solid #ccc; font-size: 16px; }
+
+#tinymce table td { line-height: 1.8; padding: 20px; border: 1px solid #ccc; font-size: 16px; }
+
+#tinymce table thead th:first-child, #tinymce table thead td:first-child { border: none; background-color: transparent; }
+
+/*------------------------------------------------*/
+/* エディターに追加するオリジナル・スタイル 2021/05/14 井上追加*/
+/* 黄色マーカー */
+.mymarker-y{
+	background: linear-gradient(transparent 70%,#FFF9C4 0%);
+	font-weight: bold;
+	font-size:16px;
+	line-height:2;
+}
+/* 赤色マーカー */
+.mymarker-r{
+	background: linear-gradient(transparent 70%,#ffcdd2 0%);
+	font-weight: bold;
+	font-size:16px;
+	line-height:2;
+}
+/* 青色マーカー */
+.mymarker-b{
+	background: linear-gradient(transparent 70%,#b3d8fa 0%);
+	font-weight: bold;
+	font-size:16px;
+	line-height:2;
+}
+/* 緑色マーカー */
+.mymarker-g{
+	background: linear-gradient(transparent 70%,#b3fab6 0%);
+	font-weight: bold;
+	font-size:16px;
+	line-height:2;
+}
+
+/* フォントウェイト */
+.weight_500 {
+	font-weight: 500;
+  }
+.weight_600 {
+  font-weight: 600;
+}
+
+/* ボックス（グレー） */
+.rnbox_gray{
+	margin:10px 0;
+	padding:15px;
+	border:#cccccc solid 1px;
+	background-color:#fbfbfb;
+	font: size 15px;
+	border-radius: 3px;
+ 	-moz-border-radius: 3px;
+ 	-webkit-border-radius: 3px;
+}
+
+/* 新設・記事ページの中見出し＆小見出しのスタイル 2021/05/14 井上 */
+.subtitle_large {
+	font-size: 24px;
+	font-weight: 500;
+  }
+.subtitle_small {
+	font-size: 20px;
+	font-weight: 500;
+  }
+
+.h2, .h3 {
+	margin: 10px 0;
+	letter-spacing: .05em;
+	line-height: 1.8;
+	color: #202020;
+}
+@media only screen and (max-width: 767px) {
+	.h2, .h3 {
+		font-size: 19px;
+		letter-spacing: .03em;
+		line-height: 1.5em;
+	}
+}
+
+/* シカケ（図表）見出し */
+.subtitle_chart{
+	font-size: 15px;
+	font-weight: 500;
+	color: #4e4e4e;
+}

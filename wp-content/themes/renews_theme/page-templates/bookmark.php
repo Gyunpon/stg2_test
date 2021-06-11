@@ -44,7 +44,7 @@ $login_user = $login_user->ID;
 		<div id="bookmark_top_intro" class="inner_base">
 
 			<div class="mypageTitleBlock">
-				<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/bookmark.png" alt="" /></div>
+				<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/bookmark.jpg" alt="クリップ" /></div>
 				<div class="mypageTitleArea">
 					<h2 class="mypageTitle"><?php the_title(); ?></h2>
 					<div class="pageCatch">

@@ -44,7 +44,7 @@ $login_user = $login_user->ID;
 	<div class="inner_base">
 
 		<div class="mypageTitleBlock">
-			<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/follow.png" alt="" /></div>
+			<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/follow.jpg" alt="フォロー" /></div>
 			<div class="mypageTitleArea">
 				<h2 class="mypageTitle"><?php the_title(); ?></h2>
 				<div class="pageCatch">
@@ -63,17 +63,11 @@ $login_user = $login_user->ID;
 
 		<div class="followBlockWrap">
 		<div id="renewer" class="followBlock">
-			<div class="sub_title_thin">
+			<div class="sec_title">
 				<h1 class="main_title">Renewer
 				<span class="main_title_jp">リニュアー</span>
 				</h1>
 			</div>
-
-
-
-
-
-
 
 				<?php
 				$rows = $wpdb->get_results("SELECT * FROM ".$wpdb->prefix."um_followers WHERE user_id2 = ".$login_user."");
@@ -142,7 +136,7 @@ $login_user = $login_user->ID;
 
 
 			<div id="agenda" class="followBlock sec_agenda">
-				<div class="sub_title_thin">
+				<div class="sec_title">
 					<h1 class="main_title">Agenda
 					<span class="main_title_jp">アジェンダ</span>
 					</h1>
@@ -213,7 +207,7 @@ $login_user = $login_user->ID;
 										<dt class="icon">
 											<img src="<?php echo $agenda_url; ?>" alt="<?php echo esc_html($taxonomy->name); ?>イメージ"  />
 										</dt>
-										<dd class="agendaTitle">
+										<dd class="title_agenda">
 											<p><?php echo esc_html($taxonomy->name); ?></p>
 										</dd>
 									</dl>
@@ -242,7 +236,7 @@ $login_user = $login_user->ID;
 
 
 			<div id="series" class="followBlock sec_column">
-				<div class="sub_title_thin">
+				<div class="sec_title">
 					<h1 class="main_title">Series
 					<span class="main_title_jp">シリーズ</span>
 					</h1>

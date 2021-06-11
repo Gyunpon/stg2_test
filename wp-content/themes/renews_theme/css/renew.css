@@ -8,35 +8,16 @@ img {
   height: auto;
   max-width: 100%;
 }
-.main {
-  padding-bottom: 0px !important;
-}
-.sec {
-  padding-bottom: 50px;
-}
-.wrap_content {
-  background-color: #f7f7f7;
-}
+
 .fw_500 {
   font-weight: 500;
 }
 .fw_600 {
   font-weight: 600;
 }
-.wrap_article_middle.grid {
-  grid-gap: 30px;
-  padding-bottom: 50px;
-}
 
-/*** ページャー ***/
-.pagerArea {
-  padding: 0 !important;
-}
-.pagerArea a.current, .pagerArea span.current {
-  background-color: #b0ad9e !important;
-}
 
-/*** ヘッダー&フッター ***/
+/*** ヘッダー ***/
 header {
   background-color: #fff;
   height: 67px !important;
@@ -202,10 +183,12 @@ header {
 }
 
 /* 全体の背景 */
-/* wrapperはマイページなど全部がおかしくなるので、いじるの禁止！ */
 /*.wrapper {
   background-color: #F7F7F7;
 }*/
+
+
+
 /************ 共通CSS END ************/
 
 
@@ -293,24 +276,6 @@ header {
 
 
 /************ TOP Page ************/
-/*** 背景色 2021/06/03 ***/
-.topPage .sec_agenda {
-  background-color: #fff;
-}
-
-/*** タイトル改革 2021/06/03 ***/
-/* セクションタイトルエリア(title_thin → sec_title) */
-.sec_title {
-  padding: 20px 0;
-}
-@media only screen and (max-width:767px) {
-  .sec_mv .sec_title {
-    padding-left: 2%;
-  }
-  .topPage .sec_series {
-    padding-bottom: 20px;
-  }
-}
 /* メインタイトル */
 .main_title {
   font-size: 20px;
@@ -330,13 +295,15 @@ header {
   font-weight: 600;
   color: #202020;
   display: inline-block;
-  margin-left: 10px;
+  padding-left: 20px;
 }
 @media only screen and (max-width:767px) {
   .main_title_navi {
     font-size: 13px;
+    padding-left: 10px;
   }
 }
+
 /* 各Pageへのナビ後の矢印 */
 .sec_title:after{
   position: unset;
@@ -347,32 +314,7 @@ svg#arrow {
   vertical-align: middle;
 }
 
-/* メインタイトル矢印
-.topPage .title_thin:not(.sec_keyword .title_thin):before, .topPage .title_thin:not(.sec_keyword .title_thin):after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 65%;
-  right: 73%;
-  height: 1px;
-  background: #b0ad9e;
-  z-index: 999;
-}
-.topPage .title_thin:not(.sec_keyword .title_thin):before {
-  width: 60px;
-  transform: translate(30px, 0px);
-}
-.topPage .title_thin:not(.sec_keyword .title_thin):after{
-  width: 15px;
-  transform-origin: right center;
-  transform: translate(30px, 0px) rotate(25deg);
-}
-@media only screen and (max-width:767px) {
-  .topPage .title_thin:not(.sec_keyword .title_thin):before, .topPage .title_thin:not(.sec_keyword .title_thin):after {
-    right: 20%;
-  }
-}
-メインタイトル矢印 ここまで */
+
 
 
 /*** 大コンポーネント > スライダー 2021/05/18 井上***/
@@ -841,13 +783,6 @@ svg#arrow {
 /************ リストPage ************/
 /*** リストPage共通 ***/
 
-/* Pageタイトルエリア(title_thin → sec_title) */
-.sub_title_thin { /* あとで削除 */
-  max-width: 1160px;
-  margin-bottom: 0;
-  padding: 30px 0 10px 0;
-}
-
 /* 各Pageのタイトル = TOPと共通*/
 .main_title_jp {
   font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
@@ -1013,7 +948,7 @@ svg#arrow {
   color: #fff;
   background-color: #b0ad9e;
   padding: 2px 7px 3px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
   margin-top: 0;
 }
@@ -1040,57 +975,26 @@ svg#arrow {
     font-size: 14px;
   }
 
-  .wrap_agenda .agenda:not(:last-child) {
+  /*.wrap_agenda .agenda:not(:last-child) {
     margin: 0 0 50px;
   }
   .wrap_agenda .agenda {
     margin-bottom: 50px;
-  }
+  }*/
 }
 
 /* アジェンダ詳細Page */
-#agenda_detail .head_content .text_intro_head_content {
-  /* font-family: YakuHanMP_Noto, 'Shippori Mincho', serif; */
-  color: #4e4e4e;
-  padding: 30px 0;
-}
-#agenda_detail .wrap_switch {
-  margin-top: 0;
-  display: flex;
-  align-items: flex-end;
-  padding: 0 30px 20px 30px;
-}
+
 #agenda_detail .content_mv {
   margin-top: 0;
 }
 
-@media only screen and (max-width: 767px) {
-  #agenda_detail .head_content .text_intro_head_content {
-    padding: 30px 20px;
-  }
-  #agenda_detail .wrap_switch {
-    align-items: unset;
-    justify-content: flex-end;
-    padding: 0 20px 20px 0;
-  }
-}
 
-#agenda_detail .head_content .wrap_switch .switch {
-  background-color: #2c76a4;
-}
 
 /* アジェンダ ここまで */
 
 
 /* シリーズ一覧 */
-.sec_column {
-  background-color: #F7F7F7;
-  padding-bottom: 70px;
-}
-.sec_series{
-  background-color: #F7F7F7;
-}
-
 .list_column {
   max-width: 100%;
   border: none;
@@ -1132,20 +1036,6 @@ svg#arrow {
 /* シリーズ覧 ここまで */
 
 /* リニュアー */
-
-#renewer .sec {
-  padding-bottom: 0;
-}
-
-.sec_renewer {
-  background-color: #fff;
-}
-
-/*
-.um-directory {
-  margin-top: 50px;
-}
-*/
 
 .um-directory .um-members-wrapper .um-members.um-members-list .um-member .um-member-card-container .um-member-card .um-member-card-actions {
   margin-left: -20px;
@@ -1375,7 +1265,7 @@ svg#arrow {
 }
 
 .head_article_detail {
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 /* 本文 */
@@ -1497,9 +1387,7 @@ svg#arrow {
 
 
 /************ アジェンダページ CSS ************/
-.sec_agenda {
-  background-color: #F7F7F7;
-}
+
 
 #agendaArchive .target_agenda {
   padding: 10px;
@@ -1539,12 +1427,18 @@ svg#arrow {
   display: flex;
   justify-content: flex-end;
 }
-
 @media only screen and (max-width: 767px) {
   #agendaArchive .text_agenda {
     font-size: 14px!important;
   }
 }
+
+.see_more:hover{
+  opacity: 0.7;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
 /************ アジェンダページ CSS ここまで ************/
 
 
@@ -1821,7 +1715,6 @@ svg#arrow {
 .followViewArea .followBlockWrap {
   max-width: 720px;
   margin: 0 auto;
-  margin-top: 20px;
 }
 
 .bookmarkPage .wrap_social {
@@ -1832,9 +1725,7 @@ svg#arrow {
   max-width: 720px;
 }
 
-#bookmark_top_contentArticle .grid {
-  grid-template-columns: repeat(2, 1fr);
-}
+
 
 #bookmark_top_contentArticle .title_middle {
   font-size: 14px;
@@ -1876,12 +1767,8 @@ svg#arrow {
   background-image: url(../images/common/ic_arrow_blue.svg);
 }
 
-.followViewArea #agenda .followList li .followTitleArea {
-  background-color: #dde5df;
-}
-.agendaTitle {
-  color: #B0AD9E;
-}
+
+
 
 .profileArea .um {
   margin-bottom: 0 !important;
@@ -1910,21 +1797,6 @@ svg#arrow {
   padding-bottom: 0;
 }
 
-/* .sec_renewer_detail.memberProfPage.myProfPage .inner_base {
-  background-color: #fff;
-} */
-
-  .followViewArea .followList.grid {
-      -ms-grid-columns: 1fr 2;
-      grid-template-columns: repeat(2, 1fr);
-  }
-
-@media only screen and (min-width: 768px) {
-  .followViewArea .followList li {
-    margin: 10px 20px;
-    margin-bottom: 40px;
-  }
-}
 
 @media only screen and (max-width: 767px) {
   .profEditTxtWrap {
@@ -1940,10 +1812,6 @@ svg#arrow {
 
   .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox {
     padding: 5px 10px;
-  }
-
-  #bookmark_top_contentArticle .grid, .followViewArea .followList.grid {
-    grid-template-columns: repeat(1, 1fr);
   }
 
   .mypageContent .noFollow {
@@ -2020,4 +1888,3 @@ svg#arrow {
   }
 }
 /************ 404ページ ここまで ************/
-

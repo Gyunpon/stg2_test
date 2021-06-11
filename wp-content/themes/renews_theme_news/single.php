@@ -30,7 +30,7 @@ $encodedURL = json_encode(get_permalink());
 
 
 
-<section class="sec sec_article_detail">
+<section class="sec sec_article_detail info_detail">
 
 	<div id="sideFixShare">
 		<div class="snsShare fixBlock for_pc">

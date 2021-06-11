@@ -185,14 +185,16 @@
 
 		<div class="sec_title">
 			<h2 class="main_title">New Articles</h2>
-			<a href="<?php echo home_url(); ?>/article/">
-				<span class="main_title_navi">すべての新着へ</span>
-				<!-- 矢印SVG -->
-				<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+			<div class="see_more">
+				<a href="<?php echo home_url(); ?>/article/">
+					<span class="main_title_navi">すべての新着へ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
 					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
-				</svg>
-			</a>
+					</svg>
+				</a>
+			</div>
 		</div>
 
 		<?php
@@ -384,14 +386,16 @@
 
 		<div class="sec_title">
 			<h2 class="main_title">Agenda</h2>
-			<a href="<?php echo home_url(); ?>/agenda/">
-				<span class="main_title_navi">すべてのアジェンダへ</span>
-				<!-- 矢印SVG -->
-				<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+			<div class="see_more">
+				<a href="<?php echo home_url(); ?>/agenda/">
+					<span class="main_title_navi">すべてのアジェンダへ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
 					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
-				</svg>
-			</a>
+					</svg>
+				</a>
+			</div>
 		</div>
 
 		<div class="agenda_slick">
@@ -544,16 +548,17 @@
 	<div class="inner_base">
 		<div class="sec_title">
 			<h2 class="main_title">Series</h2>
+			<div class="see_more">
 			<a href="<?php echo home_url(); ?>/series/">
-				<span class="main_title_navi">すべてのシリーズへ</span>
-				<!-- 矢印SVG -->
-				<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+					<span class="main_title_navi">すべてのシリーズへ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
 					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
-				</svg>
-			</a>
+					</svg>
+				</a>
+			</div>
 		</div>
-
 
 		<div class="content_column column2 flex between">
 			<?php
@@ -672,17 +677,17 @@
 	<div class="inner_base">
 		<div class="sec_title">
 			<h2 class="main_title">Renewer</h2>
+			<div class="see_more">
 			<a href="<?php echo home_url(); ?>/renewers/">
-				<span class="main_title_navi">すべてのリニュアーへ</span>
-				<!-- 矢印SVG -->
-				<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+					<span class="main_title_navi">すべてのリニュアーへ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
 					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
-				</svg>
-			</a>
+					</svg>
+				</a>
+			</div>
 		</div>
-
-		<!-- <div class="content_renewer flex between column3"></div> -->
 
 		<?php echo do_shortcode( '[ultimatemember form_id="149"]' ) ?>
 
@@ -705,15 +710,18 @@ if( $posts ):
 	<div class="inner_base">
 		<div class="sec_title">
 			<h2 class="main_title">Info</h2>
+			<div class="see_more">
 			<a href="<?php echo home_url(); ?>">
-				<span class="main_title_navi">すべてのお知らせへ</span>
-				<!-- 矢印SVG -->
-				<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
- y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
+					<span class="main_title_navi">すべてのお知らせへ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
 					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
-				</svg>
-			</a>
+					</svg>
+				</a>
+			</div>
 		</div>
+
 		<div class="news">
 			<?php foreach( $posts as $val ): ?>
 				<div class="news_cont">
