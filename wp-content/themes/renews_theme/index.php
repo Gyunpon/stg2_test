@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-
+<!--
 <div class="banner-body">
 	<div class="floating-banner">
 	    <a href="https://stg2.renews.jp/recruit/">
@@ -10,7 +10,7 @@
 	    </a>
 	</div>
 </div>
-
+-->
 
 <section class="sec sec_mv">
 	<?php
@@ -18,6 +18,7 @@
 	if( $posts ):
 	?>
 
+	<!-- 2021/04/19 黒澤 追加・編集分 -->
 	<div class="slide_wrap">
 		<div class="content_mv_wrap">
 			<?php foreach( $posts as $val ):
@@ -32,11 +33,6 @@
 				$imageUrl = get_template_directory_uri().'/images/icon/noimg.jpg';
 			}
 
-			//ユーザー
-			//$user_name = get_the_author_meta( 'display_name', $val->post_author );
-			//$renews_id = get_the_author_meta( 'user_login', $val->post_author );
-
-
 			$title = get_the_title( $val );
 
 			$termsArg = array(
@@ -50,12 +46,18 @@
 			//コメント
 			$comments = wp_count_comments( $val );
 			?>
+
 			<div class="slide">
 				<div class="content_mv">
 					<div class="article_main_img imgLiquidFill">
 						<a href="<?php echo get_permalink( $val ); ?>">
-						<img src="<?php echo $imageUrl; ?>" alt="メインビジュアルイメージ" />
+							<img src="<?php echo $imageUrl; ?>" alt="Hero Image" />
 						</a>
+						<!-- アイコン移動 -->
+						<div class="wrap_social color_black flex">
+							<div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $val) ); ?></div>
+						</div>
+						<!-- アイコン移動 ここまで -->
 					</div>
 					<div class="textbox large right_top">
 						<?php if(!empty($series_terms)): ?>
@@ -63,7 +65,7 @@
 						//$series_type = get_field('series_type','series_'.$ct->term_id)[0];
 						$series_link = get_category_link($ct->term_id);
 						?>
-						<a href="<?php echo $series_link; ?>">
+						<a href="<?php echo $series_link; ?>" class="tag_series">
 							<p class="series_name">
 								<?php echo $ct->name; ?>
 							</p>
@@ -71,7 +73,7 @@
 						<?php endforeach; ?>
 						<?php endif; ?>
 
-						<a href="<?php echo get_permalink( $val ); ?>">
+						<a href="<?php echo get_permalink( $val ); ?>" class="top_title">
 							<h2 class="title_large">
 								<?php echo $title; ?>
 							</h2>
@@ -79,27 +81,6 @@
 
 
 						<div class="top_tags">
-							<?php if(!empty($hashtag_terms)): ?>
-							<?php foreach($hashtag_terms as $t_v)://value_hashtag
-							$tag_link = get_category_link($t_v->term_id);
-							$tag_name = $t_v->name;
-
-							//SNSシェアテキスト
-							if($tag_name){
-								$text = 'Renews | 『'.$title.'』 #'.$tag_name.'';
-							}else{
-								$text = 'Renews | 『'.$title.'』';
-							}
-
-							//URLエンコード処理
-							$encoded = rawurlencode( $text ) ;
-							$encodedURL = json_encode(get_permalink());
-
-							?>
-							<a href="https://twitter.com/share?url=<?php echo get_permalink( $val ); ?>&text=<?php echo $encoded; ?>" class="share_popup tag_value border_value"><?php echo $tag_name; ?></a>
-							<?php endforeach; ?>
-							<?php endif; ?>
-							<br>
 							<?php if(!empty($agenda_terms)): ?>
 							<?php
 							$postId = $val;
@@ -188,59 +169,47 @@
 							$all_user_stockPost = get_users( $args );
 							$stockNum = count($all_user_stockPost);
 							?>
-
-
-							<div class="wrap_social color_black flex">
-								<div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $val) ); ?></div>
-								<a class="socialbox commentbox flexSocialbox" href="<?php echo get_permalink( $val ); ?>?move=commentsAreaWrap">
-									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-										<path fill="none" stroke="#b0ad9e" stroke-width="1.5" class="icon_comm" data-name="icon_comm" d="M28.1,31.9c-1.4,0-2.8-0.2-4.2-0.7s-2.2-1.9-2-3.4v-0.2h-7.5c-2.2,0-4.1-1.8-4.1-4.1V15c0-2.2,1.8-4.1,4.1-4.1 l0,0h14.4c2.2,0,4.1,1.8,4.1,4.1v8.6c0,2.2-1.8,4.1-4.1,4.1h-1.7V28c0,1,0.6,2,1.5,2.6l2.2,1.4L28.1,31.9L28.1,31.9z"/>
-									</svg>
-									<span class="commCount"><?php echo $comments->total_comments; ?></span>
-								</a>
-							</div>
 					</div>
 				</div><!-- /.content_mv -->
-			</div>
+			</div><!-- /.slide -->
 			<?php endforeach; ?>
 		</div><!-- /.content_mv_wrap -->
 		<div class="arrows"></div>
 	</div>
+
+<!-- 追加分ここまで -->
 	<?php endif; ?>
 
-
-	<?php
-	//ブログIDが「2」の子サイト
-	switch_to_blog(2);
-	?>
-	<?php
-	$posts = get_field('top_info','option');
-	if( $posts ):
-	?>
-	<div class="news">
-		<?php foreach( $posts as $val ): ?>
-		<span style="margin:0px 20px;">
-			<a href="<?php echo get_permalink( $val->ID ); ?>"><?php echo get_the_title( $val->ID ); ?></a>
-		</span>
-		<?php endforeach; ?>
-	</div>
-	<?php endif; ?>
-	<?php restore_current_blog(); ?>
 
 	<div class="inner_base">
+
+		<div class="sec_title">
+			<h2 class="main_title">New Articles</h2>
+			<div class="see_more">
+				<a href="<?php echo home_url(); ?>/article/">
+					<span class="main_title_navi">すべての新着へ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
+					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
+					</svg>
+				</a>
+			</div>
+		</div>
+
 		<?php
 		$posts = get_field('top_article_option','option');
 		if( $posts ):
 		?>
 		<div class="content_article">
-			<div class="wrap_article_middle flex colum2">
+			<div class="wrap_article_middle grid colum2">
 				<?php foreach( $posts as $val ):
 				$postId = $val;
 				// アイキャッチ
 				$thumbnail_id = get_post_thumbnail_id($val);
 				$imageUrl = '';
 				if($thumbnail_id){
-					$image = wp_get_attachment_image_src($thumbnail_id,'full');
+					$image = wp_get_attachment_image_src($thumbnail_id,'large');
 					$imageUrl = $image[0];
 				}else{
 					$imageUrl = get_template_directory_uri().'/images/icon/noimg.jpg';
@@ -276,6 +245,11 @@
 								<img src="<?php echo $imageUrl; ?>" alt="" />
 							</a>
 						</div>
+						<!-- アイコン移動 -->
+						<div class="wrap_social color_black flex">
+							<div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $postId) ); ?></div>
+						</div>
+						<!-- アイコン移動 ここまで -->
 					</div>
 
 
@@ -285,7 +259,7 @@
 						//$series_type = get_field('series_type','series_'.$ct->term_id)[0];
 						$series_link = get_category_link($ct->term_id);
 						?>
-						<a href="<?php echo $series_link; ?>">
+						<a href="<?php echo $series_link; ?>" class="tag_series">
 							<span class="series_name">
 								<?php echo $ct->name; ?>
 							</span>
@@ -294,35 +268,12 @@
 						<?php endif; ?>
 
 
-						<a href="<?php echo get_permalink( $val ); ?>">
-							<h2 class="title_middle"><?php echo $title; ?></h2>
+						<a href="<?php echo get_permalink( $val ); ?>" class="top_title">
+							<h3 class="title_middle"><?php echo $title; ?></h3>
 						</a>
 
 
 						<div class="top_tags">
-							<?php if(!empty($hashtag_terms)): ?>
-							<?php foreach($hashtag_terms as $t_v)://value_hashtag
-							$tag_link = get_category_link($t_v->term_id);
-							$tag_name = $t_v->name;
-
-
-							if($tag_name){
-								$text = 'Renews | 『'.$title.'』 #'.$tag_name.'';
-							}else{
-								$text = 'Renews | 『'.$title.'』';
-							}
-
-							//URLエンコード処理
-							$encoded = rawurlencode( $text ) ;
-							$encodedURL = json_encode(get_permalink());
-							?>
-
-							<a href="https://twitter.com/share?url=<?php echo get_permalink( $val ); ?>&text=<?php echo $encoded; ?>" class="share_popup tag_value border_value"><?php echo $tag_name; ?></a>
-
-							<?php endforeach; ?>
-							<?php endif; ?>
-
-							<br>
 
 							<?php if(!empty($agenda_terms)): ?>
 							<?php
@@ -370,95 +321,81 @@
 
 						<div class="card-bottom">
 
-						<div class="infobox">
-							<?php
-							//著者情報
-							$rows = get_field('author_select',$val ); // すべてのrow（内容・行）をいったん取得する
-							$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-							$first_row_item = $first_row['author']; // get the sub field value
-							if(!($first_row_item)){
-								$user_name = get_the_author_meta( 'display_name', $post->post_author );
-								$renews_id = get_the_author_meta( 'user_login', $post->post_author );
-								$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
-							}else{
-								$user_name = $first_row_item['display_name'];
-								$renews_id = $first_row_item['user_nicename'];
-								$user_avatar = $first_row_item['user_avatar'];
-							}
-							?>
+							<div class="infobox">
+								<?php
+								//著者情報
+								$rows = get_field('author_select',$val ); // すべてのrow（内容・行）をいったん取得する
+								$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
+								$first_row_item = $first_row['author']; // get the sub field value
+								if(!($first_row_item)){
+									$user_name = get_the_author_meta( 'display_name', $post->post_author );
+									$renews_id = get_the_author_meta( 'user_login', $post->post_author );
+									$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
+								}else{
+									$user_name = $first_row_item['display_name'];
+									$renews_id = $first_row_item['user_nicename'];
+									$user_avatar = $first_row_item['user_avatar'];
+								}
+								?>
 
 
-							<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
-								<div class="wrap_avatar flex">
-									<div class="textbox_avatar">
-										<?php echo $user_avatar; ?>
+								<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
+									<div class="wrap_avatar flex">
+										<div class="textbox_avatar">
+											<?php echo $user_avatar; ?>
+										</div>
+										<p class="title_avatar eng">
+											<span class="black"><?php echo $user_name; ?></span>
+											<span>@<?php echo $renews_id; ?></span>
+										</p>
 									</div>
-									<p class="title_avatar eng">
-										<span class="black"><?php echo $user_name; ?></span>
-										<span>@<?php echo $renews_id; ?></span>
-									</p>
-								</div>
-							</a>
-						</div>
+								</a>
+							</div>
 
-						<?php
-							//現在のユーザー
-							$user = wp_get_current_user();
-							$uid = $user->ID;
+							<?php
+								//現在のユーザー
+								$user = wp_get_current_user();
+								$uid = $user->ID;
 
-							//フォローチェック
-							$follow_post = get_user_meta($uid,'article_follow');
-							$follow_check = in_array($postId, $follow_post);
+								//フォローチェック
+								$follow_post = get_user_meta($uid,'article_follow');
+								$follow_check = in_array($postId, $follow_post);
 
-							//ストックしている人数
-							$args = array(
-							'meta_key'     => 'article_follow',
-							'meta_value'   => $postId
-							);
-							$all_user_stockPost = get_users( $args );
-							$stockNum = count($all_user_stockPost);
-						?>
-
-						<div class="wrap_social color_black flex">
-							<div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $postId) ); ?></div>
-							<a class="socialbox flexSocialbox commentbox" href="<?php echo get_permalink( $val ); ?>?move=commentsAreaWrap">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-									<path fill="none" stroke="#b0ad9e" stroke-width="1.5" class="icon_comm" data-name="icon_comm" d="M28.1,31.9c-1.4,0-2.8-0.2-4.2-0.7s-2.2-1.9-2-3.4v-0.2h-7.5c-2.2,0-4.1-1.8-4.1-4.1V15c0-2.2,1.8-4.1,4.1-4.1 l0,0h14.4c2.2,0,4.1,1.8,4.1,4.1v8.6c0,2.2-1.8,4.1-4.1,4.1h-1.7V28c0,1,0.6,2,1.5,2.6l2.2,1.4L28.1,31.9L28.1,31.9z"/>
-								</svg>
-								<span class="commCount"><?php echo $comments->total_comments; ?></span>
-							</a>
-						</div>
-
+								//ストックしている人数
+								$args = array(
+								'meta_key'     => 'article_follow',
+								'meta_value'   => $postId
+								);
+								$all_user_stockPost = get_users( $args );
+								$stockNum = count($all_user_stockPost);
+							?>
 						</div><!-- card-bottom -->
-
 					</div>
 				</div>
 
 				<?php endforeach; ?>
 			</div><!-- /.wrap_article_middle -->
-
-			<div class="wrap_btn column3 clearfix">
-				<a href="<?php echo home_url(); ?>/article/" class="btn_base color_blue">
-					<span class="text_btn">すべての新着記事</span>
-				</a>
-			</div>
-
 		</div><!-- /.content_article -->
-
 		<?php endif; ?>
-
 	</div>
 </section>
-
 
 
 <section class="sec sec_agenda">
 	<div class="inner_base">
 
-		<div class="title_thin">
-			<span class="title_thin_img white">
-				<a href="<?php echo home_url(); ?>/agenda/"><h2>アジェンダ</h2></a>
-			</span>
+		<div class="sec_title">
+			<h2 class="main_title">Agenda</h2>
+			<div class="see_more">
+				<a href="<?php echo home_url(); ?>/agenda/">
+					<span class="main_title_navi">すべてのアジェンダへ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
+					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
+					</svg>
+				</a>
+			</div>
 		</div>
 
 		<div class="agenda_slick">
@@ -467,6 +404,8 @@
 				$taxonomy_name = 'agenda'; // タクソノミーのスラッグ名を入れる
 				$post_type = 'articles'; // カスタム投稿のスラッグ名を入れる
 				$taxonomys = get_field('top_agenda_option','option');
+
+				$post_type = get_query_var('post_type');
 
 				if(!is_wp_error($taxonomys) && count($taxonomys)):
 				foreach($taxonomys as $taxonomy):
@@ -493,7 +432,7 @@
 
 				<li class="agenda">
 					<div class="agenda_slide">
-						<div class="wrap_title_agenda bg_lightblue">
+						<div class="wrap_title_agenda bg_lightgreen">
 							<a href="<?php echo $url; ?>">
 								<?php
 								//アジェンダイメージ画像
@@ -507,10 +446,27 @@
 								}
 								?>
 								<img src="<?php echo $agenda_url; ?>" alt="<?php echo esc_html($taxonomy->name); ?>イメージ" class="img_agenda" width="160" />
-								<h2 class="title_agenda"><?php echo esc_html($taxonomy->name); ?></h2>
+								<h3 class="title_agenda"><?php echo esc_html($taxonomy->name); ?></h3>
+								<div class="agenda_desc lineClamp_3">
+									<?php
+									$text = $taxonomy->description;
+									//$limit = 70;
+
+									$subDescription = strip_tags($text);
+
+									if(mb_strlen($subDescription) > $limit) {
+									$title = mb_substr($subDescription,0,$limit);
+									echo $title. ･･･ ;
+									}
+									else {
+									echo get_the_title($subDescription);
+									}
+									?>
+								</div>
 							</a>
 						</div>
 
+						<!--
 						<ul class="list_agenda">
 							<?php while($the_query->have_posts()): $the_query->the_post(); ?>
 							<?php
@@ -570,6 +526,8 @@
 							<?php endwhile; ?>
 							<li class="see_more"><a href="<?php echo $url; ?>">「<?php echo esc_html($taxonomy->name); ?>」の記事一覧へ</a></li>
 						</ul>
+					-->
+
 					</div><!-- agenda_slide -->
 				</li><!-- /.agenda -->
 
@@ -580,31 +538,27 @@
 				endif;
 				?>
 			</ul>
-		</div>
-
-		<div class="clearfix">
-			<div class="wrap_btn column3">
-				<a href="<?php echo home_url(); ?>/agenda/" class="btn_base color_blue">
-					<span class="text_btn">
-					すべてのアジェンダ
-					</span>
-				</a>
-			</div>
-		</div>
 
 	</div>
 </section>
 
 
 
-<section class="sec sec_column">
+<section class="sec sec_series">
 	<div class="inner_base">
-		<div class="title_thin">
-			<span class="title_thin_img white">
-				<a href="<?php echo home_url(); ?>/series/"><h2>シリーズ</h2></a>
-			</span>
+		<div class="sec_title">
+			<h2 class="main_title">Series</h2>
+			<div class="see_more">
+			<a href="<?php echo home_url(); ?>/series/">
+					<span class="main_title_navi">すべてのシリーズへ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
+					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
+					</svg>
+				</a>
+			</div>
 		</div>
-
 
 		<div class="content_column column2 flex between">
 			<?php
@@ -627,7 +581,7 @@
 					)
 				),
 				'post_type' => $post_type,
-				'posts_per_page' => 2,
+				'posts_per_page' => -1,
 				'post_status' => 'publish',
 				'order' => 'DESC',
 				'orderby' => 'date'
@@ -655,80 +609,13 @@
 					?>
 					<div class="inner_column_thumb">
 						<a href="<?php echo $url; ?>">
-							<img src="<?php echo $series_url; ?>" alt="<?php echo esc_html($taxonomy->name); ?>" class="series_thumb_trim" />
+							<!-- <div class="inner_conts"> -->
+								<img src="<?php echo $series_url; ?>" alt="<?php echo esc_html($taxonomy->name); ?>" class="series_thumb_trim" />
+							<!-- </div> -->
 						</a>
 					</div>
-					<div class="list_column">
-						<?php while($the_query->have_posts()): $the_query->the_post(); ?>
-						<?php
-						// アイキャッチ
-						$thumbnail_id = get_post_thumbnail_id($tax_post->ID);
-						$imageUrl = '';
-						if($thumbnail_id){
-							$image = wp_get_attachment_image_src($thumbnail_id,'full');
-							$imageUrl = $image[0];
-						}else{
-							$imageUrl = get_template_directory_uri().'/images/icon/noimg.jpg';
-						}
-						$title = get_the_title($tax_post->ID);
-						$comments = wp_count_comments( $tax_post->ID );
-
-						//現在のユーザー
-						$user = wp_get_current_user();
-						$uid = $user->ID;
-
-						//フォローチェック
-						$follow_post = get_user_meta($uid,'article_follow');
-						$follow_check = in_array($tax_post->ID, $follow_post);
-
-						//ストックしている人数
-						$args = array(
-							'meta_key'     => 'article_follow',
-							'meta_value'   => $tax_post->ID
-						);
-						$all_user_stockPost = get_users( $args );
-						$stockNum = count($all_user_stockPost);
-						?>
-
-						<?php
-						//著者情報
-						$rows = get_field('author_select',$tax_post->ID ); // すべてのrow（内容・行）をいったん取得する
-						$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-						$first_row_item = $first_row['author']; // get the sub field value
-						if(!($first_row_item)){
-							$user_name = get_the_author_meta( 'display_name', $tax_post->post_author );
-							$renews_id = get_the_author_meta( 'user_login', $tax_post->post_author );
-							$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
-						}else{
-							$user_name = $first_row_item['display_name'];
-							$renews_id = $first_row_item['user_nicename'];
-							$user_avatar = $first_row_item['user_avatar'];
-						}
-						?>
-						<div class="item_column">
-							<div class="wrap_text_column">
-								<a href="<?php echo get_permalink($tax_post->ID); ?>" class="target_column flex">
-									<p class="text_column lineClampWrap lineClamp_1">
-										<span><?php echo $title; ?></span>
-									</p>
-								</a>
-								<div class="target_column flex">
-									<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
-										<p class="title_avatar">
-											<span class="black"><?php echo $user_name; ?></span>
-											<span>@<?php echo $renews_id; ?></span>
-										</p>
-									</a>
-								</div>
-							</div>
-						</div>
-						<?php endwhile; ?>
-						<div class="see_more">
-							<a href="<?php echo $url; ?>">
-								「<?php echo esc_html($taxonomy->name); ?>」の記事一覧へ
-							</a>
-							（現在<span class="series_count"><?php echo $count_num ?></span>本）
-						</div><!-- see_more -->
+					<div class="inner_title">
+							<p><?php echo esc_html($taxonomy->name); ?></p>
 					</div>
 				</div>
 			</div><!-- /.column -->
@@ -741,29 +628,19 @@
 		</div><!-- /.content_column -->
 
 		<div class="clearfix">
-			<div class="wrap_btn column3">
-				<a href="<?php echo home_url(); ?>/series/" class="btn_base color_blue">
-					<span class="text_btn">
-						すべてのシリーズ／特集
-					</span>
-				</a>
-			</div>
 		</div>
 
 	</div>
 </section>
 
-<!-- 2021/03下旬 新規追加 黒澤 -->
-<section class="sec sec_keyword">
-	<div class="inner_base">
-		<div class="title_thin">
-			<span class="title_thin_img white">
-				<a href="<?php echo home_url(); ?>/keyword/"><h2>注目のキーワード</h2></a>
-			</span>
-		</div>
-<!-- 2021/03下旬 新規追加 黒澤 -->
 
-		<!-- <div class="content_renewer flex between column3"></div> -->
+<!--<section class="sec sec_keyword">
+	<div class="inner_base">
+		<div class="sec_title">
+			<h2 class="main_title">Keyword</h2>
+			<span class="main_title_navi">注目のキーワード</span>
+		</div>
+
 		<div class="keyword_cont">
 		<?php
 		$taxonomy_name = 'keyword';
@@ -775,7 +652,7 @@
 		$title = get_the_title($tax_post->ID);
 		?>
 			<a href="<?php echo $url; ?>">
-				<p>#<?php echo esc_html($taxonomy->name); ?></p>
+				<span class="keyword_each">#<?php echo esc_html($taxonomy->name); ?></span>
 			</a>
 		<?php
 			endforeach;
@@ -783,7 +660,7 @@
 		?>
 		</div>
 
-		<div class="clearfix">
+			<div class="clearfix">
 			<div class="wrap_btn column3">
 				<a href="<?php echo home_url(); ?>/keyword/" class="btn_base color_blue">
 					<span class="text_btn">
@@ -793,45 +670,82 @@
 			</div>
 		</div>
 	</div>
-	<!-- /.inner_base -->
-</section>
+</section>-->
 
 
 <section class="sec sec_renewer">
 	<div class="inner_base">
-		<div class="title_thin">
-			<span class="title_thin_img beige">
-				<a href="<?php echo home_url(); ?>/renewers/"><h2>注目のリニュアー</h2></a>
-			</span>
+		<div class="sec_title">
+			<h2 class="main_title">Renewer</h2>
+			<div class="see_more">
+			<a href="<?php echo home_url(); ?>/renewers/">
+					<span class="main_title_navi">すべてのリニュアーへ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
+					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
+					</svg>
+				</a>
+			</div>
 		</div>
-
-		<!-- <div class="content_renewer flex between column3"></div> -->
 
 		<?php echo do_shortcode( '[ultimatemember form_id="149"]' ) ?>
 
 		<div class="clearfix">
-			<div class="wrap_btn column3">
-				<a href="<?php echo home_url(); ?>/renewers/" class="btn_base color_beige">
-					<span class="text_btn">
-						すべてのリニュアー
-					</span>
-				</a>
-			</div>
 		</div>
 	</div>
 	<!-- /.inner_base -->
 </section>
 
 
+<?php
+	//ブログIDが「2」の子サイト
+	switch_to_blog(2);
+?>
+<?php
+$posts = get_field('top_info','option');
+if( $posts ):
+?>
+<section class="sec sec_info">
+	<div class="inner_base">
+		<div class="sec_title">
+			<h2 class="main_title">Info</h2>
+			<div class="see_more">
+			<a href="<?php echo home_url(); ?>">
+					<span class="main_title_navi">すべてのお知らせへ</span>
+					<!-- 矢印SVG -->
+					<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
+					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
+					</svg>
+				</a>
+			</div>
+		</div>
+
+		<div class="news">
+			<?php foreach( $posts as $val ): ?>
+				<div class="news_cont">
+					<span class="news_date"><?php echo get_the_time('Y.m.d', $val->ID) ?></span>
+					<span style="margin:0px 20px;">
+						<a href="<?php echo get_permalink( $val->ID ); ?>"><?php echo get_the_title( $val->ID ); ?></a>
+					</span>
+				</div>
+			<?php endforeach; ?>
+		</div>
+	</div>
+	<!-- /.inner_base -->
+</section>
+
+	<?php endif; ?>
+	<?php restore_current_blog(); ?>
+
 
 <?php
 /* 一時的に「注目のコメント」セクションを非表示
 <section class="sec sec_comment">
 	<div class="inner_base">
-		<div class="title_thin">
-			<span class="title_thin_img beige">
-				<h2>注目のコメント</h2>
-			</span>
+		<div class="sec_title">
+			<h2 class="main_title_navi">注目のコメント</h2>
 		</div>
 
 		<div class="content_commment column2 flex between">

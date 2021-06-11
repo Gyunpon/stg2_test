@@ -208,257 +208,239 @@ global $postId;
 				<div class="article_main_img imgLiquidFill">
 					<img src="<?php echo $imageUrl; ?>" alt="メインビジュアルイメージ" />
 				</div>
-				<div class="textbox large big">
-					<?php if(!empty($series_terms)): ?>
-					<?php foreach($series_terms as $ct):
-					$taxonomy_name = 'series'; // タクソノミーのスラッグ名を入れる
-					//					$series_type = get_field('series_type','series_'.$ct->term_id)[0];
-					$url = get_term_link($ct->slug, $taxonomy_name);
-					?>
-					<a href="<?php echo $url; ?>" class="series_name">
-						<span class="series_text">
-							<?php echo $ct->name; ?>
-						</span>
-					</a>
-					<?php endforeach; ?>
-					<?php endif; ?>
 
-					<h1 class="title_big">
-						<?php the_title(); ?>
-					</h1>
+				<div class="textbox_body">
+					<div class="textbox large big">
 
-				<div>
-					<?php
-//					$postId = $post->ID;
-//					$taxonomy = 'agenda';
-//
-//					$primaryTerm = get_post_meta( $postId, '_yoast_wpseo_primary_'.$taxonomy, true );
-//					if($primaryTerm){
-//						// Yoast SEO カテゴリー「メインにする」設定をされている場合
-//
-//						$terms = get_term($primaryTerm, $taxonomy);
-//						if(!empty($terms)){
-//							$termName = $terms->name;
-//							$termSlug = $terms->slug;
-//						}
-//					}else{
-//						// Yoast SEO カテゴリー「メインにする」設定をされていない場合
-//						// 選択タームの一番上を表示
-//
-//						$terms = get_the_terms($postId, array($taxonomy));
-//						if(!empty($terms)){
-//							$termName = $terms[0]->name;
-//							$termSlug = $terms[0]->slug;
-//						}
-//					}
+						<div class="serise_tags">
+							<?php if(!empty($series_terms)): ?>
+							<?php foreach($series_terms as $ct):
+							$taxonomy_name = 'series'; // タクソノミーのスラッグ名を入れる
+							//$series_type = get_field('series_type','series_'.$ct->term_id)[0];
+							$url = get_term_link($ct->slug, $taxonomy_name);
+							?>
+							<a href="<?php echo $url; ?>" class="series_name">
+								<span class="series_text">
+									<?php echo $ct->name; ?>
+								</span>
+							</a>
+							<?php endforeach; ?>
+							<?php endif; ?>
+						</div>
 
-					?>
-				</div>
+						<h1 class="title_big">
+							<?php the_title(); ?>
+						</h1>
 
+						<div class="top_tags">
+							<?php if(!empty($hashtag_terms)): ?>
+							<?php foreach($hashtag_terms as $t_v)://value_hashtag
+							$tag_link = get_category_link($t_v->term_id);
+							$tag_name = $t_v->name;
+							?>
+								<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php echo $encoded; ?>" target="_blank" class="share_popup tag_value border_value">#<?php echo $tag_name; ?></a>
+							<?php endforeach; ?>
+							<?php endif; ?>
 
+							<?php if(!empty($agenda_terms)): ?>
+									<?php
+									$postId = $post->ID;
+									$taxonomy = 'agenda';
 
-					<div class="top_tags">
-						<?php if(!empty($hashtag_terms)): ?>
-						<?php foreach($hashtag_terms as $t_v)://value_hashtag
-						$tag_link = get_category_link($t_v->term_id);
-						$tag_name = $t_v->name;
-						?>
-							<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php echo $encoded; ?>" target="_blank" class="share_popup tag_value border_value">#<?php echo $tag_name; ?></a>
-						<?php endforeach; ?>
-						<?php endif; ?>
+									$primaryTerm = get_post_meta( $postId, '_yoast_wpseo_primary_'.$taxonomy, true );
 
+									if($primaryTerm){
+										// Yoast SEO カテゴリー「メインにする」設定をされている場合
 
-						<?php if(!empty($agenda_terms)): ?>
-								<?php
-								$postId = $post->ID;
-								$taxonomy = 'agenda';
+										$terms = get_term($primaryTerm, $taxonomy);
+										if(!empty($terms)){
+											$primary_termName = $terms->name;
+											$primary_termSlug = $terms->slug;
+											$primary_termLink = get_category_link($terms->term_id);
+										}
+									}else{
+										// Yoast SEO カテゴリー「メインにする」設定をされていない場合
+										// 選択タームの一番上を表示
 
-								$primaryTerm = get_post_meta( $postId, '_yoast_wpseo_primary_'.$taxonomy, true );
-
-								if($primaryTerm){
-									// Yoast SEO カテゴリー「メインにする」設定をされている場合
-
-									$terms = get_term($primaryTerm, $taxonomy);
-									if(!empty($terms)){
-										$primary_termName = $terms->name;
-										$primary_termSlug = $terms->slug;
-										$primary_termLink = get_category_link($terms->term_id);
+										$terms = get_the_terms($postId, array($taxonomy));
+										if(!empty($terms)){
+											$primary_termName = $terms[0]->name;
+											$primary_termSlug = $terms[0]->slug;
+											$primary_termLink = get_category_link($terms[0]->term_id);
+										}
 									}
+									?>
+
+							<a href="<?php echo $primary_termLink; ?>" class="tag_agenda border_agenda primary_tag"><?php echo $primary_termName; ?></a>
+
+									<?php foreach($agenda_terms as $t_a)://agenda
+									$tag_a_id = $t_a->term_id;
+									$tag_link = get_category_link($t_a->term_id);
+									$tag_name = $t_a->name;
+									?>
+									<?php if($primaryTerm != $tag_a_id): ?>
+									<a href="<?php echo $tag_link; ?>" class="tag_agenda border_agenda"><?php echo $tag_name; ?></a>
+									<?php endif; ?>
+									<?php endforeach; ?>
+							<?php endif; ?>
+
+
+						</div>
+
+						<div class="wrap_sub_info">
+							<div class="flex wrap_label_article_mv cf">
+								<?php if(have_rows('author_select')): ?>
+								<?php while(have_rows('author_select')): the_row();
+								$user_data = get_sub_field('author');
+								$author_iconCheck = get_sub_field('icon_check');
+
+								if(!($user_data)){
+									$user_name = get_the_author_meta( 'display_name', $post->post_author );
+									$renews_id = get_the_author_meta( 'user_login', $post->post_author );
+									$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
 								}else{
-									// Yoast SEO カテゴリー「メインにする」設定をされていない場合
-									// 選択タームの一番上を表示
-
-									$terms = get_the_terms($postId, array($taxonomy));
-									if(!empty($terms)){
-										$primary_termName = $terms[0]->name;
-										$primary_termSlug = $terms[0]->slug;
-										$primary_termLink = get_category_link($terms[0]->term_id);
-									}
+									$user_name = $user_data['display_name'];
+									$renews_id = $user_data['user_nicename'];
+									$user_avatar = $user_data['user_avatar'];
 								}
-								?>
-						<a href="<?php echo $primary_termLink; ?>" class="tag_agenda border_agenda primary_tag"><?php echo $primary_termName; ?></a>
 
-								<?php foreach($agenda_terms as $t_a)://agenda
-								$tag_a_id = $t_a->term_id;
-								$tag_link = get_category_link($t_a->term_id);
-								$tag_name = $t_a->name;
 								?>
-								<?php if($primaryTerm != $tag_a_id): ?>
-								<a href="<?php echo $tag_link; ?>" class="tag_agenda border_agenda"><?php echo $tag_name; ?></a>
+								<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
+								<div class="wrap_avatar flex">
+									<?php if($author_iconCheck): ?>
+									<div class="textbox_avatar">
+										<?php echo $user_avatar; ?>
+									</div>
+									<?php endif; ?>
+									<div class="detail_avatar">
+										<p class="title_renewer">Renewer</p>
+										<p class="title_avatar story eng">
+											<span class="black"><?php echo $user_name; ?></span>
+											<br>
+											<span>@<?php echo $renews_id; ?></span>
+										</p>
+									</div>
+								</div>
+								</a>
+								<?php endwhile; ?>
 								<?php endif; ?>
-								<?php endforeach; ?>
-						<?php endif; ?>
 
 
-					</div>
+								<?php if(have_rows('editor_select')): ?>
+								<?php while(have_rows('editor_select')): the_row();
+								$editor_data = get_sub_field('editor');
+								$editor_iconCheck = get_sub_field('icon_check');
+								?>
+								<a href="<?php echo home_url(); ?>/user/<?php echo $editor_data['user_nicename']; ?>/">
+								<div class="wrap_avatar flex">
+									<?php if($editor_iconCheck): ?>
+									<div class="textbox_avatar">
+										<?php echo $editor_data['user_avatar']; ?>
+									</div>
+									<?php endif; ?>
+									<div class="detail_avatar">
+										<p class="title_editer">Editer</p>
+										<p class="title_avatar edited eng">
+											<span class="black"><?php echo $editor_data['display_name']; ?></span>
+											<br>
+											<span>@<?php echo $editor_data['user_nicename']; ?></span>
+										</p>
+									</div>
+								</div>
+								</a>
+								<?php endwhile; ?>
+								<?php endif; ?>
+
+								<?php if($illustratorName): ?>
+								<div class="wrap_avatar flex">
+									<?php if($illust_iconCheck): ?>
+									<div class="textbox_avatar">
+										<img src="<?php echo $illustIcon; ?>" alt="アバター" />
+									</div>
+									<?php endif; ?>
+									<p class="title_avatar illustrated eng">
+										<span class="black"><?php echo $illustratorName; ?></span>
+										<br>
+									</p>
+								</div>
+								<?php endif; ?>
 
 
-					<div class="flex wrap_label_article_mv cf">
-						<?php if(have_rows('author_select')): ?>
-						<?php while(have_rows('author_select')): the_row();
-						$user_data = get_sub_field('author');
-						$author_iconCheck = get_sub_field('icon_check');
-
-						if(!($user_data)){
-							$user_name = get_the_author_meta( 'display_name', $post->post_author );
-							$renews_id = get_the_author_meta( 'user_login', $post->post_author );
-							$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
-						}else{
-							$user_name = $user_data['display_name'];
-							$renews_id = $user_data['user_nicename'];
-							$user_avatar = $user_data['user_avatar'];
-						}
-
-						?>
-						<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
-						<div class="wrap_avatar flex">
-							<?php if($author_iconCheck): ?>
-							<div class="textbox_avatar">
-								<?php echo $user_avatar; ?>
+								<?php if($photographerName): ?>
+								<div class="wrap_avatar flex">
+									<?php if($photo_iconCheck): ?>
+									<div class="textbox_avatar">
+										<img src="<?php echo $photoIcon; ?>" alt="アバター" />
+									</div>
+									<?php endif; ?>
+									<p class="title_avatar photo eng">
+										<span class="black"><?php echo $photographerName; ?></span>
+										<br>
+									</p>
+								</div>
+								<?php endif; ?>
 							</div>
-							<?php endif; ?>
-							<p class="title_avatar story eng">
-								<span class="black"><?php echo $user_name; ?></span>
-								<br>
-								<span>@<?php echo $renews_id; ?></span>
-							</p>
-						</div>
-						</a>
-						<?php endwhile; ?>
-						<?php endif; ?>
 
+							<?php
 
-						<?php if(have_rows('editor_select')): ?>
-						<?php while(have_rows('editor_select')): the_row();
-						$editor_data = get_sub_field('editor');
-						$editor_iconCheck = get_sub_field('icon_check');
-						?>
-						<a href="<?php echo home_url(); ?>/user/<?php echo $editor_data['user_nicename']; ?>/">
-						<div class="wrap_avatar flex">
-							<?php if($editor_iconCheck): ?>
-							<div class="textbox_avatar">
-								<?php echo $editor_data['user_avatar']; ?>
-							</div>
-							<?php endif; ?>
-							<p class="title_avatar edited eng">
-								<span class="black"><?php echo $editor_data['display_name']; ?></span>
-								<br>
-								<span>@<?php echo $editor_data['user_nicename']; ?></span>
-							</p>
-						</div>
-						</a>
-						<?php endwhile; ?>
-						<?php endif; ?>
-
-						<?php if($illustratorName): ?>
-						<div class="wrap_avatar flex">
-							<?php if($illust_iconCheck): ?>
-							<div class="textbox_avatar">
-								<img src="<?php echo $illustIcon; ?>" alt="アバター" />
-							</div>
-							<?php endif; ?>
-							<p class="title_avatar illustrated eng">
-								<span class="black"><?php echo $illustratorName; ?></span>
-								<br>
-							</p>
-						</div>
-						<?php endif; ?>
-
-
-						<?php if($photographerName): ?>
-						<div class="wrap_avatar flex">
-							<?php if($photo_iconCheck): ?>
-							<div class="textbox_avatar">
-								<img src="<?php echo $photoIcon; ?>" alt="アバター" />
-							</div>
-							<?php endif; ?>
-							<p class="title_avatar photo eng">
-								<span class="black"><?php echo $photographerName; ?></span>
-								<br>
-							</p>
-						</div>
-						<?php endif; ?>
-					</div>
-
-					<?php
-
-					//ストックしている人数
-//					$args = array(
-//						'meta_key'     => 'article_follow',
-//						'meta_value'   => $postId
-//					);
-//					$all_user_stockPost = get_users( $args );
-//					$stockNum = count($all_user_stockPost);
-					?>
-					<div class="wrap_social color_black flex">
-						<div class ="socialbox datebox"><span class="baloon top"><?php echo get_the_time('H:i'); ?></span><?php echo get_the_time('Y.m.d'); ?></div>
-						<div class="socialbox likebox">
-							<span class="baloon top">いいね！</span>
-							<?php if(function_exists('wp_ulike_comments')) wp_ulike('get'); ?>
-						</div>
-						<a class="socialbox commentbox flexSocialbox" href="#commentsAreaWrap">
-							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-								<path fill="none" stroke="#b0ad9e" stroke-width="1.5" class="icon_comm" data-name="icon_comm" d="M28.1,31.9c-1.4,0-2.8-0.2-4.2-0.7s-2.2-1.9-2-3.4v-0.2h-7.5c-2.2,0-4.1-1.8-4.1-4.1V15c0-2.2,1.8-4.1,4.1-4.1 l0,0h14.4c2.2,0,4.1,1.8,4.1,4.1v8.6c0,2.2-1.8,4.1-4.1,4.1h-1.7V28c0,1,0.6,2,1.5,2.6l2.2,1.4L28.1,31.9L28.1,31.9z"/>
-							</svg>
-							<span class="baloon top">コメントを見る</span>
-							<span class="commCount"><?php comments_number( '0', '1', '%' ); ?></span>
-						</a>
-						<?php if( is_user_logged_in() ): ?>
-						<a href="javascript:void(0);" class="socialbox clipbox flexSocialbox postStockBtn<?php if($follow_check == 'true'){echo ' stock';} ?>" data-uid="<?php echo $uid; ?>" data-post_id="<?php echo $postId; ?>">
-							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-								<path id="icon_clip" data-name="icon_clip" fill="#B0AD9E" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
-							</svg>
-							<span class="baloon top">記事をクリップ</span>
-							<span class="stock_on stockTxt">記事をクリップ</span>
-							<span class="stock_off stockTxt">クリップを解除</span>
-						</a>
-						<?php else: ?>
-						<span class="for_pc align-center">
-							<span class="socialbox clipbox flexSocialbox">
-								<a class="popup-modal" href="#modalLoginWrap">
+							//ストックしている人数
+							//$args = array(
+							//'meta_key'     => 'article_follow',
+							//'meta_value'   => $postId
+							//);
+							//$all_user_stockPost = get_users( $args );
+							//$stockNum = count($all_user_stockPost);
+							?>
+							<div class="wrap_social color_black flex">
+								<div class ="socialbox datebox"><span class="baloon top"><?php echo get_the_time('H:i'); ?></span><?php echo get_the_time('Y.m.d'); ?></div>
+								<div class="socialbox likebox">
+									<span class="baloon top">いいね！</span>
+									<?php if(function_exists('wp_ulike_comments')) wp_ulike('get'); ?>
+								</div>
+								<a class="socialbox commentbox flexSocialbox" href="#commentsAreaWrap">
 									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-										<path id="icon_clip" data-name="icon_clip" fill="#B0AD9E" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
+										<path fill="none" stroke="#b0ad9e" stroke-width="1.5" class="icon_comm" data-name="icon_comm" d="M28.1,31.9c-1.4,0-2.8-0.2-4.2-0.7s-2.2-1.9-2-3.4v-0.2h-7.5c-2.2,0-4.1-1.8-4.1-4.1V15c0-2.2,1.8-4.1,4.1-4.1 l0,0h14.4c2.2,0,4.1,1.8,4.1,4.1v8.6c0,2.2-1.8,4.1-4.1,4.1h-1.7V28c0,1,0.6,2,1.5,2.6l2.2,1.4L28.1,31.9L28.1,31.9z"/>
 									</svg>
-							</a>
-								<span class="baloon top for_pc"><a class="popup-modal" href="#modalLoginWrap">ログイン</a>が必要です</span>
-								<a class="popup-modal stock_on stockTxt" href="#modalLoginWrap">記事をクリップ</a>
-							</span>
-						</span>
-						<span class="for_sp align-center">
-							<a href="#modalLoginWrap" class="socialbox clipbox flexSocialbox popup-modal">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-									<path id="icon_clip" data-name="icon_clip" fill="#B0AD9E" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
-								</svg>
-								<span class="stock_on stockTxt">記事をクリップ</span>
-							</a>
-						</span>
-						<?php endif; ?>
-					</div><!-- wrap_social -->
-				</div>
-			</div>
-			<!-- /.content_mv -->
-		</div>
-		<!-- /.content_article_mv -->
+									<span class="baloon top">コメントを見る</span>
+									<span class="commCount"><?php comments_number( '0', '1', '%' ); ?></span>
+								</a>
+								<?php if( is_user_logged_in() ): ?>
+								<a href="javascript:void(0);" class="socialbox clipbox flexSocialbox postStockBtn<?php if($follow_check == 'true'){echo ' stock';} ?>" data-uid="<?php echo $uid; ?>" data-post_id="<?php echo $postId; ?>">
+									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
+										<path id="icon_clip" data-name="icon_clip" fill="#b0ad9e" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
+									</svg>
+									<span class="baloon top">記事をクリップ</span>
+									<span class="stock_on stockTxt">記事をクリップ</span>
+									<span class="stock_off stockTxt">クリップを解除</span>
+								</a>
+								<?php else: ?>
+								<span class="for_pc align-center">
+									<span class="socialbox clipbox flexSocialbox">
+										<a class="popup-modal" href="#modalLoginWrap">
+											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
+												<path id="icon_clip" data-name="icon_clip" fill="#b0ad9e" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
+											</svg>
+									</a>
+										<span class="baloon top for_pc"><a class="popup-modal" href="#modalLoginWrap">ログイン</a>が必要です</span>
+										<a class="popup-modal stock_on stockTxt" href="#modalLoginWrap">記事をクリップ</a>
+									</span>
+								</span>
+								<span class="for_sp align-center">
+									<a href="#modalLoginWrap" class="socialbox clipbox flexSocialbox popup-modal">
+										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
+											<path id="icon_clip" data-name="icon_clip" fill="#b0ad9e" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
+										</svg>
+										<span class="stock_on stockTxt">記事をクリップ</span>
+									</a>
+								</span>
+								<?php endif; ?>
+							</div><!-- /.wrap_social -->
+						</div><!-- /.wrap_sub_info -->
+					</div><!-- /.textbox.large.big -->
+	
+				</div><!-- /.textbox_body -->
+			</div><!-- /.content_mv_article_detail -->
+		</div><!-- /.content_article_mv -->
 	</div><!-- /.inner_base -->
 
 
@@ -534,7 +516,7 @@ global $postId;
 					$excerpt = get_the_excerpt();
 					if($excerpt != ''): ?>
 					<div class="embed excerpt title_component mb-50">
-						<div class="reference"><?php echo $excerpt; ?></div>					
+						<div class="reference"><?php echo $excerpt; ?></div>
 					</div>
 					<hr />
 				<?php endif; ?>
@@ -595,7 +577,7 @@ global $postId;
 						<?php if( is_user_logged_in() ): ?>
 						<a href="javascript:void(0);" class="socialbox clipbox flexSocialbox postStockBtn<?php if($follow_check == 'true'){echo ' stock';} ?>" data-uid="<?php echo $uid; ?>" data-post_id="<?php echo $postId; ?>">
 							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-								<path id="icon_clip" data-name="icon_clip" fill="#B0AD9E" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
+								<path id="icon_clip" data-name="icon_clip" fill="#b0ad9e" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
 							</svg>
 							<span class="stock_on stockTxt">記事をクリップ</span>
 							<span class="stock_off stockTxt">クリップを解除</span>
@@ -605,7 +587,7 @@ global $postId;
 							<span class="socialbox clipbox flexSocialbox">
 								<a class="popup-modal" href="#modalLoginWrap">
 									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-										<path id="icon_clip" data-name="icon_clip" fill="#B0AD9E" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
+										<path id="icon_clip" data-name="icon_clip" fill="#b0ad9e" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
 									</svg>
 								</a>
 								<span class="baloon top for_pc"><a class="popup-modal" href="#modalLoginWrap">ログイン</a>が必要です</span>
@@ -615,7 +597,7 @@ global $postId;
 						<span class="for_sp align-center">
 							<a href="#modalLoginWrap" class="socialbox clipbox flexSocialbox popup-modal">
 								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-									<path id="icon_clip" data-name="icon_clip" fill="#B0AD9E" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
+									<path id="icon_clip" data-name="icon_clip" fill="#b0ad9e" d="M19,31.8c-1.7,0-3.4-0.7-4.7-2c-2.6-2.6-2.6-6.8,0-9.4l8.1-8.1c0.1-0.1,0.2-0.2,0.3-0.3 c0.9-0.9,2.2-1.3,3.4-1.2c1.3,0.1,2.5,0.6,3.3,1.6c0.9,0.9,1.3,2.2,1.2,3.4s-0.6,2.5-1.6,3.3L21.3,27c-1.2,1.1-2.9,1.1-4.1,0 c-0.6-0.5-0.9-1.3-0.9-2.1s0.3-1.5,0.8-2.1l7-6.9l1,1l-7,6.9c-0.3,0.3-0.4,0.6-0.4,1c0,0.4,0.2,0.8,0.4,1c0.6,0.6,1.5,0.6,2.1,0 l7.9-7.8c0.7-0.6,1.1-1.4,1.1-2.3c0-0.9-0.3-1.7-0.9-2.4c-0.6-0.7-1.4-1-2.3-1.1c-0.9,0-1.7,0.3-2.4,0.9c-0.1,0.1-0.1,0.1-0.2,0.2 l-8.2,8.1c-1,1-1.5,2.3-1.5,3.7c0,1.4,0.5,2.7,1.5,3.7s2.3,1.5,3.7,1.5c1.4,0,2.7-0.5,3.7-1.5l7.3-7.2l1,1l-7.3,7.2 C22.4,31.2,20.7,31.8,19,31.8z"/>
 								</svg>
 								<span class="stock_on stockTxt">記事をクリップ</span>
 							</a>
@@ -716,123 +698,166 @@ global $postId;
 $relatedPosts = get_field('article_relation');
 if(!empty($relatedPosts)):
 ?>
-<div class="content_article">
+<section class="sec content_recomend">
 	<div class="inner_base">
-		<h3 class="title_thin">
-			<span class="title_thin_img beige">
-				<h3>おすすめの記事</h3>
-			</span>
-		</h3>
+		<h2 class="sec_title">
+			<span class="main_title">Recommend</span>
+			<span class="main_title_jp">おすすめの記事</span>
+		</h2>
 		<div class="wrap_article_middle grid articleListStyle">
-	<?php foreach( $relatedPosts as $val ):
 
-	// アイキャッチ
-	$thumbnail_id = get_post_thumbnail_id($val->ID);
-	$imageUrl = '';
-	if($thumbnail_id){
-		$image = wp_get_attachment_image_src($thumbnail_id,'large');
-		$imageUrl = $image[0];
-	}else{
-		$imageUrl = get_template_directory_uri().'/images/icon/noimg.jpg';
-	}
-		//タイトル
-		$title_base = get_the_title( $val->ID );
-		$title = mb_strimwidth( $title_base, 0, 66, "...", "UTF-8" );
-		$series_terms = get_the_terms($val->ID,'series');
-		//コメント
-		$comments = wp_count_comments( $val->ID );
-	?>
-			<div class="article_middle">
-				<div class="wrap_img">
-					<div class="article_middle_img imgLiquidFill">
-						<a href="<?php the_permalink($val->ID); ?>">
-							<img src="<?php echo $imageUrl; ?>" alt="<?php echo $title; ?> サムネイル" />
-						</a>
-					</div>
-				</div>
+	<!-- 5/21 一部変更 黒澤 -->
 
-				<div class="textbox middle left_bottom">
-					<?php if(!empty($series_terms)): ?>
-					<?php foreach($series_terms as $ct): ?>
-					<?php
-					$series_link = get_category_link($ct->term_id);
-					?>
-					<a href="<?php echo $series_link; ?>">
-						<p class="series_name">
-							<?php echo $ct->name; ?>
-						</p>
-					</a>
-					<?php endforeach; ?>
-					<?php endif; ?>
+	<?php foreach( $relatedPosts as $val ): ?>
+  <?php
+  /*
+  $postId = $post->ID;
+  */
+  // アイキャッチ
+  $thumbnail_id = get_post_thumbnail_id($val->ID);
+  $imageUrl = '';
+  if ($thumbnail_id) {
+    $image = wp_get_attachment_image_src($thumbnail_id, 'large');
+    $imageUrl = $image[0];
+  } else {
+    $imageUrl = get_template_directory_uri() . '/images/icon/noimg.jpg';
+  }
 
-					<a href="<?php the_permalink($val->ID); ?>">
-						<h2 class="title_middle artcle_small_title">
-							<?php echo $title; ?>
-						</h2>
-					</a>
-					<?php
-					//著者情報
-					$rows = get_field('author_select' ,$val->ID); // すべてのrow（内容・行）をいったん取得する
-					$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-					$first_row_item = $first_row['author']; // get the sub field value
-					if(!$first_row_item){
-						$relationpost = get_post($val->ID);
-						$relationauthor = get_userdata($relationpost->post_author);
-						$user_name = get_the_author_meta( 'display_name', $relationauthor->ID );
-						$renews_id = get_the_author_meta( 'user_login', $relationauthor->ID );
-						$user_avatar = get_avatar( $relationauthor->ID, 64 );
-					}else{
-						$user_name = $first_row_item['display_name'];
-						$renews_id = $first_row_item['user_nicename'];
-						$user_avatar = $first_row_item['user_avatar'];
-					}
-					?>
-					<div class="card-bottom">
-						<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
-							<div class="wrap_avatar flex">
-								<div class="textbox_avatar">
-									<?php echo $user_avatar; ?>
-								</div>
-								<p class="title_avatar eng">
-									<span class="black"><?php echo $user_name; ?></span>
-									<span>@<?php echo $renews_id; ?></span>
-								</p>
-							</div>
-						</a>
+  //コメント
+  $comments = wp_count_comments($val->ID);
 
-						<?php
-						//現在のユーザー
-						$user = wp_get_current_user();
-						$uid = $user->ID;
+  // タイトル
+  $title_base = get_the_title( $val->ID );
+  $title = mb_strimwidth($title_base, 0, 76, "...", "UTF-8");
+  $series_terms = get_the_terms($val->ID, 'series');
+  ?>
+  <div class="article_middle">
+    <div class="wrap_img">
+      <div class="article_middle_img imgLiquidFill">
+        <a href="<?php the_permalink($val->ID); ?>">
+          <img src="<?php echo $imageUrl; ?>" alt="<?php echo $title; ?> サムネイル" />
+        </a>
+      </div>
+      <!-- アイコン移動 -->
+      <?php
+      //現在のユーザー
+      $user = wp_get_current_user();
+      $uid = $user->ID;
+      ?>
+      <div class="wrap_social color_black flex">
+        <div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $val->ID) ); ?></div>
+      </div>
+      <!-- アイコン移動 ここまで -->
+    </div>
 
-						//フォローチェック
-						$follow_post = get_user_meta($uid,'article_follow');
-						$follow_check = in_array($postId, $follow_post);
+    <div class="textbox middle left_bottom small_compo">
+      <?php if(!empty($series_terms)): ?>
+      <?php foreach($series_terms as $ct):
+      $series_link = get_category_link($ct->term_id);
+      ?>
+      <a href="<?php echo $series_link; ?>" class="search_series_name_link">
+        <span class="series_name">
+          <?php echo $ct->name; ?>
+        </span>
+      </a>
+      <?php endforeach; ?>
+      <?php endif; ?>
 
-						//ストックしている人数
-						$args = array(
-							'meta_key'     => 'article_follow',
-							'meta_value'   => $postId
-						);
-						$all_user_stockPost = get_users( $args );
-						$stockNum = count($all_user_stockPost);
-						?>
-						<div class="wrap_social color_black flex">
-							<div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $val->ID) ); ?></div>
-							<a class="socialbox flexSocialbox commentbox" href="<?php echo get_permalink($val->ID); ?>?move=commentsAreaWrap">
-								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-									<path fill="none" stroke="#b0ad9e" stroke-width="1.5" class="icon_comm" data-name="icon_comm" d="M28.1,31.9c-1.4,0-2.8-0.2-4.2-0.7s-2.2-1.9-2-3.4v-0.2h-7.5c-2.2,0-4.1-1.8-4.1-4.1V15c0-2.2,1.8-4.1,4.1-4.1 l0,0h14.4c2.2,0,4.1,1.8,4.1,4.1v8.6c0,2.2-1.8,4.1-4.1,4.1h-1.7V28c0,1,0.6,2,1.5,2.6l2.2,1.4L28.1,31.9L28.1,31.9z"/>
-								</svg>
-								<span class="commCount"><?php echo $comments->total_comments; ?></span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div><!-- /.article_middle -->
+      <a href="<?php the_permalink($val->ID); ?>">
+        <h2 class="title_middle artcle_small_title lineClamp_2">
+          <?php echo $title; ?>
+        </h2>
+      </a>
+
+
+      <!--
+      <div class="top_tags">
+        <?php if(!empty($series_terms)): ?>
+        <?php
+        /*
+        $postId = $val;
+        $taxonomy = 'agenda';
+        $primaryTerm = get_post_meta( $postId, '_yoast_wpseo_primary_'.$taxonomy, true );
+
+        if($primaryTerm){
+          // Yoast SEO カテゴリー「メインにする」設定をされている場合
+
+          $terms = get_term($primaryTerm, $taxonomy);
+          if(!empty($terms)){
+            $primary_termName = $terms->name;
+            $primary_termSlug = $terms->slug;
+            $primary_termLink = get_category_link($terms->term_id);
+          }
+        }else{
+          // Yoast SEO カテゴリー「メインにする」設定をされていない場合
+          // 選択タームの一番上を表示
+
+          $terms = get_the_terms($postId, array($taxonomy));
+          if(!empty($terms)){
+            $primary_termName = $terms[0]->name;
+            $primary_termSlug = $terms[0]->slug;
+            $primary_termLink = get_category_link($terms[0]->term_id);
+          }
+        }
+        */
+        ?>
+
+        <a href="<?php echo $primary_termLink; ?>" class="tag_agenda border_agenda primary_tag"><?php echo $primary_termName; ?></a>
+        <?php foreach($series_terms as $t_a)://agenda
+        /*
+        $tag_a_id = $t_a->term_id;
+        $tag_link = get_category_link($t_a->term_id);
+        $tag_name = $t_a->name;
+        */
+        ?>
+        <?php if($primaryTerm != $tag_a_id): ?>
+        <a href="<?php echo $tag_link; ?>" class="tag_agenda border_agenda"><?php echo $tag_name; ?></a>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        <?php endif; ?>
+
+      </div>
+    -->
+
+
+      <div class="card-bottom">
+        <?php
+        //著者情報
+        $rows = get_field('author_select' ,$val->ID); // すべてのrow（内容・行）をいったん取得する
+        $first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
+        $first_row_item = $first_row['author']; // get the sub field value
+        if(!($first_row_item)){
+          $user_name = get_the_author_meta( 'display_name', $post->post_author );
+          $renews_id = get_the_author_meta( 'user_login', $post->post_author );
+          $user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
+        }else{
+          $user_name = $first_row_item['display_name'];
+          $renews_id = $first_row_item['user_nicename'];
+          $user_avatar = $first_row_item['user_avatar'];
+        }
+        ?>
+        <a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
+          <div class="wrap_avatar flex">
+          	<div class="textbox_avatar">
+				      <?php echo $user_avatar; ?>
+			      </div>
+            <p class="title_avatar eng">
+              <span class="black"><?php echo $user_name; ?></span>
+              <span>@<?php echo $renews_id; ?></span>
+            </p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
 	<?php endforeach; ?>
+
+	<!-- 5/21 一部変更 黒澤 ここまで -->
+
 	</div><!-- /.wrap_article_middle -->
 	</div><!-- /.inner_base -->
-</div><!-- /.content_article -->
+	</section><!-- /.content_article -->
 <?php endif; ?>
 
 

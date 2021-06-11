@@ -10,9 +10,10 @@
   }
 }
 
-.sec.sec_column_detail {
+/*.sec.sec_column_detail {
   padding: 0 10px;
-}
+}*/
+
 @media screen and (max-width:767px){
   .sec.sec_column_detail {
     padding: 0;

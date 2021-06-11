@@ -25,13 +25,13 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 	<div id="info_archive_intro" class="inner_base">
 		<div class="infoTitle">
 			<div class="title_thin">
-				<span class="title_thin_img white">
-					<h2><span class="titleInfoLink"><a href="<?php echo home_url(); ?>/">お知らせ＞</a></span><?php echo $archivePageName; ?></h2>
-				</span>
+					<h1 class="main_title">Info
+						<span class="main_title_jp"><a href="<?php echo home_url(); ?>/">お知らせ＞</a><?php echo $archivePageName; ?></span>
+					</h1>
 			</div>
 		</div><!-- infoTitle -->
 	</div>
-	
+
 	<?php if(have_posts()): ?>
 	<div id="info_archive_contentArticle" class="content_article">
 		<div class="inner_base">
@@ -96,36 +96,38 @@ if(empty($archivePageName)){ $archivePageName = '投稿'; }
 						<a href="<?php the_permalink(); ?>">
 							<h2 class="title_middle"><?php echo $title; ?></h2>
 						</a>
-						<div class="infobox">
-							<?php
-							//著者情報
-							$rows = get_field('author_select_info' ); // すべてのrow（内容・行）をいったん取得する
-							$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-							$first_row_item = $first_row['author_info']; // get the sub field value 
-							if(!($first_row_item)){
-								$user_name = get_the_author_meta( 'display_name', $post->post_author );
-								$renews_id = get_the_author_meta( 'user_login', $post->post_author );
-								$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
-							}else{
-								$user_name = $first_row_item['display_name'];
-								$renews_id = $first_row_item['user_nicename'];
-								$user_avatar = $first_row_item['user_avatar'];
-							}
-							?>
+						<div class="card-bottom">
+							<div class="infobox">
+								<?php
+								//著者情報
+								$rows = get_field('author_select_info' ); // すべてのrow（内容・行）をいったん取得する
+								$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
+								$first_row_item = $first_row['author_info']; // get the sub field value
+								if(!($first_row_item)){
+									$user_name = get_the_author_meta( 'display_name', $post->post_author );
+									$renews_id = get_the_author_meta( 'user_login', $post->post_author );
+									$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
+								}else{
+									$user_name = $first_row_item['display_name'];
+									$renews_id = $first_row_item['user_nicename'];
+									$user_avatar = $first_row_item['user_avatar'];
+								}
+								?>
 
-							<a href="<?php echo network_home_url(); ?>user/<?php echo $renews_id; ?>/">
-								<div class="wrap_avatar flex">
-									<div class="textbox_avatar">
-										<?php echo $user_avatar; ?>
+								<a href="<?php echo network_home_url(); ?>user/<?php echo $renews_id; ?>/">
+									<div class="wrap_avatar flex">
+										<div class="textbox_avatar">
+											<?php echo $user_avatar; ?>
+										</div>
+										<p class="title_avatar eng">
+											<span class="black"><?php echo $user_name; ?></span>
+											<!--										<span>@<?php echo $renews_id; ?></span>-->
+										</p>
 									</div>
-									<p class="title_avatar eng">
-										<span class="black"><?php echo $user_name; ?></span>
-										<!--										<span>@<?php echo $renews_id; ?></span>-->
-									</p>
+								</a>
+								<div class="wrap_social color_black flex">
+									<div class="socialbox datebox"><?php echo get_the_time('Y.m.d'); ?></div>
 								</div>
-							</a>
-							<div class="wrap_social color_black flex">
-								<div class="socialbox datebox"><?php echo get_the_time('Y.m.d'); ?></div>
 							</div>
 						</div>
 					</div>

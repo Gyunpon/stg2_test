@@ -40,15 +40,14 @@
 	<script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	
 	<!-- animation -->
-	<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<!--<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>-->
 	<!-- UIkit CSS -->
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+	<!--<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />-->
 	<!-- UIkit JS -->
-	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
-	<!-- 環境移行時に差し替え -->
-<!--	<script src="//kit.fontawesome.com/55b5b4c129.js" crossorigin="anonymous"></script>-->
+	<!--<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>-->
+
 	<!-- base -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/all.min.css" rel="stylesheet" media="all" />
@@ -58,17 +57,20 @@
 	<link href="<?php echo get_template_directory_uri(); ?>/css/magnific-popup.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery.magnific-popup.min.js"></script>
 
-
 	<!-- add -->
 	<link href="//fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700&display=swap" rel="stylesheet">	
 	<?php if(is_home() || is_front_page()): ?>
-<!--	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />-->
+	<!--<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />-->
 	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/slick.min.js"></script>
 	
-	<link href="<?php echo get_template_directory_uri(); ?>/css/slick.css" rel="stylesheet" media="all" />
-	<script src="<?php echo get_template_directory_uri(); ?>/js/top.js"></script>
+	<!-- slick -->
+	<!--<script src="<?php echo get_template_directory_uri(); ?>/js/libs/slick.min.js"></script>
+	<link href="<?php echo get_template_directory_uri(); ?>/css/slick.css" rel="stylesheet" media="all" />-->
+
+	<!-- top.js -->
+	<!--<script src="<?php echo get_template_directory_uri(); ?>/js/top.js"></script>-->
+
 	<?php else: ?>
 	<?php endif; ?>
 
@@ -103,17 +105,11 @@
 	<?php else: ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/lower1.min.css" rel="stylesheet" media="all" />
 	<?php endif ; ?>
-
-	
-	
 	
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/privacy.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/contact.min.css" rel="stylesheet" media="all" />
 
-	
-
 	<?php if(is_single()): ?>
-<!--	<script src="<?php echo get_template_directory_uri(); ?>/js/article.js"></script>-->
 	
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/article.min.css" rel="stylesheet" media="all" />
@@ -204,25 +200,6 @@
 						</ul>
 					</nav>
 
-					<div id="headerShareLink" class="uk-flex-top" uk-modal>
-						<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-							<?php 
-							//元となるテキスト
-							$text = 'Renews | ';
-							$siteURL = rawurlencode(network_home_url());
-							//URLエンコード処理
-							$encoded = rawurlencode( $text ) ;
-							?>
-							<button class="uk-modal-close-default" type="button" uk-close></button>
-							<p class="shareBtnTitle"><img src="<?php echo get_template_directory_uri(); ?>/images/about/about.png" alt="RENEWS" /><span>をシェアする</span></p>
-							<ul class="shareBtnList">
-								<li><a href="//twitter.com/share?url=<?php echo network_home_url(); ?>&text=<?php echo $encoded; ?>" class="shareBtn twitter share_popup" target="_blank"><i class="um-faicon-twitter"></i><span>Twitter</span></a></li>
-								<li><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo $siteURL; ?>" class="shareBtn facebook share_popup" target="_blank"><i class="um-faicon-facebook-square"></i><span>Facebook</span></a></li>
-								<li><a href="//social-plugins.line.me/lineit/share?url=<?php echo $siteURL; ?>" class="shareBtn line share_popup" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/line_wh.svg" alt="LINE" /><span>LINE</span></a></li>
-								<li><a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo $siteURL; ?>&title=<?php echo $encoded; ?>" class="shareBtn hatena share_popup" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/hatena_wh.svg" alt="" /><span>はてなブックマーク</span></a></li>
-							</ul>
-						</div>
-					</div>
 					<div class="search__box for_pc">
 						<div class="search-box">
 							<form role="search" method="get" id="searchform" class="search-form" action="<?php echo network_home_url( '/' ); ?>">

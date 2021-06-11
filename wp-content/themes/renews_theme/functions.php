@@ -1,9 +1,7 @@
 <?php
 	$noImage_thumbnail = get_template_directory_uri().'/images/icon/noimg_thumbnail.png';
 	$noImage_mainImg = get_template_directory_uri().'/images/icon/noimg_single.png';
-
 	$archivePageNum = 12;
-
 
 //$http = is_ssl() ? 'https' : 'http' . '';
 //$url = $http .'://'. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
@@ -87,9 +85,6 @@ function custom_robots($robots) {
 //}
 
 
-
-
-
 if (!is_user_logged_in()){
 
 	//ログインしてなければTOPページにリダイレクト
@@ -116,7 +111,6 @@ if (!is_user_logged_in()){
 		}
 	}
 
-
 	if($page_user == '-' && $redirect_flg == 'false'){
 		//			var_dump('非ログイン：リニュアー');
 		//			var_dump($redirect_flg);
@@ -135,13 +129,6 @@ if (!is_user_logged_in()){
 	}
 
 }
-
-
-
-
-
-
-
 
 /*-------------------------------------------------------------------------------*/
 
@@ -193,7 +180,32 @@ function test_save_pre($content){
 
 	return $content;
 }
+/*-------------------------------------------------------------------------------*/
+/* Webp対応 2021/06/11 */
+//* WebP File Upload
+function add_file_types_to_uploads( $mimes ) {
+	$mimes['webp'] = 'image/webp';
+	return $mimes;
+}
+add_filter( 'upload_mimes', 'add_file_types_to_uploads' );
 
+//* WebP image thumbnail display on media　Library
+function webp_is_displayable($result, $path) {
+    if ($result === false) {
+        $displayable_image_types = array( IMAGETYPE_WEBP );
+        $info = @getimagesize( $path );
+ 
+        if (empty($info)) {
+            $result = false;
+        } elseif (!in_array($info[2], $displayable_image_types)) {
+            $result = false;
+        } else {
+            $result = true;
+        }
+    }
+    return $result;
+}
+add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
 
 /*-------------------------------------------------------------------------------*/
 /* ビジュアルエディタ禁止 */
@@ -244,7 +256,6 @@ function preDump($d){
 	var_dump($d);
 	echo '</pre>';
 }
-
 
 /*-------------------------------------------------------------------------------*/
 
@@ -1186,8 +1197,8 @@ add_action('init', 'disable_author_archive_query');
 
 
 
-
-add_filter( 'wp_lazy_loading_enabled', '__return_false' );
+//LazyLoad機能のオフ
+//add_filter( 'wp_lazy_loading_enabled', '__return_false' );
 
 
 //新しい管理画面を追加//
@@ -1205,8 +1216,98 @@ function page_html() {
 
 // TinyMCE Advancedのフォントサイズ変更
 function tinymce_custom_fonts($setting){
-	$setting['fontsize_formats'] = "9px 10px 11px 12px 13px 14px 15px 16px 18px 20px 22px";
+	$setting['fontsize_formats'] = "9px 10px 11px 12px 13px 14px 15px 16px 17px 18px 20px 22px";
 	return $setting;
 }
 add_filter('tiny_mce_before_init','tinymce_custom_fonts',5);
+
+
+// TinyMCE Advancedのオリジナルのスタイルメニュー
+if( !function_exists( "initialize_tinymce_styles" ) ):
+function initialize_tinymce_styles($init_array) {
+
+	$style_formats = array(
+		// 小見出し
+		array(
+			'title' => '見出し',/* マーカーという親メニューを作る */
+			'items' => array(/* itemsの中にメニューを入れる */
+				array(
+					"title" => "h2小見出し",
+					"block" => "h2",
+					"classes" => "subtitle_small"
+				),
+				array(
+					"title" => "h2中見出し",
+					"block" => "h2",
+					"classes" => "subtitle_large"
+				),
+				array(
+					"title" => "h3小見出し",
+					"block" => "h3",
+					"classes" => "subtitle_small"
+				),
+				array(
+					"title" => "シカケ見出し",
+					"inline" => "span",
+					"classes" => "subtitle_chart"
+				),
+			),
+		),
+		array(
+			"title" => "ウェイト500",
+			"inline" => "span",
+			"classes" => "weight_500"
+		),
+		array(
+			"title" => "ウェイト600",
+			"inline" => "span",
+			"classes" => "weight_600"
+		),
+		array(
+			'title' => 'マーカー',/* マーカーという親メニューを作る */
+			'items' => array(/* itemsの中にメニューを入れる */
+				array(
+					"title" => "黄色",
+					"inline" => "span",
+					"classes" => "mymarker-y"
+				),
+				array(
+					"title" => "赤色",
+					"inline" => "span",
+					"classes" => "mymarker-r"
+				),
+				array(
+					"title" => "青色",
+					"inline" => "span",
+					"classes" => "mymarker-b"
+				),
+				array(
+					"title" => "緑色",
+					"inline" => "span",
+					"classes" => "mymarker-g"
+				),
+			),
+		),
+		array(
+			'title' => "ボックス",/* ついでにボックスという親メニューを作ってみる */
+			'items' => array(
+				array(
+					"title" => "グレー",
+					"block" => "div",/* ボックスの時はblockと書く */
+					"classes" => "rnbox_gray"
+				)
+			)
+		)
+	);
+
+	$init_array["style_formats"] = json_encode( $style_formats );
+	
+	/* ついでにスタイルの変更がすぐ確認できるようにしておく */
+	$init_array["cache_suffix"] = "v=".time();
+
+	return $init_array;
+}
+endif;
+add_filter( "tiny_mce_before_init", "initialize_tinymce_styles" );
+
 ?>

@@ -44,7 +44,7 @@ $login_user = $login_user->ID;
 		<div id="bookmark_top_intro" class="inner_base">
 
 			<div class="mypageTitleBlock">
-				<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/bookmark.png" alt="" /></div>
+				<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/bookmark.jpg" alt="クリップ" /></div>
 				<div class="mypageTitleArea">
 					<h2 class="mypageTitle"><?php the_title(); ?></h2>
 					<div class="pageCatch">
@@ -114,7 +114,7 @@ $login_user = $login_user->ID;
 						$imageUrl = $noImage_thumbnail;
 					}
 					// タイトル
-					$title = mb_strimwidth( $post->post_title, 0, 66, "...", "UTF-8" );
+					$title = mb_strimwidth( $post->post_title, 0, 76, "...", "UTF-8" );
 					// 日付
 					$date = get_the_time('Y.m.d');
 
@@ -129,8 +129,10 @@ $login_user = $login_user->ID;
 					$agenda_terms = get_the_terms($val->ID,'agenda');
 					$hashtag_terms = get_the_terms($val->ID,'value_hashtag');
 					$series_terms = get_the_terms($val->ID,'series');
-
 					?>
+
+
+
 					<div class="article_middle" data-post_id="<?php echo $postId; ?>">
 						<div class="wrap_img">
 							<div class="article_middle_img imgLiquidFill">
@@ -138,10 +140,22 @@ $login_user = $login_user->ID;
 									<img src="<?php echo $imageUrl; ?>" alt="" />
 								</a>
 							</div>
+
+							<!-- アイコン移動 -->
+							<?php
+		          			//現在のユーザー
+		          			$user = wp_get_current_user();
+		          			$uid = $user->ID;
+		          			?>
+		          			<div class="wrap_social color_black flex">
+		            			<div class="socialbox likebox">
+									<?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $postId) ); ?>
+								</div>
+		          			</div>
+		          			<!-- アイコン移動 ここまで -->
 						</div>
 
-
-						<div class="textbox middle left_bottom">
+						<div class="textbox middle left_bottom small_compo">
 							<?php if(!empty($series_terms)): ?>
 							<?php foreach($series_terms as $ct):
 							//$series_type = get_field('series_type','series_'.$ct->term_id)[0];
@@ -180,9 +194,9 @@ $login_user = $login_user->ID;
 
 								<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
 									<div class="wrap_avatar flex">
-										<div class="textbox_avatar">
-											<?php echo $user_avatar; ?>
-										</div>
+										<!--<div class="textbox_avatar">
+											<?php //echo $user_avatar; ?>
+										</div>-->
 										<p class="title_avatar eng">
 											<span class="black"><?php echo $user_name; ?></span>
 											<span>@<?php echo $renews_id; ?></span>
@@ -211,13 +225,15 @@ $login_user = $login_user->ID;
 
 
 							<div class="wrap_social color_black flex">
-								<div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $postId) ); ?></div>
-								<a class="socialbox flexSocialbox commentbox" href="<?php echo get_permalink( $val ); ?>?move=commentsAreaWrap">
+								<!--
+								<div class="socialbox likebox"><?php //if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $postId) ); ?></div>
+								<a class="socialbox flexSocialbox commentbox" href="<?php //echo get_permalink( $val ); ?>?move=commentsAreaWrap">
 									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
 										<path fill="none" stroke="#b0ad9e" stroke-width="1.5" class="icon_comm" data-name="icon_comm" d="M28.1,31.9c-1.4,0-2.8-0.2-4.2-0.7s-2.2-1.9-2-3.4v-0.2h-7.5c-2.2,0-4.1-1.8-4.1-4.1V15c0-2.2,1.8-4.1,4.1-4.1 l0,0h14.4c2.2,0,4.1,1.8,4.1,4.1v8.6c0,2.2-1.8,4.1-4.1,4.1h-1.7V28c0,1,0.6,2,1.5,2.6l2.2,1.4L28.1,31.9L28.1,31.9z"/>
 									</svg>
-									<span class="commCount"><?php comments_number( '0', '1', '%' ); ?></span>
+									<span class="commCount"><?php //comments_number( '0', '1', '%' ); ?></span>
 								</a>
+								-->
 								<?php if( is_user_logged_in() ): ?>
 								<a href="javascript:void(0);" class="socialbox clipbox flexSocialbox postStockBtn<?php if($follow_check == 'true'){echo ' stock';} ?>" data-uid="<?php echo $uid; ?>" data-post_id="<?php echo $postId; ?>">
 									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">

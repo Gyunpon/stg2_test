@@ -41,7 +41,7 @@
 	if($the_query->have_posts()):
 	?>
 	<li class="agenda">
-		<div class="wrap_title_agenda bg_rightgreen">
+		<div class="wrap_title_agenda bg_lightgreen">
 			<a href="<?php echo $url; ?>">
 				<?php
 				//アジェンダイメージ画像
@@ -58,6 +58,22 @@
 				<h2 class="title_agenda color_green">
 					<?php echo esc_html($taxonomy->name); ?>
 				</h2>
+				<div class="agenda_desc">
+					<?php
+					$text = $taxonomy->description;
+					$limit = 50;
+
+					$subDescription = strip_tags($text);
+
+					if(mb_strlen($subDescription) > $limit) {
+					$title = mb_substr($subDescription,0,$limit);
+					echo $title. ･･･ ;
+					}
+					else {
+					echo get_the_title($subDescription);
+					}
+					?>
+				</div>
 			</a>
 		</div>
 
@@ -105,10 +121,12 @@
 							</p>
 						</a>
 						<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
+							<!--
 							<p class="title_avatar eng">
 								<span class="black"><?php echo $user_name; ?></span>
 								<span>@<?php echo $renews_id; ?></span>
 							</p>
+						  -->
 						</a>
 					</div>
 				</div>
@@ -117,6 +135,11 @@
 			<li class="see_more">
 				<a href="<?php echo $url; ?>">
 					「<?php echo esc_html($taxonomy->name); ?>」の記事一覧へ
+					<!-- 矢印SVG -->
+				<svg version="1.1" id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 38 4" style="enable-background:new 0 0 38 4;" xml:space="preserve">
+					<polygon class="st0" points="38,4 0,4 0,3.6 36.3,3.6 30.9,0.4 31.2,0 "/>
+				</svg>
 				</a>
 			</li>
 		</ul>

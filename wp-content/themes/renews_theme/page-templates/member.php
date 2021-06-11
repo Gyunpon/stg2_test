@@ -100,7 +100,7 @@ $slug_member_under = $path[2];
 				
 					<?php if($slug_member_under == 'webnotifications'): //通知設定 ?>
 					<div class="mypageTitleBlock">
-						<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notice.png" alt="" /></div>
+						<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notice.jpg" alt="" /></div>
 						<div class="mypageTitleArea">
 							<h2 class="mypageTitle">通知設定</h2>
 							<div class="pageCatch">
@@ -112,7 +112,7 @@ $slug_member_under = $path[2];
 				
 				<?php if($slug_member_under == 'password'): //パスワード変更 ?>
 				<div class="mypageTitleBlock">
-					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/password.png" alt="" /></div>
+					<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/password.jpg" alt="" /></div>
 					<div class="mypageTitleArea">
 						<h2 class="mypageTitle">パスワード変更</h2>
 						<div class="pageCatch">
@@ -124,7 +124,7 @@ $slug_member_under = $path[2];
 				
 					<?php if(($slug_member == 'member') && ($slug_member_under == 'notifications')): //メール通知 ?>
 					<div class="mypageTitleBlock">
-						<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notifications.png" alt="" /></div>
+						<div class="pageIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/my/notifications.jpg" alt="" /></div>
 						<div class="mypageTitleArea">
 							<h2 class="mypageTitle">メール通知</h2>
 							<div class="pageCatch">

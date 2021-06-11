@@ -3,7 +3,7 @@
 		<?php if(have_posts()):while(have_posts()):the_post(); ?>
 		<?php
 		$postId = $post->ID;
-			
+
 		// image
 		$thumbnailId = get_post_thumbnail_id();
 		$imageUrl = '';
@@ -30,8 +30,8 @@ $encodedURL = json_encode(get_permalink());
 
 
 
-<section class="sec sec_article_detail">
-	
+<section class="sec sec_article_detail info_detail">
+
 	<div id="sideFixShare">
 		<div class="snsShare fixBlock for_pc">
 			<div class="sharebox head_article_detail flex">
@@ -116,10 +116,10 @@ $encodedURL = json_encode(get_permalink());
 		</div>
 
 	</div><!-- sideFixShares -->
-	
-	
-	
-	
+
+
+
+
 
 	<div class="inner_base mv">
 		<div class="content_article_mv">
@@ -154,7 +154,7 @@ $encodedURL = json_encode(get_permalink());
 						<?php endif; ?>
 					</div>
 
-				
+
 					<div class="flex wrap_label_article_mv cf">
 						<?php if(have_rows('author_select_info')): ?>
 						<?php while(have_rows('author_select_info')): the_row();
@@ -230,50 +230,41 @@ $encodedURL = json_encode(get_permalink());
 								<img src="<?php echo get_template_directory_uri(); ?>/images/icons/circle_hatena.svg" alt="hatena" />
 							</a>
 						</div>
-						
-						
-						
+
 						<div class="share-btn circle-btn copy for_pc">
-							<span class="baloon top">URLをコピー</span>
+							<span class="baloon top">
+								<span class="baloon_urlCopy_before">URLをコピー</span>
+								<span class="baloon_urlCopy_after hide">コピーしました</span>
+							</span>
 							<button name="button" type="submit" onclick="copyToClipboard(target)">
 								<span class="copyBtnIcon"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/circle_copy_off.svg" alt="copy" /></span>
-<!--
-								<svg xmlns="http://www.w3.org/2000/svg" width="17.525" height="20.73" viewBox="0 0 17.525 20.73">
-									<g class="icon_copy" data-name="copy1" transform="translate(-422.488 -622.46)">
-										<rect class="icon_copy_stroke" data-name="copy5" width="13.126" height="16.411" rx="1" transform="translate(426.137 626.029)" fill="#fff" stroke="#b0ad9e" stroke-miterlimit="10" stroke-width="1.5"/>
-										<path class="icon_copy_stroke" data-name="copy2" d="M423.238,637.646v-13.4a1.038,1.038,0,0,1,1.038-1.038h10.831" fill="none" stroke="#b0ad9e" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
-										<g class="icon_copy" data-name="copy3" transform="translate(428.371 628.259)">
-											<path class="icon_copy_fill" data-name="copy4" d="M437.632,630.924a2.915,2.915,0,0,0-4.923-1.5l-2.212,2.213a2.914,2.914,0,0,0,0,4.12h0a2.916,2.916,0,0,0,4.123,0l.167-.167a.888.888,0,0,0-.712-.991.934.934,0,0,0-.287,0l-.167.168a1.538,1.538,0,0,1-.5.333,1.51,1.51,0,0,1-1.963-.831,1.525,1.525,0,0,1-.082-.853,1.505,1.505,0,0,1,.414-.777l2.217-2.213a1.457,1.457,0,0,1,.5-.334,1.5,1.5,0,0,1,1.644,2.44,3.511,3.511,0,0,1,.547.449,3.4,3.4,0,0,1,.449.55,2.891,2.891,0,0,0,.626-.949A2.921,2.921,0,0,0,437.632,630.924Z" transform="translate(-428.78 -628.565)" fill="#b0ad9e"/>
-											<path class="icon_copy_fill" data-name="copy5" d="M436.066,632.923a2.915,2.915,0,0,0-4.121,0l-.168.167a.913.913,0,0,0,.059.452.888.888,0,0,0,.94.546l.168-.168a1.474,1.474,0,0,1,.5-.334,1.525,1.525,0,0,1,.853-.083,1.52,1.52,0,0,1,1.11.916,1.525,1.525,0,0,1,.083.853,1.5,1.5,0,0,1-.413.777l-2.213,2.212a1.488,1.488,0,0,1-.5.334,1.526,1.526,0,0,1-.853.082,1.5,1.5,0,0,1-.79-2.523,3.521,3.521,0,0,1-.547-.449h0a3.506,3.506,0,0,1-.448-.547,2.914,2.914,0,0,0,4.136,4.106l2.212-2.212a2.914,2.914,0,0,0,0-4.12l0,0Z" transform="translate(-428.887 -628.073)" fill="#b0ad9e"/>
-										</g>
-									</g>
-								</svg>
--->
 							</button>
 						</div>
 
 						<div class="share-btn circle-btn share for_sp">
-							<button id="share_1">
-								<svg xmlns="http://www.w3.org/2000/svg" width="13" height="3" viewBox="0 0 13 3">
-									<circle cx="1.5" cy="1.5" r="1.5" fill="#b0ad9e"/>
-									<circle cx="1.5" cy="1.5" r="1.5" transform="translate(5)" fill="#b0ad9e"/>
-									<circle cx="1.5" cy="1.5" r="1.5" transform="translate(10)" fill="#b0ad9e"/>
-								</svg>
-							</button>
-						</div>
+								<button id="share_2">
+									<svg xmlns="http://www.w3.org/2000/svg" width="13" height="3" viewBox="0 0 13 3">
+										<circle cx="1.5" cy="1.5" r="1.5" fill="#b0ad9e"/>
+										<circle cx="1.5" cy="1.5" r="1.5" transform="translate(5)" fill="#b0ad9e"/>
+										<circle cx="1.5" cy="1.5" r="1.5" transform="translate(10)" fill="#b0ad9e"/>
+									</svg>
+								</button>
+							</div>
 
 					</div><!-- /.btn_share -->
 				</div><!-- /.head_article_detail -->
-			
+
 
 				<div class="inner_article_detail cf">
 					<div class="singleText">
 
 						<?php the_content(); ?>
 					</div>
-										
-										
+
+
 					<div class="head_article_detail flex">
+
+						<!--
 						<div class="btn_share head last">
 							<div class="share-btn circle-btn twitter">
 								<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php echo $encoded; ?>" class="share_popup" target="_blank">
@@ -313,7 +304,7 @@ $encodedURL = json_encode(get_permalink());
 											</g>
 										</g>
 									</svg>
--->
+
 								</button>
 							</div>
 
@@ -327,15 +318,15 @@ $encodedURL = json_encode(get_permalink());
 								</button>
 							</div>
 
-						</div><!-- /.btn_share -->
+						</div>--><!-- /.btn_share -->
 					</div><!-- /.head_article_detail -->
-										
-					
+
+
 				</div><!-- inner_article_detail -->
 			</div><!-- /.article_detail -->
 		</div><!-- /.inner_base -->
 	</div><!-- /.content_article_detail -->
-	
+
 
 
 	<!-- 関連記事 -->
@@ -345,10 +336,9 @@ $encodedURL = json_encode(get_permalink());
 	?>
 	<div class="content_article kanrenLink">
 		<div class="inner_base">
-			<h2 class="title_thin">
-				<span class="title_thin_img white">
-					<h2>関連記事</h2>
-				</span>
+			<h2 class="sec_title">
+				<span class="main_title">Recommend</span>
+				<span class="main_title_jp">おすすめの記事</span>
 			</h2>
 
 			<div class="wrap_article_middle flex colum2">
@@ -398,10 +388,10 @@ $encodedURL = json_encode(get_permalink());
 						</a>
 
 
-						<?php 
+						<?php
 						$rows = get_field('author_select_info',$val->ID ); // すべてのrow（内容・行）をいったん取得する
 						$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-						$first_row_item = $first_row['author_info']; // get the sub field value 
+						$first_row_item = $first_row['author_info']; // get the sub field value
 						if(!($first_row_item)){
 							$user_name = get_the_author_meta( 'display_name', $val->post_author );
 							$renews_id = get_the_author_meta( 'user_login', $val->post_author );
@@ -412,23 +402,24 @@ $encodedURL = json_encode(get_permalink());
 							$user_avatar = $first_row_item['user_avatar'];
 						}
 						?>
-						<div class="infobox">
-							<a href="<?php echo network_home_url(); ?>user/<?php echo $renews_id; ?>/">
-								<div class="wrap_avatar flex">
-									<div class="textbox_avatar">
-										<?php echo $user_avatar; ?>
+						<div class="card-bottom">
+							<div class="infobox">
+								<a href="<?php echo network_home_url(); ?>user/<?php echo $renews_id; ?>/">
+									<div class="wrap_avatar flex">
+										<div class="textbox_avatar">
+											<?php echo $user_avatar; ?>
+										</div>
+										<p class="title_avatar eng">
+											<span class="black"><?php echo $user_name; ?></span>
+	<!--										<span>@<?php echo $renews_id; ?></span>-->
+										</p>
 									</div>
-									<p class="title_avatar eng">
-										<span class="black"><?php echo $user_name; ?></span>
-<!--										<span>@<?php echo $renews_id; ?></span>-->
-									</p>
+								</a>
+								<div class="wrap_social color_black flex">
+									<div class="socialbox datebox"><?php echo get_the_time('Y.m.d'); ?></div>
 								</div>
-							</a>
-							<div class="wrap_social color_black flex">
-								<div class="socialbox datebox"><?php echo get_the_time('Y.m.d'); ?></div>
 							</div>
 						</div>
-
 
 					</div>
 				</div><!-- /.article_middle -->
@@ -440,7 +431,7 @@ $encodedURL = json_encode(get_permalink());
 	<?php endif; ?>
 </section>
 
-		
+
 		<?php endwhile;endif; ?>
 
 

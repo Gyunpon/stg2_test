@@ -1,0 +1,9 @@
+.keyword_title_head_content_wrapper {
+  padding: 10px 0;
+  color: #4E4E4E;
+}
+
+.keyword_title_head_content {
+  display: inline;
+  font-size: 130%;
+}

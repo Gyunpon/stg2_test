@@ -36,7 +36,7 @@ $login_user = $login_user->ID;
 ?>
 <?php if(have_posts()): while (have_posts()): the_post(); ?>
 
-<?php 
+<?php
 $http = is_ssl() ? 'https' : 'http' . '';
 $url = $http .'://'. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 $keys = parse_url($url); //パース処理
@@ -63,7 +63,7 @@ $user_roles = $user->roles[0];
 
 <section class="sec sec_renewer_detail <?php if($_GET['um_action'] == 'edit'){echo 'profEditPage';} if($user_roles == 'um_member'){echo ' memberProfPage';} if($login_user == $profshow_uid){echo ' myProfPage';} ?>">
 
-	<?php 
+	<?php
 	if(is_user_logged_in()):
 	if(!empty($_GET['um_action']) && $_GET['um_action'] == 'edit'):
 	?>
@@ -73,7 +73,7 @@ $user_roles = $user->roles[0];
 
 
 	<div class="inner_base">
-		<?php 
+		<?php
 		if($profshow_flg == 'true'){
 			echo do_shortcode( '[ultimatemember form_id="11"]' );
 		}elseif($profshow_flg == 'false'){
@@ -135,7 +135,7 @@ $user_roles = $user->roles[0];
 		?>
 
 		<?php if(empty($_GET['um_action']) || $_GET['um_action'] != 'edit'): ?>
-		<?php 
+		<?php
 		$user_info = get_userdata($current_uid);
 		$user_id = $user_info->ID;
 		$user_name = $user_info->user_login;
@@ -303,7 +303,7 @@ $user_roles = $user->roles[0];
 	<?php
 	$profile_id = um_profile_id();
 	$userArticle_query = new WP_Query();
-	
+
 	$args = array(
 		'post_type' => $post_type,
 		'posts_per_page' => $pageNum,
@@ -314,16 +314,17 @@ $user_roles = $user->roles[0];
 		'author' => $profile_id
 	);
 	$userArticle_query->query($args);
-	
+
 	if($userArticle_query->have_posts()):
 	?>
 	<div class="content_renewer">
 		<div class="inner_base">
 			<div class="wrap_article_middle grid articleListStyle">
 				<?php while($userArticle_query->have_posts()) : $userArticle_query->the_post(); ?>
+
+
 				<?php
 //				preDump($post->ID);
-				
 				$postId = $post->ID;
 				// アイキャッチ
 				$thumbnail_id = get_post_thumbnail_id();
@@ -362,10 +363,11 @@ $user_roles = $user->roles[0];
 
 
 				// タイトル
-				$title = mb_strimwidth( $post->post_title, 0, 66, "...", "UTF-8" );
+				$title = mb_strimwidth( $post->post_title, 0, 76, "...", "UTF-8" );
 				$series_terms = get_the_terms($post->ID, 'series');
 //				if($current_uid == $author_id):
 				?>
+
 				<div class="article_middle">
 					<div class="wrap_img">
 						<div class="article_middle_img imgLiquidFill">
@@ -373,9 +375,19 @@ $user_roles = $user->roles[0];
 								<img src="<?php echo $imageUrl; ?>" alt="<?php echo $title; ?> サムネイル" />
 							</a>
 						</div>
+						<!-- アイコン移動 -->
+            <?php
+            //現在のユーザー
+            $user = wp_get_current_user();
+            $uid = $user->ID;
+            ?>
+            <div class="wrap_social color_black flex">
+              <div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $postId) ); ?></div>
+            </div>
+            <!-- アイコン移動 ここまで -->
 					</div>
 
-					<div class="textbox middle left_bottom">
+					<div class="textbox middle left_bottom small_compo">
 						<?php if(!empty($series_terms)): ?>
 						<?php foreach($series_terms as $ct):
 						$series_link = get_category_link($ct->term_id);
@@ -389,16 +401,68 @@ $user_roles = $user->roles[0];
 						<?php endif; ?>
 
 						<a href="<?php the_permalink(); ?>">
-							<h2 class="title_middle artcle_small_title">
+							<h2 class="title_middle lineClamp_2">
 								<?php echo $title; ?>
 							</h2>
 						</a>
+
+
+<!--
+            <div class="top_tags">
+              <?php if(!empty($series_terms)): ?>
+              <?php
+              /*
+              $postId = $val;
+              $taxonomy = 'agenda';
+              $primaryTerm = get_post_meta( $postId, '_yoast_wpseo_primary_'.$taxonomy, true );
+
+              if($primaryTerm){
+                // Yoast SEO カテゴリー「メインにする」設定をされている場合
+
+                $terms = get_term($primaryTerm, $taxonomy);
+                if(!empty($terms)){
+                  $primary_termName = $terms->name;
+                  $primary_termSlug = $terms->slug;
+                  $primary_termLink = get_category_link($terms->term_id);
+                }
+              }else{
+                // Yoast SEO カテゴリー「メインにする」設定をされていない場合
+                // 選択タームの一番上を表示
+
+                $terms = get_the_terms($postId, array($taxonomy));
+                if(!empty($terms)){
+                  $primary_termName = $terms[0]->name;
+                  $primary_termSlug = $terms[0]->slug;
+                  $primary_termLink = get_category_link($terms[0]->term_id);
+                }
+              }
+              */
+              ?>
+
+              <a href="<?php echo $primary_termLink; ?>" class="tag_agenda border_agenda primary_tag"><?php echo $primary_termName; ?></a>
+              <?php foreach($series_terms as $t_a)://agenda
+              /*
+              $tag_a_id = $t_a->term_id;
+              $tag_link = get_category_link($t_a->term_id);
+              $tag_name = $t_a->name;
+              */
+              ?>
+              <?php if($primaryTerm != $tag_a_id): ?>
+              <a href="<?php echo $tag_link; ?>" class="tag_agenda border_agenda"><?php echo $tag_name; ?></a>
+              <?php endif; ?>
+              <?php endforeach; ?>
+              <?php endif; ?>
+
+            </div>
+          	-->
+
+
 						<div class="card-bottom">
 							<?php
 							//著者情報
 							$rows = get_field('author_select' ); // すべてのrow（内容・行）をいったん取得する
 							$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-							$first_row_item = $first_row['author']; // get the sub field value 
+							$first_row_item = $first_row['author']; // get the sub field value
 							if(!($first_row_item)){
 								$user_name = get_the_author_meta( 'display_name', $post->post_author );
 								$renews_id = get_the_author_meta( 'user_login', $post->post_author );
@@ -412,42 +476,15 @@ $user_roles = $user->roles[0];
 							<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
 								<div class="wrap_avatar flex">
 									<div class="textbox_avatar">
-										<?php echo $user_avatar; ?>
-									</div>
+							      <?php echo $user_avatar; ?>
+						      </div>
 									<p class="title_avatar eng">
 										<span class="black"><?php echo $user_name; ?></span>
 										<span>@<?php echo $renews_id; ?></span>
 									</p>
 								</div>
 							</a>
-
-							<?php 
-							//現在のユーザー
-							$user = wp_get_current_user();
-							$uid = $user->ID;
-
-							//フォローチェック
-							$follow_post = get_user_meta($uid,'article_follow');
-							$follow_check = in_array($postId, $follow_post);
-
-							//ストックしている人数
-							$args = array(
-								'meta_key'     => 'article_follow',
-								'meta_value'   => $postId
-							);
-							$all_user_stockPost = get_users( $args );
-							$stockNum = count($all_user_stockPost);
-							?>
-							<div class="wrap_social color_black flex">
-								<div class="socialbox likebox"><?php if(function_exists('wp_ulike_comments')) echo wp_ulike( 'put', array("id" => $postId) ); ?></div>
-								<a class="socialbox commentbox flexSocialbox" href="<?php the_permalink(); ?>?move=commentsAreaWrap">
-									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 42 41.3" style="enable-background:new 0 0 42 41.3;" xml:space="preserve">
-										<path fill="none" stroke="#b0ad9e" stroke-width="1.5" class="icon_comm" data-name="icon_comm" d="M28.1,31.9c-1.4,0-2.8-0.2-4.2-0.7s-2.2-1.9-2-3.4v-0.2h-7.5c-2.2,0-4.1-1.8-4.1-4.1V15c0-2.2,1.8-4.1,4.1-4.1 l0,0h14.4c2.2,0,4.1,1.8,4.1,4.1v8.6c0,2.2-1.8,4.1-4.1,4.1h-1.7V28c0,1,0.6,2,1.5,2.6l2.2,1.4L28.1,31.9L28.1,31.9z"/>
-									</svg>
-									<span class="commCount"><?php echo $comments->total_comments; ?></span>
-								</a>
-							</div>
-						</div>
+						</div><!-- card-bottom -->
 					</div>
 				</div>
 
@@ -457,12 +494,12 @@ $user_roles = $user->roles[0];
 
 		</div><!-- inner_base -->
 	</div>
-	
-	
-	
+
+
+
 	<?php
 	$max_page = ceil($userArticle_query->found_posts / $pageNum);
-	
+
 	if($max_page != 1):
 	$paginate_base = preg_replace('/(\?|&)pg=[0-9]{1,4}/i','',get_pagenum_link(1));
 	?>
@@ -480,8 +517,8 @@ $user_roles = $user->roles[0];
 	</div><!--pagerArea-->
 
 	<?php endif; ?>
-	
-	
+
+
 	<?php endif; wp_reset_postdata(); ?>
 
 	<?php endif; //?um_action=editじゃなかったら ?>
