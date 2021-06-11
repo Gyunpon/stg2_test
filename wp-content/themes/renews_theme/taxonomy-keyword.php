@@ -60,7 +60,6 @@ $encoded = rawurlencode( $text ) ;
 			<div class="main_title">Keyword</div>
 			<h1 class="main_title_jp"><span class="keyword_each">#<?php echo $archivePageName; ?></span>のタグが付いた記事</h1>
 		</div>
-		</div>
 
     <div class="content_article">
 			<div class="wrap_article_middle grid articleListStyle">

@@ -381,10 +381,12 @@ header {
 .bookmarkPage#article .content_article {
   padding-top: 40px; }
 
-.bookmarkPage .inner_base {
-  padding-left: 0;
+@media only screen and (max-width: 1179px) {
+  #bookmark_top_contentArticle.inner_base {
+    padding: 0 10px 0 0;
+  }
 }
-  
+
 .bookmarkPage .flexSocialbox.commentbox .commCount{
 	padding-bottom: 6px;
 }
@@ -392,6 +394,21 @@ header {
 	.bookmarkPage .flexSocialbox.commentbox .commCount{
 		padding-bottom: 7px;
 	}
+}
+
+/* 2021/06/04 */
+.flexSocialbox {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+@media only screen and (max-width: 767px) {
+  .flexSocialbox {
+    margin-top: 15px;
+  }
+}
+
+.mypageContent .wrap_avatar {
+  margin-top: 10px;
 }
 
 /* 通知 */
@@ -788,14 +805,14 @@ header {
 
 @media only screen and (max-width: 1100px) {
   .followViewArea .followList.grid {
-    -ms-grid-columns: 1fr [2];
+    -ms-grid-columns: 1fr 2;
     grid-template-columns: repeat(2, 1fr); 
   } 
 }
 
 @media only screen and (max-width: 767px) {
   .followViewArea .followList.grid {
-    -ms-grid-columns: 1fr [1];
+    -ms-grid-columns: 1fr 2;
     grid-template-columns: repeat(1, 1fr); } }
 
 
@@ -937,49 +954,72 @@ overflow: visible;
   }
 }
 
-
 @media only screen and (max-width: 1100px) {
   .bookmarkPage .mypageContent .wrap_article_middle.grid {
-    -ms-grid-columns: 1fr [2];
-    grid-template-columns: repeat(2, 1fr); } }
+    -ms-grid-columns: 1fr 2;
+    grid-template-columns: repeat(2, 1fr); 
+  } 
+}
 
 @media only screen and (max-width: 767px) {
   .bookmarkPage .mypageContent .wrap_article_middle.grid {
-    -ms-grid-columns: 1fr [1];
-    grid-template-columns: repeat(1, 1fr); } }
+    -ms-grid-columns: 1fr 1;
+    grid-template-columns: repeat(1, 1fr); 
+  } 
+}
 
 .bookmarkPage .mypageContent .wrap_article_middle.grid {
-  margin-top: 50px; }
-  @media only screen and (max-width: 767px) {
-    .bookmarkPage .mypageContent .wrap_article_middle.grid {
-      margin-top: 40px; } }
-  .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    margin-bottom: 0; }
-    .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .wrap_img .article_middle_img {
-      width: 120px;
-      height: 150px;
-      max-height: none; }
-    .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox {
+  margin-top: 50px; 
+}
+@media only screen and (max-width: 767px) {
+  .bookmarkPage .mypageContent .wrap_article_middle.grid {
+    margin-top: 40px; 
+  }
+}
+
+/* 2021/06/04 */
+.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-bottom: 0; 
+  
+  height: 150px;
+  border-right: 1px solid #B0AD9E;
+  border-bottom: 1px solid #B0AD9E;
+}
+
+.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .wrap_img .article_middle_img {
+  width: 120px;
+  height: 150px;
+  max-height: none; 
+}
+
+/* 2021/06/04 */
+
+
+.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox {
       background-color: #fff;
-      padding: 2.5% 0 2.5% 5%;
+      /*padding: 2.5% 0 2.5% 5%;*/
+      padding: 1% 2% 0 3%;
       top: 0;
       width: calc(100% - 120px);
-      margin-top: 0; }
-      .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .title_middle {
-        font-size: 18px;
+      margin-top: 0; 
+}
+
+.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .title_middle {
+        font-size: 17px;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        overflow: hidden; }
+        overflow: hidden; 
+}
       .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .likebox .wpulike-robeen svg, .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .likebox .wpulike-animated-heart .wp_ulike_btn {
         margin-top: 5px; }
       .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .likebox, .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .commentbox {

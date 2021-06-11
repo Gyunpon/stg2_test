@@ -4,12 +4,10 @@
 <section class="sec sec_mv">
 	<div id="info_top_intro" class="inner_base">
 		<div class="infoTitle">
-			<h2 class="title_thin">
-				<span class="title_thin_img white">
-					<h2>お知らせ</h2>
-				</span>
-			</h2>
-			<p class="title_thin_subtitle">Renewsからの「お知らせ」を新着順にご紹介します。</p>
+			<h1 class="main_title">Info
+				<span class="main_title_jp">お知らせ</span>
+			</h1>
+			<p class="main_title_desc mb-10">Renewsからの「お知らせ」を新着順にご紹介します。</p>
 		</div>
 	</div>
 
@@ -84,7 +82,7 @@
 								//著者情報
 								$rows = get_field('author_select_info' ); // すべてのrow（内容・行）をいったん取得する
 								$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-								$first_row_item = $first_row['author_info']; // get the sub field value 
+								$first_row_item = $first_row['author_info']; // get the sub field value
 								if(!($first_row_item)){
 									$user_name = get_the_author_meta( 'display_name', $post->post_author );
 									$renews_id = get_the_author_meta( 'user_login', $post->post_author );
@@ -118,7 +116,7 @@
 				<?php endwhile; ?>
 			</div><!-- /.wrap_article_middle -->
 		</div><!-- inner_base -->
-		
+
 		<?php
 		$max_page = $wp_query->max_num_pages;
 		if($max_page != 1):

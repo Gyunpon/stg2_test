@@ -1,6 +1,12 @@
+@charset "UTF-8";
+
 /************ 共通CSS ************/
 html, body {
   height: 100%;
+}
+img {
+  height: auto;
+  max-width: 100%;
 }
 .main {
   padding-bottom: 0px !important;
@@ -47,7 +53,8 @@ header {
 
 @media only screen and (max-width: 767px) {
   header .inner_base {
-    padding: 0 10px;
+    padding: 0;
+    height: 39px;
   }
 
   .logo_header {
@@ -56,12 +63,14 @@ header {
   }
 
   .logo_header, .noLogin .logo_header {
-    margin-left: 100px;
-    position: relative;
-    top: 3px;
+    position: static;
+    margin-bottom: 10px;
+    width: 110px;
+    margin-left: calc(50vw - 65px);
   }
+
   header.is_open .logo_header {
-    top: 3px;
+    top: 0px;
   }
   .sign_wrap {
     max-width: none;
@@ -132,7 +141,7 @@ header {
   padding-top: 5px!important;
   color: #fff;
   line-height: 1;
-  z-index: 10;
+  z-index: 9;
   width: 26px;
   text-align: left;
   position: absolute;
@@ -298,6 +307,9 @@ header {
   .sec_mv .sec_title {
     padding-left: 2%;
   }
+  .topPage .sec_series {
+    padding-bottom: 20px;
+  }
 }
 /* メインタイトル */
 .main_title {
@@ -318,11 +330,11 @@ header {
   font-weight: 600;
   color: #202020;
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 @media only screen and (max-width:767px) {
-  .title_thin .main_title_navi {
-    font-size: 14px;
+  .main_title_navi {
+    font-size: 13px;
   }
 }
 /* 各Pageへのナビ後の矢印 */
@@ -332,6 +344,7 @@ header {
 svg#arrow {
   width:50px;
   stroke: #b0ad9e;
+  vertical-align: middle;
 }
 
 /* メインタイトル矢印
@@ -373,8 +386,9 @@ svg#arrow {
   bottom: 20px;
 }
 .slick-dots li {
-  width: 47px;
+  width: 43px;
   height: 8px;
+  margin: 0 5px;
 }
 .slide_wrap .arrows .slick-arrow {
   width: 50px;
@@ -421,7 +435,7 @@ svg#arrow {
   }
   .sec_mv .slick-dots {
     left: 50%;
-    top: 43%;
+    bottom: 230px;
   }
 }
 
@@ -563,30 +577,6 @@ svg#arrow {
 /* 共通タグ ここまで */
 
 
-.title_large, .title_middle {
-  color: #202020;
-  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  line-height: 1.5;
-  text-align: justify;
-}
-
-.title_middle {
-  font-size: 20px;
-  line-height: 1.3; /* 2021/05/26 井上 */
-}
-
-/* .series_name {
-  background-color: #4E5B64;
-  padding: 4px 10px 4px 4px;
-  border:none;
-}
-.content_article {
-  padding-bottom: 0;
-} */
-
-
 /*** For SP ***/
 @media only screen and (max-width:767px){
   /* .slide_wrap {
@@ -615,7 +605,7 @@ svg#arrow {
 
   /* SP大コンポをレスポンシブ対応に、100vwに対して16:9 2021/05/31 井上 */
   .article_main_img {
-    height: calc((100vw * 9) / 16);
+    height: calc(100vw * 0.5625);
   }
 
   /* .top_title {
@@ -638,7 +628,9 @@ svg#arrow {
   }
 
   .slide_wrap .content_mv_wrap .content_mv .textbox.right_top {
-    top: auto;
+    width: 100%;
+    height: 220px;
+    top: 0;
     bottom: 0;
   }
 
@@ -656,6 +648,16 @@ svg#arrow {
 
   .title_large {
     font-size: 20px;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -o-box;
+    display: -ms-box;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    -o-box-orient: vertical;
+    -ms-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 
   .title_middle {
@@ -663,9 +665,12 @@ svg#arrow {
   }
 
   .series_name {
-    font-size: 11px;
+    font-size: 10px;
     padding: 2px 6px 3px 3px;
     letter-spacing: 0;
+  }
+  .content_mv .textbox.large.right_top .tag_series .series_name, .sec_article_detail .textbox .series_name {
+    font-size: 13px;
   }
 
   .tag_agenda {
@@ -766,16 +771,6 @@ svg#arrow {
     margin-top: 0;
   }
 
-  /* .article_middle_img, .keyword_middle_img {
-    max-height: 191px;
-  }
-  .sec_mv .inner_base, #article .inner_base {
-    padding: 0;
-  } */
-
-  .title_large {
-    font-size: 24px;
-  }
 }
 
 
@@ -820,6 +815,7 @@ svg#arrow {
 }
 .news_date {
   color: #b0ad9e;
+  padding-bottom: 10px;
 }
 
 @media screen and (max-width: 767px) {
@@ -979,21 +975,18 @@ svg#arrow {
 .sec_agenda .title_avatar{
   margin:10px 0 0
 }
-
 #agenda_detail .head_content {
   margin-bottom: 50px;
 }
-
-.agenda_slick {
-  margin-top: 30px;
-}
-
 .agenda_slick .agenda {
   padding-top: 0;
 }
-
 .agenda_slick .agenda:nth-child(1) {
   margin: 0;
+}
+.agenda_slick .slick-dots {
+  text-align: center;
+  padding-top: 15px;
 }
 
 /* 2021/06/01 井上 */
@@ -1035,12 +1028,6 @@ svg#arrow {
 }
 
 @media only screen and (max-width: 767px) {
-  .agenda_slick .agenda .agenda_slide {
-    margin: 0;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .wrap_title_agenda {
     height: auto;
     padding-top: 175px;
@@ -1173,11 +1160,15 @@ svg#arrow {
   }
 }
 
+/* リニュアー検索ボタン
 @media only screen and (max-width: 767px) {
   .um-button {
     color: #4e4e4e !important;
   }
-}
+    .um-do-search {
+    background-color: #2c76a4;
+  }
+} */
 /*** リニュアー ここまで ***/
 
 
@@ -1237,13 +1228,13 @@ svg#arrow {
   margin: auto;
 }
 
-.textbox_body {
+/*.textbox_body {
   max-width: 720px;
   width: 100%;
   height: auto;
   margin: -200px auto 0px;
   padding: 0;
-}
+}*/
 
 .sec_article_detail .textbox.large.big {
   max-width: 720px;
@@ -1343,9 +1334,6 @@ svg#arrow {
     width: auto;
     margin-left: auto;
     margin-right: auto;
-  }
-  .sec_article_detail .textbox .series_name {
-    font-size: 14px;
   }
   .sec_article_detail .tag_agenda {
     font-size: 13px;
@@ -1817,17 +1805,48 @@ svg#arrow {
 }
 
 .bookmarkPage .mypageContent .wrap_article_middle.grid .wrap_img {
-  width: 50%;
+  width: 35%; /* 2021/06/09 */
   height: 100%;
 }
 
 .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .wrap_img .article_middle_img {
   width: 100%;
+}
+
+/*.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .wrap_img .article_middle_img {
+  width: 100%;
   height: 100%;
+}*/
+
+.followViewArea .followBlockWrap {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .bookmarkPage .wrap_social {
   display: block;
+}
+
+.bookmarkPage .mypageContent .inner_base {
+  max-width: 720px;
+}
+
+#bookmark_top_contentArticle .grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#bookmark_top_contentArticle .title_middle {
+  font-size: 14px;
+}
+
+.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox {
+  height: 100%;
+  width: 65%;
+}
+
+.bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle {
+  border: none;
 }
 
 .mypageContent .flexSocialbox svg {
@@ -1895,6 +1914,18 @@ svg#arrow {
   background-color: #fff;
 } */
 
+  .followViewArea .followList.grid {
+      -ms-grid-columns: 1fr 2;
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+@media only screen and (min-width: 768px) {
+  .followViewArea .followList li {
+    margin: 10px 20px;
+    margin-bottom: 40px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .profEditTxtWrap {
     height: calc(100vh - 217px);
@@ -1911,18 +1942,29 @@ svg#arrow {
     padding: 5px 10px;
   }
 
-  .bookmarkPage .mypageContent .wrap_avatar {
+  #bookmark_top_contentArticle .grid, .followViewArea .followList.grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .mypageContent .noFollow {
+    padding-top: 5px;
+    padding-bottom: 50px;
+    justify-content: left;
+  }
+
+  /*.bookmarkPage .mypageContent .wrap_avatar {
     margin-top: 25px;
   }
 
-  .mypage_title_link {
+.mypage_title_link {
     height: 17px;
     display: block;
-  }
+  }*/
 
   #bookmark_top_contentArticle {
-    padding: 0;
+    padding: 0 10px 0 0;
     width: 100%;
+    max-width: 375px;
   }
 
   .sec_renewer_detail.profEditPage.myProfPage {

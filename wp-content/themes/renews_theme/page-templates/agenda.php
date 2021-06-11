@@ -59,17 +59,14 @@ $pageNum_article = 2;
 
 <section id="page_agenda" class="sec sec_agenda">
 	<div class="inner_base">
-		<div class="sub_title_thin">
-			<h1 class="sub_main_title">Agenda
-			<span class="sub_title_thin_img">アジェンダ</span>
+		<div class="sec_title">
+			<h1 class="main_title">Agenda
+			<span class="main_title_jp">アジェンダ</span>
 			</h1>
+			<p class="main_title_desc">重点的に取り組む「アジェンダ（議題）」の一覧です。</p>
+			<p class="main_title_desc_s">「日本の課題解決」「国際競争力の向上」「SDGsへの貢献」をゴールとします。随時、新たなアジェンダを追加していきます。</p>
 		</div>
-
-		<p class="title_thin_subtitle">重点的に取り組む議題を「アジェンダ」としてまとめました。</p>
-		<p class="title_thin_subtitle_s mb-40 mb-30">「日本の課題解決」「国際競争力の向上」「SDGsへの貢献」をゴールとします。随時、新たなアジェンダを追加していきます。</p>
-
-
-
+		
 		<div id="agendaArchive">
 			<?php get_template_part('inc/layout_agenda_taxArchive'); ?>
 		</div><!-- agendaArchive -->
@@ -78,11 +75,8 @@ $pageNum_article = 2;
 			<?php get_template_part('inc/layout_page_taxArchive_pager'); ?>
 		</div><!-- agendaArchive -->
 
-
-
 	</div>
 </section>
-
 
 	<?php endwhile; endif; ?>
 

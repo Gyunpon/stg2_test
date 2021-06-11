@@ -1,5 +1,7 @@
 @charset "UTF-8";
+/*
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,latin-ext");
+*/
 
 body {
   position: relative;
@@ -25,49 +27,49 @@ body {
   font-family: Noto Sans JP, sans-serif;
   font-weight: 300;
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(../fonts/NotoSansJP-Light.otf) format("opentype")
+  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/NotoSansJP-Light.otf) format("opentype")
 }
 
 @font-face {
   font-family: Noto Sans JP, sans-serif;
   font-weight: 400;
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(../fonts/NotoSansJP-Regular.otf) format("opentype")
+  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/NotoSansJP-Regular.otf) format("opentype")
 }
 
 @font-face {
   font-family: Noto Sans JP, sans-serif;
   font-weight: 500;
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(../fonts/NotoSansJP-Medium.otf) format("opentype")
+  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/NotoSansJP-Medium.otf) format("opentype")
 }
 
 @font-face {
   font-family: Noto Sans JP, sans-serif;
   font-weight: 700;
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(../fonts/NotoSansJP-Bold.otf) format("opentype")
+  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/NotoSansJP-Bold.otf) format("opentype")
 }
 
 @font-face {
   font-family: Shippori Mincho, serif;
   font-weight: 400;
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(../fonts/ShipporiMincho-Regular.otf) format("opentype")
+  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/ShipporiMincho-Regular.otf) format("opentype")
 }
 
 @font-face {
   font-family: Shippori Mincho, serif;
   font-weight: 500;
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(../fonts/ShipporiMincho-Medium.otf) format("opentype")
+  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/ShipporiMincho-Medium.otf) format("opentype")
 }
 
 @font-face {
   font-family: Shippori Mincho, serif;
   font-weight: 600;
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(../fonts/ShipporiMincho-SemiBold.otf) format("opentype")
+  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/ShipporiMincho-SemiBold.otf) format("opentype")
 }
 
 
@@ -92,23 +94,21 @@ a:focus, *:focus {
   outline: none;
 }
 
-a:hover {
+/*a:hover {
   text-decoration: none;
   opacity: 0.7;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
-}
+}*/
 
 textarea {
   resize: vertical
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: Noto Sans JP, Helvetica, 游ゴシック, Hiragino Kaku Gothic ProN, ヒラギノ角ゴ ProN W3, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif
+h1,h2,h3,h4,h5,h6 {
+  font-family: Noto Sans JP, Helvetica, 游ゴシック, Hiragino Kaku Gothic ProN, ヒラギノ角ゴ ProN W3, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
+  color: #202020;
+  font-weight: 400;
 }
 
 ul li {
@@ -219,35 +219,8 @@ ul li {
   /* 小コンポ・テキストBOX */
   .textbox.middle {
     width: 320px;
-    /* max-width: 83%; */
-    /* padding: 40px 9% 36px 40px */
   }
 }
-
-/* @media only screen and (max-width:1159px) {
-  .textbox.middle {
-    width: 100%;
-  }
-} 2021/04/23 井上削除*/
-
-/* @media only screen and (max-width: 767px) {
-  .textbox.middle {
-    padding: 0 0 3% 5%;
-    max-width: none;
-  }
-  .textbox.middle .title_middle {
-		display:-moz-box;
-		display:-webkit-box;
-		display:-o-box;
-		display:-ms-box;
-		-moz-box-orient:vertical;
-		-webkit-box-orient:vertical;
-		-o-box-orient:vertical;
-		-ms-box-orient:vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-  }
-} 2021/04/07 井上削除 */
 
 .textbox.right_top {
   position: absolute;
@@ -311,26 +284,28 @@ ul li {
   margin-top: 20px
 }
 
-/*
-@media only screen and (max-width:767px) {
-  .wrap_avatar {
-    margin-top: 20px
-  }
-}
-*/
 
 
 /* 大コンポーネント */
-.title_large {
-  color: #2c76a4;
-  font-size: 28px;
-  line-height: 1.3; /* 2021/04/07井上修正 */
-  font-weight: 400; /* 2021/04/07 井上追加 */
-  letter-spacing: 0.08em; /* 2021/04/07 井上追加 */
-  text-align: initial; /* 2021/04/07 井上追加 */
+.title_large, .title_middle {
+  color: #202020;
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-align: initial;
 }
 
-.title_large:hover {
+.title_large {
+  font-size: 24px;
+  line-height: 1.5;
+}
+.title_middle {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.title_large:hover, .title_middle:hover {
   opacity: 0.7;
   -webkit-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
@@ -341,39 +316,10 @@ ul li {
     font-size: 24px; /* 2021/04/07井上修正 */
     letter-spacing: 0.1em; /* 2021/04/07 井上修正 */
   }
-}
-
-.title_middle {
-  color: #2c76a4;
-  font-size: 20px; /* 2021/04/07 井上修正 */
-  font-weight: 400; /* 2021/04/07 井上修正 */
-  line-height: 1.3; /* 2021/04/07 井上修正 */
-  letter-spacing: 0.1em; /* 2021/04/07 井上修正 */
-  text-align: initial; /* 2021/04/07 井上追加 */
-}
-@media only screen and (max-width:767px) {
   .title_middle {
     font-size: 18px; /* 2021/04/07 井上修正 */
     letter-spacing: 0.07em; /* 2021/04/07 井上修正 */
   }
-}
-/* @media only screen and (min-width:768px) and (max-width:1179px) {
-  .title_middle {
-    font-size: 19px;
-  }
-} 2021/04/23 井上削除 */
-
-/*
-.text_middle {
-  font-size: 38px;
-  line-height: 1.4;
-}
-*/
-
-.title_middle:hover {
-  opacity: 0.7;
-  -webkit-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
 }
 
 @media only screen and (max-width:767px) {
@@ -382,17 +328,11 @@ ul li {
   }
 }
 
-
 @media screen and (min-width:768px){
 	.wrap_article_middle.colum2 .article_middle .textbox{
 		position:relative;
 		height:calc(100% - 252px);
 		padding:20px 17px 125px 20px; /* 2021/04/07 井上修正 */
-	}
-	.wrap_article_middle.colum2 .article_middle .infobox{
-		/* position:absolute;
-		left:40px;
-		bottom:30px; */
 	}
 	.wrap_article_middle.colum2 .article_middle .infobox .wrap_avatar{
 		margin-top: 20px;
@@ -409,19 +349,6 @@ ul li {
 		position:relative
 	}
 }
-
-/* .wrap_article_middle.colum2 .textbox > a ,.articleListStyle .textbox > a{
-	display:-moz-box;
-	display:-webkit-box;
-	display:-o-box;
-	display:-ms-box;
-	-moz-box-orient:vertical;
-	-webkit-box-orient:vertical;
-	-o-box-orient:vertical;
-	-ms-box-orient:vertical;
-	-webkit-line-clamp: 2;
-	overflow: hidden;
-} 2021/05/26 井上削除 */
 
 .wrap_article_middle.colum2 .card-bottom{
 	position: absolute;
@@ -992,12 +919,20 @@ header .inner_base{
 	align-items: center;
 }
 @media only screen and (max-width:1280px) {
+  /* 2021/06/09 黒澤修正 */
   header .inner_base {
-    padding: 0 10px
+    padding: 0 10px;
   }
 }
 
 @media only screen and (min-width:768px) {
+
+  /* 2021/06/09 黒澤追加 */
+  header .inner_base {
+    padding: 0 10px;
+  }
+
+
   header .inner_base {
     min-height: 67px
   }
@@ -1054,14 +989,23 @@ header .footer_bottom .text_copyright {
 	.noLogin .logo_header{
 		top: 3px;
 	}
-  .logo_header {
-    top: -4px;
-    margin-left: 60px;
+  /* 2021/06/09 黒澤修正 */
+  .logo_header, .noLogin .logo_header {
+    position: static;
+    margin-bottom: 12px;
+    width: 110px;
+    margin-left: calc(50vw - 65px);
 /*
     margin-left: auto
 */
   }
+
+  /* 2021/06/09 黒澤修正 */
+  header .inner_base {
+    padding: 0;
+  }
 }
+
 
 .nav_header {
   position: relative;
@@ -1294,11 +1238,32 @@ header .uk-button:hover {
 }
 
 @media only screen and (max-width:767px) {
+  /* 2021/06/09 黒澤修正 */
   .user_avatar {
     display: none !important;
-		top: -5px;
-		margin-right: 5px;
+		top: -9px;
+    margin-right: 0;
   }
+}
+
+.uk-badge {
+  background-color: #F8E9E1;
+  color: #202020;
+  box-sizing: border-box;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  border-radius: 500px;
+  vertical-align: middle;
+  font-size: .875rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uk-badge.hide{
+	opacity: 0;
+	display: none;
 }
 
 .uk-badge,
@@ -1307,15 +1272,6 @@ header .uk-button:hover {
   z-index: 2;
   top: -5px;
   right: -5px
-}
-
-.uk-badge {
-  background-color: #fff;
-  color: #202020;
-}
-.uk-badge.hide{
-	opacity: 0;
-	display: none;
 }
 
 .uk-offcanvas-bar {
@@ -1947,6 +1903,7 @@ footer {
   display: inline-block;
   max-width: 100% !important;
 	min-width: 50px;
+  height: auto;
 }
 
 .textbox_avatar img:not(:first-child) {
@@ -3584,27 +3541,11 @@ background-image: url(../../images/common/icon_like_blue-acvive.svg);
 	}
 
 	.sign_up,.sign_in{
-		font-size: 12px;
+		font-size: 11px;
 		position: relative;
 		z-index: 9000;
 	}
 }
-
-.sign_up a {
-  padding: 0 5px
-}
-
-.slider_agenda {
-  margin-top: -30px !important;
-}
-
-/*
-@media only screen and (max-width:767px) {
-  .slider_agenda {
-    padding-top: 65px !important
-  }
-}
-*/
 
 .slider_agenda .uk-slider-container {
   padding-top: 70px
@@ -4652,6 +4593,9 @@ body.is_non_active{
 	-webkit-backface-visibility: hidden; /* 追加 */
 	backface-visibility: hidden; /* 追加 */
 }
+.circle-btn >a:hover {
+  opacity:1 ;
+}
 .circle-btn {
 	display: inline-block;
 }
@@ -5095,10 +5039,60 @@ p.um-notice i{
 
 
 /* おしらせサイト */
+
+/* 2021/06/09 黒澤追加 */
+
+.infoTitle .title_thin:after {
+  display: none;
+}
+
+.main_title, .main_title_jp a {
+  font-size: 20px;
+  color: #b0ad9e;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.main_title_jp a {
+  font-size: 17px;
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+}
+
+.main_title_desc {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.main_title_desc, .main_title_desc_s {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  color: #202020;
+  padding-left: 30px;
+}
+
+.main_title_jp {
+  font-family: YakuHanMP_Noto, 'Shippori Mincho', serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: #b0ad9e;
+}
+
+.pagerArea a.current, .pagerArea span.current {
+  background-color: #b0ad9e!important;
+}
+
+.kanrenLink .sec_title {
+  padding-bottom: 20px;
+}
+
 @media only screen and (max-width:767px){
 	.infoTitle{
 		padding-left: 5%;
 	}
+
+  #info_top_contentArticle > .pagerArea.inner_base, #info_archive_contentArticle > .pagerArea.inner_base {
+    padding-top: 20px !important;
+  }
 }
 
 

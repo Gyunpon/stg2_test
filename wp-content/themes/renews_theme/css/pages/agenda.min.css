@@ -2,10 +2,6 @@
   background-color: #f7f7f7;
 }
 
-/*.wrap_agenda {
-  margin-top:50px
-}*/
-
 @media only screen and (max-width:980px) and (min-width:790px){
 	.wrap_agenda{
 		max-width: calc(362px + 362px + 4%);
@@ -14,16 +10,10 @@
 	}
 }
 
-/*
-@media only screen and (max-width:767px) {
-  .wrap_agenda{
-    margin-top:74px
-  }
-}
-*/
-
 .wrap_agenda .agenda{
-  float:left;width:31.21%;max-width: 362px;
+  /*float:left;
+  width:31.21%;*/
+  max-width: 360px;
   margin-bottom: 70px;
 }
 

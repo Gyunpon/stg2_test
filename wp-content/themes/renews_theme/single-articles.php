@@ -286,9 +286,8 @@ global $postId;
 
 
 						</div>
-					</div><!-- /.textbox.large.big -->
 
-					<div class="wrap_sub_info">
+						<div class="wrap_sub_info">
 							<div class="flex wrap_label_article_mv cf">
 								<?php if(have_rows('author_select')): ?>
 								<?php while(have_rows('author_select')): the_row();
@@ -436,8 +435,9 @@ global $postId;
 								</span>
 								<?php endif; ?>
 							</div><!-- /.wrap_social -->
-					</div><!-- /.wrap_sub_info -->
-					
+						</div><!-- /.wrap_sub_info -->
+					</div><!-- /.textbox.large.big -->
+	
 				</div><!-- /.textbox_body -->
 			</div><!-- /.content_mv_article_detail -->
 		</div><!-- /.content_article_mv -->

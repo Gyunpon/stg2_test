@@ -9,7 +9,7 @@
               $thumbnail_id = get_post_thumbnail_id();
               $imageUrl = '';
               if ($thumbnail_id) {
-                $image = wp_get_attachment_image_src($thumbnail_id, 'large');
+                $image = wp_get_attachment_image_src($thumbnail_id, 'medium');
                 $imageUrl = $image[0];
               } else {
                 $imageUrl = get_template_directory_uri() . '/images/icon/noimg.jpg';

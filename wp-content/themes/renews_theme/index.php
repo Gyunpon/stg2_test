@@ -12,7 +12,6 @@
 </div>
 -->
 
-
 <section class="sec sec_mv">
 	<?php
 	$posts = get_field('top_mv_option','option');
@@ -20,7 +19,6 @@
 	?>
 
 	<!-- 2021/04/19 黒澤 追加・編集分 -->
-
 	<div class="slide_wrap">
 		<div class="content_mv_wrap">
 			<?php foreach( $posts as $val ):
@@ -48,11 +46,12 @@
 			//コメント
 			$comments = wp_count_comments( $val );
 			?>
+
 			<div class="slide">
 				<div class="content_mv">
 					<div class="article_main_img imgLiquidFill">
 						<a href="<?php echo get_permalink( $val ); ?>">
-						<img src="<?php echo $imageUrl; ?>" alt="メインビジュアルイメージ" />
+							<img src="<?php echo $imageUrl; ?>" alt="Hero Image" />
 						</a>
 						<!-- アイコン移動 -->
 						<div class="wrap_social color_black flex">
@@ -172,7 +171,7 @@
 							?>
 					</div>
 				</div><!-- /.content_mv -->
-			</div>
+			</div><!-- /.slide -->
 			<?php endforeach; ?>
 		</div><!-- /.content_mv_wrap -->
 		<div class="arrows"></div>
@@ -208,7 +207,7 @@
 				$thumbnail_id = get_post_thumbnail_id($val);
 				$imageUrl = '';
 				if($thumbnail_id){
-					$image = wp_get_attachment_image_src($thumbnail_id,'full');
+					$image = wp_get_attachment_image_src($thumbnail_id,'large');
 					$imageUrl = $image[0];
 				}else{
 					$imageUrl = get_template_directory_uri().'/images/icon/noimg.jpg';
@@ -320,70 +319,64 @@
 
 						<div class="card-bottom">
 
-						<div class="infobox">
-							<?php
-							//著者情報
-							$rows = get_field('author_select',$val ); // すべてのrow（内容・行）をいったん取得する
-							$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
-							$first_row_item = $first_row['author']; // get the sub field value
-							if(!($first_row_item)){
-								$user_name = get_the_author_meta( 'display_name', $post->post_author );
-								$renews_id = get_the_author_meta( 'user_login', $post->post_author );
-								$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
-							}else{
-								$user_name = $first_row_item['display_name'];
-								$renews_id = $first_row_item['user_nicename'];
-								$user_avatar = $first_row_item['user_avatar'];
-							}
-							?>
+							<div class="infobox">
+								<?php
+								//著者情報
+								$rows = get_field('author_select',$val ); // すべてのrow（内容・行）をいったん取得する
+								$first_row = $rows[0]; // 1行目だけを$first_rowに格納しますよ～
+								$first_row_item = $first_row['author']; // get the sub field value
+								if(!($first_row_item)){
+									$user_name = get_the_author_meta( 'display_name', $post->post_author );
+									$renews_id = get_the_author_meta( 'user_login', $post->post_author );
+									$user_avatar = get_avatar( get_the_author_meta( 'ID' ), 64 );
+								}else{
+									$user_name = $first_row_item['display_name'];
+									$renews_id = $first_row_item['user_nicename'];
+									$user_avatar = $first_row_item['user_avatar'];
+								}
+								?>
 
 
-							<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
-								<div class="wrap_avatar flex">
-									<div class="textbox_avatar">
-										<?php echo $user_avatar; ?>
+								<a href="<?php echo home_url(); ?>/user/<?php echo $renews_id; ?>/">
+									<div class="wrap_avatar flex">
+										<div class="textbox_avatar">
+											<?php echo $user_avatar; ?>
+										</div>
+										<p class="title_avatar eng">
+											<span class="black"><?php echo $user_name; ?></span>
+											<span>@<?php echo $renews_id; ?></span>
+										</p>
 									</div>
-									<p class="title_avatar eng">
-										<span class="black"><?php echo $user_name; ?></span>
-										<span>@<?php echo $renews_id; ?></span>
-									</p>
-								</div>
-							</a>
-						</div>
+								</a>
+							</div>
 
-						<?php
-							//現在のユーザー
-							$user = wp_get_current_user();
-							$uid = $user->ID;
+							<?php
+								//現在のユーザー
+								$user = wp_get_current_user();
+								$uid = $user->ID;
 
-							//フォローチェック
-							$follow_post = get_user_meta($uid,'article_follow');
-							$follow_check = in_array($postId, $follow_post);
+								//フォローチェック
+								$follow_post = get_user_meta($uid,'article_follow');
+								$follow_check = in_array($postId, $follow_post);
 
-							//ストックしている人数
-							$args = array(
-							'meta_key'     => 'article_follow',
-							'meta_value'   => $postId
-							);
-							$all_user_stockPost = get_users( $args );
-							$stockNum = count($all_user_stockPost);
-						?>
-
+								//ストックしている人数
+								$args = array(
+								'meta_key'     => 'article_follow',
+								'meta_value'   => $postId
+								);
+								$all_user_stockPost = get_users( $args );
+								$stockNum = count($all_user_stockPost);
+							?>
 						</div><!-- card-bottom -->
-
 					</div>
 				</div>
 
 				<?php endforeach; ?>
 			</div><!-- /.wrap_article_middle -->
-
 		</div><!-- /.content_article -->
-
 		<?php endif; ?>
-
 	</div>
 </section>
-
 
 
 <section class="sec sec_agenda">
@@ -724,7 +717,7 @@ if( $posts ):
 		<div class="news">
 			<?php foreach( $posts as $val ): ?>
 				<div class="news_cont">
-					<!-- <span class="news_date"><?php echo get_the_modified_date(); ?></span> -->
+					<span class="news_date"><?php echo get_the_time('Y.m.d', $val->ID) ?></span>
 					<span style="margin:0px 20px;">
 						<a href="<?php echo get_permalink( $val->ID ); ?>"><?php echo get_the_title( $val->ID ); ?></a>
 					</span>

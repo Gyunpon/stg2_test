@@ -363,7 +363,7 @@ $user_roles = $user->roles[0];
 
 
 				// タイトル
-				$title = mb_strimwidth( $post->post_title, 0, 66, "...", "UTF-8" );
+				$title = mb_strimwidth( $post->post_title, 0, 76, "...", "UTF-8" );
 				$series_terms = get_the_terms($post->ID, 'series');
 //				if($current_uid == $author_id):
 				?>
@@ -401,7 +401,7 @@ $user_roles = $user->roles[0];
 						<?php endif; ?>
 
 						<a href="<?php the_permalink(); ?>">
-							<h2 class="title_middle artcle_small_title">
+							<h2 class="title_middle lineClamp_2">
 								<?php echo $title; ?>
 							</h2>
 						</a>

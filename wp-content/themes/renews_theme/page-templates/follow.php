@@ -64,8 +64,8 @@ $login_user = $login_user->ID;
 		<div class="followBlockWrap">
 		<div id="renewer" class="followBlock">
 			<div class="sub_title_thin">
-				<h1 class="sub_main_title">Renewer
-				<span class="sub_title_thin_img">リニュアー</span>
+				<h1 class="main_title">Renewer
+				<span class="main_title_jp">リニュアー</span>
 				</h1>
 			</div>
 
@@ -143,8 +143,8 @@ $login_user = $login_user->ID;
 
 			<div id="agenda" class="followBlock sec_agenda">
 				<div class="sub_title_thin">
-					<h1 class="sub_main_title">Agenda
-					<span class="sub_title_thin_img">アジェンダ</span>
+					<h1 class="main_title">Agenda
+					<span class="main_title_jp">アジェンダ</span>
 					</h1>
 				</div>
 
@@ -243,8 +243,8 @@ $login_user = $login_user->ID;
 
 			<div id="series" class="followBlock sec_column">
 				<div class="sub_title_thin">
-					<h1 class="sub_main_title">Series
-					<span class="sub_title_thin_img">シリーズ</span>
+					<h1 class="main_title">Series
+					<span class="main_title_jp">シリーズ</span>
 					</h1>
 				</div>
 

@@ -37,14 +37,13 @@
 
 <section class="sec sec_renewer">
 	<div class="inner_base">
-		<div class="sub_title_thin">
-			<h1 class="sub_main_title">Renewer
-			<span class="sub_title_thin_img">リニュアー</span>
+		<div class="sec_title">
+			<h1 class="main_title">Renewer
+			<span class="main_title_jp">リニュアー</span>
 			</h1>
+			<p class="main_title_desc">「Renewer（リニュアー）」の一覧です。</p>
+			<p class="main_title_desc_s">アイデアやヒント、オピニオンを発信する専門家です。新規登録順に随時、追加していきます。</p>
 		</div>
-		<p class="title_thin_subtitle">コンテンツを支える専門家集団「Renewer（リニュアー）」の一覧です。</p>
-		<p class="title_thin_subtitle_s mb-40 mb-30">新規登録順に随時、追加していきます。</p>
-
 
 		<?php echo do_shortcode( '[ultimatemember form_id="22"]' ) ?>
 	</div>

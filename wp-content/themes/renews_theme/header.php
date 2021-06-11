@@ -7,15 +7,12 @@
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="google-site-verification" content="7qFPILv6reNCvyqyb9HtIPHlkP_VZI4cUdR9O6do6iY" />
 
-
 	<?php
 	//ログインしてなければログインページにリダイレクト
-
-
-//	if (is_user_logged_in()){
-//	} else {
-//		wp_redirect('/wp-login.php');
-//	}
+	//if (is_user_logged_in()){
+	//} else {
+	//wp_redirect('/wp-login.php');
+	//}
 
 	$http = is_ssl() ? 'https' : 'http' . '';
 	$url = $http .'://'. $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
@@ -78,13 +75,13 @@
 	<!-- jquery -->
 	<script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<!-- animation -->
-	<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" media="all" />
-	<script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<!--<link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" media="all" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>-->
 	<!-- UIkit CSS -->
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"  media="all"/>
+	<!--<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"  media="all"/>-->
 	<!-- UIkit JS -->
-	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
+	<!--<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>-->
 	<!-- base -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/all.min.css" rel="stylesheet"  media="all" />
@@ -92,14 +89,18 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/magnific-popup.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery.magnific-popup.min.js"></script>
+
 	<!-- Fonts -->
+	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp-noto.min.css" media="print" onload="this.media='all'">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700&display=swap" media="print" onload="this.media='all'" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />-->
+
 	<!-- Head For TOP Page -->
 	<?php if(is_home() || is_front_page()|| is_page('index2')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/top.min.css" rel="stylesheet" media="all" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/loading.js"></script>
+	<!--<script src="<?php //echo get_template_directory_uri(); ?>/js/loading.js"></script>-->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/slick.min.js"></script>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/slick.css" rel="stylesheet" media="all" />
 	<script src="<?php echo get_template_directory_uri(); ?>/js/top.js"></script>
@@ -115,7 +116,7 @@
 	<!-- FontAwesome -->
 	<script src="https://kit.fontawesome.com/05117f24ac.js" crossorigin="anonymous"></script>
 	<?php endif; ?>
-	
+
 	<?php if(is_main_site() && is_singular('articles')): ?>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/article.js"></script>
 	<script type="text/javascript" src='<?php bloginfo('url'); ?>/wp-includes/js/comment-reply.min.js'></script>
@@ -145,7 +146,7 @@
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/keyword.min.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
 	<!-- Head For Various Pages -->
-	<?php if(is_page_template(array('page-templates/member.php','page-templates/member_under.php','page-templates/profile.php','page-templates/follow.php','page-templates/bookmark.php','page-templates/notifications.php')) || is_page(array('bookmark')) || (!empty($_GET['um_action']) && $_GET['um_action'] == 'edit') || (!empty($_GET['profiletab']) && $_GET['profiletab'] == 'following')): ?>
+	<?php if(is_page_template(array('page-templates/member.php','page-templates/member_under.php','page-templates/profile.php','page-templates/follow.php','page-templates/bookmark.php','page-templates/notifications.php')) || is_page(array('bookmark','register','login','password-reset')) || (!empty($_GET['um_action']) && $_GET['um_action'] == 'edit') || (!empty($_GET['profiletab']) && $_GET['profiletab'] == 'following')): ?>
 	<link href="<?php echo get_template_directory_uri(); ?>/css/pages/my.min.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/mypage.css" rel="stylesheet" media="all" />
 	<?php endif; ?>
@@ -194,8 +195,8 @@
 </head>
 <!-- END OF HEAD -->
 
-
-	<body ontouchstart="" <?php if(is_page('series')){echo 'id="column"';}elseif(is_tax('series')){echo 'id="ajenda_detail"';}elseif(is_page_template('page-templates/renewers_detail.php')){echo 'id="renewer_detail"';} if(!empty($_GET['um_action']) && $_GET['um_action'] == 'edit'){echo ' class="profEditBody"';} if(!is_page(array('login','register','contact'))){echo ' class="grecaptchaHide"';} ?>>
+	<!-- body ontouchstart=""-->
+	<body <?php if(is_page('series')){echo 'id="column"';}elseif(is_tax('series')){echo 'id="ajenda_detail"';}elseif(is_page_template('page-templates/renewers_detail.php')){echo 'id="renewer_detail"';} if(!empty($_GET['um_action']) && $_GET['um_action'] == 'edit'){echo ' class="profEditBody"';} if(!is_page(array('login','register','contact'))){echo ' class="grecaptchaHide"';} ?>>
 		<!-- For Top Page -->
 		<div class="wrapper <?php if(is_home() || is_front_page()|| is_page('index2')){echo 'topPage';} if(!is_user_logged_in()){echo ' noLogin';} if(is_page('password-reset')){echo ' passwordReset';} ?> " id="wrap">
 		<?php //if(!($_GET['um_action'] == 'edit')): ?>
@@ -247,25 +248,6 @@
 					</ul>
 				</nav>
 
-				<!--<div id="headerShareLink" class="uk-flex-top" uk-modal>
-					<div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
-						<?php
-						//元となるテキスト
-						$text = 'Renews | ';
-						$siteURL = rawurlencode(home_url());
-						//URLエンコード処理
-						$encoded = rawurlencode( $text ) ;
-						?>
-						<button class="uk-modal-close-default" type="button" uk-close></button>
-						<p class="shareBtnTitle"><img src="<?php echo get_template_directory_uri(); ?>/images/about/about.jpg" alt="RENEWS" /><span>をシェアする</span></p>
-						<ul class="shareBtnList">
-							<li><a href="//twitter.com/share?url=<?php echo home_url(); ?>&text=<?php echo $encoded; ?>" class="shareBtn twitter share_popup" target="_blank"><i class="um-faicon-twitter"></i><span>Twitter</span></a></li>
-							<li><a href="//www.facebook.com/sharer/sharer.php?u=<?php echo $siteURL; ?>" class="shareBtn facebook share_popup" target="_blank"><i class="um-faicon-facebook-square"></i><span>Facebook</span></a></li>
-							<li><a href="//social-plugins.line.me/lineit/share?url=<?php echo $siteURL; ?>" class="shareBtn line share_popup" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/line_wh.svg" alt="LINE" /><span>LINE</span></a></li>
-							<li><a href="http://b.hatena.ne.jp/add?mode=confirm&url=<?php echo $siteURL; ?>&title=<?php echo $encoded; ?>" class="shareBtn hatena share_popup" target="_blank" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/hatena_wh.svg" alt="" /><span>はてなブックマーク</span></a></li>
-						</ul>
-					</div>
-				</div>-->
 				<div class="search__box for_pc">
 					<div class="search-box">
 						<form role="search" method="get" id="searchform" class="search-form" action="<?php echo home_url( '/' ); ?>">
