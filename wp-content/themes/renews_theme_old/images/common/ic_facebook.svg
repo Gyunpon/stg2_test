@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="20px" viewBox="0 0 10 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>ic_facebook</title>
+    <desc>Created with Sketch.</desc>
+    <g id="design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="renews_dt_article_detail_share" transform="translate(-1065.000000, -1509.000000)" fill="#2C76A4" fill-rule="nonzero">
+            <g id="Share_pop_up" transform="translate(999.000000, 1117.000000)">
+                <g id="share_icons" transform="translate(41.000000, 40.039427)">
+                    <g id="facebook_icon" transform="translate(0.000000, 331.960573)">
+                        <path d="M34.97998,20.0019078 L34.97998,23.322238 C34.97998,23.322238 33.9289289,23.3412657 32.6376376,23.3412657 C32.2976486,23.3292362 31.8916963,23.3919144 31.652074,23.6214668 C31.4124517,23.8510191 30.9846558,24.1769686 31,24.5 L31,27 L34.97998,27 L35,30.0009539 L31,30 L31,40 L27.5,40 L27.5,30.0009539 L25,30 L25,27 L27.5,27 C27.5,27 27.5,25.1774369 27.5,23.3412657 C27.4940079,22.4094759 28.100436,21.6202396 28.8030654,20.9703894 C29.5056948,20.3205391 30.4565786,19.9708302 31.4364364,20.0019078 L34.97998,20.0019078 Z" id="ic_facebook"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

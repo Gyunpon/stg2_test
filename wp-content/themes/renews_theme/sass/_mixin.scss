@@ -1,0 +1,404 @@
+@charset "utf-8";
+@import "setting";
+
+// mixins
+// ------------------------------------------------------------------
+@mixin fs($size,$unit:$font_unit) {
+	font-size: $size + $unit;
+}
+@mixin font-family($type:serif){
+	@if $type == serif {
+		font-family: $serif;
+	}
+	@else if $type == sans-serif {
+		font-family: $sans-serif;
+		@media all and (-ms-high-contrast:none) {
+			font-family: "メイリオ",Meiryo,"游ゴシック",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+		}
+	}
+	@else {
+		font-family: $type;
+	}
+}
+@mixin linkColor($color:#000){
+	color	:	#{$color};
+	&:visited,
+	&:focus,
+	&:active{
+		color	:	#{$color};
+	}
+}
+@mixin placeholderColor($color:#ccc) {
+	&::-webkit-input-placeholder {
+		color:$color;
+	}
+	&:-moz-placeholder {
+		color:$color;
+		opacity: 1;
+	}
+	&::-moz-placeholder {
+		color:$color;
+		opacity: 1;
+	}
+	&:-ms-input-placeholder {
+		color:$color;
+	}
+}
+
+
+@mixin inputReset(){
+	padding: 0;
+	margin: 0;
+	border: none;
+	background-color: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+@mixin appearance($param:none){
+	-webkit-appearance: $param;
+	-moz-appearance: $param;
+	appearance: $param;
+}
+
+
+// @include display-flex; でflexbox
+@mixin flex-direction($direction) {
+	$row: row;
+	$row-reverse: row-reverse;
+	$column: column;
+	$column-reverse: column-reverse;
+	@if $direction == row {
+		-webkit-flex-direction: $row;
+		-ms-flex-direction: $row;
+		flex-direction: $row;
+	} @else if $direction == row-reverse {
+		-webkit-flex-direction: $row-reverse;
+		-ms-flex-direction: $row-reverse;
+		flex-direction: $row-reverse;
+	} @else if $direction == column {
+		-webkit-flex-direction: $column;
+		-ms-flex-direction: $column;
+		flex-direction: $column;
+	} @else if $direction == column-reverse {
+		-webkit-flex-direction: $column-reverse;
+		-ms-flex-direction: $column-reverse;
+		flex-direction: $column-reverse;
+	}
+}
+// /* 垂直方向の揃え方 */
+@mixin align-items($align:stretch){
+	$flex-align: "";
+	$box-align: "";
+	@if $align == "center" {
+		$flex-align: center;
+		$box-align: center;
+	} @else if $align == "flex-start" {
+		$flex-align: flex-start;
+		$box-align: start;
+	} @else if $align == "flex-end" {
+		$flex-align: flex-end;
+		$box-align: end;
+	} @else if $align == "baseline" {
+		$flex-align: baseline;
+		$box-align: baseline;
+	} @else if $align == "stretch" {
+		$flex-align: stretch;
+		$box-align: stretch;
+	}
+	-webkit-box-align: $box-align;
+	-moz-box-align: $box-align;
+	-ms-flex-align: $box-align;
+	-webkit-align-items: $flex-align;
+	align-items: $flex-align;
+}
+
+// /* 水平方向の揃え方 */
+@mixin justify-content($pack) {
+	$flex-content: "";
+	$flex-pac: "";
+	$flex-ms-pack: "";
+	@if $pack == "center" {
+		$flex-content: center;
+		$flex-ms-pack: center;
+		$flex-pac: center;
+	} @else if $pack == "flex-start" {
+		$flex-content: flex-start;
+		$flex-ms-pack: start;
+		$flex-pac: start;
+	} @else if $pack == "flex-end" {
+		$flex-content: flex-end;
+		$flex-ms-pack: end;
+		$flex-pac: end;
+	} @else if $pack == "space-between" {
+		$flex-content: space-between;
+		$flex-ms-pack: justify;
+		$flex-pac: justify;	
+	} @else if $pack == "space-around" {
+		$flex-content: space-around;
+		$flex-ms-pack: distribute;
+		$flex-pac: justify;
+	}
+	-webkit-box-pack: $flex-pac;
+	-moz-box-pack: $flex-pac;
+	-ms-flex-pack: $flex-ms-pack;
+	-webkit-justify-content: $flex-content;
+	justify-content: $flex-content;
+}
+
+// /* 複数行になったときの揃え方 */
+@mixin align-content($line:center) {
+	-webkit-align-content: $line;
+	-ms-flex-line-pack: $line;
+	align-content: $line;
+}
+@mixin flex-wrap($wrap:wrap) {
+	-webkit-flex-wrap: $wrap;
+	-ms-flex-wrap: $wrap;
+	flex-wrap: $wrap;
+}
+@mixin order($num) {
+	-webkit-box-ordinal-group: $num + 1;
+	-moz-box-ordinal-group: $num + 1;
+	-webkit-order: $num;
+	-ms-flex-order: $num;
+	order: $num;
+}
+
+
+@mixin box-sizing($type:border-box){
+	-webkit-box-sizing:$type;
+	-moz-box-sizing:$type;
+	-ms-box-sizing:$type;
+	-o-box-sizing:$type;
+	box-sizing:$type;
+}
+
+@mixin border-radius($val){
+	-webkit-border-radius:$val;
+	-moz-border-radius:$val;
+	-ms-border-radius:$val;
+	-o-border-radius:$val;
+	border-radius:$val;
+}
+
+@mixin background-size($val){
+	-webkit-background-size:$val;
+	-moz-background-size:$val;
+	-ms-background-size:$val;
+	-o-background-size:$val;
+	background-size:$val;
+}
+
+@mixin box-shadow($val){
+	-webkit-box-shadow: $val;
+	-moz-box-shadow: $val;
+	-ms-box-shadow: $val;
+	-o-box-shadow: $val;
+	box-shadow: $val;
+}
+
+@mixin rotate($val){
+	-moz-transform: rotate(#{$val});
+	-webkit-transform: rotate(#{$val});
+	-o-transform: rotate(#{$val});
+	-ms-transform: rotate(#{$val});
+	transform: rotate(#{$val});
+}
+
+@mixin scaleX($val){
+	-moz-transform: scaleX(#{$val});
+	-webkit-transform: scaleX(#{$val});
+	-o-transform: scaleX(#{$val});
+	-ms-transform: scaleX(#{$val});
+	transform: scaleX(#{$val});
+}
+
+@mixin scaleY($val){
+	-moz-transform: scaleY(#{$val});
+	-webkit-transform: scaleY(#{$val});
+	-o-transform: scaleY(#{$val});
+	-ms-transform: scaleY(#{$val});
+	transform: scaleY(#{$val});
+}
+
+@mixin translate($flg:true,$importantflg:false,$xpos:0,$ypos:0,$zpos:0){
+	@if $flg == true {
+		@if $importantflg == false{
+			-webkit-transform: translate3d($xpos, $ypos, $zpos);
+			-moz-transform: translate3d($xpos, $ypos, $zpos);
+			-ms-transform: translate3d($xpos, $ypos, $zpos);
+			-o-transform: translate3d($xpos, $ypos, $zpos);
+			transform: translate3d($xpos, $ypos, $zpos);
+		}
+		@else{
+			-webkit-transform: translate3d($xpos, $ypos, $zpos)!important;
+			-moz-transform: translate3d($xpos, $ypos, $zpos)!important;
+			-ms-transform: translate3d($xpos, $ypos, $zpos)!important;
+			-o-transform: translate3d($xpos, $ypos, $zpos)!important;
+			transform: translate3d($xpos, $ypos, $zpos)!important;
+		}
+	}
+	@else {
+		@if $importantflg == false{
+			-webkit-transform: translate($xpos, $ypos);
+			-moz-transform: translate($xpos, $ypos);
+			-ms-transform: translate($xpos, $ypos);
+			-o-transform: translate($xpos, $ypos);
+			transform: translate($xpos, $ypos);
+		}
+		@else{
+			-webkit-transform: translate($xpos, $ypos)!important;
+			-moz-transform: translate($xpos, $ypos)!important;
+			-ms-transform: translate($xpos, $ypos)!important;
+			-o-transform: translate($xpos, $ypos)!important;
+			transform: translate($xpos, $ypos)!important;
+		}
+	}
+}
+@mixin translateX($pos:0,$importantflg:false){
+	@if $importantflg == false{
+		-webkit-transform: translateX($pos);
+		-moz-transform: translateX($pos);
+		-ms-transform: translateX($pos);
+		-o-transform: translateX($pos);
+		transform: translateX($pos);
+	}
+	@else{
+		-webkit-transform: translateX($pos)!important;
+		-moz-transform: translateX($pos)!important;
+		-ms-transform: translateX($pos)!important;
+		-o-transform: translateX($pos)!important;
+		transform: translateX($pos)!important;
+	}
+}
+@mixin translateY($pos:0,$importantflg:false){
+	@if $importantflg == false{
+		-webkit-transform: translateY($pos);
+		-moz-transform: translateY($pos);
+		-ms-transform: translateY($pos);
+		-o-transform: translateY($pos);
+		transform: translateY($pos);
+	}
+	@else{
+		-webkit-transform: translateY($pos)!important;
+		-moz-transform: translateY($pos)!important;
+		-ms-transform: translateY($pos)!important;
+		-o-transform: translateY($pos)!important;
+		transform: translateY($pos)!important;
+	}
+}
+@mixin translateZ($pos:0,$importantflg:false){
+	@if $importantflg == false{
+		-webkit-transform: translateZ($pos);
+		-moz-transform: translateZ($pos);
+		-ms-transform: translateZ($pos);
+		-o-transform: translateZ($pos);
+		transform: translateZ($pos);
+	}
+	@else{
+		-webkit-transform: translateZ($pos)!important;
+		-moz-transform: translateZ($pos)!important;
+		-ms-transform: translateZ($pos)!important;
+		-o-transform: translateZ($pos)!important;
+		transform: translateZ($pos)!important;
+	}
+}
+
+@mixin opacity($opacity:0.6) {
+	opacity: $opacity;
+	filter: alpha(opacity=($opacity * 100));
+}
+
+@mixin calc($prop,$formula){
+	#{$prop}:-webkit-calc( #{$formula} ) ;
+	#{$prop}:calc( #{$formula} ) ;
+}
+
+
+// 複数指定 @include trans($prop:"background-color, color");
+@mixin trans($prop:all,$time:0.3s,$anime:ease,$delay:0s){
+	-webkit-transition-property: #{$prop};
+	-moz-transition-property: #{$prop};
+	-ms-transition-property: #{$prop};
+	-o-transition-property: #{$prop};
+	transition-property: #{$prop};
+	-webkit-transition-duration: #{$time};
+	-moz-transition-duration: #{$time};
+	-ms-transition-duration: #{$time};
+	-o-transition-duration: #{$time};
+	transition-duration: #{$time};
+	-webkit-transition-timing-function: #{$anime};
+	-moz-transition-timing-function: #{$anime};
+	-ms-transition-timing-function: #{$anime};
+	-o-transition-timing-function: #{$anime};
+	transition-timing-function: #{$anime};
+	-webkit-transition-delay: #{$delay};
+	-moz-transition-delay: #{$delay};
+	-ms-transition-delay: #{$delay};
+	-o-transition-delay: #{$delay};
+	transition-delay: #{$delay};
+}
+
+@mixin grad($topColor:#fff,$bottomColor:#ccc){
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1.00, $bottomColor), color-stop(0.00, $topColor));
+	background: -webkit-linear-gradient($topColor, $bottomColor);
+	background: -moz-linear-gradient($topColor, $bottomColor);
+	background: -o-linear-gradient($topColor, $bottomColor);
+	background: -ms-linear-gradient($topColor, $bottomColor);
+	background: linear-gradient($topColor, $bottomColor);
+}
+@mixin gradPos($topColor:#fff,$topPos:0,$bottomColor:#000,$bottomPos:100){
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(($bottomPos / 100), $bottomColor), color-stop(($topPos / 100), $topColor));
+	background: -webkit-linear-gradient(top, $topColor ($topPos * 1%), $bottomColor ($bottomPos * 1%));
+	background: -moz-linear-gradient(top, $topColor ($topPos * 1%), $bottomColor ($bottomPos * 1%));
+	background: -o-linear-gradient(top, $topColor ($topPos * 1%), $bottomColor ($bottomPos * 1%));
+	background: -ms-linear-gradient(top, $topColor ($topPos * 1%), $bottomColor ($bottomPos * 1%));
+	background: linear-gradient(to bottom, $topColor ($topPos * 1%), $bottomColor ($bottomPos * 1%));
+}
+// /* 横grad */
+@mixin gradSidePos($leftColor:#fff,$leftPos:0,$rightColor:#000,$rightPos:100){
+	background: -webkit-gradient(linear, left top, right top, color-stop(($rightPos / 100), $rightColor), color-stop(($leftPos / 100), $leftColor));
+	background: -webkit-linear-gradient(left, $leftColor ($leftPos * 1%), $rightColor ($rightPos * 1%));
+	background: -moz-linear-gradient(left, $leftColor ($leftPos * 1%), $rightColor ($rightPos * 1%));
+	background: -o-linear-gradient(left, $leftColor ($leftPos * 1%), $rightColor ($rightPos * 1%));
+	background: -ms-linear-gradient(left, $leftColor ($leftPos * 1%), $rightColor ($rightPos * 1%));
+	background: linear-gradient(to right, $leftColor ($leftPos * 1%), $rightColor ($rightPos * 1%));
+}
+// /* 斜めgrad */
+@mixin gradSlanting($topColor:#fff,$bottomColor:#ccc){
+	background:-webkit-gradient(linear, left top, right bottom, from($topColor), to($bottomColor));
+	background:-webkit-linear-gradient(left top, $topColor, $bottomColor);
+	background:-moz-linear-gradient(left top, $topColor, $bottomColor);
+	background:-ms-linear-gradient(left top, $topColor, $bottomColor);
+	background:-o-linear-gradient(left top, $topColor, $bottomColor);
+	background:linear-gradient(to right bottom, $topColor, $bottomColor);
+}
+
+
+// media queries
+@mixin bigPc{
+	@media only screen and (min-width:#{$bigPcViewport}){ @content; }
+}
+@mixin pc{
+	@media only screen and (min-width:#{$pcViewport}){ @content; }
+}
+@mixin spTab{
+	$num: ($pcViewport - 1px);
+	@media only screen and (max-width:#{$num}){ @content; }
+}
+@mixin tablet{
+	$num: ($pcViewport - 1px);
+	@media only screen and (min-width:#{($tabViewport)}) and (max-width:#{$num}){ @content; }
+}
+@mixin mobile{
+	@media only screen and (max-width:#{$spViewport}){ @content; }
+}
+
+@mixin retina{
+	@media (-webkit-min-device-pixel-ratio: 2),(min-resolution: 2dppx){ @content; }
+}
+
+
+

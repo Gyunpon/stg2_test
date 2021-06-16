@@ -1,0 +1,273 @@
+/************ 共通コンポーネント CSS ************/
+
+
+/* 小コンポーネント */
+
+.textbox {
+  background-color: #fff;
+  border: none;
+}
+
+.textbox.middle {
+  width: 100%;
+  max-width: 100%;
+}
+
+.wrap_article_middle.grid .textbox.left_bottom {
+  top: 0;
+}
+
+
+/* 小コンポーネント ここまで */
+
+/************ 共通コンポーネント CSS ここまで ************/
+
+/************ 記事ページ CSS ************/
+
+/* 全体 */
+
+.main {
+  padding-bottom: 0!important;
+  padding-top: 67px;
+}
+
+/* 全体 ここまで */
+
+/* 背景 */
+
+header, .sec_article_detail {
+  background-color: #fff;
+}
+
+/* 背景 ここまで */
+
+/* 共通タグ */
+
+
+.series_name {
+    background-color: #4E5B64;
+    padding: 4px 10px 4px 4px;
+    border: none;
+}
+
+
+.tag_agenda {
+  background-color: #B0AD9E;
+  color: white;
+  border: none;
+}
+
+/* 共通タグ ここまで */
+
+/* MV */
+
+.content_mv_article_detail {
+  width: 1160px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.sec_article_detail .article_main_img {
+  max-width: 1160px;
+  height: 652.5px;
+  z-index: 1;
+  margin: auto;
+}
+
+.sec_article_detail .textbox.big {
+  margin-top: -200px !important;
+}
+
+.sec_article_detail .textbox.large.big {
+  width: 100%;
+  border: none;
+  padding: 0 calc((100vw - 960px) / 2);
+  margin: 0;
+}
+
+.title_big {
+  font-size: 36px;
+  color: white;
+  font-family: 'Shippori Mincho', serif;
+  text-shadow: 0px 0px 5px #ffffff, 0px 0px 20px #202020, 0px 0px 40px #202020, 0px 0px 60px #202020, 0px 0px 80px #202020;
+}
+
+.content_mv_article_detail .textbox {
+  background-color: transparent;
+}
+
+.top_tags a {
+  margin: 10px 5px 40px 0;
+}
+
+.sec_article_detail .wrap_avatar {
+  margin-top: 30px;
+}
+
+.wrap_sub_info {
+  display: flex;
+}
+
+.content_mv_article_detail .wrap_social {
+  margin-left: auto;
+  margin-top: 30px!important;
+}
+
+.textbox_avatar.story:before, .title_avatar.story:before {
+  content: "";
+}
+
+.wrap_label_article_mv .title_avatar {
+  display: flex;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .content_mv_article_detail {
+    width: 100%;
+  }
+
+  .sec_article_detail .textbox.big {
+    margin-top: -200px !important;
+  }
+
+  .wrap_sub_info {
+    display: block;
+  }
+
+  .content_mv_article_detail .wrap_social {
+    margin-top: 15px !important;
+  }
+
+  .sec_article_detail .article_main_img {
+    max-height: 350px;
+  }
+
+  .sec_article_detail .textbox.large.big .title_big {
+    font-size: 23px;
+  }
+
+  .top_tags a {
+    margin-bottom: 20px;
+  }
+
+  .sec_article_detail .wrap_avatar {
+    margin-top: 20px;
+  }
+
+  .excerpt {
+    font-size: 17px;
+  }
+
+  .sec_article_detail .textbox.large.big {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+/* MV ここまで */
+
+
+/* 本文 */
+
+.sec_article_detail .content_article_detail .inner_base {
+  max-width: 1160px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.sec_article_detail .content_article_detail .article_detail {
+  padding: 0;
+  padding-top: 30px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sec_article_detail .content_article_detail::before {
+  background-color: transparent;
+}
+
+.excerpt {
+  font-size: 18px;
+}
+
+.article_detail h2 {
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 767px) {
+  .article_detail h2 {
+    font-size: 20px;
+  }
+
+  .sec_article_detail .content_article_detail .article_detail {
+    padding-top: 20px;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+/* 本文 ここまで */
+
+
+/* コメント */
+
+.form-submit .submit:disabled {
+  color: #B0AD9E;
+  border-color: #B0AD9E;
+}
+
+.sec_comment .content_article_detail::before {
+  background-color: transparent;
+}
+
+.sec_comment .content_article_detail, .sec_comment .article_detail {
+  background-color: #F7F7F7!important;
+}
+
+.reload_button {
+  border: 1px solid #B0AD9E;
+  color: #B0AD9E;
+}
+
+.wrap_comment, .comments-list .comment .children .wrap_comment {
+  background-color: #fff;
+}
+
+.comments-list .replyBtnWrap .comment-reply-link {
+  color: #B0AD9E;
+}
+
+.morelink {
+  color: #B0AD9E;
+}
+
+.overComm .grad-item::before {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.9)), color-stop(50%, rgba(255, 255, 255, 0.9)), to(#fff));
+}
+
+.overComm .grad-trigger {
+  color: #B0AD9E;
+}
+
+.uk-input:focus, .uk-select:focus, .uk-textarea:focus {
+  border: 1px solid #B0AD9E;
+}
+
+.comment-reply-title a {
+  color: #B0AD9E;
+}
+
+/* コメント ここまで */
+
+/* おすすめの記事 */
+/* .content_article {
+  background-color: #F7F7F7;
+  padding-bottom: 50px;
+} 2021/05/14 井上削除*/
+
+/* 記事ページ・おすすめ記事エリアのClassを新設 2021/05/14 井上 */
+.content_recomend{
+  background-color: #F7F7F7;
+}
+/************ 記事ページ CSS ここまで ************/

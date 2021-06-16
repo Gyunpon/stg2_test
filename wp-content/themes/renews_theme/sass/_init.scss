@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+html{
+	font-size: 62.5%;
+}
+body{
+	@include fs($base_fontSize);
+	color: $base_fontColor;
+	-webkit-text-size-adjust: 100%;
+}
+#wrap{
+	@include fs($base_fontSize);
+}
+a{
+	@include linkColor($base_fontColor);
+}
+img{
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+
+/* common */
+/*------------------------------------------------*/
+.inner{
+	width: $base_width;
+	margin-left: auto;
+	margin-right: auto;
+	@include tablet{
+		width: $sp_base_width;
+	}
+	@include mobile{
+		width: $sp_base_width;
+	}
+}
+@include pc{
+	.flL{
+		float: left;
+	}
+	.flR{
+		float: right;
+	}
+	.hoverOpacity{
+		@include trans($prop:opacity);
+		&:hover{
+			@include opacity(0.8);
+		}
+	}
+	.pcH{
+		display: none !important;
+	}
+}
+@include spTab{
+	.spTabH{
+		display: none !important;
+	}
+}
+@include tablet{
+	.tabH{
+		display: none !important;
+	}
+}
+@include mobile{
+	.spH{
+		display: none !important;
+	}
+}
+
+.alignL{
+	text-align: left;
+}
+.alignC{
+	text-align: center;
+}
+.alignR{
+	text-align: right;
+}
+@include tablet{
+	.tabAlignL{
+		text-align: left;
+	}
+	.tabAlignC{
+		text-align: center;
+	}
+	.tabAlignR{
+		text-align: right;
+	}
+}
+@include mobile{
+	.spAlignL{
+		text-align: left;
+	}
+	.spAlignC{
+		text-align: center;
+	}
+	.spAlignR{
+		text-align: right;
+	}
+}
+
+/* font */
+/*------------------------------------------------*/
+.required{
+	color: #c00;
+	@include fs(10);
+	font-weight: bold;
+}
+.bold{
+	font-weight: bold;
+}
+
+/* tab */
+/*------------------------------------------------*/
+.tabBox{
+	width: 100%;
+	display: none;
+	&.active{
+		display: block;
+	}
+}
+
+/* spGlobalNav */
+/*------------------------------------------------*/
+@include mobile{
+	.slidemenu{
+		width: 240px;
+		visibility: hidden;
+		position: fixed;
+		top: 0;
+		z-index: -1;
+		.slidemenu-body{
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		.slidemenu-content{
+			position: relative;
+		}
+		&.slidemenu-left{
+			left: 0;
+		}
+		&.slidemenu-right{
+			right: 0;
+		}
+	}
+}

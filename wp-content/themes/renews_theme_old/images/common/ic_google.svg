@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>ic_google</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 17 0 17 17 0 17"></polygon>
+    </defs>
+    <g id="design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="renews_dt_article_detail_share" transform="translate(-1061.000000, -1262.000000)">
+            <g id="Share_pop_up" transform="translate(999.000000, 1117.000000)">
+                <g id="share_icons" transform="translate(41.000000, 40.039427)">
+                    <g id="google" transform="translate(0.000000, 82.960573)">
+                        <g id="ic_google" transform="translate(21.000000, 22.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <path d="M14.4596451,2.20674175 L11.9983836,4.64584827 C11.9983836,4.64584827 10.7263722,3.34499146 8.6969638,3.34499146 C6.73652879,3.34499146 3.54583967,4.96733177 3.54583967,8.49998392 C3.54583967,11.9853591 6.63179147,13.6262243 8.5,13.6262243 C10.3048683,13.6262243 12.7792957,12.9839326 13.3328511,10.2434112 L8.65085056,10.2434112 L8.65085056,6.94576106 L16.8305797,6.94576106 C16.8305797,6.94576106 17,7.70675972 17,8.83918825 C17,12.4435921 14.5499721,17 8.85842565,17 C3.09423777,17 0,12.3992418 0,8.49998392 C0,3.77370045 3.91464735,0 8.72002042,0 C11.4415859,0 13.4678829,1.278151 14.4596451,2.20674175" id="Fill-1" fill="#2C76A4" mask="url(#mask-2)"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

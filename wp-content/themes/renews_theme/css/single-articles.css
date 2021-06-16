@@ -1,0 +1,644 @@
+/* 2021/06/02 */
+.wrapper{
+	padding-bottom: 0 !important;
+}
+footer {
+	position: static !important;
+}
+
+
+.sec_article_detail .inner_base {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.sec_article_detail .article_main_img {
+  z-index: 2;
+  position: relative;
+  width: 1200px;
+  height: 630px;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .sec_article_detail .article_main_img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .article_main_img {
+    height: 600px;
+    max-height: 50vh;
+  }
+}
+
+.sec_article_detail .textbox.large.big {
+  box-sizing: border-box;
+  display: block;
+  z-index: 3;
+  position: relative;
+  max-width: 960px;
+  margin: -150px 240px 0 auto; /* 2021/04/19 井上修正 */
+  padding: 30px 120px;
+}
+@media screen and (max-width: 767px) {
+  .sec_article_detail .textbox.large.big {
+    margin: -80px 240px 0 auto; /* 2021/04/19 井上修正 */
+  }
+}
+
+/* .sec_article_detail .textbox.large.big .title_big {
+  font-size: 58px !important;
+} */
+
+/* 記事ページタイトル */
+.title_big {
+  margin-bottom: 10px; /* 2021/04/01井上追加 */
+  max-width: 720px; /* 2021/04/01井上追加 */
+  color: #2c76a4;
+  font-size: 39px; /* 2021/04/22井上修正 */
+  font-weight: 400; /* 2021/04/01井上修正 */
+  line-height: 1.3; /* 2021/04/07井上修正 */
+  letter-spacing: .15em; /* 2021/04/01井上修正 */
+  text-align: initial; /* 2021/04/07井上追加 */
+}
+
+@media screen and (max-width: 1440px) {
+  .sec_article_detail .textbox.large.big {
+    width: auto;
+    max-width: 100%;
+    margin-right: calc(100vw - 1200px);
+    margin-left: calc((100vw - 960px) / 2);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .sec_article_detail .textbox.large.big {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .sec_article_detail .textbox.large.big {
+    margin-left: 40px;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .textbox.large.big {
+    margin-left: 5%;
+    padding: 5% 5% 2%; /* 2021/04/07 井上修正 */
+  }
+  .sec_article_detail .textbox.large.big .title_big {
+    font-size: 27px !important; /* 2021/05/20 井上修正 */
+    letter-spacing: 0.1em; /* 2021/04/07 井上修正 */
+  }
+
+/*
+  .sec_article_detail .textbox.large.big .series_name {
+    margin: 0 0 10px 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+  .sec_article_detail .textbox.large.big .series_name .series_text {
+    color: #6d7278;
+    font-size: 3.2vw;
+    font-weight: normal;
+  }
+*/
+/*
+  .sec_article_detail .textbox.large.big .top_tags a {
+    padding: 0;
+    border: none !important;
+    color: #000 !important;
+    font-size: 3.5vw;
+  }
+*/
+/*
+  .sec_article_detail .textbox.large.big .wrap_label_article_mv > *:not(:first-child) {
+    display: none;
+  }
+*/
+/*
+  .sec_article_detail .textbox.large.big .wrap_avatar {
+    margin-bottom: 0 !important;
+  }
+*/
+  .sec_article_detail .textbox.large.big .textbox_avatar {
+    margin: 0 10px 0 0;
+  }
+  .sec_article_detail .textbox.large.big .title_avatar {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .sec_article_detail .textbox.large.big .title_avatar::before {
+    display: none;
+  }
+/*
+  .sec_article_detail .textbox.large.big .title_avatar > *:not(:last-child) {
+    display: none;
+  }
+*/
+}
+
+.sec_article_detail .content_article_detail {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  /*word-break: break-all;*/
+}
+
+.sec_article_detail .content_article_detail::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: #fff;
+  content: '';
+}
+
+.sec_article_detail .content_article_detail .inner_base {
+  box-sizing: border-box;
+  width: 960px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 959px) {
+  .sec_article_detail .content_article_detail .inner_base {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.sec_article_detail .content_article_detail .article_detail {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-right: 12.5%;
+  padding-left: 12.5%;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+/*
+  .sec_article_detail .content_article_detail .article_detail {
+    position: relative;
+  }
+  .sec_article_detail .content_article_detail .article_detail::before {
+    display: block;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    left: 0;
+    height: 80px;
+    background-color: #fff;
+    content: '';
+  }
+*/
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail {
+    z-index: 1;
+    padding-top: 20px;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+/*
+.sec_article_detail .content_article_detail .article_detail .btn_share.head {
+  -webkit-box-pack: end;
+  -webkit-box-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-transform: none;
+  display: -webkit-box;
+  display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+  width: 100%;
+  margin-right: 0;
+          transform: none;
+
+	height: 50px;
+}
+*/
+
+/*
+.sec_article_detail .content_article_detail .article_detail .btn_share.head > .share-btn {
+  display: block;
+  margin-left: 5px;
+}
+*/
+
+@media screen and (max-width: 767px) {
+/*
+  .sec_article_detail .content_article_detail .article_detail .btn_share.head {
+    -webkit-box-pack: center;
+            justify-content: center;
+    width: calc(100% + 23px * 2);
+    margin-right: -23px;
+    margin-left: -23px;
+    padding: 23px;
+    background-color: #e3e3e3;
+  }
+  .sec_article_detail .content_article_detail .article_detail .btn_share.head > .share-btn:not(:last-child) {
+    margin-right: 20px;
+  }
+*/
+}
+
+.sec_article_detail .content_article_detail .article_detail .inner_article_detail {
+  padding-right: 0;
+  max-width: 720px; /*2021/03/31 井上追加 */
+}
+
+.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right, .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left {
+  box-sizing: content-box;
+  width: 600px;
+}
+
+@media screen and (max-width: 1440px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right, .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left {
+    width: 41.66667vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right, .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left {
+    width: auto;
+    float: none;
+    text-align: center;
+  }
+}
+
+/* クイックタグ左・全画面サイズ */
+.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right img, .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left img {
+  width: 100%;
+  vertical-align: bottom;
+  /* margin-bottom: 10px; 2021/04/05 井上削除 */
+}
+
+
+/* クイックタグ両端断ち切り・全画面サイズ */
+/*
+ .sec_article_detail .content_article_detail .article_detail .wrap_img_article.full .caption_article {
+  padding-top:10px;
+  padding-bottom: 23px;
+}
+2021/03/29 井上修正 コメントアウト処理 */
+
+.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right .caption_article, .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left .caption_article {
+  margin: 0;
+  /* padding: 0 23px 23px 0; */
+  text-align-last: left;
+  /* padding-bottom: 20px; */  /* 2021/03/26 黒澤修正 */
+}
+/*
+@media screen and (max-width: 768px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right .caption_article, .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left .caption_article {
+    padding-top: 10px;
+  }
+}
+*/
+
+/* クイックタグ右寄せ・右裁ち落とし*/
+.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right {
+  margin-right: -360px;
+  /* padding-left: 28px; 2021/03/31井上修正 */
+  margin-left: 50px; /* 2021/03/31井上修正 */
+  margin-bottom: 10px; /* 2021/03/31井上修正 */
+}
+
+.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right .caption_article {
+	/* padding-right: 263px; 2021/04/05 井上削除 */
+	margin-top:5px; /* 2021/04/05井上修正 */
+}
+
+@media screen and (max-width: 1440px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right {
+    margin-right: calc(-120px - (100vw - 960px) / 2);
+  }
+	.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right .caption_article {
+		padding-right: calc((100vw - 960px) / 2 + 23px);
+	}
+}
+
+@media screen and (max-width: 960px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right {
+    margin-right: -12.5vw;
+  }
+	.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right .caption_article {
+		padding-right: 23px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_right {
+    margin-right: -23px;
+    margin-left: 23px;
+    padding-left: 0;
+    margin-bottom: 27px; /* 2021/03/26 黒澤修正 */ /* 2021/03/30 井上修正 */
+  }
+}
+
+/* クイックタグ左寄せ・左裁ち落とし*/
+.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left {
+  margin-left: -360px;
+  /* padding-right: 28px; 2021/03/31井上修正 */
+  margin-right: 50px; /* 2021/03/31井上修正 */
+  margin-bottom: 10px; /* 2021/03/31井上修正 */
+}
+
+.sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left .caption_article {
+  /* padding-left: 263px; 2021/04/05 井上削除 */
+  margin-top: 5px; /* 2021/04/05 井上修正 */
+}
+
+@media screen and (max-width: 1440px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left {
+    margin-left: calc(-120px - (100vw - 960px) / 2);
+  }
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left .caption_article {
+    padding-left: calc((100vw - 960px) / 2 + 23px);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left {
+    margin-left: -12.5vw;
+  }
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left .caption_article {
+    padding-left: 23px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail .wrap_img_article.img_left {
+    margin-right: 23px;
+    margin-left: -23px;
+    padding-right: 0;
+    margin-bottom: 27px; /* 2021/03/26 黒澤修正 */ /* 2021/03/30 井上修正 */
+  }
+}
+
+.sec_article_detail .content_article_detail .article_detail blockquote {
+  position: relative;
+  padding-top: 28px;
+  padding-left: 36px;
+  border-left: 1px solid #8dbda3;
+  color: #8dbda3;
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail blockquote {
+    padding-top: 20px;
+    padding-left: 25px;
+  }
+}
+
+.sec_article_detail .content_article_detail .article_detail blockquote p {
+  color: inherit;
+}
+
+.sec_article_detail .content_article_detail .article_detail blockquote cite {
+  margin-top: 10px;
+  color: inherit !important;
+  font-size: 16px;
+}
+
+.sec_article_detail .content_article_detail .article_detail blockquote cite a {
+  margin-left: 0.5em;
+  color: #2c76a4 !important;
+  text-decoration: none;
+}
+
+.sec_article_detail .content_article_detail .article_detail blockquote::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  border-top: 1px solid #8dbda3;
+  content: '';
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater {
+  border-width: 2px;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater > p {
+  display: none;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .wrap_article_middle {
+  display: block;
+  padding: 30px;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .wrap_article_middle > p {
+  display: none;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .renewer {
+  padding: 30px;
+  border-right: 2px solid #e2bda1;
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail .article_sec_avater .renewer {
+    border-right: none;
+    border-bottom: 2px solid #e2bda1;
+  }
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .renewer > p {
+  display: none;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .name_renewer {
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail .article_sec_avater .wrap_text_renewer {
+    margin-top: 0;
+  }
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .text_renewer {
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail .article_sec_avater .text_renewer {
+    text-align-last: left;
+  }
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .wrap_img {
+  -webkit-box-flex: 0;
+          flex: 0 0 auto;
+  width: 100px;
+  height: 125px;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .article_middle {
+  display: -webkit-box;
+  display: flex;
+  min-height: 125px;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .article_middle > p {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .sec_article_detail .content_article_detail .article_detail .article_sec_avater .article_middle:nth-last-child(2) {
+    margin-bottom: 0;
+  }
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .article_middle_img {
+  width: 100%;
+  height: 100%;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .textbox.left_bottom {
+  position: relative;
+  background-color: transparent;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .textbox_avatar {
+  display: none;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .title_avatar {
+  margin: 0;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .title_middle {
+  font-size: 16px;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .wrap_social {
+  margin-top: 10px !important;
+  padding-left: 0;
+}
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .wrap_social .likebox {
+/*  margin-top: 5px;*/
+  padding-left: 8px !important;
+/*  padding-left: 23px !important;*/
+/*  background-image: url(../images/common/icon_like_blue.svg) !important;*/
+}
+
+.sec_comment {
+  padding-bottom: 0;
+}
+
+.sec_comment .content_article_detail {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.sec_comment .content_article_detail::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: #f0ecd4;
+  content: '';
+}
+
+.sec_comment .content_article_detail .inner_base {
+  box-sizing: border-box;
+  width: 960px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #f0ecd4;
+}
+
+@media screen and (max-width: 959px) {
+  .sec_comment .content_article_detail .inner_base {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.sec_comment .content_article_detail .article_detail {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 12.5% 60px;
+}
+
+@media screen and (max-width: 767px) {
+  .sec_comment .content_article_detail .article_detail {
+    padding: 30px 5%;
+  }
+}
+
+.sec_comment .content_article_detail .inner_article_detail {
+  padding-right: 0;
+}
+
+.sec_comment .content_article_detail .comment-respond {
+  margin-top: 10px;
+}
+
+.sec_comment .content_article_detail .comment-reply-title {
+  margin-bottom: 0;
+}
+
+
+@media only screen and (max-width: 767px) {
+  /* .content_article {
+    padding-top: 5% !important;
+    padding-bottom: 5% !important;
+  } */
+
+	.content_article .inner_base {
+		margin-bottom: 50px;
+		padding-left: 0;
+	}
+	.content_article .inner_base .title_thin{
+		padding-left: 5%;
+	}
+  .content_article .inner_base .article_middle:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.singleText table tr:first-child th,
+.singleText table tr:first-child td {
+  padding-left: 0;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.singleText table tr:not(:first-child) th,
+.singleText table tr:not(:first-child) td {
+  padding-left: 0;
+  border: none;
+  border-bottom: 1px solid #b0ad9e;
+}
+/*# sourceMappingURL=single-articles.css.map */
+

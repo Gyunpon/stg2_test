@@ -1,0 +1,118 @@
+/***** 新CSSエリア（統合作業エリア） 2021/06/10以降 *****/ 
+
+
+@media only screen and (min-width: 768px) {
+.textbox.middle {
+    width: auto;
+    max-width: 420px;
+  }
+}
+
+/***** 新CSSエリア（統合作業エリア） END ***************/ 
+
+
+
+/***** 旧CSSエリア 2021/06/10以前 ********************/
+/* common */
+.series_name {
+	display: inline-block !important;
+  border: 1px solid #2c76a4;
+  background-color: #fffdf5;
+  color: #2c76a4; }
+  .series_name > * {
+    color: #2c76a4; }
+
+.textbox {
+  background-color: #fff; }
+
+.article_middle .textbox .wrap_social {
+  padding-left: 0; }
+
+.title_big, .title_middle {
+  font-family: Noto Sans JP, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #202020; 
+}
+
+.title_big {
+  font-size: 36px;
+}
+.title_middle {
+  font-size: 20px;
+}
+
+.wrap_img {
+  max-width: none; }
+
+.title_thin_subtitle {
+  margin-bottom: 50px;
+}
+
+
+/* article */
+.titleInfoLink a {
+  color: #B0AD9E;
+  font-size: 32px; }
+  @media only screen and (max-width: 767px) {
+    .titleInfoLink a {
+      font-size: 26px; } }
+
+.title_thin h2 {
+  margin-bottom: 0px; }
+
+@media only screen and (max-width: 767px) {
+  .title_thin_subtitle {
+    margin-top: 10px; } }
+
+/* single */
+.sec_article_detail .textbox.large.big {
+  margin-top: 0; }
+
+.sec_article_detail .singleText img {
+  max-width: 100% !important; }
+
+.wrap_social.color_black .datebox {
+  margin-right: 0; }
+
+.wrap_label_article_mv .title_avatar {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px); }
+
+@media only screen and (max-width: 767px) {
+  .wrap_label_article_mv a:first-of-type {
+    margin-bottom: 20px; } }
+
+.wrap_label_article_mv a:first-of-type .title_avatar span:nth-of-type(2) {
+  display: none; }
+
+.kanrenLink .title_thin {
+  margin-bottom: 30px; }
+
+.kanrenLink .textbox.middle {
+  margin-top: 0; }
+
+.kanrenLink .title_middle {
+  line-height: 33px; }
+
+.kanrenLink .wrap_article_middle.colum2 {
+  width: 100%; }
+
+.kanrenLink .inner_base {
+  max-width: 1020px; }
+  @media only screen and (max-width: 767px) {
+    .kanrenLink .inner_base {
+      width: 90%; } }
+
+.kanrenLink .series_name {
+  font-size: 15px !important;
+  padding: 3px 5px !important;
+  line-height: 19px !important; }
+
+.btn_share.last {
+  margin-top: 55px; }
+
+/* search */
+.articleListStyle .textbox > .search_series_name_link{
+	display: none;
+}

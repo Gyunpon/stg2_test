@@ -1,0 +1,345 @@
+@charset "utf-8";
+
+/* WP COMMON SETTING */
+
+
+/* breadcrumb */
+/* ------------------------------------------------- */
+#breadcrumbWrap{
+	width: 100%;
+}
+#breadcrumb{
+	>ul{
+		width: 100%;
+		overflow-x: auto;
+		@include fs(0);
+		white-space: nowrap;
+		>li{
+			display: inline-block;
+			vertical-align: top;
+			@include fs($base_fontSize);
+			a{
+				text-decoration: underline;
+				@include pc{
+					&:hover{
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/* Pager */
+/* ------------------------------------------------- */
+.pagerArea{
+	text-align: center;
+	@include fs(0);
+	@include mobile{
+		&:after{
+			visibility: hidden;
+			display: block;
+			font-size: 0;
+			content: " ";
+			clear: both;
+			height: 0;
+		}
+	}
+	a, span{
+		padding: 8px 12px;
+		margin-left: 10px;
+		display: inline-block;
+		vertical-align: top;
+		border: 1px solid $base_color;
+		@include fs(16);
+		@include linkColor($base_color);
+		@include box-sizing();
+		@include trans($prop:"background-color color");
+		&.current{
+			background-color: $base_color;
+			@include linkColor(#fff);
+		}
+		&:first-child{
+			margin-left: 0;
+		}
+		@include mobile{
+			display: none;
+			&.next, &.prev{
+				display: inline-block;
+			}
+			&.next{
+				float: right;
+			}
+			&.prev{
+				float: left;
+			}
+		}
+	}
+	a{
+		@include pc{
+			&:hover{
+				background-color: $base_color;
+				@include linkColor(#fff);
+			}
+		}
+	}
+}
+
+
+
+/* Archive */
+/* ------------------------------------------------- */
+.archive{
+	.archiveTitleArea{
+		padding-bottom: 30px;
+		border-bottom: 1px solid #eaeaea;
+		@include tablet{
+			padding-bottom: 4%;
+		}
+		@include mobile{
+			padding-bottom: 6%;
+		}
+		>h2{
+			line-height: 1.2;
+			padding-left: 0.5em;
+			@include fs(30);
+			font-weight: bold;
+			color: $base_fontColor;
+			border-left: 8px solid $base_color;
+			@include tablet{
+				font-size: 4.2vw;
+			}
+			@include mobile{
+				font-size: 5.2vw;
+			}
+			.archiveCountNum{
+				@include fs(16);
+				color: $base_fontColor;
+				@include tablet{
+					width: 100%;
+					margin-top: 1%;
+					display: block;
+					font-size: 2.3vw;
+					color: #666;
+				}
+				@include mobile{
+					width: 100%;
+					margin-top: 3%;
+					display: block;
+					font-size: 2.8vw;
+					color: #666;
+				}
+			}
+		}
+	}
+
+	.archiveList{
+		margin-top: 60px;
+		@include tablet{
+			margin-top: 4%;
+		}
+		@include mobile{
+			margin-top: 6%;
+		}
+		>ul{
+			>li{
+				padding-top: 30px;
+				margin-top: 30px;
+				border-top: 1px dotted #eaeaea;
+				@include tablet{
+					padding-top: 4%;
+					margin-top: 4%;
+				}
+				@include mobile{
+					padding-top: 6%;
+					margin-top: 6%;
+				}
+				&:first-child{
+					padding-top: 0;
+					margin-top: 0;
+					border-top: none;
+				}
+				a{
+					width: 100%;
+					display: block;
+					@include pc{
+						@include trans($prop:background-color);
+						&:hover{
+							background-color: #fafafa;
+						}
+					}
+					.archiveBox{
+						width: 100%;
+						display: table;
+						table-layout: fixed;
+						border-collapse: collapse;
+						border-spacing: 0;
+						>*{
+							display: table-cell;
+							vertical-align: top;
+							@include box-sizing();
+						}
+						.photo{
+							width: 180px;
+							@include mobile{
+								width: 20%;
+							}
+						}
+						.detail{
+							padding-left: 30px;
+							@include tablet{
+								padding-left: 4%;
+							}
+							@include mobile{
+								padding-left: 5%;
+							}
+							>*{
+								margin-top: 15px;
+								@include tablet{
+									margin-top: 5%;
+								}
+								@include mobile{
+									margin-top: 5%;
+								}
+								&:first-child{
+									margin-top: 0;
+								}
+							}
+						}
+						
+					}
+				}
+			}
+		}
+		
+		.articleInfo{
+			width: 100%;
+			display: table;
+			table-layout: fixed;
+			border-collapse: collapse;
+			border-spacing: 0;
+			>*{
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+		}
+		.date{
+			width: 6em;
+			line-height: 1;
+			@include fs(16);
+			@include tablet{
+				font-size: 2vw;
+			}
+			@include mobile{
+				font-size: 3.6vw;
+			}
+		}
+		.category{
+			
+		}
+		.categoryList{
+			>ul{
+				vertical-align: top;
+				>li{
+					margin-left: 15px;
+					display: inline-block;
+					&:first-child{
+						margin-left: 0;
+					}
+					.catIcon{
+						padding: 6px 18px;
+						display: inline-block;
+						vertical-align: middle;
+						@include fs(12);
+						background-color: $base_color;
+						@include border-radius(3px);
+						color: #fff;
+						@include tablet{
+							font-size: 1.8vw;
+						}
+						@include mobile{
+							padding: 3px 10px;
+							font-size: 2.8vw;
+						}
+					}
+				}
+			}
+		}
+		.title{
+			line-height: 1.4;
+			@include fs(18);
+			@include tablet{
+				font-size: 3vw;
+			}
+			@include mobile{
+				font-size: 3.8vw;
+			}
+		}
+	}
+}
+
+
+
+/* 404 */
+/* ------------------------------------------------- */
+#notFound{
+	padding: 60px 0;
+	h1{
+		line-height: 1.2;
+		margin-bottom: 30px;
+		text-align: center;
+		@include fs(30);
+		font-weight: bold;
+		color: $base_color;
+		@include tablet{
+			font-size: 4.8vw;
+		}
+		@include mobile{
+			margin-bottom: 8%;
+			font-size: 5.2vw;
+			text-align: left;
+		}
+	}
+	p{
+		line-height: $base_lineHeight;
+		text-align: center;
+		@include fs(16);
+		@include tablet{
+			font-size: 2.4vw;
+		}
+		@include mobile{
+			font-size: 3.6vw;
+			text-align: left;
+		}
+		a{
+			padding: 8px;
+			display: inline-block;
+			background-color: $base_color;
+			@include linkColor(#fff);
+		}
+		&.returnTop{
+			margin-top: 15px;
+			@include mobile{
+				margin-top: 5%;
+			}
+		}
+	}
+}
+
+
+
+/* MWWP FORM */
+/* ------------------------------------------------- */
+.mw_wp_form_input{
+	.inputH{
+		display: none !important;
+	}
+}
+.mw_wp_form_confirm{
+	.confirmH{
+		display: none !important;
+	}
+}

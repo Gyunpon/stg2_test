@@ -1,0 +1,280 @@
+#renewer .wrapper{background-color:#fff}
+.sec_renewer{padding-top:0px}
+
+.wrapper {
+  background-color: #f7f7f7;
+}
+
+/*
+@media only screen and (max-width:767px){.sec_renewer{padding-top:13px}}
+*/
+
+.slider_renewer{-ms-flex-wrap:wrap;flex-wrap:wrap}
+.slider_renewer .renewer{width:33.33333%;margin-bottom:45px;padding:0 15px}
+
+@media only screen and (min-width:768px) and (max-width:979px){.slider_renewer .renewer{width:50%}.slider_renewer .renewer:nth-child(2n){padding-right:0}}
+
+@media only screen and (max-width:767px){
+.slider_renewer .renewer{
+width:100%;margin:0 0 40px;padding:0}}
+
+
+.head_content_renewer{
+  padding-top:0;
+}
+@media only screen and (min-width:768px){
+  .head_content_renewer{
+    background-color: #f8eae1;
+    /* padding-bottom: 30px; */
+  }
+}
+
+  @media only screen and (max-width:767px){
+  .head_content_renewer{
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column
+    }
+}
+
+.avatar_renewer_main{
+	width:400px;
+	padding-right:35px
+}
+@media only screen and (max-width:767px){
+	.avatar_renewer_main{
+		width:64%
+	}
+}
+
+.sec_renewer_detail{
+	padding-top:0
+}
+@media only screen and (max-width:767px){
+	.sec_renewer_detail{
+		padding-top:0;
+		padding-bottom:60px
+	}
+}
+
+.wrap_text_renewer_head {
+  position: relative;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap;
+  padding: 50px 40px 0;
+  display:block;
+}
+
+@media only screen and (max-width:767px){
+  .wrap_text_renewer_head{
+    padding: 0;
+  }
+}
+
+/*
+.memberProfPage.sec_renewer_detail > .inner_base{
+	background: none !important;
+}
+*/
+
+.profEditTxtWrap{
+	padding-top: 40px;
+  margin-bottom: -70px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+  background-color: #fffdf5;
+}
+.profEditTxtWrap .userInfo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
+}
+.profEditTxtWrap .userName{
+	font-size: 16px;
+}
+.profEditTxtWrap .userIcon{
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 50px;
+	margin-right: 20px;
+}
+.profEditTxtWrap .btn_base{
+	background-color: #fff;
+	display: inline-block;
+}
+.profileUpdateField{
+	margin-bottom: 30px;
+}
+.profileUpdateField >p{
+	text-align: center;
+	font-size: 16px;
+}
+.profileUpdateField >p:nth-of-type(2){
+	margin-top: 5px;
+}
+.profEditTxt{
+	font-size: 16px;
+	color: #4e4e4e;
+	text-align: center;
+	margin: 100px 0 120px;
+}
+@media only screen and (max-width:767px){
+	.profEditTxtWrap .userIcon{
+		width: 90px;
+		height: 90px;
+	}
+}
+
+.wrap_bottom_renewer_head{
+  width:100%;
+  max-width:594px;
+  /* padding-top:30px; */
+}
+
+@media only screen and (max-width:767px){
+  .wrap_bottom_renewer_head{
+    position:absolute;
+    top:70px;
+    left:50%;
+    -webkit-transform:translateX(-50%);
+    transform:translateX(-50%);
+    z-index:1;
+  }
+}
+
+.social{
+  display:block;
+  margin:20px 0 20px;
+}
+
+
+.social *{vertical-align:middle;}.social .social_link{color:#17577f}
+.social .btn_contact{display:inline-block;color:#6d7278;margin-right:10px;line-height:24px}
+
+/*@media only screen and (max-width:767px){.social{display:none}}*/
+.social .social_button{
+	display:inline-block;
+	width: 30px;
+	margin-right:10px
+}
+.social .social_button img{
+	width: 30px;
+	height: 30px;
+}
+
+/*
+.text_renewer{
+  line-height:1.74!important;
+letter-spacing:.12em !important
+}
+*/
+
+
+@media only screen and (max-width:767px){
+  .text_renewer{
+    margin-top:12px!important
+  }
+}
+
+
+.text_renewer.large{
+  margin-top:20px;
+  max-width: 566px;
+  font-size: 15px;
+  word-break: break-word;
+  line-height: 1.7;
+  letter-spacing: .045em;
+}
+
+/*
+@media only screen and (max-width:767px){
+  .wrap_text_renewer_intro{
+    padding-top:150px
+  }
+}
+*/
+
+@media only screen and (max-width:767px){.wrap_text_renewer_intro .title_middle{font-size:26px}}.wrap_pagination{margin-top:60px}
+@media only screen and (max-width:767px){.wrap_pagination{margin-top:0}}
+
+#renewer_detail .wrapper:before{
+  width:78%;
+  height:579px;
+  /* background-color:#f8e2d4; */
+}
+
+@media only screen and (max-width:767px){
+  #renewer_detail .wrapper:before{
+    right:auto;
+    left:0;
+    width:100%;
+    height:448px;
+  }
+}
+
+/*@media only screen and (max-width:767px){#renewer_detail .article_middle{margin-bottom:42px}
+
+#renewer_detail .article_middle:nth-child(n+4){display:none}}*/
+#renewer_detail .wrap_text_renewer{margin-top:0;padding-top:20px}
+@media only screen and (max-width:767px){#renewer_detail .wrap_text_renewer{padding-top:0}}
+#renewer_detail .wrap_text_renewer .title_middle{display:none}
+@media only screen and (max-width:767px){#renewer_detail .wrap_text_renewer .title_middle{display:block}}
+
+#renewer_detail .content_renewer {
+  padding-top:119px
+}
+
+/*@media screen and (min-width:1160px){#renewer_detail .content_renewer .wrap_article_middle .article_middle_img{width:360px}}*/
+/*
+
+@media screen and (min-width:767px){
+	#renewer_detail .content_renewer .article_middle_img{height:189px}
+	#renewer_detail .content_renewer .title_middle{font-size:21px}
+	#renewer_detail .content_renewer .textbox{padding:30px 30px 140px 26px;height:calc(100% - 189px);background-color:#fffdf5!important}
+	#renewer_detail .content_renewer .subinfo{position:absolute;width:100%;bottom:30px;left:30px}
+	}
+*/
+	
+@media only screen and (max-width:767px){
+  #renewer_detail .content_renewer{
+    padding-top:70px;
+  }
+	.content_renewer .inner_base{
+		padding-left: 0;
+	}
+}
+
+#renewer_detail .head_content_renewer .wrap_switch{margin-top:0}
+.name_renewer.bold.large{padding-left:0;text-align: left;}.sec_renewel{padding-top:80px;background-color:#fff}
+.sec_renewel .wrap_btn{margin-top:0}.sec_renewel .title_thin{margin-bottom:40px}
+@media only screen and (max-width:767px){.sec_renewel .title_thin_img img{width:189px}}
+.renewer_social i{color:#ebab81}
+
+.sec_renewer_detail .followCover{
+	right: 26%;
+}
+.sec_renewer_detail .followCover .popup-modal{
+	display: block;
+	height: 100%;
+}
+@media only screen and (max-width:767px){
+	.sec_renewer_detail .followCover{
+		top: 10px;
+		right: 0;
+	}
+}
+
+
+.name_renewer .category_renewer {
+  display: block;
+  margin-top: 7px;
+  font-size: 16px;
+  max-width: 566px;
+  color: #4e4e4e !important;
+  letter-spacing: 0.045em;
+}

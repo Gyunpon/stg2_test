@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+// ***********************************************
+// 共通変数設定
+//
+// ページで数値が異なる場合は、各scss上で上書きして利用してください。
+// 例）$bigPcViewport: 1200px;
+// 「!default」をとった形でそのscss上でのみ上書きが可能。
+// ***********************************************
+
+
+// Viewport
+// -----------------------------------------------
+// BIGPC -> $bigPcViewport以上
+// PC -> $pcViewport以上
+// SP and Tablet => $pcViewport以下
+// Tablet -> $pcViewport未満 $tabViewport以上
+// SP -> $spViewport以下
+$bigPcViewport: 1200px !default;
+$pcViewport: 960px !default;
+$tabViewport: 768px !default;
+$spViewport: 767px !default;
+
+// Width
+// -----------------------------------------------
+// PC 基準width
+$base_width: 960px !default;
+// SP 基準width
+$sp_base_width: 90% !default;
+
+// Fonts
+// -----------------------------------------------
+// 共通 line-height
+$base_lineHeight: 1.6 !default;
+// 共通 font-size 初期値
+$base_fontSize: 14 !default;
+// 共通 font-size 単位 初期値
+$font_unit: px !default;
+// 明朝系 font-family
+$serif: "Times New Roman", "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "メイリオ", Meiryo, serif !default;
+// ゴシック系 font-family
+$sans-serif: -apple-system, BlinkMacSystemFont, 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック', YuGothic, 'Yu Gothic', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif !default;
+
+// Color
+// -----------------------------------------------
+// 共通 サイトメインカラー
+$base_color: #2c76a4 !default;
+// 共通 サイトメインフォントカラー
+$base_fontColor: #202020 !default;
+
+$rn_black : #202020;
+$rn_gray : #4e4e4e;
+$rn_blue : #2c76a4;
+$rn_red : #ff745a;
+$rn_ash : #B0AD9E;
+$rn_green : #dcebe3;
+

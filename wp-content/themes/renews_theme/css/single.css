@@ -1,0 +1,387 @@
+@charset "UTF-8";
+/* singleText */
+/*------------------------------------------------*/
+.singleText {
+  /* text */
+  /* -------------------------------------------------- */
+  /* img */
+  /* -------------------------------------------------- */
+  /* box */
+  /* -------------------------------------------------- */
+  /* list */
+  /* -------------------------------------------------- */
+  /* movie */
+  /* -------------------------------------------------- */
+  /* table */
+  /* -------------------------------------------------- */
+}
+
+/* 2021/05/16 井上削除
+.singleText h4 {
+  line-height: 1.6;
+  padding: 0 0.5em 0.5em 2em;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 767px) {
+  .singleText h4 {
+    font-size: 4vw;
+  }
+}
+
+.singleText h4:before, .singleText h4:after {
+  content: '';
+  position: absolute;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.singleText h4:before {
+  width: 18px;
+  height: 18px;
+  top: 0.2em;
+  left: 0.2em;
+  z-index: 2;
+  background-color: #eee;
+  background-color: rgba(150, 150, 150, 0.5);
+}
+
+.singleText h4:after {
+  width: 13px;
+  height: 13px;
+  top: 0.7em;
+  left: 0.7em;
+  background-color: #bbb;
+  background-color: rgba(210, 210, 210, 0.5);
+}
+
+.singleText h5 {
+  line-height: 1.6;
+  padding-bottom: 0.4em;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 4px solid #eaeaea;
+  position: relative;
+}
+
+@media only screen and (max-width: 767px) {
+  .singleText h5 {
+    font-size: 4vw;
+  }
+}
+
+.singleText h5:after {
+  width: 20%;
+  height: 4px;
+  content: '';
+  background-color: #2c76a4;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  z-index: 2;
+}
+
+.singleText h6 {
+  line-height: 1.6;
+  padding-bottom: 0.4em;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 767px) {
+  .singleText h6 {
+    font-size: 4vw;
+  }
+}
+
+.singleText a {
+  color: #2c76a4;
+}
+*/
+
+.singleText a:visited, .singleText a:focus, .singleText a:active {
+  color: #2c76a4;
+}
+
+@media only screen and (min-width: 960px) {
+  .singleText a:hover {
+    text-decoration: none;
+  }
+}
+
+.singleText p:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+
+/* 2021/03/26 黒澤修正 */
+.wp_img_contents {
+  float: right;
+  text-align: center;
+  margin: 0 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .wp_img_contents {
+    width: 45%;
+  }
+}
+/* 2021/03/26 黒澤修正ここまで */
+
+
+.singleText p.wp-caption-text {
+  color: #4e4e4e;
+  font-size: 13px; /* 2021/03/26 黒澤修正 */
+  line-height: 1.5;
+  letter-spacing: .045em;
+  margin-top: 5px; /* 2021/04/05 井上修正 */
+  /* padding-bottom: 23px; 2021/04/05 井上削除*/
+  /* width: 100%; 2021/03/26 黒澤修正 */
+  max-width: 720px; /* 2021/04/15 井上追加 */
+  display: table-caption; /* 2021/04/02 黒澤修正 */
+  caption-side: bottom; /* 2021/04/02 黒澤修正 */
+  /* text-align: left;  2021/04/02 黒澤削除 */
+  /* margin-bottom: 50px;
+  color: #8dbda3;
+  font-size: 15px;
+  line-height: 1.4; */
+}
+
+.singleText b, .singleText em, .singleText strong {
+  font-weight: bold;
+}
+
+.singleText em {
+  font-style: italic;
+}
+
+.singleText sup, .singleText sub {
+  font-size: 80%;
+}
+
+.singleText sup {
+  vertical-align: super;
+}
+
+.singleText sub {
+  vertical-align: sub;
+}
+
+.singleText .alignleft {
+  /* padding-right: 30px; 2021/04/02 黒澤修正 */
+  /* padding-bottom: 0px; 2021/04/05 井上削除 */
+  margin-right: 36px; /* 2021/04/16 井上修正 */
+  margin-bottom: 10px; /* 2021/04/05 井上追加 */
+  float: left;
+}
+
+@media only screen and (max-width: 767px) {
+  .singleText .alignleft {
+    padding: 0;
+    /* padding-bottom: 4%; */ /* 2021/03/26 黒澤修正 */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 27px; /* 2021/04/05 井上追加 */
+    float: none;
+    text-align: center; /* 2021/04/12 黒澤追加 */
+    display: table; /* 2021/04/02 黒澤修正 */
+  }
+}
+
+.singleText .alignright {
+  /* padding-left: 30px;  2021/04/02 黒澤修正  */
+  /* padding-bottom: 0px; 2021/04/05 井上削除 */
+  margin-left: 36px; /* 2021/04/16 井上修正 */
+  margin-bottom: 10px; /* 2021/04/05 井上追加 */
+  float: right;
+}
+
+@media only screen and (max-width: 767px) {
+  .singleText .alignright {
+    padding: 0;
+    /* padding-bottom: 4%; */ /* 2021/03/26 黒澤修正 */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 27px; /* 2021/04/05 井上追加 */
+    text-align: center;
+    display: table; /* 2021/04/02 黒澤修正 */
+  }
+}
+
+.singleText .aligncenter {
+  /* padding-bottom: 0px; 2021/04/05 井上削除 */
+  margin-bottom: 30px; /* 2021/04/19 井上修正 */
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  display: table; /* 2021/04/02 黒澤修正 */
+}
+
+@media only screen and (max-width: 767px) {
+  .singleText .aligncenter {
+    padding: 0;
+    /* padding-bottom: 4%; */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* 2021/03/26 黒澤修正 */
+  }
+}
+
+.singleText hr {
+  max-width: 500px;
+  height: 1px;
+  border: none;
+  background-color: #888;
+  display: block;
+}
+
+.singleText blockquote p {
+  display: block;
+  line-height: 40px;
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: .05em;
+  color: #3c7658;
+}
+
+.singleText ul {
+  padding-left: 1.2em;
+  list-style: disc;
+  font-size: 16px;
+}
+
+.singleText ul li {
+  list-style: disc;
+}
+
+.singleText ol {
+  padding-left: 1.2em;
+  list-style: decimal;
+  font-size: 14px;
+}
+
+.singleText ol li {
+  list-style: decimal;
+}
+
+.singleText li {
+  line-height: 1.8;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+  .singleText li {
+    margin-top: 3%;
+    font-size: 15px;
+  }
+}
+
+.singleText li:first-child {
+  margin-top: 0;
+}
+
+.singleText iframe, .singleText video {
+  max-width: 100% !important;
+  height: 400px;
+}
+
+/* 2021/04/02 黒澤修正 */
+@media only screen and (max-width: 767px) {
+  .singleText iframe, .singleText video {
+    height: 56.25vw !important;
+  }
+}
+
+
+.singleText table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.singleText table th {
+  line-height: 1.8;
+  padding-right: 20px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.singleText table td {
+  line-height: 1.2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.singleText table thead th:first-child, .singleText table thead td:first-child {
+  border: none;
+  background-color: transparent;
+}
+
+.singleText .article_sec_avater .article_middle a {
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.singleText .article_sec_avater .article_middle .commentbox {
+  font-size: 14px;
+}
+
+.singleText .article_sec_avater .avatar_renewer {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  overflow: hidden;
+}
+
+.singleText .article_sec_avater .avatar_renewer img {
+  max-width: 100% !important;
+}
+
+.singleText .article_sec_avater .text_renewer {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+
+/* 2021/05/15 井上修正*/
+.excerpt {
+  line-height: 1.8;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: .05em;
+}
+
+@media only screen and (max-width: 767px) {
+  .excerpt {
+    line-height: 1.4;
+    font-size: 17px;
+    letter-spacing: .03em;
+  }
+}
+
+/* 2021/03/26 黒澤修正 */
+
+/*
+.wp-caption {
+  width: 100% !important;
+}
+*/
+
+.sec_article_detail .content_article_detail .article_detail .article_sec_avater .title_avatar {
+  color: #202020;
+}

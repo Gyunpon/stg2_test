@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/* Reset */
+/*-----------------------------------------------*/
+html, body{
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	@include font-family(sans-serif);
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+}
+body{
+	line-height: 1;
+}
+div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	@include font-family(sans-serif);
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+a{
+	text-decoration: none;
+	color: #000;
+	&.decoration{
+		text-decoration: underline;
+		&:visited,
+		&:focus,
+		&:active{
+			text-decoration: underline;
+			outline: 0;
+		}
+	}
+	&:visited,
+	&:focus,
+	&:active{
+		text-decoration: none;
+		color: #000;
+		outline: 0;
+	}
+}
+
+/* clearfix */
+/*-----------------------------------------------*/
+.clearfix:after{
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+* html .clearfix{
+	zoom: 1;
+}
+*:first-child+html .clearfix{
+	zoom: 1;
+}
+
+/*-----------------------------------------------*/
+/* Reset */

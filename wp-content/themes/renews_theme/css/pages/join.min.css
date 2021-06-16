@@ -1,0 +1,180 @@
+.main{
+	padding-bottom: 0;
+}
+
+header {
+  background-color: #fffdf5;
+}
+
+.sign_in{
+	-ms-flex-item-align:center;
+	align-self:center;
+	position:relative;
+/*	font-size:14px;*/
+	letter-spacing:.05em;
+	line-height:1.5
+}
+
+.sec_join,.sec_login{
+	text-align:center;
+	background-color: #fff;
+	padding-bottom:100px;
+}
+
+.um .um-register .um-9 .uimob340 .um-postmessage p{
+  font-size: 17px !important;
+  color: #4e4e4e !important;
+}
+
+@media only screen and (max-width:767px){
+	.sec_join,.sec_login{
+		padding-top: 0;
+		padding-bottom:160px;
+	}
+}
+.sec_join .mypageHead{
+	margin-bottom: 50px;
+}
+.sec_login{
+	padding-bottom: 35px;
+}
+.sec_login .mypageContent{
+	padding-top: 60px;
+}
+
+.sec_join .title_lower_l1,.sec_login .title_lower_l1{
+	font-size:42px;
+	font-weight:100
+}
+.sec_join:not(.password_changed_wrap):not(.alreadyRegist) .text_link,.sec_login:not(.password_changed_wrap):not(.alreadyRegist) .text_link{
+	font-size:16px
+}
+.sec_join:not(.password_changed_wrap):not(.alreadyRegist) .text_link a,.sec_login:not(.password_changed_wrap):not(.alreadyRegist) .text_link a{
+	color:#2c76a4
+}
+.sec_join:not(.password_changed_wrap):not(.alreadyRegist) .btn_base,.sec_login:not(.password_changed_wrap):not(.alreadyRegist) .btn_base{
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-pack:center;
+	-ms-flex-pack:center;
+	justify-content:center;
+	margin-top:42px;
+	width:100%
+}
+.sec_join:not(.password_changed_wrap):not(.alreadyRegist) .btn_base:after,.sec_login:not(.password_changed_wrap):not(.alreadyRegist) .btn_base:after{
+	position:relative;
+	-webkit-transform:unset;
+	transform:unset;
+	right:unset;
+	margin:5px 0;
+	-webkit-transition:.5s ease;
+	transition:.5s ease
+}
+.sec_join .inner_base .text_read,
+.sec_join .inner_base .title_lower_l1,
+.sec_join .text_social,
+.sec_login .inner_base .text_read,
+.sec_login .inner_base .title_lower_l1,
+.sec_login .text_social{
+	text-align:center
+}
+
+.alreadyRegist .userProfAreaWrap{
+	padding-top: 50px;
+}
+
+.alreadyRegistTxt{
+	text-align: center;
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 40px;
+}
+
+#um_field_9_user_login label:after{
+	content: "（登録後変更できません）";
+}
+
+.password_changed_wrap,.alreadyRegist{
+	height: calc(100vh - 125px - 67px);
+}
+@media only screen and (max-width:767px){
+	.password_changed_wrap,.alreadyRegist{
+		height: calc(100vh - 150px - 67px);
+	}
+}
+
+.userProfAreaWrap{
+	text-align: center;
+
+}
+.userProfAreaWrap .userIconWrap{
+	margin-bottom: 30px;
+}
+.userProfAreaWrap .userIcon{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border-radius: 50px;
+}
+.userProfAreaWrap .userName{
+	text-align: center;
+	margin-top: 15px;
+	font-weight: 500;
+}
+.userProfAreaWrap .wrap_btn{
+	display: inline-block;
+}
+@media only screen and (max-width:767px){
+	.userProfAreaWrap .userIcon{
+		width: 90px;
+		height: 90px;
+	}
+}
+
+
+
+
+
+/* password reset */
+.um-password .um-field-block{
+	display: none;
+}
+.passwordReset.wrapper{
+	background-color: #fff;
+}
+#um_field_um_password_id_confirm_user_password .um-field-error{
+	font-size: 0;
+}
+#um_field_um_password_id_confirm_user_password .um-field-error:before{
+	content: "パスワードの確認を入力してください";
+	font-size: 13px;
+}
+
+.um-um_password_id .um-form-field::placeholder{
+	color: transparent;
+}
+.resetText{
+	color: #4e4e4e;
+	text-align: center;
+	line-height: 1.6;
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+@media only screen and (max-width:767px){
+	.resetText{
+		font-size: 14px;
+		letter-spacing: 0;
+	}
+}
+
+
+
+/* ソーシャルログイン */
+.um-social-login-wrap .um-col-alt .um-left{
+	text-align: center;
+}
+
+.um-social-login-wrap .um-col-alt .um-right{
+	display: none;
+}
