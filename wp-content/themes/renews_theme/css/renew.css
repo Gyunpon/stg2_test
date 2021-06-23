@@ -23,6 +23,10 @@ header {
   height: 67px !important;
 }
 
+header .inner_base {
+  max-width: 100%;
+}
+
 .logo_header {
   position: relative;
   top: 0;
@@ -32,38 +36,203 @@ header {
   display: block;
 }
 
+.sp_menu {
+  display: block;
+  z-index: -1;
+}
+
+.logo_header {
+  left: 0;
+  transform: translateX(0%);
+}
+
+.logo_header, .noLogin .logo_header {
+  position: static;
+  margin-bottom: 0px;
+  width: 250px;
+  margin-left: calc(50% - 125px);
+  text-align: center;
+}
+
+header.is_open .logo_header {
+  top: 0px;
+}
+.sign_wrap {
+  max-width: none;
+  margin-left: auto;
+  margin-bottom: 0px;
+  width: 20%;
+}
+.sign_wrap svg {
+  width: 17px;
+  margin-bottom: -7px;
+  color: #707070;
+}
+.sign_wrap a {
+  color: #4E4E4E;
+}
+.sign_up > a {
+  background-color: transparent;
+}
+.logo_header .sub_title {
+  text-align: center;
+  font-size: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  color: #2C76A4;
+}
+
+.inner_menu_sp {
+  width: 100%;
+  margin-top: 67px;
+}
+
+#search_sp {
+  border: 1px solid #B0AD9E;
+  margin: 0 10%;
+  width: 80%;
+  padding: 5px 25px;
+}
+
+.search__box {
+  width: 100%;
+}
+
+.search__box .search__btn {
+  left: 10%;
+}
+
+.inner_menu_sp_top {
+  padding: 20px 0;
+  background-color: #FFFDF5;
+  color: #4E4E4E;
+}
+
+.inner_menu_sp_sign {
+  display: flex;
+  justify-content: center;
+}
+
+.inner_menu_sp_signIn, .inner_menu_sp_signUp {
+  text-align: center;
+  margin-bottom: 20px;
+  margin: 0 10px;
+}
+
+.inner_menu_sp_signIn p, .inner_menu_sp_signUp p {
+  font-size: 10px;
+  text-align: center;
+}
+
+
+.inner_menu_sp_sign button {
+  border-radius: 50px;
+  border: 1px solid #B0AD9E;
+  padding: 5px 15px;
+  background-color: #fff;
+  margin-top: 5px;
+  color: #4E4E4E;
+}
+
+.inner_menu_sp_sign button span {
+  vertical-align: super;
+  color: #4E4E4E;
+}
+
+.inner_menu_sp_sign button svg {
+  fill: #707070;
+  width: 17px;
+}
+
+.inner_menu_sp .inner_menu_sp_block .item_menu_sp {
+  text-align: center;
+}
+
+.item_menu_sp a {
+  color: #4E4E4E;
+}
+
+.btn_share {
+  justify-content: space-around;
+}
+
+.text_copyright {
+  margin: auto;
+}
+
+.inner_menu_sp .inner_menu_sp_block .item_menu_sp:not(:first-of-type) {
+  margin-top: 35px;
+}
+
+.inner_menu_sp_top_none {
+  height: 30px;
+}
+
+.inner_menu_sp_scroll {
+  height: 53vh;
+}
+
+.inner_menu_sp .inner_menu_sp_block:nth-of-type(2) {
+  border-top: none;
+}
+
+.inner_menu_sp_scroll .inner_menu_sp_block {
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  #menu {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+  .sign_wrap {
+    width: 25%;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   header .inner_base {
     padding: 0;
     height: 39px;
   }
-
-  .logo_header {
-    left: 0;
-    transform: translateX(0%);
-  }
-
-  .logo_header, .noLogin .logo_header {
-    position: static;
-    margin-bottom: 10px;
-    width: 110px;
-    margin-left: calc(50vw - 65px);
-  }
-
-  header.is_open .logo_header {
-    top: 0px;
-  }
-  .sign_wrap {
-    max-width: none;
-    width: auto;
-    margin-left: auto;
-  }
+  /*
   .sign_up {
     margin-left: 5px;
   }
+  */
   .user_avatar {
     top: -10px;
     margin-right: 0px;
+  }
+
+  .sign_up {
+    display: none;
+  }
+
+  .sign_wrap {
+  width: auto;
+  }
+
+  .logo_header, .noLogin .logo_header, .sign_wrap {
+    margin-bottom: 20px;
+  }
+
+  .search__box .search__btn {
+    left: 12%;
+  }
+
+  #menu {
+    overflow: scroll;
+  }
+
+  .search-box {
+    height: 34px;
+  }
+
+  #search_sp {
+    padding: 5px 35px;
   }
 }
 
@@ -80,6 +249,69 @@ header {
 /* Classから.article_middleを削除。大中コンポのAgendaタグ周りをゼロにして間隔調整は各コンポのタイトル周りで行う */
 .top_tags {
   padding-top: 0; /*2021/05/25 井上 */
+}
+
+
+/* フッター */
+
+header .footer_bottom {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border-top: none;
+}
+
+.footer_link {
+  text-align: center;
+}
+
+.footer_link a {
+  font-size: 10px;
+  color: #707070;
+}
+
+.footer_link a:after {
+  content: " |";
+}
+
+.footer_link a:last-child:after {
+  content: none;
+}
+
+.follow {
+  text-align: center;
+}
+
+.follow button {
+  border-radius: 5px;
+  border: 1px solid #B0AD9E;
+  padding: 5px 10px;
+  background-color: #fff;
+}
+
+.follow button a {
+  color: #B0AD9E;
+  font-weight: bold;
+}
+
+.clearfix {
+  margin: 20px 0;
+}
+
+#footer {
+  text-align: center;
+}
+
+.text_copyright {
+  text-align: center;
+}
+
+#LINE_LOGO_1_ .st0 {
+  fill: #fff;
+}
+
+
+@media only screen and (max-width:767px) {
 }
 
 

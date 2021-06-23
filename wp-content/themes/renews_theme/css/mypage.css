@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/***** 新CSSエリア（統合作業エリア） 2021/06/10以降 *****/ 
+/***** 新CSSエリア（統合作業エリア） 2021/06/10以降 *****/
 .followViewArea .followList.grid {
   -ms-grid-columns: 1fr 2;
   grid-template-columns: repeat(2, 1fr);
@@ -17,7 +17,7 @@
 }
 
 .followViewArea .mypageContent .inner_base {
-  padding: 0; 
+  padding: 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -56,6 +56,16 @@ a:hover .title_agenda {
   margin-bottom: -3px;
 }
 
+/* 6/23 黒澤 追加 */
+.inner_menu_header_sp {
+  height: 100px;
+  background-color: #fffdf5;
+}
+
+.inner_menu_sp {
+  margin-top: 0!important;
+}
+
 
 /*** Bookmark（クリップ記事） ***/
 #bookmark_top_contentArticle .grid {
@@ -68,7 +78,7 @@ a:hover .title_agenda {
 }
 
 
-/***** 新CSSエリア（統合作業エリア） END ***************/ 
+/***** 新CSSエリア（統合作業エリア） END ***************/
 
 
 /***** 旧CSSエリア 2021/06/10以前 ********************/
@@ -383,7 +393,7 @@ header {
 @media only screen and (max-width: 767px) {
   .followViewArea .followBlockWrap .followBlock .title_thin {
     margin-bottom: 20px;
-  } 
+  }
 }
 
 /*
@@ -832,7 +842,7 @@ header {
   margin-top: 20px;
   max-width: 330px;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
 .followViewArea .followNavWrap .followNav {
   display: -webkit-box;
@@ -843,7 +853,7 @@ header {
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; 
+  align-items: center;
 }
 .followViewArea .followNavWrap .followNav li a {
   color: #4e4e4e;
@@ -851,7 +861,7 @@ header {
   background-image: url("../images/icons/arrow_btm.svg");
   background-position: right center;
   background-repeat: no-repeat;
-  padding-right: 20px; 
+  padding-right: 20px;
 }
 
 .followViewArea .followList li .followListBlock .followTitleArea {
@@ -993,7 +1003,7 @@ overflow: visible;
 /* クリップ記事 */
 .bookmarkPage .mypageContent .inner_base {
   max-width: 1160px; }
-  
+
 @media only screen and (max-width: 767px) {
   .bookmarkPage .mypageContent .mypageTitleBlock{
     padding-left: 5%;
@@ -1003,23 +1013,23 @@ overflow: visible;
 @media only screen and (max-width: 1100px) {
   .bookmarkPage .mypageContent .wrap_article_middle.grid {
     -ms-grid-columns: 1fr 2;
-    grid-template-columns: repeat(2, 1fr); 
-  } 
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .bookmarkPage .mypageContent .wrap_article_middle.grid {
     -ms-grid-columns: 1fr 1;
-    grid-template-columns: repeat(1, 1fr); 
-  } 
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .bookmarkPage .mypageContent .wrap_article_middle.grid {
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 @media only screen and (max-width: 767px) {
   .bookmarkPage .mypageContent .wrap_article_middle.grid {
-    margin-top: 40px; 
+    margin-top: 40px;
   }
 }
 
@@ -1034,8 +1044,8 @@ overflow: visible;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin-bottom: 0; 
-  
+  margin-bottom: 0;
+
   height: 150px;
   border-right: 1px solid #B0AD9E;
   border-bottom: 1px solid #B0AD9E;
@@ -1044,7 +1054,7 @@ overflow: visible;
 .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .wrap_img .article_middle_img {
   width: 120px;
   height: 150px;
-  max-height: none; 
+  max-height: none;
 }
 
 /* 2021/06/04 */
@@ -1056,7 +1066,7 @@ overflow: visible;
       padding: 1% 2% 0 3%;
       top: 0;
       width: calc(100% - 120px);
-      margin-top: 0; 
+      margin-top: 0;
 }
 
 .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .title_middle {
@@ -1064,7 +1074,7 @@ overflow: visible;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        overflow: hidden; 
+        overflow: hidden;
 }
       .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .likebox .wpulike-robeen svg, .bookmarkPage .mypageContent .wrap_article_middle.grid .article_middle .textbox .likebox .wpulike-animated-heart .wp_ulike_btn {
         margin-top: 5px; }
