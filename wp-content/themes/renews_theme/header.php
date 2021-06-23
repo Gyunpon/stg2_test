@@ -192,6 +192,9 @@
 	<!-- add.css -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/add.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/renew.css" rel="stylesheet" media="all" />
+
+	<!-- add rss -->
+	<link rel="alternate" type="application/rss+xml" href="https://stg2.renews.jp/feed/" title="renews フィード" />
 </head>
 <!-- END OF HEAD -->
 
@@ -206,6 +209,7 @@
 				<!-- For Top Page -->
 				<!--<div class="logo_header">-->
 				<<?php if(is_home() || is_front_page()|| is_page('index2')){echo 'h1';} else{echo 'div';} ?> class="logo_header">
+					<p class="sub_title">世の中を“リニュー”しよう。課題解決にこだわるメディア</p>
 					<a href="<?php echo home_url(); ?>/">
 						<svg
 								 version="1.1"
@@ -238,6 +242,9 @@
 				<!--</div>-->
 				</<?php if(is_home() || is_front_page()|| is_page('index2')){echo 'h1';}else{echo 'div';} ?>>
 
+
+				<!--
+
 				<nav class="nav_header">
 					<ul class="list_nav_header flex">
 						<li class="item_nav_header header-article"><a href="<?php echo home_url(); ?>/article/" class="target_nav_header">新着</a></li>
@@ -262,6 +269,8 @@
 						</svg>
 					</div>
 				</div>
+
+				-->
 
 				<?php
 				$user = wp_get_current_user();
@@ -294,10 +303,10 @@
 				</div>
 					<?php else: ?>
 				<div class="sign_in">
-					<a class="popup-modal" href="#modalLoginWrap">ログイン</a>
+					<a class="popup-modal" href="#modalLoginWrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 15h2v5h12V4H6v5H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6zm6-4V8l5 4-5 4v-3H2v-2h8z"/></svg>ログイン</a>
 				</div>
 				<div class="sign_up">
-					<a href="<?php echo home_url(); ?>/register/">新規登録</a>
+					<a href="<?php echo home_url(); ?>/register/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg><span>新規登録</span></a>
 				</div>
 					<?php endif; ?>
 				</div><!-- sign_wrap -->
@@ -317,7 +326,30 @@
 
 						<section id="menu">
 
+							<div class="inner_menu_header_sp">
+							</div>
+
 							<div class="inner_menu_sp">
+
+								<?php if( is_user_logged_in() ) : ?>
+								<div class="inner_menu_sp_top_none">
+								</div>
+								<?php else: ?>
+								<div class="inner_menu_sp_top">
+									<div class="inner_menu_sp_sign">
+										<div class="inner_menu_sp_signIn">
+											<p>すでに会員の方は</p>
+											<button type="button"><a class="popup-modal" href="#modalLoginWrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 15h2v5h12V4H6v5H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6zm6-4V8l5 4-5 4v-3H2v-2h8z"/></svg><span>ログイン</span></a></button>
+										</div>
+										<div class="inner_menu_sp_signUp">
+											<p>カンタン無料登録！</p>
+											<button type="button"><a href="<?php echo home_url(); ?>/register/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z"/></svg><span>新規登録</span></a></button>
+										</div>
+									</div>
+								</div>
+								<?php endif; ?>
+
+
 								<div class="inner_menu_sp_block">
 									<div class="search__box">
 										<div class="search-box">
@@ -325,10 +357,12 @@
 												<input type="text" placeholder="検索する" name="s" id="search_sp" class="searchInput" autocomplete="off">
 												<button id="searchsubmit_sp" class="search__btn"></button>
 											</form>
+											<!--
 											<svg class="search-border" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314 48">
 												<path class="border" d="M157.5,41.3H22.5a17.5,17.5,0,1,1,0-35h135"/>
 												<path class="border" d="M157.5,41.3h135a17.5,17.5,0,1,0,0-35h-135"/>
 											</svg>
+											-->
 										</div>
 									</div>
 								</div>
@@ -349,6 +383,9 @@
 											<a href="<?php echo home_url(); ?>/renewers/">リニュアー</a>
 										</div>
 										<div class="item_menu_sp">
+											<a href="<?php echo home_url(); ?>/info/">お知らせ</a>
+										</div>
+										<div class="item_menu_sp">
 											<a href="<?php echo home_url(); ?>/about/">リニューズとは</a>
 										</div>
 										<?php if( is_user_logged_in() ) : ?>
@@ -356,30 +393,33 @@
 											<a href="<?php echo home_url(); ?>/logout/">ログアウト</a>
 										</div>
 										<?php endif; ?>
-									</div>
-
-									<div class="inner_menu_sp_block">
 										<div class="item_menu_sp">
-											<a href="<?php echo home_url(); ?>/info/">お知らせ</a>
+											<a href="<?php echo home_url(); ?>/info/contact/">情報提供／お問い合わせ</a>
 										</div>
+									</div>
+										<!--
 										<div class="item_menu_sp">
 											<a href="<?php echo home_url(); ?>/info/policy/">プライバシーポリシー</a>
 										</div>
 										<div class="item_menu_sp">
 											<a href="<?php echo home_url(); ?>/info/terms/">利用規約</a>
 										</div>
-										<div class="item_menu_sp">
-											<a href="<?php echo home_url(); ?>/info/contact/">情報提供／お問い合わせ</a>
-										</div>
+										-->
+										<!--
 										<div class="item_menu_sp">
 											<a href="<?php echo home_url(); ?>/about/?move=company">会社概要</a>
 										</div>
-									</div>
+										-->
 
 
 								</div><!-- inner_menu_sp_scroll -->
 
 									<div class="footer_bottom flex">
+
+										<div class="follow">
+											<button type="button"><a href="" title="">Follow me!</a></button>
+										</div>
+
 										<?php
 										//元となるテキスト
 										$text = 'Renews | ';
@@ -392,29 +432,77 @@
 											<div class="btn_share flex">
 												<div class="share-btn twitter">
 													<a href="//twitter.com/share?url=<?php echo home_url(); ?>&text=<?php echo $encoded; ?>" class="share_popup" target="_blank">
-														<img src="<?php echo get_template_directory_uri(); ?>/images/icons/foot_tw.svg" alt="twitter" />
+														<!-- <img src="<?php echo get_template_directory_uri(); ?>/images/icons/foot_tw.svg" alt="twitter" /> -->
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/></svg>
 													</a>
 												</div>
 												<div class="share-btn facebook">
 													<a href="//www.facebook.com/sharer/sharer.php?u=<?php echo $siteURL; ?>" class="share_popup" target="_blank">
-														<img src="<?php echo get_template_directory_uri(); ?>/images/icons/foot_fb.svg" alt="facebook" />
+														<!-- <img src="<?php echo get_template_directory_uri(); ?>/images/icons/foot_fb.svg" alt="facebook" /> -->
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
 													</a>
 												</div>
-												<div class="share-btn hatena">
-													<a href="https://b.hatena.ne.jp/add?mode=confirm&url=<?php echo $siteURL; ?>&title=<?php echo $encoded; ?>" class="for_pc share_popup" target="_blank" rel="nofollow">
-														<img src="<?php echo get_template_directory_uri(); ?>/images/icons/foot_hatena.svg" alt="hatena" />
+												<div class="share-btn insta">
+													<a href="" class="for_pc share_popup" target="_blank">
+														<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/></svg>
 													</a>
-													<a href="https://b.hatena.ne.jp/entry/<?php echo $siteURL; ?>" data-hatena-bookmark-initialized="1" data-hatena-bookmark-title="<?php echo $encoded; ?>" data-hatena-bookmark-layout="simple" class="for_sp share_popup" target="_blank">
-														<img src="<?php echo get_template_directory_uri(); ?>/images/icons/foot_hatena.svg" alt="hatena" />
+												</div>
+												<div class="share-btn line">
+													<a href="" class="for_pc share_popup" target="_blank">
+														<?xml version="1.0" encoding="utf-8"?>
+														<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
+														<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+															 viewBox="0 0 25 25" style="enable-background:new 0 0 25 25;" xml:space="preserve">
+														<style type="text/css">
+															.st0{fill:#FFFFFF;}
+														</style>
+														<g id="BG">
+														</g>
+														<g id="LINE_LOGO_1_">
+															<g>
+																<circle cx="12.5" cy="12.5" r="12.5"/>
+																<g>
+																	<g>
+																		<g>
+																			<path class="st0" d="M20.8,11.8C20.8,8,17.1,5,12.5,5c-4.6,0-8.3,3-8.3,6.8c0,3.3,3,6.2,7,6.7c0.3,0.1,0.6,0.2,0.7,0.4
+																				c0.1,0.2,0.1,0.5,0,0.8c0,0-0.1,0.6-0.1,0.7c0,0.2-0.2,0.8,0.7,0.4c0.9-0.4,4.8-2.8,6.6-4.8h0C20.3,14.6,20.8,13.3,20.8,11.8z"
+																				/>
+																		</g>
+																		<g>
+																			<path d="M18.1,13.9c0.1,0,0.2-0.1,0.2-0.2v-0.6c0-0.1-0.1-0.2-0.2-0.2h-1.6v-0.6h1.6c0.1,0,0.2-0.1,0.2-0.2v-0.6
+																				c0-0.1-0.1-0.2-0.2-0.2h-1.6v-0.6h1.6c0.1,0,0.2-0.1,0.2-0.2v-0.6c0-0.1-0.1-0.2-0.2-0.2h-2.3h0c-0.1,0-0.2,0.1-0.2,0.2v0v0
+																				v3.6v0v0c0,0.1,0.1,0.2,0.2,0.2h0H18.1z"/>
+																			<path d="M9.4,13.9c0.1,0,0.2-0.1,0.2-0.2v-0.6c0-0.1-0.1-0.2-0.2-0.2H7.8v-2.9C7.8,10,7.7,10,7.6,10H7C7,10,6.9,10,6.9,10.1
+																				v3.6v0v0c0,0.1,0.1,0.2,0.2,0.2h0H9.4z"/>
+																			<path d="M10.8,10h-0.6C10.1,10,10,10,10,10.1v3.6c0,0.1,0.1,0.2,0.2,0.2h0.6c0.1,0,0.2-0.1,0.2-0.2v-3.6C11,10,10.9,10,10.8,10
+																				z"/>
+																			<path d="M14.8,10h-0.6c-0.1,0-0.2,0.1-0.2,0.2v2.2L12.4,10c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0
+																				c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0
+																				c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0h-0.6c-0.1,0-0.2,0.1-0.2,0.2v3.6c0,0.1,0.1,0.2,0.2,0.2h0.6
+																				c0.1,0,0.2-0.1,0.2-0.2v-2.2l1.7,2.3c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0
+																				c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0h0.6c0.1,0,0.2-0.1,0.2-0.2v-3.6C15,10,14.9,10,14.8,10z"/>
+																		</g>
+																	</g>
+																</g>
+															</g>
+														</g>
+														</svg>
 													</a>
 												</div>
 											</div><!-- /.btn_share -->
 										</div>
 
+										<div class="footer_link">
+											<a href="<?php echo home_url(); ?>/info/policy/">プライバシーポリシー</a>
+											<a href="<?php echo home_url(); ?>/info/terms/">利用規約</a>
+											<a href="<?php echo home_url(); ?>/about/?move=company">会社概要</a>
+										</div>
 
+										<!--
 										<p class="text_copyright">
 											&copy; Renews inc. 2020
 										</p>
+										-->
 									</div><!-- footer_bottom -->
 
 
