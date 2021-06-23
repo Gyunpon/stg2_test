@@ -194,7 +194,7 @@ function webp_is_displayable($result, $path) {
     if ($result === false) {
         $displayable_image_types = array( IMAGETYPE_WEBP );
         $info = @getimagesize( $path );
- 
+
         if (empty($info)) {
             $result = false;
         } elseif (!in_array($info[2], $displayable_image_types)) {
@@ -1301,7 +1301,7 @@ function initialize_tinymce_styles($init_array) {
 	);
 
 	$init_array["style_formats"] = json_encode( $style_formats );
-	
+
 	/* ついでにスタイルの変更がすぐ確認できるようにしておく */
 	$init_array["cache_suffix"] = "v=".time();
 
@@ -1310,4 +1310,21 @@ function initialize_tinymce_styles($init_array) {
 endif;
 add_filter( "tiny_mce_before_init", "initialize_tinymce_styles" );
 
+?>
+
+<?php
+//SmartNewsフィード追加
+add_action('init', function (){
+	add_feed('smartnews', function () {
+		get_template_part('smartnews');
+	});
+});
+
+//SmartNewsのHTTP header for Content-type
+add_filter( 'feed_content_type', function ( $content_type, $type ) {
+	if ( 'smartnews' === $type ) {
+		return feed_content_type( 'rss2' );
+	}
+	return $content_type;
+}, 10, 2 );
 ?>
