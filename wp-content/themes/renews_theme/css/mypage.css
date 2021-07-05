@@ -66,7 +66,6 @@ a:hover .title_agenda {
   margin-top: 0!important;
 }
 
-
 /*** Bookmark（クリップ記事） ***/
 #bookmark_top_contentArticle .grid {
   grid-template-columns: repeat(2, 1fr);

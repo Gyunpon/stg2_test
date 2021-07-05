@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /***** 新CSSエリア（統合作業エリア） 2021/06/10以降 *****/
-/*** Base ***/
+/***** Base *****/
 .wrap {
   -ms-flex-flow: wrap;
   flex-flow: wrap
@@ -37,8 +37,15 @@
 }
 
 
-/*** 全ページ共通パーツ ***/
+/***** 全ページ共通パーツ *****/
 
+
+
+/*** textbox ***/
+/* avatar */
+.wrap_avatar {
+  margin-top: 20px
+}
 
 
 
@@ -52,6 +59,24 @@
 /*
 @import url("https://fonts.googleapis.com/css?family=Ubuntu:700&subset=latin,latin-ext");
 */
+html {
+  font-family: Noto Sans JP, Helvetica, 游ゴシック, Hiragino Kaku Gothic ProN, ヒラギノ角ゴ ProN W3, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif !important;
+  font-size: 14px;
+  font-weight: 400;
+  color: #202020;
+}
+
+a {
+  color: #2c76a4;
+  text-decoration: none;
+  border-style:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  cursor:pointer;
+}
+
+a:focus, *:focus {
+  outline: none;
+}
 
 body {
   position: relative;
@@ -73,76 +98,63 @@ body {
   text-align: justify
 }
 
+/*** Font ***/
+/* noto-sans-jp-regular - latin_japanese */
 @font-face {
-  font-family: Noto Sans JP, sans-serif;
-  font-weight: 300;
+  font-family: 'Noto Sans JP';
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/NotoSansJP-Light.otf) format("opentype")
-}
-
-@font-face {
-  font-family: Noto Sans JP, sans-serif;
+  font-display: swap;
   font-weight: 400;
-  font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/NotoSansJP-Regular.otf) format("opentype")
+  src: local('Noto Sans CJK JP Regular'),
+       url('../fonts/noto-sans-jp-v28-latin_japanese-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/noto-sans-jp-v28-latin_japanese-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/noto-sans-jp-v28-latin_japanese-regular.ttf') format('truetype'), /* Safari, Android, iOS */
 }
-
+/* noto-sans-jp-500 - latin_japanese */
 @font-face {
-  font-family: Noto Sans JP, sans-serif;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-display: swap;
   font-weight: 500;
-  font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/NotoSansJP-Medium.otf) format("opentype")
+  src: local('Noto Sans CJK JP Medium'),
+       url('../fonts/noto-sans-jp-v28-latin_japanese-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/noto-sans-jp-v28-latin_japanese-500.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/noto-sans-jp-v28-latin_japanese-500.ttf') format('truetype'), /* Safari, Android, iOS */
 }
-
+/* noto-sans-jp-700 - latin_japanese */
 @font-face {
-  font-family: Noto Sans JP, sans-serif;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-display: swap;
   font-weight: 700;
-  font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/NotoSansJP-Bold.otf) format("opentype")
+  src: local('Noto Sans CJK JP Bold'),
+       url('../fonts/noto-sans-jp-v28-latin_japanese-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/noto-sans-jp-v28-latin_japanese-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/noto-sans-jp-v28-latin_japanese-700.ttf') format('truetype'), /* Safari, Android, iOS */
 }
-
+/* shippori-mincho-500 - latin_japanese */
 @font-face {
-  font-family: Shippori Mincho, serif;
-  font-weight: 400;
+  font-family: 'Shippori Mincho';
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/ShipporiMincho-Regular.otf) format("opentype")
-}
-
-@font-face {
-  font-family: Shippori Mincho, serif;
+  font-display: swap;
   font-weight: 500;
-  font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/ShipporiMincho-Medium.otf) format("opentype")
+  src: local(''),
+       url('../fonts/shippori-mincho-v4-latin_japanese-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/shippori-mincho-v4-latin_japanese-500.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/shippori-mincho-v4-latin_japanese-500.ttf') format('truetype'), /* Safari, Android, iOS */
 }
-
+/* shippori-mincho-600 - latin_japanese */
 @font-face {
-  font-family: Shippori Mincho, serif;
-  font-weight: 600;
+  font-family: 'Shippori Mincho';
   font-style: normal;
-  src: local("Noto Sans CJK JP Regular"), url(https://stg.renews.jp/fonts/ShipporiMincho-SemiBold.otf) format("opentype")
+  font-display: swap;
+  font-weight: 600;
+  src: local(''),
+       url('../fonts/shippori-mincho-v4-latin_japanese-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/shippori-mincho-v4-latin_japanese-600.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/shippori-mincho-v4-latin_japanese-600.ttf') format('truetype'), /* Safari, Android, iOS */
 }
 
-
-
-
-html {
-  font-family: Noto Sans JP, Helvetica, 游ゴシック, Hiragino Kaku Gothic ProN, ヒラギノ角ゴ ProN W3, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif !important;
-  font-size: 14px;
-  font-weight: 400;
-  color: #202020;
-}
-
-a {
-  color: #2c76a4;
-  text-decoration: none;
-  border-style:none;
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
-  cursor:pointer;
-}
-
-a:focus, *:focus {
-  outline: none;
-}
 
 /*a:hover {
   text-decoration: none;
@@ -205,7 +217,7 @@ ul li {
   }
 }
 
-.article_main_img {
+/*.article_main_img {
   width: 75.9%;
   height: 462px;
   max-width: 880px;
@@ -223,19 +235,20 @@ ul li {
     width: 95%;
     height: 178px
   }
-}
+}*/
 
-.textbox {
+/*.textbox {
   display: inline-block;
   background-color: rgba(255,253,245,1);
   border-left: 1px solid #888;
   border-bottom: 1px solid #888
-}
+}*/
 
-.textbox.large {
+/*.textbox.large {
   width: 375px;
-  padding: 20px 20px 15px 20px; /* 2021/04/07 井上修正 */
-}
+  padding: 20px 20px 15px 20px;
+}*/
+
 @media only screen and (max-width:767px) {
   .textbox.large {
     width: 90%;
@@ -245,9 +258,9 @@ ul li {
   }
 }
 
-.textbox.large .wrap_avatar {
+/*.textbox.large .wrap_avatar {
   margin-bottom: 0
-}
+}*/
 
 @media only screen and (min-width:768px) {
   /* TOPページ・中コンポ・テキストBOX */
@@ -289,8 +302,7 @@ ul li {
     left: auto;
     right: 0;
     width: calc(100% - 120px);
-    /* padding: 0 7% 21px 28px; 2021/04/07 井上削除 */
-    padding: 1px 2% 2% 5%; /* 2021/04/07 井上修正 */
+    padding: 1px 0 4px 5%;
   }
 }
 
@@ -318,9 +330,7 @@ ul li {
   margin-right: 10px
 }
 
-.wrap_avatar {
-  margin-top: 20px
-}
+
 
 
 
@@ -726,9 +736,9 @@ ul li {
   letter-spacing: .03em
 }
 
-.eng {
+/*.eng {
   letter-spacing: .03em
-}
+}*/
 
 .wrap_pagination.center {
   display: table;
@@ -886,23 +896,23 @@ header .inner_base{
 }
 
 
-header .footer_bottom {
-  position: fixed;
+/*header .footer_bottom {
   bottom: 20px;
+  position: fixed;
   left: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   z-index: 1001;
-  width: 77.5%;
+  width: 84%;
   margin: 40px auto 0;
   padding-top: 20px;
 	background-color: #C7DCEE;
 	border-top: 1px solid #2C76A4;
-}
+}*/
 
-header .footer_bottom .social_button a {
+/*header .footer_bottom .social_button a {
   color: #202020;
-}
+}*/
 
 header .footer_bottom .text_copyright {
   -ms-flex-item-align: center;
@@ -1169,7 +1179,7 @@ header .uk-button:hover {
   font-size: .875rem;
   display: inline-flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
 }
 
 .uk-badge.hide{
@@ -1241,11 +1251,12 @@ header .uk-button:hover {
 
 #menu {
 	position: fixed;
-	width: 98%;
+	width: 80%;
 	height: 100vh;
 	top: 0;
 	left: 0;
-	background-color: #C7DCEE;
+	background-color: #fff;
+  opacity: 0.92;
 	-webkit-transition-property: all;
 	-o-transition-property: all;
 	transition-property: all;
@@ -1293,11 +1304,16 @@ header .uk-button:hover {
   position: relative
 }
 
-.is_open #menuToggle {
+/* 2021/06/28 編集 */
+
+
+/*
+
+.active .menu-trigger {
   top: 34px !important
 }
 
-#menuToggle {
+.menu-trigger {
   display: block;
   position: absolute;
   top: 28px;
@@ -1310,7 +1326,7 @@ header .uk-button:hover {
 	transition:top .3s;
 }
 
-#menuToggle .uk-badge {
+.menu-trigger .uk-badge {
   position: absolute;
   z-index: 9999;
   top: -15px;
@@ -1318,11 +1334,11 @@ header .uk-button:hover {
   pointer-events: none
 }
 
-#menuToggle .badge_mypage_sp_menu {
+.menu-trigger .badge_mypage_sp_menu {
   top: 5px
 }
 
-#menuToggle >input {
+.menu-trigger >input {
   display: block;
   width: 50px;
   height: 50px;
@@ -1335,7 +1351,7 @@ header .uk-button:hover {
   -webkit-touch-callout: none
 }
 
-#menuToggle .ic_menu {
+.menu-trigger .ic_menu {
   position: relative;
   display: block;
   width: 22px;
@@ -1352,40 +1368,42 @@ header .uk-button:hover {
   transition: transform .5s cubic-bezier(.77, .2, .05, 1), background .5s cubic-bezier(.77, .2, .05, 1), opacity .55s ease, -webkit-transform .5s cubic-bezier(.77, .2, .05, 1)
 }
 
-#menuToggle span.ic_menun:first-child {
+.menu-trigger span.ic_menun:first-child {
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0
 }
 
-#menuToggle .ic_menu:nth-last-child(2) {
+.menu-trigger .ic_menu:nth-last-child(2) {
   -webkit-transform-origin: 0 100%;
   transform-origin: 0 100%
 }
 
-#menuToggle input:checked~.ic_menu {
+.menu-trigger input:checked~.ic_menu {
   opacity: 1;
 	-webkit-transform: rotate(45deg) translate(-3px, -1px);
 	transform: rotate(45deg) translate(-3px, -1px);
 	background: #2C76A4;
 }
 
-#menuToggle input:checked~.ic_menu:nth-last-child(3) {
+.menu-trigger input:checked~.ic_menu:nth-last-child(3) {
   opacity: 0;
   -webkit-transform: rotate(0deg) scale(.2);
   transform: rotate(0deg) scale(.2)
 }
 
-#menuToggle input:checked~.ic_menu:nth-last-child(2) {
+.menu-trigger input:checked~.ic_menu:nth-last-child(2) {
 	-webkit-transform: rotate(-45deg) translate(1px, -2px);
 	transform: rotate(-45deg) translate(1px, -2px);
 }
 
-.inner_menu_sp {
+*/
+
+/*.inner_menu_sp {
 	width: 90%;
 	margin: 80px auto 0;
-}
+}*/
 
-.inner_menu_sp .inner_menu_sp_block:not(:first-of-type){
+/*.inner_menu_sp .inner_menu_sp_block:not(:first-of-type){
 	padding: 20px 0;
 }
 .inner_menu_sp .inner_menu_sp_block:nth-of-type(2){
@@ -1393,30 +1411,36 @@ header .uk-button:hover {
 }
 .inner_menu_sp .inner_menu_sp_block{
 	width: 100%;
-}
-.inner_menu_sp .inner_menu_sp_block .item_menu_sp{
+}*/
+
+/*.inner_menu_sp .inner_menu_sp_block .item_menu_sp{
 	width: 100%;
-}
-.inner_menu_sp .inner_menu_sp_block .item_menu_sp:not(:first-of-type){
+}*/
+
+/*.inner_menu_sp .inner_menu_sp_block .item_menu_sp:not(:first-of-type){
 	margin-top: 15px;
-}
-.inner_menu_sp_scroll{
+}*/
+
+/*.inner_menu_sp_scroll{
 	height: 66vh;
 	overflow-y: auto
-}
-.inner_menu_sp_scroll .inner_menu_sp_block{
+}*/
+
+/*.inner_menu_sp_scroll .inner_menu_sp_block{
 	padding: 30px 0;
 	width: 86%;
 	margin-left: auto;
 	margin-right: auto;
-}
+}*/
 
 
-
-#menuToggle input:checked~section {
+.menu-trigger:checked~section {
   -webkit-transform: none;
   transform: none
 }
+
+
+/* 2021/06/28 ここまで */
 
 .user_avatar {
   display: none
@@ -1543,10 +1567,11 @@ footer {
   margin-top: auto;
 }
 
-.footer_bottom {
+/*.footer_bottom {
   padding-top: 20px;
-}
-.footer_bottom .btn_share .share-btn{
+}*/
+
+/*.footer_bottom .btn_share .share-btn{
 	width: 26px;
   height: 26px;
 }
@@ -1567,7 +1592,7 @@ footer {
 	.footer_bottom .btn_share .share-btn img{
 		height: 30px;
 	}
-}
+}*/
 
 
 
@@ -1629,6 +1654,7 @@ footer {
   align-self: center;
 }
 
+/*
 .textbox_avatar.story:before,
 .title_avatar.story:before {
   content: "Renewer";
@@ -1674,6 +1700,7 @@ footer {
   opacity: 0;
   pointer-events: none
 }
+*/
 
 .textbox_avatar span.black,
 .title_avatar span.black {
@@ -1778,7 +1805,7 @@ footer {
 @media only screen and (max-width:767px){
 	.wpulike-robeen svg, .wpulike-animated-heart .wp_ulike_btn{
 		width: 36px;
-		margin-top: 5px;
+		margin-top: 4px;
 	}
 	.likebox .count-box{
 		padding-top: 11px;
@@ -1968,6 +1995,7 @@ footer {
 
 .clipbox svg{
 	width: 19px;
+  margin-bottom: -2px;
 }
 @media only screen and (max-width:767px){
 	.commentbox svg{
@@ -1975,6 +2003,7 @@ footer {
 	}
 	.clipbox svg{
 		width: 15px;
+    margin-bottom: 0;
 	}
 }
 .clipbox.stock svg{
@@ -2069,7 +2098,7 @@ footer {
 	width: 40px;
 }
 .flexSocialbox.clipbox .stockTxt{
-	padding-bottom: 10px;
+	padding-bottom: 11px;
 	margin-left: -4px;
 }
 @media only screen and (max-width:767px) {
@@ -2080,6 +2109,9 @@ footer {
 		width: 36px;
 		margin-right: 0;
 	}
+  .flexSocialbox.clipbox .stockTxt{
+    padding-bottom: 8px;
+  }
 }
 
 
