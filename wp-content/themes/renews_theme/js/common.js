@@ -52,7 +52,7 @@ $(document).ready(function(){
 
 	$('a[href^="#"]').not(smoothScrollNotList).click(function(e){
 		leaveScrollNum = ($('header.is_fixed').outerHeight()) * -1;
-		
+
 		var href= $(this).attr("href");
 		var target = $(href == "#" || href == "" ? 'html' : href);
 		var position = (target.offset().top)+leaveScrollNum;
@@ -60,15 +60,15 @@ $(document).ready(function(){
 		e.preventDefault();
 		return false;
 	});
-	
-	
+
+
 	// 別ページスムーススクロール
 	var smoothScrollPrefix = 'move=';
 	$(window).on('load.smooth',function(){
 		$.each(paramAry, function(i, val) {
 			if(val.indexOf(smoothScrollPrefix) != -1){
 				leaveScrollNum = ($('header.is_fixed').outerHeight()) * -1;
-				
+
 				var hh = val.replace('?','').replace(smoothScrollPrefix,'');
 				var hash = '#' + hh;
 				var tgt = $(hash);
@@ -77,7 +77,7 @@ $(document).ready(function(){
 			}
 		});
 	});
-	
+
 	/*
 		○別ページからのURL
 		hogehoge.com/about/?move=ID名
@@ -92,7 +92,7 @@ $(document).ready(function(){
 			$('#noticeCount').addClass('hide');
 		}
 	}
-	
+
 });
 
 
@@ -143,17 +143,17 @@ $(window).load(function(){
 		showCloseBtn: false,
 		fixedContentPos:true
 	});
-	
-	
-	
-	
+
+
+
+
 	//閉じるリンクの設定
-	$(document).on('click', '.popup-modal-dismiss', function (e) { 
+	$(document).on('click', '.popup-modal-dismiss', function (e) {
 		e.preventDefault();
 		$.magnificPopup.close();
 	});
-	
-	
+
+
 	if($('#modalLoginWrap .um-field-error').length){
 			$.magnificPopup.open({
 				items: {src: '#modalLoginWrap'},
@@ -172,28 +172,28 @@ $(window).load(function(){
 
 //$('.hatenaBtn').click(function(e) {
 //	alert('aaa');
-//	
+//
 //});
 
 
 $(function(){
 	/* follow */
 	//リニュアー
-	
-	
+
+
 //	if($('#renewer .followViewArea .um-followers-user-btn .um-unfollow-btn').length){
 //		console.log('ある');
 //	}
-	
+
 //	if($('#renewer .followViewArea .followList .um-button').addClass('um-follow-btn')){
 //		console.log('test');
 //	}
-	
+
 	$('#renewer .followViewArea .followList .um-button').click(function(e){
-		
+
 		//var user_id1 = $(this).data('user_id1');
-		
-		
+
+
 //		if($(this).hasClass('um-unfollow-btn')){
 //			alert('ddd');
 //			$.ajax({
@@ -213,15 +213,15 @@ $(function(){
 //		}
 //		$('.followViewArea .followList li[data-taxonomy_id = '+taxonomy_id+' ]').fadeOut();
 	});
-	
-	
+
+
 	//シリーズ・アジェンダ
 	$('.articleFollow').click(function(e){
 		$(this).toggleClass('open');
 		var uid = $(this).data('uid');
 		var taxonomy = $(this).data('taxonomy');
 		var taxonomy_id = $(this).data('taxonomy_id');
-		
+
 		if($(this).hasClass('open')){
 			$.ajax({
 				type: 'post',
@@ -255,7 +255,7 @@ $(function(){
 		e.preventDefault();
 		return false;
 	});
-	
+
 	/* bookmark */
 	$('.postStockBtn').click(function(e){
 		$(this).toggleClass('stock');
@@ -272,10 +272,10 @@ $(function(){
 //		$stockNum.val(0);
 //		console.log($stockNum);
 //		var stockNum = $stockNum.val();
-//		
-		
-		
-		
+//
+
+
+
 		if($(this).hasClass('stock')){
 			$.ajax({
 				type: 'post',
@@ -315,10 +315,10 @@ $(function(){
 		e.preventDefault();
 		return false;
 	});
-	
-	
-	
-	
+
+
+
+
 	//コメント削除
 	$('.commentDeleteBtn').click(function(e){
 		var comment_id = $(this).data('comment_id');
@@ -348,10 +348,10 @@ $(function(){
 		e.preventDefault();
 		return false;
 	});
-	
-	
-	
-	
+
+
+
+
 });
 
 
@@ -424,7 +424,8 @@ $(function(){
 
 // sp menu
 $(function() {
-  $('#menuToggle .triger_btn_sp').on('click', function() {
+  $('button.menu-trigger').on('click', function() {
+    $('.menu-trigger').toggleClass('active');
     $('header').toggleClass('is_open');
     $('.wrapper').toggleClass('is_non_active');
     $('body').toggleClass('is_non_active');
@@ -488,7 +489,7 @@ $(function() {
 //})
 
 $(function(){
-	
+
 
 	var widthHalf = window.screen.width / 2,
 			heightHalf = window.screen.height / 2,
@@ -523,11 +524,11 @@ $(function(){
 			+ ',top=' + options.top
 			+ ',width=' + options.width
 			+ ',height=' + options.height;
-	
+
 			window.open(thisHref, 'blankShareWindow', arg);
 		});
 	});
-	
+
 });
 
 
