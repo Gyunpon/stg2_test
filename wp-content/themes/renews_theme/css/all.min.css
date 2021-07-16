@@ -1258,12 +1258,9 @@ header .uk-button:hover {
 
 #menu {
 	position: fixed;
-	width: 85%;
-	height: 100vh;
 	top: 0;
 	left: 0;
-	/* background-color: #fff; 2021/07/05 井上削除*/
-  opacity: 0.92;
+  /*opacity: 0.92;*/
 	-webkit-transition-property: all;
 	-o-transition-property: all;
 	transition-property: all;
