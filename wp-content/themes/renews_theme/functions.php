@@ -1313,6 +1313,14 @@ add_filter( "tiny_mce_before_init", "initialize_tinymce_styles" );
 ?>
 
 <?php
+
+// headにRSSフィード
+add_theme_support('automatic-feed-links');
+add_action( 'wp_head', 'feed_links' );
+//コメントのRSSフィードは出力しない
+add_filter( 'feed_links_show_comments_feed', function() { return false; } );
+
+
 //SmartNewsフィード追加
 add_action('init', function (){
 	add_feed('smartnews', function () {

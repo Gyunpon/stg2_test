@@ -184,14 +184,15 @@ ul li {
   min-height: 100vh;
   background-color: #fffdf5;
   overflow: hidden;
-  padding-bottom: 125px;
+  padding-bottom: 84px; /* 2021/07/05 井上 */
   box-sizing: border-box;
 }
-@media only screen and (max-width:767px) {
+
+/* @media only screen and (max-width:767px) {
   .wrapper {
     padding-bottom: 150px;
   }
-}
+} 2021/07/05 井上削除 */
 
 .main {
   padding-top: 67px;
@@ -1019,7 +1020,8 @@ header .uk-button:hover {
 .search__box {
   position: relative;
   z-index: 9000;
-	top: 1px;
+  /*
+  margin: 0 10%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1031,12 +1033,12 @@ header .uk-button:hover {
   width: 20%;
   min-width: 120px;
 	margin-right: 3%;
-  padding: .25em;
+  padding: .25em; 2021/07/05 削除*/
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-@media only screen and (min-width:768px) and (max-width:980px){
+/*@media only screen and (min-width:768px) and (max-width:980px){
 	.search__box{
 		margin-right: 1%;
 	}
@@ -1048,9 +1050,10 @@ header .uk-button:hover {
 		padding: 0;
 		margin-right: 0;
   }
-}
+} 2021/07/05 削除 */
 
-.search__box .search__btn {
+
+/*.search__box .search__btn {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -1063,13 +1066,12 @@ header .uk-button:hover {
 		right: auto;
 		left: 15px;
 	}
-}
+}*/
 
 .search__box:hover .search__field {
   width: 240px;
   padding: .25em .5em
 }
-
 @media only screen and (max-width:767px) {
   .search__box:hover .search__field {
     width: 200px
@@ -1116,8 +1118,11 @@ header .uk-button:hover {
 
 .search__btn {
   position: relative;
-  top: 0;
-  display: grid;
+  top: 2px;
+  left: 2px;
+  padding: 0;
+  z-index: 3 !important;
+  /*display: grid;*/
   place-items: center;
   width: 30px;
   height: 30px;
@@ -1141,12 +1146,14 @@ header .uk-button:hover {
   .search__btn {
     width: 20px;
     height: 20px;
-    background-size: 12px auto;
+    top: 7px;
+    left: 6px;
+    /*background-size: 12px auto;
     position: absolute;
     top: 50%;
     right: 15px;
     -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    transform: translateY(-50%);*/
     z-index: 1
   }
 }
@@ -1251,11 +1258,11 @@ header .uk-button:hover {
 
 #menu {
 	position: fixed;
-	width: 80%;
+	width: 85%;
 	height: 100vh;
 	top: 0;
 	left: 0;
-	background-color: #fff;
+	/* background-color: #fff; 2021/07/05 井上削除*/
   opacity: 0.92;
 	-webkit-transition-property: all;
 	-o-transition-property: all;
@@ -1459,13 +1466,12 @@ footer {
 }
 
 /* フローティングの実験でSPフッターボトムに80pxを挿入 */
-
-@media only screen and (max-width:767px) {
+/*@media only screen and (max-width:767px) {
   footer {
     padding: 30px 0;
     height: 150px;
   }
-}
+} 2021/07/05 井上削除*/
 
 .inner_footer {
   max-width: 960px;
@@ -3362,13 +3368,14 @@ body.is_non_active{
 	-ms-touch-action: none;
 	touch-action: none
 }
-.wrapper.is_non_active {
+
+/*.wrapper.is_non_active {
   height: 100%;
-/*	height: 100vh;*/
+	height: 100vh;
   overflow: hidden;
   -ms-touch-action: none;
   touch-action: none
-}
+} 2021/07/05 井上削除*/
 
 .text_center {
   text-align: center
@@ -3841,7 +3848,7 @@ body.is_non_active{
 */
 
 
-.search-box {
+/*.search-box {
   position: relative;
   width: 100%;
   max-width: 360px;
@@ -3855,7 +3862,7 @@ body.is_non_active{
     height: 60px;
 		max-width: none;
   }
-}
+}*/
 
 /*
 @media only screen and (max-width:767px) {
@@ -3992,10 +3999,10 @@ body.is_non_active{
 #search,
 #search_sp {
   position: absolute;
-  top: 50%;
+  /*top: 50%;
   left: 0;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translateY(-50%);*/
   z-index: 2;
   width: 100%;
   height: 100%;
@@ -4010,8 +4017,8 @@ body.is_non_active{
   outline: none
 }
 
-@media only screen and (min-width:768px) and (max-width:980px) {
 
+/*@media only screen and (min-width:768px) and (max-width:980px) {
   #search,
   #search_sp {
     padding: 5px 16px
@@ -4019,17 +4026,14 @@ body.is_non_active{
 }
 
 @media only screen and (max-width:767px) {
-
   #search,
   #search_sp {
 		font-size: 12px;
 		padding-left: 40px;
-/*
     padding: 2px 30px;
     background-color: #eee
-*/
   }
-}
+}*/
 
 #search::-webkit-input-placeholder,
 #search_sp::-webkit-input-placeholder {
