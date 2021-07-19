@@ -45,3 +45,5 @@ Allow from env=tw_crawler
 	RewriteBase /
 </IfModule>
 
+AddType image/svg+xml .svg .svgz
+AddEncoding gzip .svgz

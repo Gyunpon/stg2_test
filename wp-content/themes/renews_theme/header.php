@@ -163,6 +163,9 @@
 	<?php //endif; ?>-->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/imgLiquid-min.js"></script>
 
+	<!-- add js -->
+	<script src="<?php echo get_template_directory_uri(); ?>/js/hamburger.js"></script>
+
 	<!-- add.css -->
 	<link href="<?php echo get_template_directory_uri(); ?>/css/add.css" rel="stylesheet" media="all" />
 	<link href="<?php echo get_template_directory_uri(); ?>/css/renew.css" rel="stylesheet" media="all" />

@@ -53,9 +53,9 @@ img {
 /*** ヘッダー ***/
 /* 2021/07/15修正分 */
 #menu {
-  height: calc(100vh - 67px);
   margin-top: 67px;
   overflow-y: auto;
+  height: calc(100vh - 67px);
 }
 @media only screen and (min-width: 768px) {
   #menu {
@@ -145,7 +145,7 @@ img {
 .inner_menu_bottom {
   width: 100%;
   height: 126px;
-  padding: 0 50px;
+  padding: 0 50px 200px;
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -515,8 +515,8 @@ header .inner_base {
 .logo_header, .noLogin .logo_header {
   position: static;
   margin-bottom: 0px;
-  width: 250px;
-  margin-left: calc(50% - 125px);
+  width: 150px;
+  margin-left: calc(50% - 75px);
   text-align: center;
 }
 
@@ -783,6 +783,13 @@ header.is_open .logo_header {
   }
 }*/
 
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+  .sign_wrap {
+      width: 22%;
+  }
+}
+
+
 @media only screen and (max-width: 767px) {
   header .inner_base {
     padding: 0;
@@ -798,7 +805,7 @@ header.is_open .logo_header {
   }
 
   .sign_wrap {
-  width: 17%;
+  width: 23%;
   }
 
   /*.logo_header, .noLogin .logo_header, .sign_wrap {

@@ -158,6 +158,17 @@ function ltIE9(){
 })(jQuery);
 
 
+/*
+// スマホの時のハンバーガーメニューの高さ
+$(function() {
+	var vh=window.innerHeight - 67;
+	document.getElementById('menu').style.height=vh+'px';
+
+	//jQueryを使うなら
+	$('#menu').css('height',$(window).height());
+});
+*/
+
 
 
 
