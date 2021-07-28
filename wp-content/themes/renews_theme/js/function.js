@@ -158,16 +158,30 @@ function ltIE9(){
 })(jQuery);
 
 
-/*
+
+
+
 // スマホの時のハンバーガーメニューの高さ
 $(function() {
-	var vh=window.innerHeight - 67;
-	document.getElementById('menu').style.height=vh+'px';
+
+	// 最初に、ビューポートの高さを取得し、0.01を掛けて1%の値を算出して、vh単位の値を取得
+	//let vh = ( window.innerHeight - 67 ) * 0.01;
+	// カスタム変数--vhの値をドキュメントのルートに設定
+	//document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+	// resizeイベントの取得
+	//window.addEventListener('resize', () => {
+	// あとは上記と同じスクリプトを実行
+	//let vh = window.innerHeight * 0.01;
+	//document.documentElement.style.setProperty('--vh', `${vh}px`);
+	//});
 
 	//jQueryを使うなら
+	/*
 	$('#menu').css('height',$(window).height());
+	*/
+
 });
-*/
 
 
 

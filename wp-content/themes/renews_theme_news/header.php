@@ -129,9 +129,6 @@
 
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/imgLiquid-min.js"></script>
 
-	<!-- add.css -->
-	<link href="<?php echo get_template_directory_uri(); ?>/css/renewInfo.css" rel="stylesheet" media="all" />
-
 	
 	<!-- SNSシェアボタン -->
 	<!-- TW -->
