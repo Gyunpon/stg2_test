@@ -73,6 +73,7 @@
 	<?php endif; ?>
 
 	<script src="https://www.google.com/recaptcha/api.js?render=6LfQE_YUAAAAAE0yo7a_spXYH3MliOmIRVAtC0kv"></script>
+	<!--
 	<script>
 		grecaptcha.ready(function () {
 			grecaptcha.execute('6LfQE_YUAAAAAE0yo7a_spXYH3MliOmIRVAtC0kv', { action: 'contact' }).then(function (token) {
@@ -81,6 +82,7 @@
 			});
 		});
 	</script>
+-->
 
 
 	<?php if(is_page('policy')): ?>
@@ -123,9 +125,9 @@
 	<?php endif ; ?>
 	
 
-	<link href="<?php echo get_template_directory_uri(); ?>/css/information.css" rel="stylesheet" media="all" />
-
 	<link href="<?php echo get_template_directory_uri(); ?>/css/add.css" rel="stylesheet" media="all" />
+
+	<link href="<?php echo get_template_directory_uri(); ?>/css/information.css" rel="stylesheet" media="all" />
 
 	<script src="<?php echo get_template_directory_uri(); ?>/js/libs/imgLiquid-min.js"></script>
 

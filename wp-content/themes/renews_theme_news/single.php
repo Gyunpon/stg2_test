@@ -351,7 +351,7 @@ $encodedURL = json_encode(get_permalink());
 					$image = wp_get_attachment_image_src($thumbnail_id,'large');
 					$imageUrl = $image[0];
 				}else{
-					$imageUrl = get_template_directory_uri().'/images/icon/noimg.jpg';
+					$imageUrl = get_template_directory_uri().'/images/icons/noimg.jpg';
 				}
 				//タイトル
 				$title_base = get_the_title( $val->ID );

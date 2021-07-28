@@ -722,6 +722,7 @@ header .inner_base {
   width: 150px;
   margin-left: calc(50% - 75px);
   text-align: center;
+  height: 43px;
 }
 
 header.is_open .logo_header {
@@ -744,12 +745,19 @@ header.is_open .logo_header {
 .sign_up > a {
   background-color: transparent;
 }
+.sign_in svg {
+  margin-top: -5px;
+}
+.sign_up svg {
+  margin-top: -7px;
+}
 .logo_header .sub_title {
   text-align: center;
   font-size: 10px;
   margin-top: -10px;
   margin-bottom: 10px;
   color: #2C76A4;
+  height: 13px;
 }
 
 /*.inner_menu_sp {
@@ -989,7 +997,7 @@ header.is_open .logo_header {
 
 @media only screen and (min-width: 768px) and (max-width: 980px) {
   .sign_wrap {
-      width: 18%;
+      width: 23%;
   }
 }
 
