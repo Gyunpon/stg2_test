@@ -167,7 +167,7 @@ fill: #2c76a4;
 
 
 
-			<a href="<?php echo home_url(); ?>/">
+			<a href="<?php echo network_home_url(); ?>/">
 				<svg
 						 version="1.1"
 						 id="Layer_1"
@@ -232,6 +232,67 @@ fill: #2c76a4;
 </div>
 <!-- /.wrapper -->
 
+
+
+
+
+
 	<?php wp_footer(); ?>
+
+
+
+<!----- lazy load ----->
+<script src="<?php echo get_template_directory_uri(); ?>/js/function.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/common.js"></script>
+<link href="<?php echo get_template_directory_uri(); ?>/css/magnific-popup.css" rel="stylesheet" media="all" />
+<script src="<?php echo get_template_directory_uri(); ?>/js/libs/jquery.magnific-popup.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfQE_YUAAAAAE0yo7a_spXYH3MliOmIRVAtC0kv"></script>
+
+<!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp-noto.min.css" media="all" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" rel="stylesheet" media="all" />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&display=swap" rel="stylesheet" media="all" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanmp-noto.min.css" media="print" onload="this.media='all'">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700&display=swap" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&display=swap" media="print" onload="this.media='all'" />
+-->
+
+	<!-- SNS Share -->
+	<!-- TW -->
+	<script>
+		window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.async=true;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+	</script>
+	<!-- hatena -->
+	<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async">
+		{lang: "ja"}
+	</script>
+	<!-- FB -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.async = true;
+		js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169936877-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-169936877-1');
+	</script>
+
+	<!-- cookie -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+
 </body>
 </html>

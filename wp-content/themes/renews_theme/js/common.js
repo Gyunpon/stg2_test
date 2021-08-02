@@ -611,3 +611,18 @@ $(() => {
 		}
 	});
 });
+
+
+//ハンバーガーメニュー 閉じる
+
+//１．クリックイベントの設定
+$(document).on('click', function(e) {
+	// ２．クリックされた場所の判定
+	if(!$(e.target).closest('#menu').length && !$(e.target).closest('.menu-trigger').length && !$(e.target).closest('header').length && !$(e.target).closest('#footer').length && $(e.target).closest('#navOverlay').length){
+		$('.menu-trigger').toggleClass('active');
+    	$('header').toggleClass('is_open');
+		$('.wrapper').toggleClass('is_non_active');
+    	$('body').toggleClass('is_non_active');
+	}
+});
+

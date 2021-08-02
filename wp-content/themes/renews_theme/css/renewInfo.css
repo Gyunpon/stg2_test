@@ -470,8 +470,8 @@ header .inner_base {
 .logo_header, .noLogin .logo_header {
   position: static;
   margin-bottom: 0px;
-  width: 150px;
-  margin-left: calc(50% - 75px);
+  width: 250px;
+  margin-left: calc(50% - 125px);
   text-align: center;
 }
 
@@ -760,7 +760,7 @@ header.is_open .logo_header {
   }
 
   .sign_wrap {
-  width: 23%;
+  width: 17%;
   }
 
   /*.logo_header, .noLogin .logo_header, .sign_wrap {

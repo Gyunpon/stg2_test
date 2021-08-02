@@ -298,9 +298,10 @@
 					<span class="ic_menu"></span>
 				</button><!-- menu-trigger -->
 
+				<!-- Toggle Menu -->
 				<section id="menu">
 					<div class="inner_menu">
-						<!--
+						<!-- ログイン・新規登録
 						<?php //if( is_user_logged_in() ) : ?>
 						<div class="inner_menu_top_none">
 						</div>
@@ -321,127 +322,131 @@
 						</div>
 						<?php //endif; ?>
 						-->
+						
 
-						<div class="inner_menu_block">
-							<div class="search__box">
-								<form role="search" method="get" id="searchform_sp" class="search-form" action="<?php echo home_url( '/' ); ?>">
-									<input type="text" placeholder="検索する" name="s" id="search_sp" class="searchInput" autocomplete="off">
-									<button id="searchsubmit_sp" class="search__btn"></button>
-								</form>
-								<!--
-								<svg class="search-border" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314 48">
-									<path class="border" d="M157.5,41.3H22.5a17.5,17.5,0,1,1,0-35h135"/>
-									<path class="border" d="M157.5,41.3h135a17.5,17.5,0,1,0,0-35h-135"/>
-								</svg>
-								-->
-							</div>
-						</div>
-
-						<div class="inner_menu_block">
-							<div class="item_menu">
-								<a href="<?php echo home_url(); ?>/article/">新着</a>
-							</div>
-							<div class="item_menu">
-								<a href="<?php echo home_url(); ?>/agenda/">アジェンダ</a>
-							</div>
-							<div class="item_menu">
-								<a href="<?php echo home_url(); ?>/series/">シリーズ</a>
-							</div>
-							<div class="item_menu">
-								<a href="<?php echo home_url(); ?>/renewers/">リニュアー</a>
-							</div>
-						</div>
-
-						<div class="menu_border"></div>
-
-						<div class="inner_menu_block">
-							<div class="item_menu fs_13">
-								<a href="<?php echo home_url(); ?>/info/">お知らせ</a>
-							</div>
-							<div class="item_menu fs_13">
-								<a href="<?php echo home_url(); ?>/about/">Renews(リニューズ)とは</a>
-							</div>
-							<div class="item_menu fs_13">
-								<a href="<?php echo home_url(); ?>/info/contact/"><svg version="1.1" id="information" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"y="0px" viewBox="0 0 17 17"style="enable-background:new 0 0 17 17;" xml:space="preserve"><style type="text/css">.st0_fukidashi{fill:#C2DDEE;}.st1_fukidashi{fill:#2C76A4;}.st2_fukidashi{opacity:0.1;enable-background:new  ;}</style><g><circle class="st0_fukidashi" cx="8.5" cy="8.5" r="8.5"/><g><path id="パス_150" class="st1_fukidashi" d="M12.1,4.7C10,2.9,7,2.9,5,4.7C3.2,6,3,8.5,4.4,10.3c0.1,0.2,0.3,0.3,0.4,0.5c0.8,0.7,1.8,1.2,2.8,1.3v1.2c0,0.2,0.1,0.3,0.3,0.4c0.2,0.1,0.3,0,0.5-0.1l3.3-2.4l0,0c0.6-0.4,1-0.9,1.4-1.5c0.3-0.6,0.4-1.2,0.4-1.8C13.5,6.6,13,5.4,12.1,4.7z M12.3,9.2c-0.3,0.5-0.7,0.9-1.1,1.2l0,0l-2.6,1.9v-0.7c0-0.2-0.2-0.4-0.4-0.4c-1-0.1-1.9-0.5-2.7-1.1C4.1,9,4,6.9,5.2,5.6c0.1-0.1,0.2-0.3,0.4-0.4c1.7-1.4,4.1-1.4,5.8,0c0.8,0.6,1.2,1.6,1.2,2.5C12.6,8.3,12.5,8.8,12.3,9.2L12.3,9.2z"/><path id="パス_151" class="st1_fukidashi" d="M6.1,7.1c-0.4,0-0.6,0.3-0.6,0.6c0,0.4,0.3,0.6,0.6,0.6c0.4,0,0.6-0.3,0.6-0.6l0,0C6.8,7.4,6.5,7.1,6.1,7.1C6.1,7.1,6.1,7.1,6.1,7.1z"/><path id="パス_152" class="st1_fukidashi" d="M8.5,7.1c-0.4,0-0.6,0.3-0.6,0.6c0,0.4,0.3,0.6,0.6,0.6c0.4,0,0.6-0.3,0.6-0.6l0,0C9.1,7.4,8.9,7.1,8.5,7.1C8.5,7.1,8.5,7.1,8.5,7.1z"/><path id="パス_153" class="st1_fukidashi" d="M10.9,7.1c-0.4,0-0.6,0.3-0.6,0.6c0,0.4,0.3,0.6,0.6,0.6c0.4,0,0.6-0.3,0.6-0.6l0,0C11.5,7.4,11.2,7.1,10.9,7.1C10.9,7.1,10.9,7.1,10.9,7.1z"/></g><path class="st2_fukidashi" d="M8.5,1.7c3.7,0,6.8,3.1,6.8,6.8s-3.1,6.8-6.8,6.8s-6.8-3.1-6.8-6.8S4.8,1.7,8.5,1.7 M8.5,0C3.8,0,0,3.8,0,8.5S3.8,17,8.5,17c4.7,0,8.5-3.8,8.5-8.5S13.2,0,8.5,0L8.5,0z"/></g></svg>情報提供／お問い合わせ</a>
-							</div>
-						</div>
-
-						<div class="inner_mail">
-							<div class="mail_desc">
-								<div class="mail_img">
-									<svg version="1.1" id="mailmagazine" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-									 y="0px" viewBox="0 0 60 50" style="enable-background:new 0 0 60 50;" xml:space="preserve">
-										<style type="text/css">
-										.st0_magazine{fill:#E6F4FF;}
-										.st1_magazine{fill:#4E4E4E;}
-										.st2_magazine{fill:#E3E3E3;}
-										.st3_magazine{fill:#FFFFFF;}
-										.st4_magazine{fill:none;stroke:#2C76A4;stroke-width:1.5;stroke-miterlimit:10;}
-										.st5_magazine{fill:#FA6400;}
-										</style>
-										<g>
-											<g>
-												<g>
-													<path class="st0_magazine" d="M3.1,49.2c-1.3,0-2.4-1.1-2.4-2.3V21H51v25.9c0,1.3-1.1,2.3-2.4,2.3H3.1z"/>
-													<path class="st1_magazine" d="M50.2,21.7v25.2c0,0.9-0.7,1.6-1.6,1.6H3.1c-0.9,0-1.6-0.7-1.6-1.6V21.7H50.2 M51.7,20.2H0v26.7
-													C0,48.6,1.4,50,3.1,50h45.5c1.7,0,3.1-1.4,3.1-3.1V20.2L51.7,20.2z"/>
-												</g>
-												<g>
-													<path class="st1_magazine" d="M25.9,34.6l18.3,13.9H7.6L25.9,34.6 M25.9,32.7L3.1,50h45.5L25.9,32.7L25.9,32.7z"/>
-												</g>
-												<g>
-													<polygon class="st2_magazine" points="1.2,20.2 25.9,1 50.5,20.2 25.9,39.5 			"/>
-													<path class="st1_magazine" d="M25.9,1.9l23.4,18.3L25.9,38.5L2.4,20.2L25.9,1.9 M25.9,0L0,20.2l25.9,20.2l25.9-20.2L25.9,0L25.9,0z"/>
-												</g>
-												<g>
-													<polygon class="st3_magazine" points="8.5,25.8 8.5,7.5 43.2,7.5 43.2,25.8 25.9,39.4 			"/>
-													<path class="st1_magazine" d="M42.5,8.3v17.2l-16.6,13l-16.6-13V8.3H42.5 M44,6.8H7.8v19.4l18.1,14.1L44,26.2V6.8L44,6.8z"/>
-												</g>
-												<g id="グループ_5066_1_" transform="translate(12.688 13.177)">
-													<line id="線_256_1_" class="st4_magazine" x1="2.3" y1="-0.2" x2="24" y2="-0.2"/>
-													<line id="線_257_1_" class="st4_magazine" x1="2.3" y1="6" x2="24" y2="6"/>
-													<line id="線_258_1_" class="st4_magazine" x1="2.3" y1="12.3" x2="24" y2="12.3"/>
-												</g>
-											</g>
-											<g>
-												<ellipse id="楕円形_274_1_" class="st5_magazine" cx="50.7" cy="36" rx="6.2" ry="6.2"/>
-												<path class="st3_magazine" d="M50.5,38.2h2.2V39h-4l2.1-2.5c0.2-0.2,0.4-0.5,0.5-0.6c0.1-0.2,0.2-0.3,0.3-0.5c0.1-0.2,0.2-0.5,0.2-0.6
-												c0-0.3-0.1-0.5-0.3-0.7c-0.2-0.2-0.4-0.3-0.7-0.3c-0.6,0-0.9,0.4-1,1.1h-0.9c0.1-1.2,0.8-1.9,1.9-1.9c0.5,0,1,0.2,1.4,0.5
-												c0.4,0.3,0.6,0.8,0.6,1.3c0,0.3-0.1,0.6-0.3,0.9c-0.1,0.2-0.2,0.4-0.4,0.6c-0.2,0.2-0.4,0.5-0.6,0.8L50.5,38.2z"/>
-											</g>
-											<g>
-												<g>
-													<rect x="53.8" y="27.8" class="st0_magazine" width="1" height="2.1"/>
-													<polygon class="st1" points="54.8,27.8 53.8,27.8 53.8,29.8 54.8,29.8 54.8,27.8 			"/>
-												</g>
-												<g>
-													<rect x="57.9" y="32.9" class="st0_magazine" width="2.1" height="1"/>
-													<polygon class="st1" points="60,32.9 57.9,32.9 57.9,34 60,34 60,32.9 			"/>
-												</g>
-												<g>
-													<polygon class="st0_magazine" points="57.2,31.3 56.5,30.5 58,29 58.7,29.8 			"/>
-													<polygon class="st1_magazine" points="58,29 56.5,30.5 57.2,31.3 58.7,29.8 58,29 			"/>
-												</g>
-											</g>
-										</g>
+						<div class="inner_menu_scroll">
+							<div class="inner_menu_block">
+								<div class="search__box">
+									<form role="search" method="get" id="searchform_sp" class="search-form" action="<?php echo home_url( '/' ); ?>">
+										<input type="text" placeholder="検索する" name="s" id="search_sp" class="searchInput" autocomplete="off">
+										<button id="searchsubmit_sp" class="search__btn"></button>
+									</form>
+									<!--
+									<svg class="search-border" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314 48">
+										<path class="border" d="M157.5,41.3H22.5a17.5,17.5,0,1,1,0-35h135"/>
+										<path class="border" d="M157.5,41.3h135a17.5,17.5,0,1,0,0-35h-135"/>
 									</svg>
-								</div><!-- /.mail_img -->
-
-								<div class="mail_text">
-									<p class="mail_title">Mail magazine</p>
-									<p class="mail_sub"><!--<span class="mail_strong">-->オリジナルのニューズレターや最新情報<!--</span>-->をメールでお届けします！</p>
+									-->
 								</div>
-							</div><!-- /.mail_desc -->
+							</div>
 
-							<form>
-								<div class="mail_container">
-									<div class="mail_input">
-										<input type="email" name="" value="" placeholder="E-mail adress">
+							<div class="inner_menu_block">
+								<div class="item_menu">
+									<a href="<?php echo home_url(); ?>/article/">新着</a>
+								</div>
+								<div class="item_menu">
+									<a href="<?php echo home_url(); ?>/agenda/">アジェンダ</a>
+								</div>
+								<div class="item_menu">
+									<a href="<?php echo home_url(); ?>/series/">シリーズ</a>
+								</div>
+								<div class="item_menu">
+									<a href="<?php echo home_url(); ?>/renewers/">リニュアー</a>
+								</div>
+							</div>
+
+							<div class="menu_border"></div>
+
+							<div class="inner_menu_block">
+								<div class="item_menu fs_13">
+									<a href="<?php echo home_url(); ?>/info/">お知らせ</a>
+								</div>
+								<div class="item_menu fs_13">
+									<a href="<?php echo home_url(); ?>/about/">Renews(リニューズ)とは</a>
+								</div>
+								<div class="item_menu fs_13">
+									<a href="<?php echo home_url(); ?>/info/contact/"><svg version="1.1" id="information" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"y="0px" viewBox="0 0 17 17"style="enable-background:new 0 0 17 17;" xml:space="preserve"><style type="text/css">.st0_fukidashi{fill:#C2DDEE;}.st1_fukidashi{fill:#2C76A4;}.st2_fukidashi{opacity:0.1;enable-background:new  ;}</style><g><circle class="st0_fukidashi" cx="8.5" cy="8.5" r="8.5"/><g><path id="パス_150" class="st1_fukidashi" d="M12.1,4.7C10,2.9,7,2.9,5,4.7C3.2,6,3,8.5,4.4,10.3c0.1,0.2,0.3,0.3,0.4,0.5c0.8,0.7,1.8,1.2,2.8,1.3v1.2c0,0.2,0.1,0.3,0.3,0.4c0.2,0.1,0.3,0,0.5-0.1l3.3-2.4l0,0c0.6-0.4,1-0.9,1.4-1.5c0.3-0.6,0.4-1.2,0.4-1.8C13.5,6.6,13,5.4,12.1,4.7z M12.3,9.2c-0.3,0.5-0.7,0.9-1.1,1.2l0,0l-2.6,1.9v-0.7c0-0.2-0.2-0.4-0.4-0.4c-1-0.1-1.9-0.5-2.7-1.1C4.1,9,4,6.9,5.2,5.6c0.1-0.1,0.2-0.3,0.4-0.4c1.7-1.4,4.1-1.4,5.8,0c0.8,0.6,1.2,1.6,1.2,2.5C12.6,8.3,12.5,8.8,12.3,9.2L12.3,9.2z"/><path id="パス_151" class="st1_fukidashi" d="M6.1,7.1c-0.4,0-0.6,0.3-0.6,0.6c0,0.4,0.3,0.6,0.6,0.6c0.4,0,0.6-0.3,0.6-0.6l0,0C6.8,7.4,6.5,7.1,6.1,7.1C6.1,7.1,6.1,7.1,6.1,7.1z"/><path id="パス_152" class="st1_fukidashi" d="M8.5,7.1c-0.4,0-0.6,0.3-0.6,0.6c0,0.4,0.3,0.6,0.6,0.6c0.4,0,0.6-0.3,0.6-0.6l0,0C9.1,7.4,8.9,7.1,8.5,7.1C8.5,7.1,8.5,7.1,8.5,7.1z"/><path id="パス_153" class="st1_fukidashi" d="M10.9,7.1c-0.4,0-0.6,0.3-0.6,0.6c0,0.4,0.3,0.6,0.6,0.6c0.4,0,0.6-0.3,0.6-0.6l0,0C11.5,7.4,11.2,7.1,10.9,7.1C10.9,7.1,10.9,7.1,10.9,7.1z"/></g><path class="st2_fukidashi" d="M8.5,1.7c3.7,0,6.8,3.1,6.8,6.8s-3.1,6.8-6.8,6.8s-6.8-3.1-6.8-6.8S4.8,1.7,8.5,1.7 M8.5,0C3.8,0,0,3.8,0,8.5S3.8,17,8.5,17c4.7,0,8.5-3.8,8.5-8.5S13.2,0,8.5,0L8.5,0z"/></g></svg>情報提供／お問い合わせ</a>
+								</div>
+							</div>
+
+							<div class="inner_mail">
+								<div class="mail_desc">
+									<div class="mail_img">
+										<svg version="1.1" id="mailmagazine" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+										 y="0px" viewBox="0 0 60 50" style="enable-background:new 0 0 60 50;" xml:space="preserve">
+											<style type="text/css">
+											.st0_magazine{fill:#E6F4FF;}
+											.st1_magazine{fill:#4E4E4E;}
+											.st2_magazine{fill:#E3E3E3;}
+											.st3_magazine{fill:#FFFFFF;}
+											.st4_magazine{fill:none;stroke:#2C76A4;stroke-width:1.5;stroke-miterlimit:10;}
+											.st5_magazine{fill:#FA6400;}
+											</style>
+											<g>
+												<g>
+													<g>
+														<path class="st0_magazine" d="M3.1,49.2c-1.3,0-2.4-1.1-2.4-2.3V21H51v25.9c0,1.3-1.1,2.3-2.4,2.3H3.1z"/>
+														<path class="st1_magazine" d="M50.2,21.7v25.2c0,0.9-0.7,1.6-1.6,1.6H3.1c-0.9,0-1.6-0.7-1.6-1.6V21.7H50.2 M51.7,20.2H0v26.7
+														C0,48.6,1.4,50,3.1,50h45.5c1.7,0,3.1-1.4,3.1-3.1V20.2L51.7,20.2z"/>
+													</g>
+													<g>
+														<path class="st1_magazine" d="M25.9,34.6l18.3,13.9H7.6L25.9,34.6 M25.9,32.7L3.1,50h45.5L25.9,32.7L25.9,32.7z"/>
+													</g>
+													<g>
+														<polygon class="st2_magazine" points="1.2,20.2 25.9,1 50.5,20.2 25.9,39.5 			"/>
+														<path class="st1_magazine" d="M25.9,1.9l23.4,18.3L25.9,38.5L2.4,20.2L25.9,1.9 M25.9,0L0,20.2l25.9,20.2l25.9-20.2L25.9,0L25.9,0z"/>
+													</g>
+													<g>
+														<polygon class="st3_magazine" points="8.5,25.8 8.5,7.5 43.2,7.5 43.2,25.8 25.9,39.4 			"/>
+														<path class="st1_magazine" d="M42.5,8.3v17.2l-16.6,13l-16.6-13V8.3H42.5 M44,6.8H7.8v19.4l18.1,14.1L44,26.2V6.8L44,6.8z"/>
+													</g>
+													<g id="グループ_5066_1_" transform="translate(12.688 13.177)">
+														<line id="線_256_1_" class="st4_magazine" x1="2.3" y1="-0.2" x2="24" y2="-0.2"/>
+														<line id="線_257_1_" class="st4_magazine" x1="2.3" y1="6" x2="24" y2="6"/>
+														<line id="線_258_1_" class="st4_magazine" x1="2.3" y1="12.3" x2="24" y2="12.3"/>
+													</g>
+												</g>
+												<g>
+													<ellipse id="楕円形_274_1_" class="st5_magazine" cx="50.7" cy="36" rx="6.2" ry="6.2"/>
+													<path class="st3_magazine" d="M50.5,38.2h2.2V39h-4l2.1-2.5c0.2-0.2,0.4-0.5,0.5-0.6c0.1-0.2,0.2-0.3,0.3-0.5c0.1-0.2,0.2-0.5,0.2-0.6
+													c0-0.3-0.1-0.5-0.3-0.7c-0.2-0.2-0.4-0.3-0.7-0.3c-0.6,0-0.9,0.4-1,1.1h-0.9c0.1-1.2,0.8-1.9,1.9-1.9c0.5,0,1,0.2,1.4,0.5
+													c0.4,0.3,0.6,0.8,0.6,1.3c0,0.3-0.1,0.6-0.3,0.9c-0.1,0.2-0.2,0.4-0.4,0.6c-0.2,0.2-0.4,0.5-0.6,0.8L50.5,38.2z"/>
+												</g>
+												<g>
+													<g>
+														<rect x="53.8" y="27.8" class="st0_magazine" width="1" height="2.1"/>
+														<polygon class="st1" points="54.8,27.8 53.8,27.8 53.8,29.8 54.8,29.8 54.8,27.8 			"/>
+													</g>
+													<g>
+														<rect x="57.9" y="32.9" class="st0_magazine" width="2.1" height="1"/>
+														<polygon class="st1" points="60,32.9 57.9,32.9 57.9,34 60,34 60,32.9 			"/>
+													</g>
+													<g>
+														<polygon class="st0_magazine" points="57.2,31.3 56.5,30.5 58,29 58.7,29.8 			"/>
+														<polygon class="st1_magazine" points="58,29 56.5,30.5 57.2,31.3 58.7,29.8 58,29 			"/>
+													</g>
+												</g>
+											</g>
+										</svg>
+									</div><!-- /.mail_img -->
+
+									<div class="mail_text">
+										<p class="mail_title">Mail magazine</p>
+										<p class="mail_sub"><!--<span class="mail_strong">-->オリジナルのニューズレターや最新情報<!--</span>-->をメールでお届けします！</p>
 									</div>
-									<button type="submit"><span class="mail_button_item">go!</span></button>
-								</div>
-							</form>
-						</div><!-- /.inner_mail -->
+								</div><!-- /.mail_desc -->
+
+								<form>
+									<div class="mail_container">
+										<div class="mail_input">
+											<input type="email" name="" value="" placeholder="E-mail adress">
+										</div>
+										<button type="submit"><span class="mail_button_item">go!</span></button>
+									</div>
+								</form>
+							</div><!-- /.inner_mail -->
+
+						</div><!-- /.inner_menu_scroll -->
 
 						<div class="inner_menu_bottom">
 							<!--

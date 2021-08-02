@@ -1147,9 +1147,9 @@ header .userIcon {
 }
 
 /* single リニュアー自動表示 */
-.singleRenewerBlockWrap {
+/*.singleRenewerBlockWrap {
   margin-bottom: 35px;
-}
+}*/
 
 .singleRenewerBlockWrap .singleRenewerBlock .renewerIntroParts {
   background-color: #f8eae1;
@@ -1237,7 +1237,6 @@ header .userIcon {
 	width: 100%;
   padding-top: 50px !important;
 	margin-top: 0 !important;
-	margin-bottom: 50px !important; /* 2021/06/11 黒澤 追加 */
 	font-size: 0;
   text-align: center;
 	overflow: hidden;
@@ -2212,11 +2211,11 @@ small.um-max-filesize {
 }
 */
 
-@media only screen and (max-width: 767px) {
+/*@media only screen and (max-width: 767px) {
   .content_mv_article_detail .wrap_avatar {
     margin-bottom: 0 !important;
   }
-}
+}*/
 
 /*
 .content_mv_article_detail .title_avatar:before {
@@ -2727,9 +2726,10 @@ width: 100%;
 */
 
 /* 小コンポーネント */
-.articleListStyle .textbox.middle .wrap_avatar {
+
+/*.articleListStyle .textbox.middle .wrap_avatar {
 	margin-bottom: 18px;
-}
+}*/
 
 @media only screen and (min-width: 768px) {
   .articleListStyle .textbox.left_bottom {
@@ -2764,9 +2764,10 @@ top: -30px;
 	left: 0;
 	padding: 0px 9px 15px 15px; /* 2021/04/07 井上修正 */
 }
-.articleListStyle .textbox.middle .wrap_avatar {
+
+/*.articleListStyle .textbox.middle .wrap_avatar {
 	margin-bottom: 0;
-}
+}*/
 
 @media only screen and (max-width: 767px) {
 	.articleListStyle .article_middle{
@@ -3153,9 +3154,11 @@ ul.link_list li:before {
 		margin-top: 0 !important;
 	}
 }
-#page_series #seriesArchivePager .pagerArea{
+
+/*#page_series #seriesArchivePager .pagerArea{
 	margin-top: 40px !important;
-}
+}*/
+
 @media only screen and (max-width: 767px) {
 	#page_series #seriesArchivePager .pagerArea{
 		margin-top: 0 !important;
@@ -3416,3 +3419,567 @@ div#toc_container ul li::before {
   content: '\f00c';
   color: #00ACDB;
 }
+
+
+
+
+/*** トグルメニュー＆ヘッダー関連上書きCSS 2021/07/29 ***/
+/* 2021/06/28 ハンバーガーボタン追加 */
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: relative;
+  width: 25px;
+  height: 16px;
+  background: none;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2C76A4;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 7px;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+.menu-trigger span:nth-of-type(1) {
+  animation: menu-bar01 .75s forwards;
+}
+@keyframes menu-bar01 {
+  0% {
+    transform: translateY(7px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+.menu-trigger span:nth-of-type(2) {
+  transition: all .25s .25s;
+  opacity: 1;
+}
+.menu-trigger span:nth-of-type(3) {
+  animation: menu-bar02 .75s forwards;
+}
+@keyframes menu-bar02 {
+  0% {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+.menu-trigger.active span:nth-of-type(1) {
+  animation: active-menu-bar01 .75s forwards;
+}
+@keyframes active-menu-bar01 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(7px) rotate(0);
+  }
+  100% {
+    transform: translateY(7px) rotate(45deg);
+  }
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  animation: active-menu-bar03 .75s forwards;
+}
+@keyframes active-menu-bar03 {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0);
+  }
+  100% {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+  .sign_wrap {
+      width: 22%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header .inner_base {
+    padding: 0;
+    height: 39px;
+  }
+  .user_avatar {
+    top: 5px;
+    margin-right: 0px;
+  }
+
+  .sign_up.none_login {
+    display: none;
+  }
+
+  .sign_wrap {
+  width: 23%;
+  }
+}
+/* 2021/06/28 ハンバーガーボタン追加 ここまで */
+
+
+/*** ヘッダー ***/
+/* 2021/07/15修正分 */
+#menu {
+  height: 100vh;
+}
+@media only screen and (min-width: 768px) {
+  #menu {
+    width: 500px;
+  }
+}
+.inner_menu {
+  position: relative;
+  width: 100%;
+  /* height: 100vh; */
+  color: #4E4E4E;
+  background: rgba(255,255,255,0.92);
+  margin-top: 67px;
+  /*padding-bottom: 126px;
+  box-sizing: border-box;*/
+}
+@supports (-webkit-touch-callout: none) {
+  .inner_menu {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
+}
+.inner_menu_scroll {
+  overflow-y: auto;
+  height: calc(100vh - 193px);
+}
+@media only screen and (max-width:767px) {
+  .inner_menu_scroll {
+    height: 60vh;
+  }
+}
+.inner_menu_block {
+  width: 100%;
+  padding-top: 20px;
+}
+
+#search_sp {
+  background: #fff;
+  border: 1px solid #B0AD9E;
+  padding: 5px 28px;
+}
+.search__box {
+  margin: 0 10%;
+}
+.item_menu {
+  text-align: center;
+}
+.item_menu:not(:first-of-type) {
+  padding-top: 20px;
+}
+.item_menu>a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+.item_menu>a {
+  color: #202020;
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+}
+.item_menu>a::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color: #202020;
+  transition: .3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.item_menu>a:hover::after{
+  width: 100%;
+}
+.menu_border{
+  width:  77%;
+  margin: 0 auto;
+  border-bottom: 1px solid #707070;
+  padding-top: 30px;
+}
+.inner_mail {
+  width: auto;
+  background: #fff;
+  border: 2px solid #17577F;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 30px 50px 20px;
+}
+.mail_input input {
+  border: none;
+  background: #FBF8E5;
+  padding-left: 10px;
+  width: 300px;
+  height: 20px;
+}
+.inner_menu_bottom {
+  width: 100%;
+  /* height: 126px; */
+  padding: 0 50px;
+  text-align: center;
+  position: fixed;
+  /*position: absolute; */
+  bottom: 0;
+  left: 50%; /* absoluteのセンタリング処理 */
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+}
+.inner_menu_bottom .btn_share {
+  padding-top: 5px;
+  justify-content: space-evenly;
+}
+.footer_link {
+  text-align: center;
+  padding: 20px 0;
+}
+.footer_link a {
+  font-size: 11px;
+  color: #707070;
+}
+.footer_link a:before {
+  content: " | ";
+}
+.footer_link a:first-child:before {
+  content: none;
+}
+
+@media only screen and (max-width:767px) {
+  #menu {
+    width: 85%;
+  }
+  #search_sp {
+    padding: 15px 28px;
+  }
+  .inner_mail {
+    margin: 30px 30px 20px;
+  }
+  .mail_input input {
+    width: 200px;
+  }
+  .inner_menu_bottom {
+    padding: 0 20px;
+    /*  margin-bottom: 70px; */
+  }
+}
+
+
+/* 2021/07/05 「Follow us」テキスト化 */
+.follow {
+  /*text-align: center;*/
+  display: inline-flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.diagonal_left {
+  width: 13px;
+  height: 13px;
+  background-image: linear-gradient(to right top, transparent 44%, black 44%, black 56%, transparent 56%);
+}
+
+.diagonal_right {
+  width: 13px;
+  height: 13px;
+  background-image: linear-gradient(to left top, transparent 44%, black 44%, black 56%, transparent 56%);
+}
+
+.follow_us {
+  font-weight: 700;
+  font-size: 15px;
+  padding: 0 3px;
+}
+
+
+/* 2021/06/24改名新設分 */
+.top_menu {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: block;
+  z-index: 1;
+}
+
+.inner_menu_top_none {
+  height: 30px;
+}
+
+.inner_menu_top {
+  padding: 20px 0;
+}
+
+.inner_menu_sign {
+  display: flex;
+  justify-content: center;
+}
+
+.inner_menu_signIn, .inner_menu_signUp {
+  /* text-align: center; */
+  margin-bottom: 20px;
+  margin: 0 10px;
+}
+
+.inner_menu_signUp {
+  display: flex;
+}
+
+.register_desc {
+  display: flex;
+}
+
+.register_desc p {
+  font-size: 13px;
+}
+
+.register_desc svg {
+  width: 14px;
+  height: 14px;
+}
+
+.register_link {
+  margin-left: 15px;
+  color: #4E4E4E;
+  background: linear-gradient(transparent 60%, #FFFF00 0%);
+}
+
+.inner_menu_signIn p, .inner_menu_signUp p {
+  font-size: 10px;
+  text-align: center;
+}
+
+.inner_menu_sign button {
+  border-radius: 50px;
+  border: 1px solid #B0AD9E;
+  padding: 5px 15px;
+  background-color: #fff;
+  margin-top: 5px;
+  color: #4E4E4E;
+}
+
+.inner_menu_sign button span {
+  vertical-align: super;
+  color: #4E4E4E;
+}
+
+.inner_menu_sign button svg {
+  fill: #707070;
+  width: 17px;
+}
+
+.item_menu svg {
+  width: 16px;
+  height: 16px;
+  margin-bottom: -3px;
+  margin-right: 5px;
+}
+
+.mail_desc, .inner_mail form {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.mail_desc {
+  padding-bottom: 5px;
+}
+
+.mail_desc svg {
+  width: 60px;
+  height: 60px;
+}
+
+.mail_container {
+  display: flex;
+}
+
+.mail_text {
+  padding-left: 10px;
+  width: auto;
+  letter-spacing: 1.5px;
+}
+
+.mail_title {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.mail_sub {
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  padding-top: 5px;
+}
+
+.mail_input input::placeholder {
+  color: #DEDABC;
+}
+
+.mail_container button {
+  border: none;
+  background-color: #B0AD9E;
+  color: #fff;
+}
+
+.inner_menu_bottom .btn_share .share-btn {
+  width: 24px;
+  height: 24px;
+}
+
+/* ここまで */
+
+
+header {
+  background-color: #fff;
+  height: 67px !important;
+}
+
+header .inner_base {
+  max-width: 100%;
+}
+
+.logo_header {
+  position: relative;
+  top: 0;
+}
+
+.sign_in {
+  display: block;
+}
+
+
+.logo_header {
+  left: 0;
+  transform: translateX(0%);
+}
+
+.logo_header, .noLogin .logo_header {
+  position: static;
+  margin-bottom: 0px;
+  width: 150px;
+  margin-left: calc(50% - 75px);
+  text-align: center;
+}
+
+header.is_open .logo_header {
+  top: 0px;
+}
+.sign_wrap {
+  max-width: none;
+  margin-left: auto;
+  margin-bottom: 0px;
+  width: 23%;
+}
+.sign_wrap svg {
+  width: 17px;
+  margin-bottom: -2px;
+  color: #707070;
+}
+.sign_wrap a {
+  color: #4E4E4E;
+}
+.sign_up > a {
+  background-color: transparent;
+}
+.logo_header .sub_title {
+  text-align: center;
+  font-size: 10px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  color: #2C76A4;
+}
+
+
+.search__box {
+  margin: 0 10%;
+  height: 32px;
+}
+
+.twitter {
+  fill: #1DA1F2;
+}
+
+.facebook {
+  fill: #1877F2;
+}
+
+.line {
+  fill: #00B900;
+}
+
+.line svg {
+  fill: inherit;
+}
+
+.text_copyright {
+  margin: auto;
+}
+
+
+.follow button {
+  border-radius: 5px;
+  border: 1px solid #B0AD9E;
+  padding: 5px 10px;
+  background-color: #fff;
+}
+
+.follow button a {
+  color: #B0AD9E;
+  font-weight: bold;
+}
+
+.clearfix {
+  margin: 20px 0;
+}
+
+#footer {
+  text-align: center;
+}
+
+.text_copyright {
+  text-align: center;
+}
+
+#LINE_LOGO_1_ .st0 {
+  fill: #fff;
+}
+/*** トグルメニュー＆ヘッダー上書きCSS ここまで ***/
