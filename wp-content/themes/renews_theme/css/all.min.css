@@ -227,6 +227,7 @@ ul li {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  /* height: 100vh; */
   background-color: #fffdf5;
   overflow: hidden;
   padding-bottom: 84px; /* 2021/07/05 井上 */

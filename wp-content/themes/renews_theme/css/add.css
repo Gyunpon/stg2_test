@@ -3553,7 +3553,8 @@ div#toc_container ul li::before {
 /*** ヘッダー ***/
 /* 2021/07/15修正分 */
 #menu {
-  height: 100vh;
+  /* height: 100vh; */
+  height: 100%;
 }
 @media only screen and (min-width: 768px) {
   #menu {
@@ -3561,9 +3562,9 @@ div#toc_container ul li::before {
   }
 }
 .inner_menu {
-  position: relative;
+  /* position: relative; */
   width: 100%;
-  /* height: 100vh; */
+  height: 100vh;
   color: #4E4E4E;
   background: rgba(255,255,255,0.92);
   margin-top: 67px;
@@ -3578,11 +3579,11 @@ div#toc_container ul li::before {
 }
 .inner_menu_scroll {
   overflow-y: auto;
-  height: calc(100vh - 193px);
+  height: calc(100vh - 300px);
 }
 @media only screen and (max-width:767px) {
   .inner_menu_scroll {
-    height: 60vh;
+    height: 65vh;
   }
 }
 .inner_menu_block {
@@ -3699,6 +3700,7 @@ div#toc_container ul li::before {
   }
   .inner_menu_bottom {
     padding: 0 20px;
+    margin-top: 20px;
     /*  margin-bottom: 70px; */
   }
 }
