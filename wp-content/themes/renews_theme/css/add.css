@@ -3579,16 +3579,27 @@ div#toc_container ul li::before {
 }
 .inner_menu_scroll {
   overflow-y: auto;
-  height: calc(100vh - 300px);
+  height: calc(100vh - 193px);
 }
 @media only screen and (max-width:767px) {
   .inner_menu_scroll {
-    height: 65vh;
+    height: 63vh;
   }
 }
 .inner_menu_block {
   width: 100%;
   padding-top: 20px;
+}
+@media only screen and (max-width:767px) {
+  .inner_menu_block {
+    padding-top: 15px;
+  }
+  .inner_menu_block:first-of-type {
+    height: 47px;
+  }
+  .inner_menu_block:nth-of-type(2) {
+    height: 132px;
+  }
 }
 
 #search_sp {
@@ -3605,6 +3616,16 @@ div#toc_container ul li::before {
 .item_menu:not(:first-of-type) {
   padding-top: 20px;
 }
+@media only screen and (max-width:767px) {
+  .item_menu:not(:first-of-type) {
+    padding-top: 15px;
+  }
+
+  #searchform_sp {
+    height: 100%;
+  }
+}
+
 .item_menu>a:hover {
   text-decoration: none;
   opacity: 0.7;
@@ -3636,7 +3657,7 @@ div#toc_container ul li::before {
   width:  77%;
   margin: 0 auto;
   border-bottom: 1px solid #707070;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 .inner_mail {
   width: auto;
@@ -3655,7 +3676,7 @@ div#toc_container ul li::before {
 }
 .inner_menu_bottom {
   width: 100%;
-  /* height: 126px; */
+  height: 126px;
   padding: 0 50px;
   text-align: center;
   position: fixed;
@@ -3690,10 +3711,11 @@ div#toc_container ul li::before {
     width: 85%;
   }
   #search_sp {
-    padding: 15px 28px;
+    /* padding: 15px 28px; */
+    height: 32px;
   }
   .inner_mail {
-    margin: 30px 30px 20px;
+    margin: 20px 30px;
   }
   .mail_input input {
     width: 200px;
@@ -3701,6 +3723,7 @@ div#toc_container ul li::before {
   .inner_menu_bottom {
     padding: 0 20px;
     margin-top: 20px;
+    z-index: 1000;
     /*  margin-bottom: 70px; */
   }
 }
